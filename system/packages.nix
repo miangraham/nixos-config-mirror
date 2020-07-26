@@ -6,6 +6,7 @@ in
 {
   environment.systemPackages = with pkgs; [
     alacritty
+    audacity
     awscli
     bzip2
     chromium
@@ -19,6 +20,7 @@ in
     gawk
     gimp
     git
+    gnome3.adwaita-icon-theme
     gnupg
     graphviz
     grim
@@ -35,6 +37,7 @@ in
     pandoc
     pavucontrol
     pstree
+    pulseeffects
     qdirstat
     ranger
     ripgrep

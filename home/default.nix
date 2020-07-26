@@ -19,9 +19,11 @@ in
     yarn
 
     # rust
-    rustup
-    rust-analyzer
+    # rustup
+    rustc
+    cargo
     cargo-release
+    rust-analyzer
 
     # haskell
     cabal-install
