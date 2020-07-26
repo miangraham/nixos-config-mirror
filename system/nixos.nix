@@ -1,7 +1,6 @@
 { config, pkgs, lib, ... }:
 {
   imports = [
-    ../box/nene/default.nix
     ../common/overlays.nix
     ./bash.nix
     ./fonts.nix

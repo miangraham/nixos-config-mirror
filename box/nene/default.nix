@@ -2,6 +2,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ../../system/nixos.nix
   ];
   system.stateVersion = "20.03";
   networking.hostName = "nene";
