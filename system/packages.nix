@@ -12,8 +12,8 @@ in
     chromium
     cmus
     emacsMine
-    exa
     evince
+    exa
     feh
     ffmpeg
     firefox-wayland
