@@ -69,13 +69,11 @@ in
     unzip
     valgrind
     vim
+    vscode
     watch
     wget
     youtube-dl
     zip
-
-    # editors
-    vscode
 
     # haskell
     haskell.compiler.ghc883
@@ -89,5 +87,7 @@ in
     # rust
     rustup
     rust-analyzer
+
+    texlive.combined.scheme-small
   ];
 }
