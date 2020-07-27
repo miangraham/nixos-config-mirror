@@ -65,5 +65,7 @@ in
     python38Packages.glances
 
     startSwayScript
+
+    texlive.combined.scheme-small
   ];
 }
