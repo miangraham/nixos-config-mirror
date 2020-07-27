@@ -35,4 +35,4 @@ $ ./install_home.sh
 
 ## License: CC0 [![License: CC0-1.0](https://licensebuttons.net/p/zero/1.0/80x15.png)](http://creativecommons.org/publicdomain/zero/1.0/)
 
-To the extent possible under law, M. Ian Graham has waived all copyright and related or neighboring rights to dot-nix. This work is published from: Japan.
+To the extent possible under law, [M. Ian Graham](https://github.com/miangraham) has waived all copyright and related or neighboring rights to dot-nix. This work is published from: Japan.
