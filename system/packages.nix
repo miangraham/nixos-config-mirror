@@ -20,6 +20,7 @@ in
     gawk
     gimp
     git
+    gitAndTools.git-subrepo
     gnome3.adwaita-icon-theme
     gnupg
     graphviz
