@@ -3,7 +3,7 @@ pkgs.emacsWithPackagesFromUsePackage {
   config = "";
   package = pkgs.emacsGit;
   extraEmacsPackages = epkgs: with epkgs; [
-    ace-jump-mode
+    ace-window
     ag
     aggressive-indent
     anzu

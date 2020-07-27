@@ -42,6 +42,7 @@ in
     findutils
     gawk
     git
+    gitAndTools.git-subrepo
     gnugrep
     gnupg
     gnused
