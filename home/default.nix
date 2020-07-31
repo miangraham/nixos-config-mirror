@@ -7,7 +7,7 @@ in
 {
   inherit (unstable)
     # tools
-    cli-visualizer
+    # cli-visualizer
     mpv
     obs-studio
     obs-wlrobs
