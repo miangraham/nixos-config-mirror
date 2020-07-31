@@ -1,4 +1,6 @@
 { config, pkgs, lib, ... }:
+let rtmp = import ./rtmp.nix { fetchFromGitHub=pkgs.fetchFromGitHub; };
+in
 {
   imports = [
     ../common/overlays.nix
@@ -40,5 +42,29 @@
     user = "ian";
     dataDir = "/home/ian/share";
     configDir = "/home/ian/.config/syncthing";
+  };
+
+  # temp dev nginx
+  networking.firewall.allowedTCPPorts = [ 22 80 1935 ];
+  services.nginx = {
+    enable = true;
+    package = (pkgs.nginx.override {modules = [rtmp];});
+    virtualHosts._ = {
+      root = "/home/ian/www";
+    };
+    appendConfig = ''
+      rtmp {
+        server {
+          listen 1935;
+          chunk_size 4000;
+          application vidtest {
+            live on;
+            record off;
+            meta copy;
+            on_publish http://127.0.0.1:8080/auth_publish;
+          }
+        }
+      }
+    '';
   };
 }

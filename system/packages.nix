@@ -44,6 +44,7 @@ in
     ripgrep
     rofi
     rsync
+    rustfmt
     silver-searcher
     sqlite
     speedtest-cli
@@ -51,6 +52,7 @@ in
     terraform
     terraform-providers.aws
     tdesktop # telegram client
+    tldr
     tmux
     unrar
     unzip
