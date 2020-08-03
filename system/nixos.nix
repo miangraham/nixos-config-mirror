@@ -1,15 +1,23 @@
-{ config, pkgs, lib, ... }:
-let rtmp = import ./rtmp.nix { fetchFromGitHub=pkgs.fetchFromGitHub; };
+{ ... }:
+let
+  sources = import ../nix/sources.nix;
+  emacsOverlay = import ../common/emacs-overlay.nix {};
+  pkgs = import sources.nixpkgs { config.allowUnfree = true; config.pulseaudio = true; overlays = [ emacsOverlay ]; };
+  rtmp = import ./rtmp.nix {pkgs=pkgs;};
+  fonts = import ./fonts.nix {pkgs=pkgs;};
+  packages = import ./packages.nix {pkgs=pkgs;};
 in
 {
   imports = [
     ../common/overlays.nix
     ./bash.nix
-    ./fonts.nix
     ./network.nix
-    ./packages.nix
     ./sway.nix
   ];
+
+  fonts.fonts = fonts;
+
+  environment.systemPackages = packages;
 
   nixpkgs.config = {
     allowUnfree = true;

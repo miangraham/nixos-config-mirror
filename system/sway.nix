@@ -1,5 +1,9 @@
-{ pkgs, lib, ... }:
-
+{ lib, ... }:
+let
+  sources = import ../nix/sources.nix;
+  emacsOverlay = import ../common/emacs-overlay.nix {};
+  pkgs = import sources.nixpkgs { config.allowUnfree = true; config.pulseaudio = true; overlays = [ emacsOverlay ]; };
+in
 {
   programs.sway = {
     enable = true;

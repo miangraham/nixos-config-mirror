@@ -1,4 +1,9 @@
-{ pkgs, ... } :
+{ ... } :
+let
+  sources = import ../nix/sources.nix;
+  emacsOverlay = import ./emacs-overlay.nix {};
+  pkgs = import sources.nixpkgs-unstable { config.allowUnfree = true; config.pulseaudio = true; overlays = [ emacsOverlay ]; };
+in
 pkgs.emacsWithPackagesFromUsePackage {
   config = "";
   package = pkgs.emacsGit;
