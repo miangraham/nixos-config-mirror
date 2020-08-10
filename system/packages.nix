@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, unstable, crate2nix, ... }:
 let
   emacsMine = import ../common/emacs.nix {};
   startSwayScript = import ./startsway.nix {pkgs=pkgs;};
@@ -69,4 +69,29 @@ with pkgs; [
   startSwayScript
 
   texlive.combined.scheme-small
+
+  # tools
+  # cli-visualizer
+  unstable.mpv
+  unstable.obs-studio
+  unstable.obs-wlrobs
+  unstable.youtube-dl
+  unstable.zeal
+
+  # js
+  unstable.nodejs
+  unstable.yarn
+
+  # rust
+  unstable.rustc
+  unstable.cargo
+  unstable.cargo-release
+  unstable.rust-analyzer
+
+  # haskell
+  unstable.cabal-install
+  unstable.ghcid
+  unstable.haskell.compiler.ghc883
+
+  crate2nix
 ]

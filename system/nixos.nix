@@ -3,9 +3,11 @@ let
   sources = import ../nix/sources.nix;
   emacsOverlay = import ../common/emacs-overlay.nix {};
   pkgs = import sources.nixpkgs { config.allowUnfree = true; config.pulseaudio = true; overlays = [ emacsOverlay ]; };
+  unstable = import sources.nixpkgs-unstable { config.allowUnfree = true; config.pulseaudio = true; overlays = [ emacsOverlay ]; };
+  crate2nix = import sources.crate2nix {};
   rtmp = import ./rtmp.nix {pkgs=pkgs;};
   fonts = import ./fonts.nix {pkgs=pkgs;};
-  packages = import ./packages.nix {pkgs=pkgs;};
+  packages = import ./packages.nix {pkgs=pkgs;unstable=unstable;crate2nix=crate2nix;};
 in
 {
   imports = [
@@ -69,7 +71,10 @@ in
             live on;
             record off;
             meta copy;
+
             on_publish http://127.0.0.1:8080/auth_publish;
+
+            exec systemd-cat -t vidtest /home/ian/vidtest/run_dev.sh;
           }
         }
       }
