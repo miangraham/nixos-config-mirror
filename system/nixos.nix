@@ -9,20 +9,24 @@ let
 in
 {
   imports = [
-    ../common/overlays.nix
     ./bash.nix
     ./network.nix
     ./sway.nix
   ];
 
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+      pulseaudio = true;
+    };
+    overlays = [
+      (import ../common/emacs-overlay.nix {})
+    ];
+  };
+
   fonts.fonts = fonts;
 
   environment.systemPackages = packages;
-
-  nixpkgs.config = {
-    allowUnfree = true;
-    pulseaudio = true;
-  };
 
   time.timeZone = "Asia/Tokyo";
 

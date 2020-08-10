@@ -4,18 +4,21 @@ let
 in
 {
   imports = [
-    ../common/overlays.nix
-    # ./bash.nix
     ./fonts.nix
   ];
 
-  environment.darwinConfig = "$HOME/.nix/configuration.nix";
-
-  nixpkgs.config = {
-    allowUnfree = true;
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+    };
+    overlays = [
+      (import ../common/emacs-overlay.nix {})
+    ];
   };
 
   programs.bash.enable = true;
+
+  environment.darwinConfig = "$HOME/.nix/configuration.nix";
 
   environment.systemPackages = with pkgs; [
     # base
