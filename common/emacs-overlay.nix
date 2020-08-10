@@ -1,4 +1,4 @@
 { ... }:
 import (builtins.fetchTarball {
-  url = https://github.com/nix-community/emacs-overlay/archive/5d36f14d62da38e5f71c4dcc151ecbaa9feffbbc.tar.gz;
+  url = https://github.com/nix-community/emacs-overlay/archive/98d5c6bd56f67e8c8d1416dd9986870f9a7c6f3b.tar.gz;
 })
