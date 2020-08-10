@@ -1,5 +1,12 @@
-{ pkgs, unstable, crate2nix, ... }:
+{ ... }:
 let
+  conf = import ./config.nix {};
+  sources = import ../nix/sources.nix;
+
+  pkgs = import sources.nixpkgs conf;
+  unstable = import sources.nixpkgs-unstable conf;
+  crate2nix = import sources.crate2nix {};
+
   emacsMine = import ../common/emacs.nix {};
   startSwayScript = import ./startsway.nix {pkgs=pkgs;};
 in

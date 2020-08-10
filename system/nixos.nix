@@ -1,13 +1,11 @@
 { ... }:
 let
+  conf = import ./config.nix {};
   sources = import ../nix/sources.nix;
-  emacsOverlay = import ../common/emacs-overlay.nix {};
-  pkgs = import sources.nixpkgs { config.allowUnfree = true; config.pulseaudio = true; overlays = [ emacsOverlay ]; };
-  unstable = import sources.nixpkgs-unstable { config.allowUnfree = true; config.pulseaudio = true; overlays = [ emacsOverlay ]; };
-  crate2nix = import sources.crate2nix {};
+  pkgs = import sources.nixpkgs conf;
   rtmp = import ./rtmp.nix {pkgs=pkgs;};
   fonts = import ./fonts.nix {pkgs=pkgs;};
-  packages = import ./packages.nix {pkgs=pkgs;unstable=unstable;crate2nix=crate2nix;};
+  packages = import ./packages.nix {};
 in
 {
   imports = [

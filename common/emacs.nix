@@ -1,8 +1,8 @@
 { ... } :
 let
+  conf = import ../system/config.nix {};
   sources = import ../nix/sources.nix;
-  emacsOverlay = import ./emacs-overlay.nix {};
-  pkgs = import sources.nixpkgs-unstable { config.allowUnfree = true; config.pulseaudio = true; overlays = [ emacsOverlay ]; };
+  pkgs = import sources.nixpkgs-unstable conf;
 in
 pkgs.emacsWithPackagesFromUsePackage {
   config = "";
