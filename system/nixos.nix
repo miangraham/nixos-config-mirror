@@ -42,6 +42,14 @@ in
 
   hardware.pulseaudio.enable = true;
 
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
+    inputMethod = {
+      enabled = "fcitx";
+      fcitx.engines = with pkgs.fcitx-engines; [ mozc ];
+    };
+  };
+
   services.openssh.enable = true;
 
   services.syncthing = {
