@@ -71,20 +71,21 @@ in
     package = (pkgs.nginx.override {modules = [rtmp];});
     virtualHosts._ = {
       root = "/home/ian/www";
+      # root = "/home/ian/yewtest";
     };
     appendConfig = ''
       rtmp {
         server {
           listen 1935;
           chunk_size 4000;
-          application vidtest {
+          application ingest {
             live on;
             record off;
             meta copy;
 
             on_publish http://127.0.0.1:8080/auth_publish;
 
-            exec systemd-cat -t vidtest /home/ian/vidtest/run_dev.sh;
+            exec systemd-cat -t ingest /home/ian/.bin/handleRtmpIngest.sh $name;
           }
         }
       }
