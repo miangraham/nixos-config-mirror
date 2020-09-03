@@ -38,6 +38,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     json-mode
     ledger-mode
     lsp-mode
+    lsp-ui
     magit
     markdown-mode
     move-dup

@@ -94,6 +94,14 @@ with pkgs; [
   unstable.cargo
   unstable.cargo-release
   unstable.rust-analyzer
+  unstable.pkg-config
+  unstable.gst_all_1.gstreamer
+  unstable.gst_all_1.gst-libav
+  unstable.gst_all_1.gst-plugins-base
+  unstable.gst_all_1.gst-plugins-good
+  unstable.gst_all_1.gst-plugins-bad
+  unstable.gst_all_1.gst-plugins-ugly
+  unstable.gcc
 
   # haskell
   unstable.cabal-install
