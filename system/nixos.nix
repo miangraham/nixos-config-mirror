@@ -6,6 +6,7 @@ let
   rtmp = import ./rtmp.nix {pkgs=pkgs;};
   fonts = import ./fonts.nix {pkgs=pkgs;};
   packages = import ./packages.nix {};
+  overlays = import ../common/overlays.nix {};
 in
 {
   imports = [
@@ -19,9 +20,7 @@ in
       allowUnfree = true;
       pulseaudio = true;
     };
-    overlays = [
-      (import ../common/emacs-overlay.nix {})
-    ];
+    overlays = overlays;
   };
 
   fonts.fonts = fonts;

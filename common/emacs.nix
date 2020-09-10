@@ -18,12 +18,14 @@ pkgs.emacsWithPackagesFromUsePackage {
     company
     dante
     diminish
+    direnv
     doom-themes
     editorconfig
     elfeed
     elfeed-org
     emacsql
     emacsql-sqlite3
+    eslint-fix
     flycheck
     flycheck-rust
     fullframe

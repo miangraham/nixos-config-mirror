@@ -1,8 +1,9 @@
 { ... }:
-let emacsOverlay = import ../common/emacs-overlay.nix {};
+let
+  overlays = import ../common/overlays.nix {};
 in
 {
   config.allowUnfree = true;
   config.pulseaudio = true;
-  overlays = [ emacsOverlay ];
+  overlays = overlays;
 }

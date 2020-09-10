@@ -2,7 +2,6 @@
 let
   conf = import ./config.nix {};
   sources = import ../nix/sources.nix;
-  emacsOverlay = import ../common/emacs-overlay.nix {};
   pkgs = import sources.nixpkgs conf;
 in
 {

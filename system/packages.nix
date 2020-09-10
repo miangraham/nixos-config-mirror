@@ -17,6 +17,7 @@ with pkgs; [
   bzip2
   chromium
   cmus
+  direnv
   emacsMine
   evince
   exa
@@ -102,6 +103,8 @@ with pkgs; [
   unstable.gst_all_1.gst-plugins-bad
   unstable.gst_all_1.gst-plugins-ugly
   unstable.gcc
+  unstable.glib
+  unstable.glib.dev
 
   # haskell
   unstable.cabal-install

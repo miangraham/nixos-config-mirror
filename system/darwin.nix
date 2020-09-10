@@ -1,6 +1,7 @@
 { config, pkgs, lib, ... }:
 let
   emacsMine = import ../common/emacs.nix {pkgs=pkgs;};
+  overlays = import ../common/overlays.nix {};
 in
 {
   imports = [
@@ -11,9 +12,7 @@ in
     config = {
       allowUnfree = true;
     };
-    overlays = [
-      (import ../common/emacs-overlay.nix {})
-    ];
+    overlays = overlays;
   };
 
   programs.bash.enable = true;
