@@ -41,6 +41,7 @@ with pkgs; [
   mu
   neofetch
   niv
+  nix-index
   pamixer
   pandoc
   pavucontrol
@@ -105,11 +106,14 @@ with pkgs; [
   unstable.gcc
   unstable.glib
   unstable.glib.dev
+  unstable.capnproto
 
   # haskell
-  unstable.cabal-install
-  unstable.ghcid
-  unstable.haskell.compiler.ghc883
+  # unstable.cabal-install
+  # unstable.ghcid
+  # unstable.haskell.compiler.ghc883
+
+  unstable.godot
 
   crate2nix
 ]
