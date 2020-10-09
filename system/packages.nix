@@ -34,6 +34,7 @@ with pkgs; [
   grim
   gzip
   htop
+  hwinfo
   imagemagick
   killall
   krita
@@ -45,6 +46,7 @@ with pkgs; [
   pamixer
   pandoc
   pavucontrol
+  pciutils
   pstree
   pulseeffects
   qdirstat

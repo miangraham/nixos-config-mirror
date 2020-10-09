@@ -3,6 +3,7 @@ let
   conf = import ./config.nix {};
   sources = import ../nix/sources.nix;
   pkgs = import sources.nixpkgs conf;
+  unstable = import sources.nixpkgs-unstable conf;
   rtmp = import ./rtmp.nix {pkgs=pkgs;};
   fonts = import ./fonts.nix {pkgs=pkgs;};
   packages = import ./packages.nix {};
@@ -28,6 +29,8 @@ in
   environment.systemPackages = packages;
 
   time.timeZone = "Asia/Tokyo";
+
+  boot.kernelPackages = unstable.linuxPackages_5_8;
 
   boot.loader.systemd-boot = {
     enable = true;
