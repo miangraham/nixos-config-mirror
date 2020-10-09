@@ -39,6 +39,7 @@ with pkgs; [
   killall
   krita
   lftp
+  lshw
   mu
   neofetch
   niv

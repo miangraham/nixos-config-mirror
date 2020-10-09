@@ -18,4 +18,6 @@
   programs.light.enable = true;
   services.upower.enable = true;
   powerManagement.powertop.enable = true;
+
+  services.fwupd.enable = true;
 }
