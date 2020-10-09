@@ -43,7 +43,7 @@ in
 
   users.users.ian = {
     isNormalUser = true;
-    extraGroups = ["wheel" "audio"];
+    extraGroups = ["wheel" "audio" "video"];
   };
 
   hardware.pulseaudio.enable = true;

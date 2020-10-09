@@ -73,6 +73,7 @@ with pkgs; [
   watch
   wget
   wofi
+  xdg_utils
   zip
 
   python38Packages.glances
