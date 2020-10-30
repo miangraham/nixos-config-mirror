@@ -11,6 +11,8 @@
 
   networking.networkmanager.enable = true;
 
+  networking.resolvconf.dnsExtensionMechanism = false;
+
   networking.interfaces.enp2s0f0.useDHCP = true;
   networking.interfaces.enp5s0.useDHCP = true;
   networking.interfaces.wlp3s0.useDHCP = true;
