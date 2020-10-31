@@ -1,4 +1,4 @@
 { ... }:
 import (builtins.fetchTarball {
-  url = https://github.com/mozilla/nixpkgs-mozilla/archive/efda5b357451dbb0431f983cca679ae3cd9b9829.tar.gz;
+  url = https://github.com/mozilla/nixpkgs-mozilla/archive/8c007b60731c07dd7a052cce508de3bb1ae849b4.tar.gz;
 })

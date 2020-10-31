@@ -5,7 +5,6 @@ let
 
   pkgs = import sources.nixpkgs conf;
   unstable = import sources.nixpkgs-unstable conf;
-  crate2nix = import sources.crate2nix {};
 
   emacsMine = import ../common/emacs.nix {};
   startSwayScript = import ./startsway.nix {pkgs=pkgs;};
@@ -118,6 +117,4 @@ with pkgs; [
   # unstable.haskell.compiler.ghc883
 
   unstable.godot
-
-  crate2nix
 ]
