@@ -49,6 +49,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     org-randomnote
     org-ref
     org-roam
+    org-superstar
     org-tree-slide
     pdf-tools
     projectile
