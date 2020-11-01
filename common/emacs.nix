@@ -57,6 +57,8 @@ pkgs.emacsWithPackagesFromUsePackage {
     purescript-mode
     rainbow-delimiters
     rust-mode
+    selectrum
+    selectrum-prescient
     smartparens
     solaire-mode
     spinner
