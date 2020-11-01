@@ -14,7 +14,6 @@ with pkgs; [
   audacity
   awscli
   bzip2
-  chromium
   cmus
   direnv
   emacsMine
@@ -22,7 +21,6 @@ with pkgs; [
   exa
   feh
   ffmpeg
-  firefox-wayland
   gawk
   gimp
   git
@@ -110,6 +108,8 @@ with pkgs; [
   unstable.glib
   unstable.glib.dev
   unstable.capnproto
+  unstable.ungoogled-chromium
+  unstable.firefox-wayland
 
   # haskell
   # unstable.cabal-install
