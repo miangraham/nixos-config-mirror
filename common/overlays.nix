@@ -1,6 +1,7 @@
 { ... }:
 let
-  emacsOverlay = import ../common/emacs-overlay.nix {};
-  mozOverlay = import ../common/mozilla-overlay.nix {};
+  sources = import ../nix/sources.nix;
+  emacsOverlay = import sources.emacs-overlay;
+  mozOverlay = import sources.nixpkgs-mozilla;
 in
 [ emacsOverlay mozOverlay ]

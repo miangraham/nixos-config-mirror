@@ -52,7 +52,6 @@ with pkgs; [
   ripgrep
   rofi
   rsync
-  rustfmt
   silver-searcher
   sqlite
   speedtest-cli
@@ -93,10 +92,11 @@ with pkgs; [
   unstable.yarn
 
   # rust
-  unstable.rustc
-  unstable.cargo
+  (unstable.latest.rustChannels.stable.rust.override {
+    extensions = ["rust-src"];
+  })
   unstable.cargo-release
-  unstable.rust-analyzer
+
   unstable.pkg-config
   unstable.gst_all_1.gstreamer
   unstable.gst_all_1.gst-libav

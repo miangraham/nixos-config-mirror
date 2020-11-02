@@ -1,4 +1,16 @@
 {
+    "emacs-overlay": {
+        "branch": "master",
+        "description": "Bleeding edge emacs overlay [maintainer=@adisbladis] ",
+        "homepage": "",
+        "owner": "nix-community",
+        "repo": "emacs-overlay",
+        "rev": "c57bba0fcc6386dc95ff92f0b7b192135725bd07",
+        "sha256": "163x244gpzx48nk5drwjncfq26m02f9p1wbvg6fllf6bys9i72dx",
+        "type": "tarball",
+        "url": "https://github.com/nix-community/emacs-overlay/archive/c57bba0fcc6386dc95ff92f0b7b192135725bd07.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "niv": {
         "branch": "master",
         "description": "Easy dependency management for Nix projects",
@@ -21,6 +33,18 @@
         "sha256": "19innk4v45xq62q6n5h0alhfbb3v7yxpdd1r7sglgjn8sr3ylwmn",
         "type": "tarball",
         "url": "https://github.com/NixOS/nixpkgs-channels/archive/504f993df9a5ca63317fe9c859df19daad30aa14.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "nixpkgs-mozilla": {
+        "branch": "master",
+        "description": "mozilla related nixpkgs (extends nixos/nixpkgs repo)",
+        "homepage": null,
+        "owner": "mozilla",
+        "repo": "nixpkgs-mozilla",
+        "rev": "8c007b60731c07dd7a052cce508de3bb1ae849b4",
+        "sha256": "1zybp62zz0h077zm2zmqs2wcg3whg6jqaah9hcl1gv4x8af4zhs6",
+        "type": "tarball",
+        "url": "https://github.com/mozilla/nixpkgs-mozilla/archive/8c007b60731c07dd7a052cce508de3bb1ae849b4.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nixpkgs-unstable": {
