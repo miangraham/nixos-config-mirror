@@ -7,6 +7,7 @@ in
 pkgs.emacsWithPackagesFromUsePackage {
   config = "";
   package = pkgs.emacsGit;
+  alwaysEnsure = true;
   extraEmacsPackages = epkgs: with epkgs; [
     ace-window
     ag

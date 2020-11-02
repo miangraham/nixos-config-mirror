@@ -110,6 +110,7 @@ with pkgs; [
   unstable.capnproto
   unstable.ungoogled-chromium
   unstable.firefox-wayland
+  unstable.element-desktop
 
   # haskell
   # unstable.cabal-install
