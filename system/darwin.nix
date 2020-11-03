@@ -1,6 +1,6 @@
 { config, pkgs, lib, ... }:
 let
-  emacsMine = import ../common/emacs.nix {pkgs=pkgs;};
+  emacsMine = import ../common/emacs.nix {inherit pkgs;};
   overlays = import ../common/overlays.nix {};
 in
 {

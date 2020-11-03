@@ -4,10 +4,10 @@ let
   sources = import ../nix/sources.nix;
   pkgs = import sources.nixpkgs conf;
   unstable = import sources.nixpkgs-unstable conf;
-  rtmp = import ./rtmp.nix {pkgs=pkgs;};
-  fonts = import ./fonts.nix {pkgs=pkgs;};
+  fonts = import ./fonts.nix {inherit pkgs;};
   packages = import ./packages.nix {};
   overlays = import ../common/overlays.nix {};
+  services = import ./services.nix {};
 in
 {
   imports = [
@@ -21,7 +21,7 @@ in
       allowUnfree = true;
       pulseaudio = true;
     };
-    overlays = overlays;
+    inherit overlays;
   };
 
   fonts.fonts = fonts;
@@ -31,7 +31,7 @@ in
 
   time.timeZone = "Asia/Tokyo";
 
-  boot.kernelPackages = unstable.linuxPackages_5_8;
+  boot.kernelPackages = unstable.linuxPackages_latest;
 
   boot.loader.systemd-boot = {
     enable = true;
@@ -60,41 +60,6 @@ in
     };
   };
 
-  services.openssh.enable = true;
-
-  services.syncthing = {
-    enable = true;
-    openDefaultPorts = true;
-    user = "ian";
-    dataDir = "/home/ian/share";
-    configDir = "/home/ian/.config/syncthing";
-  };
-
-  # temp dev nginx
   networking.firewall.allowedTCPPorts = [ 22 80 1935 ];
-  services.nginx = {
-    enable = true;
-    package = (pkgs.nginx.override {modules = [rtmp];});
-    virtualHosts._ = {
-      root = "/home/ian/www";
-      # root = "/home/ian/yewtest";
-    };
-    appendConfig = ''
-      rtmp {
-        server {
-          listen 1935;
-          chunk_size 4000;
-          application ingest {
-            live on;
-            record off;
-            meta copy;
-
-            on_publish http://127.0.0.1:8080/auth_publish;
-
-            exec systemd-cat -t ingest /home/ian/.bin/handleRtmpIngest.sh $name;
-          }
-        }
-      }
-    '';
-  };
+  inherit services;
 }

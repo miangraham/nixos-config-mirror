@@ -7,7 +7,7 @@ let
   unstable = import sources.nixpkgs-unstable conf;
 
   emacsMine = import ../common/emacs.nix {};
-  startSwayScript = import ./startsway.nix {pkgs=pkgs;};
+  startSwayScript = import ./startsway.nix {inherit pkgs;};
 in
 with pkgs; [
   alacritty
