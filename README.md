@@ -16,13 +16,6 @@ $ ln -s box/somebox/default.nix ./configuration.nix
 $ ./rebuild_system.sh
 ```
 
-## Install Home (NixOS only)
-
-```console
-$ cd ~/.nix
-$ ./install_home.sh
-```
-
 ## Organization
 
 | Location | Description |

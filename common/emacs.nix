@@ -32,6 +32,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     fullframe
     git-link
     git-timemachine
+    golden-ratio
     haskell-mode
     hcl-mode
     helm
@@ -66,6 +67,8 @@ pkgs.emacsWithPackagesFromUsePackage {
     tide
     toml-mode
     treemacs
+    treemacs-magit
+    treemacs-projectile
     use-package
     vterm
     web-mode
