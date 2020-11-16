@@ -25,7 +25,7 @@ in
   };
 
   fonts.fonts = fonts;
-  fonts.fontconfig.disableVersionedFontConfiguration = true;
+  # fonts.fontconfig.disableVersionedFontConfiguration = true;
 
   environment.systemPackages = packages;
 

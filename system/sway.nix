@@ -12,7 +12,6 @@ in
       swayidle
       xwayland
       waybar
-      kanshi
     ];
   };
   programs.waybar.enable = true;

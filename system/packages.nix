@@ -33,6 +33,7 @@ with pkgs; [
   htop
   hwinfo
   imagemagick
+  kanshi
   killall
   krita
   lftp
@@ -72,8 +73,6 @@ with pkgs; [
   wofi
   xdg_utils
   zip
-
-  python38Packages.glances
 
   startSwayScript
 
