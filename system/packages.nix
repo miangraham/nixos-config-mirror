@@ -9,112 +9,115 @@ let
   emacsMine = import ../common/emacs.nix {};
   startSwayScript = import ./startsway.nix {inherit pkgs;};
 in
-with pkgs; [
-  alacritty
-  audacity
-  awscli
-  bzip2
-  cmus
-  direnv
-  emacsMine
-  evince
-  exa
-  feh
-  ffmpeg
-  gawk
-  gimp
-  git
-  gitAndTools.git-subrepo
-  gnome3.adwaita-icon-theme
-  gnupg
-  graphviz
-  grim
-  gzip
-  htop
-  hwinfo
-  imagemagick
-  kanshi
-  killall
-  krita
-  lftp
-  lshw
-  mu
-  neofetch
-  niv
-  nix-index
-  pamixer
-  pandoc
-  pavucontrol
-  pciutils
-  pstree
-  pulseeffects
-  qdirstat
-  ranger
-  ripgrep
-  rofi
-  rsync
-  silver-searcher
-  sqlite
-  speedtest-cli
-  starship
-  terraform
-  terraform-providers.aws
-  tdesktop # telegram client
-  tldr
-  tmux
-  unrar
-  unzip
-  valgrind
-  vim
-  vlc
-  vscode
-  watch
-  wget
-  wofi
-  xdg_utils
-  zip
+builtins.attrValues {
+  inherit emacsMine;
+  inherit startSwayScript;
 
-  startSwayScript
+  inherit (pkgs)
+    alacritty
+    audacity
+    awscli
+    bzip2
+    cmus
+    direnv
+    element-desktop
+    evince
+    exa
+    feh
+    ffmpeg
+    gawk
+    gimp
+    git
+    gnupg
+    godot
+    graphviz
+    grim
+    gzip
+    htop
+    hwinfo
+    imagemagick
+    kanshi
+    killall
+    krita
+    lftp
+    lshw
+    mpv
+    mu
+    neofetch
+    niv
+    nix-index
+    obs-studio
+    obs-wlrobs
+    pamixer
+    pandoc
+    pavucontrol
+    pciutils
+    pstree
+    pulseeffects
+    qdirstat
+    ranger
+    ripgrep
+    rofi
+    rsync
+    silver-searcher
+    sqlite
+    speedtest-cli
+    starship
+    terraform
+    tdesktop # telegram client
+    tldr
+    tmux
+    ungoogled-chromium
+    unrar
+    unzip
+    valgrind
+    vim
+    vlc
+    vscode
+    watch
+    wget
+    wofi
+    xdg_utils
+    zip
+    zeal
 
-  texlive.combined.scheme-small
-
-  # tools
-  # cli-visualizer
-  unstable.mpv
-  unstable.obs-studio
-  unstable.obs-wlrobs
-  unstable.youtube-dl
-  unstable.zeal
-
-  # js
-  unstable.nodejs
-  unstable.yarn
+    # js
+    nodejs
+    yarn
+  ;
+  inherit (pkgs.gitAndTools) git-subrepo;
+  inherit (pkgs.gnome3) adwaita-icon-theme;
+  inherit (pkgs.terraform-providers) aws;
+  inherit (pkgs.texlive.combined) scheme-small;
 
   # rust
-  (unstable.latest.rustChannels.stable.rust.override {
+  rust = (unstable.latest.rustChannels.stable.rust.override {
     extensions = ["rust-src"];
-  })
-  unstable.cargo-release
+  });
 
-  unstable.pkg-config
-  unstable.gst_all_1.gstreamer
-  unstable.gst_all_1.gst-libav
-  unstable.gst_all_1.gst-plugins-base
-  unstable.gst_all_1.gst-plugins-good
-  unstable.gst_all_1.gst-plugins-bad
-  unstable.gst_all_1.gst-plugins-ugly
-  unstable.gcc
-  unstable.glib
-  unstable.glib.dev
-  unstable.capnproto
-  unstable.ungoogled-chromium
-  unstable.firefox-wayland
-  unstable.element-desktop
+  inherit (unstable)
+    cargo-release
+    pkg-config
+    gcc
+    glib
+    capnproto
+    firefox-wayland
+    youtube-dl
+  ;
+
+  inherit (unstable.glib) dev;
+
+  inherit (unstable.gst_all_1)
+    gstreamer
+    gst-libav
+    gst-plugins-base
+    gst-plugins-good
+    gst-plugins-bad
+    gst-plugins-ugly
+  ;
 
   # haskell
   # unstable.cabal-install
   # unstable.ghcid
   # unstable.haskell.compiler.ghc883
-
-  unstable.godot
-]
+}

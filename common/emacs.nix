@@ -13,6 +13,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     ag
     aggressive-indent
     anzu
+    beacon
     biblio
     bibtex-completion
     bongo
