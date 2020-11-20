@@ -6,12 +6,11 @@ let
   pkgs = import sources.nixpkgs conf;
   unstable = import sources.nixpkgs-unstable conf;
 
-  emacsMine = import ../common/emacs.nix {};
+  emacs = import ../common/emacs.nix {};
   startSwayScript = import ./startsway.nix {inherit pkgs;};
 in
 builtins.attrValues {
-  inherit emacsMine;
-  inherit startSwayScript;
+  inherit emacs startSwayScript;
 
   inherit (pkgs)
     alacritty
@@ -91,7 +90,7 @@ builtins.attrValues {
   inherit (pkgs.texlive.combined) scheme-small;
 
   # rust
-  rust = (unstable.latest.rustChannels.stable.rust.override {
+  rust = ((unstable.rustChannelOf { channel = "1.48.0"; }).rust.override {
     extensions = ["rust-src"];
   });
 
