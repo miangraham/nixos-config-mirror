@@ -70,6 +70,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     treemacs
     treemacs-magit
     treemacs-projectile
+    unicode-fonts
     use-package
     vterm
     web-mode

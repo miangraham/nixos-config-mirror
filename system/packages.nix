@@ -28,7 +28,6 @@ builtins.attrValues {
     gimp
     git
     gnupg
-    godot
     graphviz
     grim
     gzip
@@ -102,6 +101,7 @@ builtins.attrValues {
     capnproto
     firefox-wayland
     youtube-dl
+    godot
   ;
 
   inherit (unstable.glib) dev;
