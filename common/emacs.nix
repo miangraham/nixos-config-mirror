@@ -28,6 +28,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     emacsql
     emacsql-sqlite3
     eslint-fix
+    forge
     flycheck
     flycheck-rust
     fullframe
@@ -48,6 +49,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     markdown-mode
     move-dup
     nix-mode
+    no-littering
     org
     org-randomnote
     org-ref
@@ -59,6 +61,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     psci
     purescript-mode
     rainbow-delimiters
+    ripgrep
     rust-mode
     selectrum
     selectrum-prescient
