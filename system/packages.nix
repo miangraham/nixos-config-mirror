@@ -78,6 +78,7 @@ builtins.attrValues {
     xdg_utils
     zip
     zeal
+    zotero
 
     # js
     nodejs
