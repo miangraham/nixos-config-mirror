@@ -17,7 +17,8 @@ in
   };
 
   nginx = {
-    enable = true;
+    # not currently in use anywhere
+    enable = false;
     package = (pkgs.nginx.override {modules = [rtmp];});
     virtualHosts._ = {
       root = "/home/ian/www";
