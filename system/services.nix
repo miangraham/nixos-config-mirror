@@ -41,4 +41,8 @@ in
       }
     '';
   };
+
+  coturn = {
+    enable = true;
+  };
 }
