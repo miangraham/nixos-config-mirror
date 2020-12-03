@@ -40,6 +40,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     helm
     helpful
     ivy
+    ivy-bibtex
     js2-mode
     json-mode
     ledger-mode
@@ -54,6 +55,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     org-randomnote
     org-ref
     org-roam
+    org-roam-bibtex
     org-superstar
     org-tree-slide
     pdf-tools
@@ -73,7 +75,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     treemacs
     treemacs-magit
     treemacs-projectile
-    unicode-fonts
+    # unicode-fonts
     use-package
     vterm
     web-mode
