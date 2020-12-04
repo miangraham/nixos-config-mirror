@@ -36,8 +36,9 @@ builtins.attrValues {
     imagemagick
     kanshi
     killall
-    krita
+    # krita
     lftp
+    libreoffice
     lshw
     mpv
     mu
