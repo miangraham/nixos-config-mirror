@@ -44,6 +44,7 @@ builtins.attrValues {
     mu
     neofetch
     niv
+    nix-direnv
     nix-index
     obs-studio
     obs-wlrobs

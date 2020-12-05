@@ -28,6 +28,9 @@ in
   # fonts.fontconfig.disableVersionedFontConfiguration = true;
 
   environment.systemPackages = packages;
+  environment.pathsToLink = [
+    "/share/nix-direnv"
+  ];
 
   time.timeZone = "Asia/Tokyo";
 
@@ -43,6 +46,10 @@ in
   systemd.coredump.enable = true;
 
   nix.trustedUsers = ["@wheel"];
+  nix.extraOptions = ''
+    keep-outputs = true
+    keep-derivations = true
+  '';
 
   users.users.ian = {
     isNormalUser = true;
