@@ -40,6 +40,8 @@ in
   };
   boot.loader.efi.canTouchEfiVariables = true;
 
+  systemd.coredump.enable = true;
+
   nix.trustedUsers = ["@wheel"];
 
   users.users.ian = {
