@@ -22,6 +22,7 @@ builtins.attrValues {
     element-desktop
     evince
     exa
+    exfat
     feh
     ffmpeg
     gawk
@@ -50,6 +51,7 @@ builtins.attrValues {
     obs-wlrobs
     pamixer
     pandoc
+    parted
     pavucontrol
     pciutils
     pstree
