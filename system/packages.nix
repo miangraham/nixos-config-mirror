@@ -16,6 +16,8 @@ builtins.attrValues {
     alacritty
     audacity
     awscli
+    bashmount
+    borgbackup
     bzip2
     cmus
     direnv
@@ -69,6 +71,7 @@ builtins.attrValues {
     tdesktop # telegram client
     tldr
     tmux
+    udiskie
     ungoogled-chromium
     unrar
     unzip

@@ -4,8 +4,11 @@ let
   sources = import ../nix/sources.nix;
   pkgs = import sources.nixpkgs conf;
   rtmp = import ./rtmp.nix {inherit pkgs;};
+  backup = import ./backup.nix {};
 in
 {
+  inherit (backup) borgbackup;
+
   openssh.enable = true;
 
   syncthing = {
@@ -14,6 +17,14 @@ in
     user = "ian";
     dataDir = "/home/ian/share";
     configDir = "/home/ian/.config/syncthing";
+  };
+
+  udisks2 = {
+    enable = true;
+  };
+
+  coturn = {
+    enable = true;
   };
 
   nginx = {
@@ -41,9 +52,5 @@ in
         }
       }
     '';
-  };
-
-  coturn = {
-    enable = true;
   };
 }
