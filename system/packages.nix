@@ -85,6 +85,11 @@ builtins.attrValues {
     # js
     nodejs
     yarn
+
+    adapta-gtk-theme
+    arc-theme
+    equilux-theme
+    nordic
   ;
   inherit (pkgs.gitAndTools) git-subrepo;
   inherit (pkgs.gnome3) adwaita-icon-theme;
