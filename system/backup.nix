@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 let
   home-path = "/home/ian";
 
@@ -16,66 +16,60 @@ let
     "music"
     "tmp"
     "videos"
+    ".config/.git"
+    ".config/borg"
     ".config/chromium"
     ".config/Code"
     ".config/Element"
+    ".config/fcitx"
     ".config/libreoffice"
+    ".config/obs-studio/logs"
     "**/.cache"
     "**/.terraform"
     "**/target"
     "**/*.dump"
+    "**/*.log"
   ];
 
-  exclude = map (s: home-path + "/" + s) exclude-home-paths;
-
-  prune = {
-    keep = {
-      hourly = 6;
-      daily = 7;
-      weekly = 3;
-      monthly = 3;
+  common = {
+    compression = "auto,zstd";
+    encryption = {
+      mode = "none";
     };
+    exclude = map (s: home-path + "/" + s) exclude-home-paths;
+    paths = home-path;
+    prune = {
+      keep = {
+        hourly = 3;
+        daily = 7;
+        weekly = 3;
+        monthly = 3;
+      };
+    };
+    startAt = "hourly";
   };
-  encryption = {
-    mode = "none";
-  };
-  compression = "auto,zstd";
+
+  job = props: pkgs.lib.recursiveUpdate common props;
 in
 {
-  borgbackup.jobs.home-ian-to-local = {
+  borgbackup.jobs.home-ian-to-local = job {
     repo = "/borg";
     user = "root";
-    paths = home-path;
-    startAt = "hourly";
     preHook = ''
       mkdir -p /borg
     '';
-
-    inherit compression;
-    inherit encryption;
-    inherit exclude;
-    inherit prune;
   };
 
-  borgbackup.jobs.home-ian-to-usb = {
+  borgbackup.jobs.home-ian-to-usb = job {
     repo = "/run/media/ian/70F3-5B2F/borg";
     user = "ian";
-    paths = home-path;
-    startAt = "hourly";
     doInit = false;
     removableDevice = true;
-
-    inherit compression;
-    inherit encryption;
-    inherit exclude;
-    inherit prune;
   };
 
-  borgbackup.jobs.home-ian-to-homura = {
+  borgbackup.jobs.home-ian-to-homura = job {
     repo = "/tmp/homuraborg";
     user = "ian";
-    paths = home-path;
-    startAt = "hourly";
     doInit = false;
     preHook = ''
       mkdir -p /tmp/homuraborg
@@ -88,10 +82,5 @@ in
     readWritePaths = [
       "/tmp"
     ];
-
-    inherit compression;
-    inherit encryption;
-    inherit exclude;
-    inherit prune;
   };
 }
