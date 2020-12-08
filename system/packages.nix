@@ -66,6 +66,7 @@ builtins.attrValues {
     silver-searcher
     sqlite
     speedtest-cli
+    sshfs-fuse
     starship
     terraform
     tdesktop # telegram client
