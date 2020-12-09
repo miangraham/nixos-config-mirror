@@ -3,19 +3,20 @@ let
   home-path = "/home/ian";
 
   exclude-home-paths = [
-    ".cache"
-    ".cargo"
-    ".gnupg"
-    ".local/share/Trash"
-    ".local/share/Zeal"
-    ".mozilla/firefox/**/storage"
-    ".pki"
-    ".rustup"
-    ".ssh"
     "downloads"
     "music"
     "tmp"
     "videos"
+
+    ".cache"
+    ".cargo"
+    ".compose-cache"
+    ".debug"
+    ".gnupg"
+    ".pki"
+    ".rustup"
+    ".ssh"
+
     ".config/.git"
     ".config/borg"
     ".config/chromium"
@@ -24,6 +25,17 @@ let
     ".config/fcitx"
     ".config/libreoffice"
     ".config/obs-studio/logs"
+
+    ".local/share/Steam"
+    ".local/share/TelegramDesktop"
+    ".local/share/Trash"
+    ".local/share/Zeal"
+
+    ".mozilla/firefox/**/datareporting"
+    ".mozilla/firefox/**/saved-telemetry-pings"
+    ".mozilla/firefox/**/storage"
+    ".mozilla/firefox/**/*.sqlite"
+
     "**/.cache"
     "**/.terraform"
     "**/target"
