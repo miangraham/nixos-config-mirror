@@ -7,6 +7,7 @@ let
     "music"
     "tmp"
     "videos"
+    "zotero"
 
     ".cache"
     ".cargo"

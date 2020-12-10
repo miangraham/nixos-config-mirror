@@ -18,6 +18,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     bibtex-completion
     bongo
     company
+    # consult
     dante
     diminish
     direnv
@@ -27,6 +28,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     elfeed-org
     emacsql
     emacsql-sqlite3
+    # embark
     eslint-fix
     forge
     flycheck
@@ -47,6 +49,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     lsp-mode
     lsp-ui
     magit
+    # marginalia
     markdown-mode
     move-dup
     nix-mode
