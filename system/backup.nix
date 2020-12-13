@@ -14,9 +14,11 @@ let
     ".compose-cache"
     ".debug"
     ".gnupg"
+    ".mozilla"
     ".pki"
     ".rustup"
     ".ssh"
+    ".zotero"
 
     ".config/.git"
     ".config/borg"
@@ -31,11 +33,6 @@ let
     ".local/share/TelegramDesktop"
     ".local/share/Trash"
     ".local/share/Zeal"
-
-    ".mozilla/firefox/**/datareporting"
-    ".mozilla/firefox/**/saved-telemetry-pings"
-    ".mozilla/firefox/**/storage"
-    ".mozilla/firefox/**/*.sqlite"
 
     "**/.cache"
     "**/.terraform"
