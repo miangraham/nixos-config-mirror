@@ -50,7 +50,7 @@ let
     paths = home-path;
     prune = {
       keep = {
-        hourly = 3;
+        hourly = 12;
         daily = 7;
         weekly = 3;
         monthly = 3;
