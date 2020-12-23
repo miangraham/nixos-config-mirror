@@ -83,6 +83,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     vterm
     web-mode
     which-key
+    with-editor
     ws-butler
     yaml-mode
     yasnippet

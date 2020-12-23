@@ -56,6 +56,11 @@ in
     extraGroups = ["wheel" "audio" "video"];
   };
 
+  users.users.nginx = {
+    isNormalUser = true;
+    extraGroups = ["nginx"];
+  };
+
   hardware.pulseaudio.enable = true;
 
   i18n = {
@@ -69,6 +74,11 @@ in
     };
   };
 
-  networking.firewall.allowedTCPPorts = [ 22 80 1935 ];
+  security.acme = {
+    email = "spamisevil@ijin.net";
+    acceptTerms = true;
+  };
+
+  networking.firewall.allowedTCPPorts = [ 22 80 443 1935 8443 ];
   inherit services;
 }

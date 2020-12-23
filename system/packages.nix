@@ -17,7 +17,7 @@ builtins.attrValues {
     audacity
     awscli
     bashmount
-    borgbackup
+    # borgbackup
     bzip2
     cmus
     direnv

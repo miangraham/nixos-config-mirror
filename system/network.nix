@@ -2,6 +2,7 @@
 {
   networking.useDHCP = false;
   networking.extraHosts = ''
+127.0.0.1     testlocal.ian.tokyo
 192.168.0.108 yuno
 192.168.0.110 homura
 192.168.0.111 nanachi
