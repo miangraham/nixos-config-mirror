@@ -74,11 +74,6 @@ in
     };
   };
 
-  security.acme = {
-    email = "spamisevil@ijin.net";
-    acceptTerms = true;
-  };
-
   networking.firewall.allowedTCPPorts = [ 22 80 443 1935 8443 ];
   inherit services;
 }

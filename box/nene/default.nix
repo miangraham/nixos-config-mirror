@@ -13,4 +13,19 @@
     # "fs.inotify.max_user_instances" = 4096;
     # "net.ipv4.tcp_fin_timeout" = 10;
   };
+
+  # box specific due to ACME, rip
+  services.nginx = {
+    enable = true;
+    user = "nginx";
+    virtualHosts."testlocal.ian.tokyo" = {
+      root = "/var/www";
+      addSSL = true;
+      enableACME = true;
+    };
+  };
+  security.acme = {
+    email = "spamisevil@ijin.net";
+    acceptTerms = true;
+  };
 }

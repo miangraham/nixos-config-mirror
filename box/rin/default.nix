@@ -22,4 +22,13 @@
   powerManagement.powertop.enable = true;
 
   services.fwupd.enable = true;
+
+  # box specific due to ACME, rip
+  services.nginx = {
+    enable = true;
+    user = "nginx";
+    virtualHosts._ = {
+      root = "/var/www";
+    };
+  };
 }

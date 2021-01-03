@@ -26,39 +26,4 @@ in
   coturn = {
     enable = true;
   };
-
-  nginx = {
-    # not currently in use anywhere
-    enable = true;
-    user = "nginx";
-    # user = "ian"; # XXX
-    # package = (pkgs.nginx.override {modules = [rtmp];});
-    virtualHosts."testlocal.ian.tokyo" = {
-      root = "/var/www";
-      addSSL = true;
-      enableACME = true;
-      # root = "/home/ian/yewtest";
-      # root = "/home/ian/gst-examples/webrtc/sendrecv/js";
-      # extraConfig = ''
-      #   location / {}
-      # '';
-    };
-    # appendConfig = ''
-    #   rtmp {
-    #     server {
-    #       listen 1935;
-    #       chunk_size 4000;
-    #       application ingest {
-    #         live on;
-    #         record off;
-    #         meta copy;
-
-    #         on_publish http://127.0.0.1:8080/auth_publish;
-
-    #         exec systemd-cat -t ingest /home/ian/.bin/handleRtmpIngest.sh $name;
-    #       }
-    #     }
-    #   }
-    # '';
-  };
 }
