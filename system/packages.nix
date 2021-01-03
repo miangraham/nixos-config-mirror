@@ -72,6 +72,7 @@ builtins.attrValues {
     tdesktop # telegram client
     tldr
     tmux
+    tree
     udiskie
     ungoogled-chromium
     unrar
