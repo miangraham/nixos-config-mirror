@@ -6,50 +6,22 @@ let
   unstable = import sources.nixpkgs-unstable conf;
 
   home-packages = import ./packages.nix {};
+
+  alacritty = import ./alacritty.nix {};
+  bash = import ./bash.nix {};
   secrets = import ./secrets.nix {};
+  starship = import ./starship.nix {};
 in
 {
   home.packages = home-packages;
 
   programs = {
+    inherit alacritty bash starship;
     inherit (secrets.programs) gpg password-store;
-
-    bash = {
-      enable = true;
-      sessionVariables = {
-        EDITOR = "emacs -nw";
-      };
-      profileExtra = ''
-        source ~/.profile.private
-      '';
-      shellAliases = {
-        ls = "exa --color-scale --group --git";
-      };
-    };
 
     obs-studio = {
       enable = true;
-      plugins = [
-        pkgs.obs-wlrobs
-      ];
-    };
-
-    starship = {
-      enable = true;
-      package = pkgs.starship;
-      settings = {
-        aws.disabled = true;
-
-        character = {
-          style_success = "bold green";
-          style_failure = "bold green";
-          symbol = "λ";
-        };
-
-        cmd_duration.disabled = true;
-        hostname.ssh_only = false;
-        username.show_always = true;
-      };
+      plugins = [ pkgs.obs-wlrobs ];
     };
   };
 
