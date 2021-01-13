@@ -12,8 +12,9 @@ Requires a system-level [NixOS](https://nixos.org/download.html) or [nix-darwin]
 $ git clone https://github.com/miangraham/dot-nix.git ~/.nix
 $ cd ~/.nix
 $ vim box/somebox/default.nix
-$ ln -s box/somebox/default.nix ./configuration.nix
-$ ln -s home/default.nix ~/.config/nixpkgs/home.nix
+$ ln -s ~/.nix/box/somebox/default.nix ./configuration.nix
+$ mkdir -p ~/.config/nixpkgs/
+$ ln -s ~/.nix/home/default.nix ~/.config/nixpkgs/home.nix
 $ ./rebuild_system.sh
 ```
 
