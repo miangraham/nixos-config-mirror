@@ -15,6 +15,7 @@ in
     ];
   };
   programs.waybar.enable = true;
+  systemd.user.services.waybar.enable = false;
 
   systemd.user.targets.sway-session = {
     description = "Sway compositor session";

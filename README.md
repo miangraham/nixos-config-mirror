@@ -6,13 +6,14 @@ Nix configuration for my personal machines. Manages dev environments for NixOS a
 
 Requires a system-level [NixOS](https://nixos.org/download.html) or [nix-darwin](https://github.com/LnL7/nix-darwin) installation. `nix-env` alone is not enough.
 
-## Install System (Global)
+## Install
 
 ```console
 $ git clone https://github.com/miangraham/dot-nix.git ~/.nix
 $ cd ~/.nix
 $ vim box/somebox/default.nix
 $ ln -s box/somebox/default.nix ./configuration.nix
+$ ln -s home/default.nix ~/.config/nixpkgs/home.nix
 $ ./rebuild_system.sh
 ```
 

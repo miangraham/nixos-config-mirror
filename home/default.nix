@@ -4,4 +4,10 @@ let
   unstable = import sources.nixpkgs-unstable {};
 in
 {
+  programs.obs-studio = {
+    enable = true;
+    plugins = [
+      pkgs.obs-wlrobs
+    ];
+  };
 }

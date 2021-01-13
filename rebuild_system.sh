@@ -12,6 +12,7 @@ fi
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   NIXOS_CONFIG=$CONF_LOC nixos-rebuild switch -I $CONF_LOC
+  sudo -u ian home-manager switch
 elif [[ "$OSTYPE" == "darwin"* ]]; then
   darwin-rebuild switch -I darwin-config=$CONF_LOC
 else

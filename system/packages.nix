@@ -34,6 +34,7 @@ builtins.attrValues {
     graphviz
     grim
     gzip
+    home-manager
     htop
     hwinfo
     imagemagick
@@ -49,8 +50,6 @@ builtins.attrValues {
     niv
     nix-direnv
     nix-index
-    obs-studio
-    obs-wlrobs
     pamixer
     pandoc
     parted
