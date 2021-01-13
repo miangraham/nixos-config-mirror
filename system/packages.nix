@@ -30,7 +30,6 @@ builtins.attrValues {
     gawk
     gimp
     git
-    gnupg
     graphviz
     grim
     gzip
@@ -38,7 +37,6 @@ builtins.attrValues {
     htop
     hwinfo
     imagemagick
-    kanshi
     killall
     # krita
     lftp
@@ -66,7 +64,6 @@ builtins.attrValues {
     sqlite
     speedtest-cli
     sshfs-fuse
-    starship
     terraform
     tdesktop # telegram client
     tldr

@@ -11,7 +11,6 @@ let
 in
 {
   imports = [
-    ./bash.nix
     ./network.nix
     ./sway.nix
   ];
