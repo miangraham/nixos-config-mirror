@@ -45,6 +45,7 @@ in
 
   systemd.coredump.enable = true;
 
+  nix.allowedUsers = ["@wheel"];
   nix.trustedUsers = ["@wheel"];
   nix.extraOptions = ''
     keep-outputs = true
