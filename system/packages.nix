@@ -13,91 +13,42 @@ builtins.attrValues {
   inherit emacs startSwayScript;
 
   inherit (pkgs)
-    alacritty
-    audacity
-    awscli
     bashmount
-    # borgbackup
     bzip2
-    cmus
-    direnv
-    element-desktop
-    evince
-    exa
     exfat
-    feh
-    ffmpeg
     gawk
-    gimp
     git
     graphviz
-    grim
     gzip
     home-manager
     htop
     hwinfo
-    imagemagick
     killall
-    # krita
-    lftp
-    libreoffice
     lshw
-    mpv
-    mu
-    neofetch
-    niv
-    nix-direnv
     nix-index
     pamixer
-    pandoc
     parted
     pavucontrol
     pciutils
     pstree
     pulseeffects
-    qdirstat
-    ranger
     ripgrep
-    rofi
     rsync
     silver-searcher
     sqlite
-    speedtest-cli
     sshfs-fuse
-    terraform
-    tdesktop # telegram client
-    tldr
+    # tdesktop # telegram client breaks on X11 now?
     tmux
     tree
     udiskie
-    ungoogled-chromium
     unrar
     unzip
-    valgrind
     vim
-    vlc
-    vscode
     watch
     wget
-    wofi
     xdg_utils
     zip
-    zeal
-    zotero
-
-    # js
-    nodejs
-    yarn
-
-    adapta-gtk-theme
-    arc-theme
-    equilux-theme
-    nordic
   ;
-  inherit (pkgs.gitAndTools) git-subrepo;
-  inherit (pkgs.gnome3) adwaita-icon-theme;
-  inherit (pkgs.terraform-providers) aws;
-  inherit (pkgs.texlive.combined) scheme-small;
 
   # rust
   rust = ((unstable.rustChannelOf { channel = "1.48.0"; }).rust.override {
@@ -111,8 +62,6 @@ builtins.attrValues {
     glib
     capnproto
     firefox-wayland
-    youtube-dl
-    godot
   ;
 
   inherit (unstable.glib) dev;

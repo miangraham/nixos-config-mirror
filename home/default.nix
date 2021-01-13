@@ -1,9 +1,16 @@
 let
+  conf = import ../system/config.nix {};
   sources = import ../nix/sources.nix;
-  pkgs = import sources.nixpkgs {};
+
+  pkgs = import sources.nixpkgs conf;
+  unstable = import sources.nixpkgs-unstable conf;
+
+  home-packages = import ./packages.nix {};
   secrets = import ./secrets.nix {};
 in
 {
+  home.packages = home-packages;
+
   programs = {
     inherit (secrets.programs) gpg password-store;
 
