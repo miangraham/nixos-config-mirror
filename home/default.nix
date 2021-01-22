@@ -9,6 +9,7 @@ let
 
   alacritty = import ./alacritty.nix {};
   bash = import ./bash.nix {};
+  git = import ./git.nix {};
   secrets = import ./secrets.nix {};
   starship = import ./starship.nix {};
   tmux = import ./tmux.nix {};
@@ -17,7 +18,7 @@ in
   home.packages = home-packages;
 
   programs = {
-    inherit alacritty bash starship tmux;
+    inherit alacritty bash git starship tmux;
     inherit (secrets.programs) gpg password-store;
 
     obs-studio = {
