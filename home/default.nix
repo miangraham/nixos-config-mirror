@@ -1,7 +1,6 @@
 let
   conf = import ../system/config.nix {};
   sources = import ../nix/sources.nix;
-
   pkgs = import sources.nixpkgs conf;
   unstable = import sources.nixpkgs-unstable conf;
 
