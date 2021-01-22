@@ -67,6 +67,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     purescript-mode
     rainbow-delimiters
     ripgrep
+    ron-mode
     rust-mode
     selectrum
     selectrum-prescient
