@@ -38,7 +38,6 @@ builtins.attrValues {
     sqlite
     sshfs-fuse
     # tdesktop # telegram client breaks on X11 now?
-    tmux
     tree
     udiskie
     unrar

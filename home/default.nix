@@ -11,12 +11,13 @@ let
   bash = import ./bash.nix {};
   secrets = import ./secrets.nix {};
   starship = import ./starship.nix {};
+  tmux = import ./tmux.nix {};
 in
 {
   home.packages = home-packages;
 
   programs = {
-    inherit alacritty bash starship;
+    inherit alacritty bash starship tmux;
     inherit (secrets.programs) gpg password-store;
 
     obs-studio = {
