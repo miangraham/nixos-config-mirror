@@ -26,4 +26,8 @@ in
   coturn = {
     enable = true;
   };
+
+  rabbitmq = {
+    enable = true;
+  };
 }
