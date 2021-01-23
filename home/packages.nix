@@ -11,7 +11,6 @@ builtins.attrValues {
     audacity
     awscli
     cmus
-    direnv
     element-desktop
     evince
     exa

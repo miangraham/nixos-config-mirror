@@ -8,6 +8,7 @@ let
 
   alacritty = import ./alacritty.nix {};
   bash = import ./bash.nix {};
+  direnv = import ./direnv.nix {};
   git = import ./git.nix {};
   secrets = import ./secrets.nix {};
   starship = import ./starship.nix {};
@@ -17,7 +18,7 @@ in
   home.packages = home-packages;
 
   programs = {
-    inherit alacritty bash git starship tmux;
+    inherit alacritty bash direnv git starship tmux;
     inherit (secrets.programs) gpg password-store;
 
     obs-studio = {
@@ -36,5 +37,7 @@ in
 output "Ancor Communications Inc ROG PG279Q G1LMQS019376" mode 2560x1440 position 0,0
       '';
     };
+
+    lorri.enable = true;
   };
 }
