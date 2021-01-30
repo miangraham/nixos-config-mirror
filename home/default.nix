@@ -10,6 +10,7 @@ let
   bash = import ./bash.nix {};
   direnv = import ./direnv.nix {};
   git = import ./git.nix {};
+  mpv = import ./mpv.nix {};
   secrets = import ./secrets.nix {};
   starship = import ./starship.nix {};
   tmux = import ./tmux.nix {};
@@ -18,8 +19,15 @@ in
   home.packages = home-packages;
 
   programs = {
-    inherit alacritty bash direnv git starship tmux;
+    inherit alacritty bash direnv git mpv starship tmux;
     inherit (secrets.programs) gpg password-store;
+
+    feh.enable = true;
+
+    firefox = {
+      enable = true;
+      package = unstable.firefox-wayland;
+    };
 
     obs-studio = {
       enable = true;

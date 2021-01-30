@@ -14,14 +14,13 @@ builtins.attrValues {
     element-desktop
     evince
     exa
-    feh
     ffmpeg
     gimp
     grim
     imagemagick
+    john
     lftp
     libreoffice
-    mpv
     mu
     neofetch
     niv

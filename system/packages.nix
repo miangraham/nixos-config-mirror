@@ -59,22 +59,7 @@ builtins.attrValues {
     gcc
     glib
     capnproto
-    firefox-wayland
   ;
 
   inherit (unstable.glib) dev;
-
-  # inherit (unstable.gst_all_1)
-  #   gstreamer
-  #   gst-libav
-  #   gst-plugins-base
-  #   gst-plugins-good
-  #   gst-plugins-bad
-  #   gst-plugins-ugly
-  # ;
-
-  # haskell
-  # unstable.cabal-install
-  # unstable.ghcid
-  # unstable.haskell.compiler.ghc883
 }
