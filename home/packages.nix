@@ -29,7 +29,6 @@ builtins.attrValues {
     protonmail-bridge
     qdirstat
     ranger
-    rofi
     speedtest-cli
     terraform
     tldr
