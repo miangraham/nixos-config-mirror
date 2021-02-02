@@ -15,6 +15,7 @@ builtins.attrValues {
     bashmount
     bzip2
     exfat
+    file
     gawk
     git
     graphviz
