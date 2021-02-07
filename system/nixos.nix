@@ -74,6 +74,6 @@ in
     };
   };
 
-  networking.firewall.allowedTCPPorts = [ 22 80 443 1935 8443 ];
+  networking.firewall.allowedTCPPorts = [ 22 80 443 1935 3478 8443 ];
   inherit services;
 }
