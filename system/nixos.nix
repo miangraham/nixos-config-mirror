@@ -24,7 +24,6 @@ in
   };
 
   fonts.fonts = fonts;
-  # fonts.fontconfig.disableVersionedFontConfiguration = true;
 
   environment.systemPackages = packages;
   environment.pathsToLink = [
@@ -65,9 +64,6 @@ in
 
   i18n = {
     defaultLocale = "en_US.UTF-8";
-    # extraLocaleSettings = {
-    #   LC_CTYPE = "ja_JP.UTF-8";
-    # };
     inputMethod = {
       enabled = "fcitx";
       fcitx.engines = with pkgs.fcitx-engines; [ mozc ];

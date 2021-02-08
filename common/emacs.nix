@@ -18,17 +18,16 @@ pkgs.emacsWithPackagesFromUsePackage {
     bibtex-completion
     bongo
     company
-    # consult
     dante
     diminish
     direnv
     doom-themes
+    drag-stuff
     editorconfig
     elfeed
     elfeed-org
     emacsql
     emacsql-sqlite3
-    # embark
     eslint-fix
     forge
     flycheck
@@ -49,9 +48,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     lsp-mode
     lsp-ui
     magit
-    # marginalia
     markdown-mode
-    move-dup
     nix-mode
     no-littering
     org
@@ -79,7 +76,6 @@ pkgs.emacsWithPackagesFromUsePackage {
     treemacs
     treemacs-magit
     treemacs-projectile
-    # unicode-fonts
     use-package
     vterm
     web-mode
