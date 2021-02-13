@@ -29,6 +29,7 @@ builtins.attrValues {
     protonmail-bridge
     qdirstat
     ranger
+    slack
     speedtest-cli
     terraform
     tldr

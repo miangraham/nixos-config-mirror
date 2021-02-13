@@ -50,7 +50,7 @@ builtins.attrValues {
   ;
 
   # rust
-  rust = ((unstable.rustChannelOf { channel = "1.49.0"; }).rust.override {
+  rust = ((unstable.rustChannelOf { channel = "1.50.0"; }).rust.override {
     extensions = ["rust-src"];
   });
 
