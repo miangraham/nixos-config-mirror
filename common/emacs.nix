@@ -13,6 +13,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     ag
     aggressive-indent
     anzu
+    avy
     beacon
     biblio
     bibtex-completion
@@ -40,6 +41,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     hcl-mode
     helm
     helpful
+    hydra
     ivy
     ivy-bibtex
     js2-mode
@@ -68,6 +70,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     rust-mode
     selectrum
     selectrum-prescient
+    shackle
     smartparens
     solaire-mode
     spinner
