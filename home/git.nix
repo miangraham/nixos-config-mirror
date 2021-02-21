@@ -23,5 +23,6 @@ in
     ".indium.json"
     ".envrc"
     ".direnv"
+    "__pycache__"
   ];
 }
