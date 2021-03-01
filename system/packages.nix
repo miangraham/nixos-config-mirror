@@ -37,7 +37,7 @@ builtins.attrValues {
     silver-searcher
     sqlite
     sshfs-fuse
-    # tdesktop # telegram client breaks on X11 now?
+    tdesktop
     tree
     udiskie
     unrar

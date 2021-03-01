@@ -82,6 +82,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     use-package
     vterm
     web-mode
+    weblorg
     which-key
     with-editor
     ws-butler
