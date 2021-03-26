@@ -53,6 +53,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     markdown-mode
     nix-mode
     no-littering
+    orderless
     org
     org-randomnote
     org-ref

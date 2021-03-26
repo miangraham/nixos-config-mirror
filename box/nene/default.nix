@@ -20,8 +20,8 @@
     user = "nginx";
     virtualHosts."testlocal.ian.tokyo" = {
       root = "/var/www";
-      # addSSL = true;
-      # enableACME = true;
+      addSSL = true;
+      enableACME = true;
     };
   };
   security.acme = {
