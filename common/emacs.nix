@@ -19,6 +19,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     bibtex-completion
     bongo
     company
+    consult
     dante
     diminish
     direnv
