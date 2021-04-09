@@ -8,6 +8,7 @@ in
   programs.sway = {
     enable = true;
     extraPackages = with pkgs; [
+      sway-contrib.inactive-windows-transparency
       swaylock
       swayidle
       xwayland
