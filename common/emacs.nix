@@ -10,6 +10,7 @@ pkgs.emacsWithPackagesFromUsePackage {
   alwaysEnsure = true;
   extraEmacsPackages = epkgs: with epkgs; [
     ace-window
+    adaptive-wrap
     ag
     aggressive-indent
     anzu
@@ -82,6 +83,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     treemacs-magit
     treemacs-projectile
     use-package
+    visual-fill-column
     vterm
     web-mode
     weblorg
@@ -90,5 +92,6 @@ pkgs.emacsWithPackagesFromUsePackage {
     ws-butler
     yaml-mode
     yasnippet
+    zenburn-theme
   ];
 }
