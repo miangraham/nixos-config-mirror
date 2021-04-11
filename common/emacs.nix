@@ -89,6 +89,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     weblorg
     which-key
     with-editor
+    writeroom-mode
     ws-butler
     yaml-mode
     yasnippet
