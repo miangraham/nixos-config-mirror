@@ -15,6 +15,7 @@ with pkgs; [
   mplus-outline-fonts
   ibm-plex
   ia-writer-duospace
+  overpass
 
   # icons
   font-awesome

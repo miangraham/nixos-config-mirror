@@ -50,11 +50,19 @@ builtins.attrValues {
   ;
 
   # rust
-  rust = ((unstable.rustChannelOf { channel = "1.49.0"; }).rust.override {
-    extensions = ["rust-src"];
-  });
+  # rust = ((unstable.rustChannelOf { channel = "1.49.0"; }).rust.override {
+  #   extensions = ["rust-src"];
+  # });
 
   inherit (unstable)
+    rustc
+    cargo
+    clippy
+    rustfmt
+    rust-analyzer
+    # rustcSrc
+    # rustLibSrc
+
     cargo-release
     pkg-config
     gcc
