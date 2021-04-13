@@ -16,6 +16,7 @@ with pkgs; [
   ibm-plex
   ia-writer-duospace
   overpass
+  alegreya
 
   # icons
   font-awesome
