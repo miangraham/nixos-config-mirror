@@ -17,6 +17,7 @@ builtins.attrValues {
     ffmpeg
     gimp
     grim
+    hugo
     imagemagick
     john
     lftp

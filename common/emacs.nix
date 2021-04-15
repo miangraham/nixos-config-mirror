@@ -43,6 +43,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     hcl-mode
     helm
     helpful
+    htmlize
     hydra
     ivy
     ivy-bibtex
@@ -63,6 +64,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     org-roam-bibtex
     org-superstar
     org-tree-slide
+    ox-hugo
     pdf-tools
     projectile
     psci
@@ -77,6 +79,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     smartparens
     solaire-mode
     spinner
+    templatel
     tide
     toml-mode
     treemacs
