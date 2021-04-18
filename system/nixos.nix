@@ -36,7 +36,7 @@ in
 
   boot.loader.systemd-boot = {
     enable = true;
-    configurationLimit = 100;
+    configurationLimit = 20;
     consoleMode = "auto";
   };
   boot.loader.efi.canTouchEfiVariables = true;
