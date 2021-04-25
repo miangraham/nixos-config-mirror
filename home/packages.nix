@@ -62,6 +62,7 @@ builtins.attrValues {
   inherit (pkgs.gitAndTools) git-subrepo;
   inherit (pkgs.gnome3) adwaita-icon-theme;
   inherit (pkgs.terraform-providers) aws;
-  inherit (pkgs.texlive.combined) scheme-small;
   inherit (pkgs.xfce) thunar;
+
+  texliveCombined = (pkgs.texlive.combine { inherit (pkgs.texlive) scheme-small koma-script collection-latexextra; });
 }
