@@ -24,10 +24,10 @@ in
   };
 
   coturn = {
-    enable = true;
+    enable = false;
   };
 
   rabbitmq = {
-    enable = true;
+    enable = false;
   };
 }

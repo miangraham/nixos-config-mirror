@@ -10,6 +10,7 @@ builtins.attrValues {
     alacritty
     audacity
     awscli
+    bitwarden
     cmus
     element-desktop
     evince
@@ -62,4 +63,5 @@ builtins.attrValues {
   inherit (pkgs.gnome3) adwaita-icon-theme;
   inherit (pkgs.terraform-providers) aws;
   inherit (pkgs.texlive.combined) scheme-small;
+  inherit (pkgs.xfce) thunar;
 }
