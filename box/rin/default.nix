@@ -31,4 +31,6 @@
       root = "/var/www";
     };
   };
+
+  programs.steam.enable = true;
 }
