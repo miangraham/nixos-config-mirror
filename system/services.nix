@@ -11,6 +11,8 @@ in
 
   openssh.enable = true;
 
+  earlyoom.enable = true;
+
   syncthing = {
     enable = true;
     openDefaultPorts = true;
