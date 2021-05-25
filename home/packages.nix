@@ -11,7 +11,7 @@ builtins.attrValues {
     audacity
     awscli
     bitwarden
-    cmus
+    # cmus  # depends on vulnerable ffmpeg version
     element-desktop
     evince
     exa
