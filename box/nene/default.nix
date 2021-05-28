@@ -28,4 +28,11 @@
     email = "spamisevil@ijin.net";
     acceptTerms = true;
   };
+
+  services.znc = {
+    enable = true;
+    confOptions = {
+      passBlock = "";
+    };
+  };
 }
