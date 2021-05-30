@@ -2,6 +2,6 @@
 let
   sources = import ../nix/sources.nix;
   emacsOverlay = import sources.emacs-overlay;
-  # mozOverlay = import sources.nixpkgs-mozilla;
+  swayOverlay = import ./sway-overlay.nix {};
 in
-[ emacsOverlay ]
+[ emacsOverlay swayOverlay ]

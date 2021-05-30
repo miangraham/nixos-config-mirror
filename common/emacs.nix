@@ -1,8 +1,6 @@
-{ ... } :
+{ ... }:
 let
-  conf = import ../system/config.nix {};
-  sources = import ../nix/sources.nix;
-  pkgs = import sources.nixpkgs-unstable conf;
+  pkgs = import ./unstable.nix {};
 in
 pkgs.emacsWithPackagesFromUsePackage {
   config = "";

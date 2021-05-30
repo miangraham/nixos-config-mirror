@@ -1,9 +1,7 @@
 { ... }:
 let
-  conf = import ./config.nix {};
-  sources = import ../nix/sources.nix;
-  pkgs = import sources.nixpkgs conf;
-  unstable = import sources.nixpkgs-unstable conf;
+  pkgs = import ../common/stable.nix {};
+  unstable = import ../common/unstable.nix {};
 
   emacs = import ../common/emacs.nix {};
   startSwayScript = import ./startsway.nix {inherit pkgs;};

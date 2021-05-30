@@ -1,8 +1,6 @@
 { ... }:
 let
-  conf = import ../system/config.nix {};
-  sources = import ../nix/sources.nix;
-  pkgs = import sources.nixpkgs conf;
+  pkgs = import ../common/stable.nix {};
 
   obfuscatedAddr = ["es@" "am" "" "graham" "g" "" "mian"];
   unshuffle = builtins.sort (a: b: (builtins.stringLength a) < (builtins.stringLength b));

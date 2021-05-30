@@ -1,12 +1,9 @@
 { ... }:
 let
-  conf = import ./config.nix {};
-  sources = import ../nix/sources.nix;
-  pkgs = import sources.nixpkgs conf;
-  unstable = import sources.nixpkgs-unstable conf;
+  pkgs = import ../common/stable.nix {};
   fonts = import ./fonts.nix {inherit pkgs;};
   packages = import ./packages.nix {};
-  overlays = import ../common/overlays.nix {};
+  overlays = import ../common/overlays-stable.nix {};
   services = import ./services.nix {};
 in
 {

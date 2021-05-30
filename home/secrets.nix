@@ -1,7 +1,6 @@
 { ... }:
 let
-  sources = import ../nix/sources.nix;
-  pkgs = import sources.nixpkgs {};
+  pkgs = import ../common/stable.nix {};
 in
 {
   programs.gpg = {

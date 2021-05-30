@@ -1,8 +1,6 @@
 { ... }:
 let
-  conf = import ./config.nix {};
-  sources = import ../nix/sources.nix;
-  pkgs = import sources.nixpkgs conf;
+  pkgs = import ../common/stable.nix {};
   rtmp = import ./rtmp.nix {inherit pkgs;};
   backup = import ./backup.nix {inherit pkgs;};
 in

@@ -1,8 +1,6 @@
 { lib, ... }:
 let
-  conf = import ./config.nix {};
-  sources = import ../nix/sources.nix;
-  pkgs = import sources.nixpkgs conf;
+  pkgs = import ../common/stable.nix {};
 in
 {
   programs.sway = {

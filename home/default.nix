@@ -1,8 +1,6 @@
 let
-  conf = import ../system/config.nix {};
-  sources = import ../nix/sources.nix;
-  pkgs = import sources.nixpkgs conf;
-  unstable = import sources.nixpkgs-unstable conf;
+  pkgs = import ../common/stable.nix {};
+  unstable = import ../common/unstable.nix {};
 
   home-packages = import ./packages.nix {};
 
