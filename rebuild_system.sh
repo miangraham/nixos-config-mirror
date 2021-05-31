@@ -13,8 +13,6 @@ fi
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   NIXOS_CONFIG=$CONF_LOC nixos-rebuild switch -I $CONF_LOC --show-trace
   sudo -u ian home-manager switch --show-trace
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-  darwin-rebuild switch -I darwin-config=$CONF_LOC
 else
   echo "Unexpected OS"
   exit 1

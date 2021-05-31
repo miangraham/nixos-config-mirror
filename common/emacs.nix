@@ -51,6 +51,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     lsp-mode
     lsp-ui
     magit
+    marginalia
     markdown-mode
     nix-mode
     no-littering
