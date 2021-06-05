@@ -12,20 +12,16 @@ let
   secrets = import ./secrets.nix {};
   starship = import ./starship.nix {};
   tmux = import ./tmux.nix {};
+  firefox = import ./firefox.nix {};
 in
 {
   home.packages = home-packages;
 
   programs = {
-    inherit alacritty bash direnv git mpv starship tmux;
+    inherit alacritty bash direnv firefox git mpv starship tmux;
     inherit (secrets.programs) gpg password-store;
 
     feh.enable = true;
-
-    firefox = {
-      enable = true;
-      package = unstable.firefox-wayland;
-    };
 
     obs-studio = {
       enable = true;

@@ -52,21 +52,21 @@ builtins.attrValues {
   #   extensions = ["rust-src"];
   # });
 
-  inherit (unstable)
-    rustc
-    cargo
-    clippy
-    rustfmt
-    rust-analyzer
-    # rustcSrc
-    # rustLibSrc
+  # inherit (unstable)
+  #   rustc
+  #   cargo
+  #   clippy
+  #   rustfmt
+  #   # rust-analyzer
+  #   # rustcSrc
+  #   # rustLibSrc
 
-    cargo-release
-    pkg-config
-    gcc
-    glib
-    capnproto
-  ;
+  #   cargo-release
+  #   pkg-config
+  #   gcc
+  #   glib
+  #   capnproto
+  # ;
 
-  inherit (unstable.glib) dev;
+  # inherit (unstable.glib) dev;
 }
