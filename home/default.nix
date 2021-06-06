@@ -1,18 +1,16 @@
 let
   pkgs = import ../common/stable.nix {};
-  unstable = import ../common/unstable.nix {};
-
   home-packages = import ./packages.nix {};
 
   alacritty = import ./alacritty.nix {};
   bash = import ./bash.nix {};
   direnv = import ./direnv.nix {};
+  firefox = import ./firefox.nix {};
   git = import ./git.nix {};
   mpv = import ./mpv.nix {};
   secrets = import ./secrets.nix {};
   starship = import ./starship.nix {};
   tmux = import ./tmux.nix {};
-  firefox = import ./firefox.nix {};
 in
 {
   home.packages = home-packages;

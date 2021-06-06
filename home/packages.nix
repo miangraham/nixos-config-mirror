@@ -15,8 +15,8 @@ builtins.attrValues {
     exa
     ffmpeg
     gimp
+    graphviz
     grim
-    hugo
     imagemagick
     john
     lftp
@@ -31,6 +31,7 @@ builtins.attrValues {
     ranger
     slack
     speedtest-cli
+    tdesktop
     terraform
     tldr
     ungoogled-chromium

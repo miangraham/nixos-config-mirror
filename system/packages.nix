@@ -1,7 +1,6 @@
 { ... }:
 let
   pkgs = import ../common/stable.nix {};
-  unstable = import ../common/unstable.nix {};
 
   emacs = import ../common/emacs.nix {};
   startSwayScript = import ./startsway.nix {inherit pkgs;};
@@ -16,26 +15,23 @@ builtins.attrValues {
     file
     gawk
     git
-    graphviz
     gzip
     home-manager
     htop
     hwinfo
-    killall
     lshw
     nix-index
     pamixer
     parted
     pavucontrol
     pciutils
-    pstree
+    psmisc
     pulseeffects
     ripgrep
     rsync
     silver-searcher
     sqlite
     sshfs-fuse
-    tdesktop
     tree
     udiskie
     unrar
