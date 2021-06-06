@@ -11,9 +11,15 @@ in
     };
     scrolling.history = 100000;
     selection.save_to_clipboard = true;
-    mouse.url.launcher = {
-      program = "firefox";
-      args = [];
+    hints = {
+      enabled = [{
+        regex = ''(mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)[^\u0000-\u001F\u007F-\u009F<>"\\s{-}\\^⟨⟩`]+'';
+        command = "firefox";
+        post_processing = true;
+        mouse = {
+          enabled = true;
+        };
+      }];
     };
     window.padding = {
       x = 10;

@@ -14,6 +14,9 @@ let
 in
 {
   home.packages = home-packages;
+  home.stateVersion = "21.05";
+  home.username = "ian";
+  home.homeDirectory = "/home/ian";
 
   programs = {
     inherit alacritty bash direnv firefox git mpv starship tmux;

@@ -9,9 +9,8 @@ in
     aws.disabled = true;
 
     character = {
-      style_success = "bold green";
-      style_failure = "bold green";
-      symbol = "λ";
+      success_symbol = "[λ](bold green)";
+      error_symbol = "[λ](bold green)";
     };
 
     cmd_duration.disabled = true;

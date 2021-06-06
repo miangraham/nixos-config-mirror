@@ -24,15 +24,15 @@
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nixpkgs": {
-        "branch": "nixos-20.09",
+        "branch": "nixos-21.05",
         "description": "Nix Packages collection",
         "homepage": "",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "47e580e291ff40bbde191e9fed35128727963b0c",
-        "sha256": "1fnz42w2p6avnz76p8n0dr2lvdgv1v1kipysih61mdakr4lc2fs8",
+        "rev": "0edbcd01f6a6719c2d3896a775b462b8f32f02cb",
+        "sha256": "14kf0mwz5b69a0d9qbydsk11ylr0j59v3dnc2h5p13ykcdcaysf4",
         "type": "tarball",
-        "url": "https://github.com/NixOS/nixpkgs/archive/47e580e291ff40bbde191e9fed35128727963b0c.tar.gz",
+        "url": "https://github.com/NixOS/nixpkgs/archive/0edbcd01f6a6719c2d3896a775b462b8f32f02cb.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nixpkgs-mozilla": {
