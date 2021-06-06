@@ -12,6 +12,7 @@ in
         "app.update.auto" = false;
         "browser.aboutConfig.showWarning" = false;
         "browser.shell.checkDefaultBrowser" = false;
+        "signon.rememberSignons" = false;
         # Allow userChrome
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
 
@@ -30,6 +31,13 @@ in
         "browser.tabs.showAudioPlayingIcon" = false;
         "browser.tabs.warnOnClose" = false;
         "browser.tabs.warnOnOpen" = false;
+
+        # Sync defaults
+        "services.sync.engine.addresses" = false;
+        "services.sync.engine.creditcards" = false;
+        "services.sync.engine.history" = false;
+        "services.sync.engine.passwords" = false;
+        "services.sync.engine.tabs" = false;
       };
 
       userChrome = builtins.readFile ./userChrome.css;
