@@ -34,5 +34,6 @@
     confOptions = {
       passBlock = "";
     };
+    # extraFlags = [ "--debug" ];
   };
 }
