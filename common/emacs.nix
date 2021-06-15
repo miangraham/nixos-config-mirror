@@ -33,6 +33,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     forge
     flycheck
     flycheck-rust
+    fstar-mode
     fullframe
     git-link
     git-timemachine

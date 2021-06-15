@@ -25,6 +25,7 @@ builtins.attrValues {
     neofetch
     niv
     nix-direnv
+    nyxt
     pandoc
     protonmail-bridge
     qdirstat
