@@ -5,10 +5,12 @@ let
   exclude-home-paths = [
     "downloads"
     "music"
+    "nixpkgs"
     "tmp"
     "videos"
     "zotero"
 
+    ".cabal"
     ".cache"
     ".cargo"
     ".compose-cache"
@@ -18,6 +20,8 @@ let
     ".pki"
     ".rustup"
     ".ssh"
+    ".vscode"
+    ".zoom"
     ".zotero"
 
     ".config/.git"
@@ -28,6 +32,7 @@ let
     ".config/fcitx"
     ".config/libreoffice"
     ".config/obs-studio/logs"
+    ".config/Slack"
 
     ".local/share/Steam"
     ".local/share/TelegramDesktop"
@@ -36,6 +41,7 @@ let
 
     "**/.cache"
     "**/.terraform"
+    "**/node_modules"
     "**/target"
     "**/*.dump"
     "**/*.log"
