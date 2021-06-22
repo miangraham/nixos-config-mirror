@@ -20,6 +20,8 @@ with pkgs; [
 
   # icons
   font-awesome
+  emojione
+  twemoji-color-font
 
   # jp
   noto-fonts
