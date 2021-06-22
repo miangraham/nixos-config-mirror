@@ -79,6 +79,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     smartparens
     solaire-mode
     spinner
+    telega
     templatel
     tide
     toml-mode
