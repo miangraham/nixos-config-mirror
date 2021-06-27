@@ -42,6 +42,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     hcl-mode
     helm
     helpful
+    highlight-indent-guides
     htmlize
     hydra
     ivy
