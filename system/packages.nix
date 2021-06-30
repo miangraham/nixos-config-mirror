@@ -26,7 +26,7 @@ builtins.attrValues {
     pavucontrol
     pciutils
     psmisc
-    pulseeffects-legacy
+    # pulseeffects-legacy
     ripgrep
     rsync
     silver-searcher

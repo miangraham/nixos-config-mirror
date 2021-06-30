@@ -1,5 +1,6 @@
 let
   pkgs = import ../common/stable.nix {};
+  unstable = import ../common/unstable.nix {};
   home-packages = import ./packages.nix {};
 
   alacritty = import ./alacritty.nix {};
@@ -26,7 +27,7 @@ in
 
     obs-studio = {
       enable = true;
-      plugins = [ pkgs.obs-wlrobs ];
+      package = unstable.obs-studio;
     };
 
     rofi = {

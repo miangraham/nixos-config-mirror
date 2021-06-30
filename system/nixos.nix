@@ -15,7 +15,7 @@ in
   nixpkgs = {
     config = {
       allowUnfree = true;
-      pulseaudio = true;
+      # pulseaudio = true;
     };
     inherit overlays;
   };
@@ -57,7 +57,7 @@ in
     extraGroups = ["nginx"];
   };
 
-  hardware.pulseaudio.enable = true;
+  # hardware.pulseaudio.enable = true;
 
   i18n = {
     defaultLocale = "en_US.UTF-8";
@@ -68,5 +68,6 @@ in
   };
 
   networking.firewall.allowedTCPPorts = [ 22 80 443 1935 3478 8443 ];
+  security.rtkit.enable = true;
   inherit services;
 }

@@ -5,7 +5,7 @@ let
   conf = {
     inherit overlays;
     config.allowUnfree = true;
-    config.pulseaudio = true;
+    # config.pulseaudio = true;
   };
   stable = import sources.nixpkgs conf;
 in
