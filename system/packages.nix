@@ -39,6 +39,7 @@ builtins.attrValues {
     vim
     watch
     wget
+    xdg-desktop-portal-wlr
     xdg_utils
     zip
   ;
