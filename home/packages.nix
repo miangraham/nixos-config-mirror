@@ -37,7 +37,7 @@ builtins.attrValues {
     ungoogled-chromium
     valgrind
     vlc
-    vscode
+    vscodium
     wofi
     zeal
     zotero

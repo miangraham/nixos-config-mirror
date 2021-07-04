@@ -1,10 +1,10 @@
 # .nix
 
-Nix configuration for my personal machines. Manages dev environments for NixOS and Darwin.
+Nix configuration for my personal machines. Manages dev environments for NixOS.
 
 ## Prerequisites
 
-Requires a system-level [NixOS](https://nixos.org/download.html) or [nix-darwin](https://github.com/LnL7/nix-darwin) installation. `nix-env` alone is not enough.
+Requires [NixOS](https://nixos.org/download.html).
 
 ## Install
 
