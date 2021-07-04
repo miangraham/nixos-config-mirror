@@ -4,7 +4,7 @@ let
 in
 pkgs.emacsWithPackagesFromUsePackage {
   config = "";
-  package = pkgs.emacsGit;
+  package = pkgs.emacsPgtk;
   alwaysEnsure = true;
   extraEmacsPackages = epkgs: with epkgs; [
     ace-window
