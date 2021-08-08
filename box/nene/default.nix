@@ -16,7 +16,7 @@
 
   # box specific due to ACME, rip
   services.nginx = {
-    enable = false;
+    enable = true;
     user = "nginx";
     virtualHosts."testlocal.ian.tokyo" = {
       root = "/var/www";

@@ -52,13 +52,6 @@ in
     extraGroups = ["wheel" "audio" "video" "nginx"];
   };
 
-  users.users.nginx = {
-    isNormalUser = true;
-    extraGroups = ["nginx"];
-  };
-
-  # hardware.pulseaudio.enable = true;
-
   i18n = {
     defaultLocale = "en_US.UTF-8";
     inputMethod = {
