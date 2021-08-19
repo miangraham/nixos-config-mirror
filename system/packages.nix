@@ -20,13 +20,13 @@ builtins.attrValues {
     htop
     hwinfo
     lshw
+    micro
     nix-index
     pamixer
     parted
     pavucontrol
     pciutils
     psmisc
-    # pulseeffects-legacy
     ripgrep
     rsync
     silver-searcher
@@ -43,27 +43,4 @@ builtins.attrValues {
     xdg_utils
     zip
   ;
-
-  # rust
-  # rust = ((unstable.rustChannelOf { channel = "1.49.0"; }).rust.override {
-  #   extensions = ["rust-src"];
-  # });
-
-  # inherit (unstable)
-  #   rustc
-  #   cargo
-  #   clippy
-  #   rustfmt
-  #   # rust-analyzer
-  #   # rustcSrc
-  #   # rustLibSrc
-
-  #   cargo-release
-  #   pkg-config
-  #   gcc
-  #   glib
-  #   capnproto
-  # ;
-
-  # inherit (unstable.glib) dev;
 }

@@ -10,9 +10,12 @@ builtins.attrValues {
     awscli
     bitwarden
     # cmus  # depends on vulnerable ffmpeg version
+    diskonaut
+    du-dust
     element-desktop
     evince
     exa
+    fd
     ffmpeg
     gimp
     graphviz
@@ -40,6 +43,7 @@ builtins.attrValues {
     vscodium
     wofi
     zeal
+    zenith
     zotero
 
     # js

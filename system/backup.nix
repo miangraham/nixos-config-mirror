@@ -33,6 +33,7 @@ let
     ".config/libreoffice"
     ".config/obs-studio/logs"
     ".config/Slack"
+    ".config/syncthing/*.db"
 
     ".local/share/Steam"
     ".local/share/TelegramDesktop"
