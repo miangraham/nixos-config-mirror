@@ -9,7 +9,7 @@ builtins.attrValues {
     audacity
     awscli
     bitwarden
-    # cmus  # depends on vulnerable ffmpeg version
+    cmus
     diskonaut
     du-dust
     element-desktop
@@ -58,8 +58,10 @@ builtins.attrValues {
   ;
 
   inherit (unstable)
+    freetube
     godot
     youtube-dl
+    yt-dlp
   ;
 
   inherit (pkgs.gitAndTools) git-subrepo;
