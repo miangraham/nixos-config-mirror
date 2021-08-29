@@ -17,6 +17,7 @@ builtins.attrValues {
     exa
     fd
     ffmpeg
+    foot
     gimp
     graphviz
     grim
