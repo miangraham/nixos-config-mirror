@@ -46,4 +46,17 @@
     };
     environmentFile = /home/ian/.config/searx/env;
   };
+
+  # virtualisation.oci-containers = {
+  #   backend = "podman";
+  #   containers = {
+  #     whoogle = {
+  #       image = "benbusby/whoogle-search";
+  #       ports = ["127.0.0.1:5000:5000"];
+  #       volumes = [
+  #         "/var/db/isso:/db"
+  #       ];
+  #     };
+  #   };
+  # };
 }
