@@ -28,10 +28,13 @@ builtins.attrValues {
     pciutils
     psmisc
     ripgrep
+    # rss-bridge
+    # rss-bridge-cli
     rsync
     silver-searcher
     sqlite
     sshfs-fuse
+    tarssh
     tree
     udiskie
     unrar

@@ -35,6 +35,7 @@ builtins.attrValues {
     qdirstat
     ranger
     speedtest-cli
+    # t
     tdesktop
     terraform
     tldr
