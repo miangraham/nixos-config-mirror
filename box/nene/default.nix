@@ -52,6 +52,10 @@ in
     environmentFile = /home/ian/.config/searx/env;
   };
 
+  services.rss-bridge = {
+    enable = true;
+  };
+
   # virtualisation.oci-containers = {
   #   backend = "podman";
   #   containers = {
