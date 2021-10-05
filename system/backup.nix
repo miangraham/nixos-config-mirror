@@ -40,6 +40,9 @@ let
     ".local/share/Trash"
     ".local/share/Zeal"
 
+    "share/p4acamera"
+    "share/videos"
+
     "**/.cache"
     "**/.terraform"
     "**/node_modules"
