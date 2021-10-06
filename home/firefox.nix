@@ -25,6 +25,7 @@ in
         "browser.search.defaultenginename" = "DuckDuckGo";
         "browser.search.hiddenOneOffs" = "Amazon.com,Bing,eBay,Wikipedia (en)";
         "browser.search.region" = "US";
+        "browser.search.suggest.enabled" = false;
         "browser.urlbar.suggest.topsites" = false;
 
         # Tab behavior
