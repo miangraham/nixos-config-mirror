@@ -33,4 +33,6 @@
   };
 
   programs.steam.enable = true;
+
+  networking.firewall.allowedTCPPorts = [ 22 80 443 8443 8989 ];
 }

@@ -22,6 +22,7 @@ in
     user = "ian";
     dataDir = "/home/ian/share";
     configDir = "/home/ian/.config/syncthing";
+    guiAddress = "0.0.0.0:8384";
   };
 
   udisks2 = {

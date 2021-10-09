@@ -20,6 +20,8 @@ in
     # "net.ipv4.tcp_fin_timeout" = 10;
   };
 
+  networking.firewall.allowedTCPPorts = [ 22 80 443 2222 8384 8443 8989 ];
+
   # virtualisation.oci-containers = {
   #   backend = "podman";
   #   containers = {

@@ -60,7 +60,6 @@ in
     };
   };
 
-  networking.firewall.allowedTCPPorts = [ 22 80 443 1935 2222 3478 8443 8989 ];
   security.rtkit.enable = true;
   inherit services;
 }
