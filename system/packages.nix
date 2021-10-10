@@ -19,6 +19,7 @@ builtins.attrValues {
     home-manager
     htop
     hwinfo
+    jq
     lshw
     micro
     nix-index

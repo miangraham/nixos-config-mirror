@@ -5,6 +5,8 @@ let
   packages = import ./packages.nix {};
   overlays = import ../common/overlays-stable.nix {};
   services = import ./services.nix {};
+
+  nixpkgsPathCfg = fetchTarball { inherit ((import ../nix/sources.nix).nixpkgs) url sha256; };
 in
 {
   imports = [
@@ -15,7 +17,6 @@ in
   nixpkgs = {
     config = {
       allowUnfree = true;
-      # pulseaudio = true;
     };
     inherit overlays;
   };
@@ -40,12 +41,30 @@ in
 
   systemd.coredump.enable = true;
 
-  nix.allowedUsers = ["@wheel"];
-  nix.trustedUsers = ["@wheel"];
-  nix.extraOptions = ''
-    keep-outputs = true
-    keep-derivations = true
-  '';
+  nix = {
+    nixPath = [
+      # NIX_PATH=nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos:nixos-config=/etc/nixos/configuration.nix:/nix/var/nix/profiles/per-user/root/channels
+      # "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos"
+      # "nixpkgs=${fetchTarball (builtins.readFile ../nix/stable_nixpkgs_tarball_url)}"
+      "nixpkgs=${nixpkgsPathCfg}"
+      "nixos-config=${../configuration.nix}"
+      # "/nix/var/nix/profiles/per-user/root/channels"
+    ];
+    allowedUsers = ["@wheel"];
+    trustedUsers = ["@wheel"];
+    extraOptions = ''
+      keep-outputs = true
+      keep-derivations = true
+    '';
+    autoOptimiseStore = true;
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 7d";
+    };
+    # sshServe.enable = true;
+    # sshServe.keys = [ "ssh-dss AAAAB3NzaC1k... bob@example.org" ];
+  };
 
   users.users.ian = {
     isNormalUser = true;
