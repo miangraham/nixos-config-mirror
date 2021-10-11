@@ -4,6 +4,7 @@ let
 
   exclude-home-paths = [
     "downloads"
+    "mounts"
     "music"
     "nixpkgs"
     "tmp"
@@ -88,19 +89,18 @@ in
   };
 
   borgbackup.jobs.home-ian-to-homura = job {
-    repo = "/tmp/homuraborg";
+    repo = "/home/ian/mounts/homuraborg";
     user = "ian";
     doInit = false;
     preHook = ''
-      mkdir -p /tmp/homuraborg
-      /run/current-system/sw/bin/sshfs borg@homura:/share/MD0_DATA/nixborg /tmp/homuraborg
+      mkdir -p /home/ian/mounts/homuraborg
+      /run/current-system/sw/bin/sshfs borg@homura:/share/MD0_DATA/nixborg /home/ian/mounts/homuraborg
     '';
     postHook = ''
-      /run/wrappers/bin/fusermount3 -u /tmp/homuraborg
+      /run/wrappers/bin/fusermount3 -u /home/ian/mounts/homuraborg
     '';
-    privateTmp = false;
-    readWritePaths = [
-      "/tmp"
-    ];
+    environment = {
+      BORG_RELOCATED_REPO_ACCESS_IS_OK = "yes";
+    };
   };
 }
