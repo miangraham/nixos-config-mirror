@@ -30,9 +30,9 @@
         "owner": "NixOS",
         "repo": "nixpkgs",
         "rev": "ce7a1190a0fa4ba3465b5f5471b08567060ca14c",
-        "sha256": "1zr1s9gp0h5g4arlba1bpb9yqfaaby5195ydm6a2psaxhm748li9",
+        "sha256": "112drvixj81vscj8cncmks311rk2ik5gydpd03d3r0yc939zjskg",
         "type": "tarball",
-        "url": "https://github.com/NixOS/nixpkgs/archive/ce7a1190a0fa4ba3465b5f5471b08567060ca14c.tar.gz",
+        "url": "https://releases.nixos.org/nixos/21.05/nixos-21.05.3740.ce7a1190a0f/nixexprs.tar.xz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nixpkgs-unstable": {

@@ -47,7 +47,7 @@ in
       # "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos"
       # "nixpkgs=${fetchTarball (builtins.readFile ../nix/stable_nixpkgs_tarball_url)}"
       "nixpkgs=${nixpkgsPathCfg}"
-      "nixos-config=${../configuration.nix}"
+      "nixos-config=/home/ian/.nix/configuration.nix"
       # "/nix/var/nix/profiles/per-user/root/channels"
     ];
     allowedUsers = ["@wheel"];
