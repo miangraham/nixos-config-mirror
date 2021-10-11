@@ -101,6 +101,7 @@ in
     '';
     environment = {
       BORG_RELOCATED_REPO_ACCESS_IS_OK = "yes";
+      BORG_UNKNOWN_UNENCRYPTED_REPO_ACCESS_IS_OK = "yes";
     };
   };
 }
