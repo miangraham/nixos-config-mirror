@@ -2,11 +2,8 @@
 let
   pkgs = import ../common/stable.nix {};
   rtmp = import ./rtmp.nix {inherit pkgs;};
-  backup = import ./backup.nix {inherit pkgs;};
 in
 {
-  inherit (backup) borgbackup;
-
   pipewire = {
     enable = true;
     pulse.enable = true;

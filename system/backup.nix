@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, backupTime, ... }:
 let
   home-path = "/home/ian";
 
@@ -67,7 +67,7 @@ let
         monthly = 3;
       };
     };
-    startAt = "hourly";
+    startAt = backupTime;
   };
 
   job = props: pkgs.lib.recursiveUpdate common props;
@@ -99,6 +99,7 @@ in
     postHook = ''
       /run/wrappers/bin/fusermount3 -u /home/ian/mounts/homuraborg
     '';
+    extraArgs = "--lock-wait 30";
     environment = {
       BORG_RELOCATED_REPO_ACCESS_IS_OK = "yes";
       BORG_UNKNOWN_UNENCRYPTED_REPO_ACCESS_IS_OK = "yes";

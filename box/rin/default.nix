@@ -1,4 +1,11 @@
 { ... }:
+let
+  pkgs = import ../../common/stable.nix {};
+  backup = import ../../system/backup.nix {
+    inherit pkgs;
+    backupTime = "*-*-* *:06:00";
+  };
+in
 {
   imports = [
     ./hardware-configuration.nix
@@ -22,6 +29,9 @@
   powerManagement.powertop.enable = true;
 
   services.fwupd.enable = true;
+  services = {
+    inherit (backup) borgbackup;
+  };
 
   # box specific due to ACME, rip
   services.nginx = {
