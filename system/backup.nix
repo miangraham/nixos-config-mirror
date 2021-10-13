@@ -43,6 +43,7 @@ let
 
     "share/p4acamera"
     "share/videos"
+    "share/ytdl"
 
     "**/.cache"
     "**/.terraform"

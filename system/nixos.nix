@@ -79,6 +79,11 @@ in
     };
   };
 
-  security.rtkit.enable = true;
+  security = {
+    rtkit.enable = true;
+    sudo.extraConfig = ''
+      Defaults timestamp_timeout=20
+    '';
+  };
   inherit services;
 }

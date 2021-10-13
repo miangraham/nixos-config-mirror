@@ -1,6 +1,7 @@
 { config, ... }:
 let
   pkgs = import ../../common/stable.nix {};
+  unstable = import ../../common/unstable.nix {};
   backup = import ../../system/backup.nix {
     inherit pkgs;
     backupTime = "*-*-* *:02:00";
@@ -90,5 +91,18 @@ in
   security.acme = {
     email = "spamisevil@ijin.net";
     acceptTerms = true;
+  };
+
+  systemd.services.pueue = {
+    serviceConfig = {
+      Type = "simple";
+      User = "ian";
+    };
+    wantedBy = [ "multi-user.target" ];
+    path = [
+      unstable.pueue
+      unstable.yt-dlp
+    ];
+    script = "pueued -v";
   };
 }

@@ -62,6 +62,7 @@ builtins.attrValues {
   inherit (unstable)
     freetube
     godot
+    pueue
     youtube-dl
     yt-dlp
   ;

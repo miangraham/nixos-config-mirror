@@ -20,7 +20,7 @@ if ! test -f $CONF_LOC; then
   exit 1
 fi
 
-sudo echo "Building..."
+sudo -v
 
 NIXOS_CONFIG=$CONF_LOC nixos-rebuild build -I $CONF_LOC --show-trace
 
