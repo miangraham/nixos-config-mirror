@@ -1,7 +1,6 @@
 { ... }:
 let
-  sources = import ../nix/sources.nix;
-  emacsOverlay = import sources.emacs-overlay;
+  emacsOverlay = import ((import ./paths.nix {}).emacs-overlay);
   swayOverlay = import ./sway-overlay.nix {};
 in
 [

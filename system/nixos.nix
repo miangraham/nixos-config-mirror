@@ -6,7 +6,7 @@ let
   overlays = import ../common/overlays-stable.nix {};
   services = import ./services.nix {};
 
-  nixpkgsPathCfg = fetchTarball { inherit ((import ../nix/sources.nix).nixpkgs) url sha256; };
+  nixpkgsPathCfg = (import ../common/paths.nix {}).stable;
 in
 {
   imports = [

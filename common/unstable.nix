@@ -1,12 +1,11 @@
 { ... }:
 let
-  sources = import ../nix/sources.nix;
+  path = (import ./paths.nix {}).unstable;
   overlays = import ./overlays-unstable.nix {};
   conf = {
     inherit overlays;
     config.allowUnfree = true;
-    # config.pulseaudio = true;
   };
-  unstable = import sources.nixpkgs-unstable conf;
+  unstable = import path conf;
 in
 unstable
