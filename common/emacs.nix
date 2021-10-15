@@ -6,6 +6,9 @@ pkgs.emacsWithPackagesFromUsePackage {
   config = "";
   package = pkgs.emacsPgtk;
   alwaysEnsure = true;
+  override = epkgs: epkgs // {
+    telega = epkgs.melpaPackages.telega;
+  };
   extraEmacsPackages = epkgs: with epkgs; [
     ace-window
     adaptive-wrap

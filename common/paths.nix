@@ -11,7 +11,14 @@ in
     sha256 = "04bvfkr28xks9qqpn3fixcn8rdlyjhnqnbrg4ynwzqick0j3zcgw";
   };
   emacs-overlay = fetchTarball {
-    url = "https://github.com/nix-community/emacs-overlay/archive/1fbdcc136511834878b122a34b6fdb2af5302ddd.tar.gz";
-    sha256 = "03hxkrljm6vdrw903f9rb1biq20886fybxwhm8c7pv0hm6h031dz";
+    url = "https://github.com/nix-community/emacs-overlay/archive/de536fa76c469b25e377674028641f6fe03b602d.tar.gz";
+    sha256 = "1hj5qv915fklgmn60b8csa368s3h6vz6m7z6ws1arbgnzchw5pp3";
+  };
+  tdlib = {
+    version = "unstable-2021-10-15";
+    src = fetchTarball {
+      url = "https://github.com/tdlib/td/archive/49282f35a5eb6a53a6005a8a7d3cbb2fd99c992b.tar.gz";
+      sha256 = "1ml20smdivvh078sdb7fxh3inqqkbjicd0hxfpw8sd5vs5fv4ddv";
+    };
   };
 }
