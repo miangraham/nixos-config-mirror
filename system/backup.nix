@@ -21,6 +21,7 @@ let
     ".pki"
     ".rustup"
     ".ssh"
+    ".steam"
     ".vscode"
     ".zoom"
     ".zotero"
@@ -36,10 +37,7 @@ let
     ".config/Slack"
     ".config/syncthing/*.db"
 
-    ".local/share/Steam"
-    ".local/share/TelegramDesktop"
-    ".local/share/Trash"
-    ".local/share/Zeal"
+    ".local/share"
 
     "share/p4acamera"
     "share/videos"

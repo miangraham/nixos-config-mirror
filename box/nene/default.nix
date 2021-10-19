@@ -22,6 +22,8 @@ in
 
   networking.firewall.allowedTCPPorts = [ 22 80 443 2222 8384 8443 8989 ];
 
+  programs.steam.enable = true;
+
   # virtualisation.oci-containers = {
   #   backend = "podman";
   #   containers = {
