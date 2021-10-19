@@ -18,6 +18,7 @@ let
     ".debug"
     ".gnupg"
     ".mozilla"
+    ".paradoxlauncher"
     ".pki"
     ".rustup"
     ".ssh"
@@ -27,6 +28,7 @@ let
     ".zotero"
 
     ".config/.git"
+    ".config/Bitwarden"
     ".config/borg"
     ".config/chromium"
     ".config/Code"
@@ -36,6 +38,7 @@ let
     ".config/obs-studio/logs"
     ".config/Slack"
     ".config/syncthing/*.db"
+    ".config/VSCodium"
 
     ".local/share"
 
