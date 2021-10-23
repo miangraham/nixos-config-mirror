@@ -42,6 +42,7 @@ in
   systemd.coredump.enable = true;
 
   nix = {
+    package = pkgs.nixUnstable;
     nixPath = [
       # NIX_PATH=nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos:nixos-config=/etc/nixos/configuration.nix:/nix/var/nix/profiles/per-user/root/channels
       # "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos"
@@ -55,6 +56,7 @@ in
     extraOptions = ''
       keep-outputs = true
       keep-derivations = true
+      experimental-features = nix-command flakes
     '';
     autoOptimiseStore = true;
     gc = {
