@@ -21,7 +21,10 @@ in
     inherit overlays;
   };
 
-  fonts.fonts = fonts;
+  fonts = {
+    fontDir.enable = true;
+    inherit fonts;
+  };
 
   environment.systemPackages = packages;
   environment.pathsToLink = [

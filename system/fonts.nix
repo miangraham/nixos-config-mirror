@@ -17,11 +17,25 @@ with pkgs; [
   ia-writer-duospace
   overpass
   alegreya
+  source-code-pro
+
+  oxygenfonts
 
   # icons
   font-awesome
   emojione
   twemoji-color-font
+  # (nerdfonts.override {
+  #   fonts = [
+  #     "IBMPlexMono"
+  #     "JetBrainsMono"
+  #     "Overpass"
+  #     "Cousine"
+  #     "RobotoMono"
+  #     "FiraCode"
+  #     "SourceCodePro"
+  #   ];
+  # })
 
   # jp
   noto-fonts
