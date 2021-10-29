@@ -11,6 +11,5 @@ in
       waybar
     ];
   };
-  programs.waybar.enable = true;
   xdg.portal.enable = true;
 }

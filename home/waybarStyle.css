@@ -1,0 +1,77 @@
+* {
+    font-size: 20px;
+    font-family: "SF Pro Display", "FontAwesome";
+}
+
+window#waybar {
+  /* background: #292b2ea0; */
+  /* background: rgba(63, 63, 63, 0.5); */
+  background: rgba(0, 0, 0, 0.75);
+  color: #fdf6e3;
+}
+
+#custom-right-arrow-dark, #custom-left-arrow-cap {
+    color: #1a1a1a;
+    background: rgba(63, 63, 63, 0.0);
+}
+#custom-left-arrow-dark {
+    color: #1a1a1a;
+    background: rgba(63, 63, 63, 1.0);
+}
+#custom-right-arrow-light, #custom-left-arrow-light {
+    color: rgba(63, 63, 63, 1.0);
+    background: #1a1a1a;
+}
+
+#workspaces, #clock, #clock.1, #clock.2, #clock.3, #pulseaudio, #backlight, #memory, #cpu, #temperature, #battery, #tray, #custom-storage, #network, #idle_inhibitor {
+  background: rgba(0, 0, 0, 0.0);
+}
+
+#clock, #clock.1, #clock.2, #clock.3, #pulseaudio, #backlight, #memory, #cpu, #temperature, #battery, #tray, #custom-storage, #network, #idle_inhibitor {
+  padding: 0 20px;
+}
+
+#workspaces {
+  /* margin-right: 10px; */
+}
+#workspaces button {
+    padding: 0 20px;
+    color: #fdf6e3;
+}
+#workspaces button.focused {
+    color: #268bd2;
+}
+#workspaces button:hover {
+  box-shadow: inherit;
+  text-shadow: inherit;
+  background: #1a1a1a;
+  /* border: #1a1a1a; */
+}
+
+#idle_inhibitor {
+    color: #f9c0cc;
+}
+#pulseaudio {
+    color: #268bd2;
+}
+#network {
+    color: #d2ac7b;
+}
+#backlight {
+    color: #b58900;
+}
+#memory {
+    color: #2aa198;
+}
+#temperature {
+    color: #b58900;
+}
+#cpu {
+    color: #6c71c4;
+}
+#battery {
+    color: #859900;
+}
+#custom-storage {
+    color: #b58900;
+}

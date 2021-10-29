@@ -1,3 +1,4 @@
+{ config, lib, ... }:
 let
   pkgs = import ../common/stable.nix {};
   unstable = import ../common/unstable.nix {};
@@ -12,6 +13,7 @@ let
   secrets = import ./secrets.nix {};
   starship = import ./starship.nix {};
   tmux = import ./tmux.nix {};
+  waybar = import ./waybar.nix { inherit config lib; };
 in
 {
   home.packages = home-packages;
@@ -20,7 +22,7 @@ in
   home.homeDirectory = "/home/ian";
 
   programs = {
-    inherit alacritty bash direnv firefox git mpv starship tmux;
+    inherit alacritty bash direnv firefox git mpv starship tmux waybar;
     inherit (secrets.programs) gpg password-store;
 
     feh.enable = true;
@@ -43,6 +45,8 @@ in
   services = {
     inherit (secrets.services) gpg-agent;
 
+    lorri.enable = true;
+
     kanshi = {
       enable = true;
       package = pkgs.kanshi;
@@ -50,7 +54,5 @@ in
 output "Ancor Communications Inc ROG PG279Q G1LMQS019376" mode 2560x1440 position 0,0
       '';
     };
-
-    lorri.enable = true;
   };
 }
