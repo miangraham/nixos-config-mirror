@@ -23,11 +23,11 @@ window#waybar {
     background: #1a1a1a;
 }
 
-#workspaces, #clock, #clock.1, #clock.2, #clock.3, #pulseaudio, #backlight, #memory, #cpu, #temperature, #battery, #tray, #custom-storage, #network, #idle_inhibitor {
+#workspaces, #clock, #clock.1, #clock.2, #clock.3, #pulseaudio, #backlight, #memory, #cpu, #temperature, #battery, #tray, #custom-storage, #disk, #network, #idle_inhibitor {
   background: rgba(0, 0, 0, 0.0);
 }
 
-#clock, #clock.1, #clock.2, #clock.3, #pulseaudio, #backlight, #memory, #cpu, #temperature, #battery, #tray, #custom-storage, #network, #idle_inhibitor {
+#clock, #clock.1, #clock.2, #clock.3, #pulseaudio, #backlight, #memory, #cpu, #temperature, #battery, #tray, #custom-storage, #disk, #network, #idle_inhibitor {
   padding: 0 20px;
 }
 
@@ -73,5 +73,11 @@ window#waybar {
     color: #859900;
 }
 #custom-storage {
-    color: #b58900;
+  color: #b58900;
+}
+#disk {
+  color: #b58900;
+}
+#custom-failed-units {
+  color: #ff0000;
 }

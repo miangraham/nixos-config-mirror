@@ -1,5 +1,13 @@
-{ config, lib, ... }:
+{ config, lib, pkgs, ... }:
 let
+  failed-units-bin = pkgs.writeShellScriptBin "failed-units" ''
+num_failed=$(systemctl --failed --no-legend | wc -l)
+
+if [ $num_failed -gt 0 ]
+then
+  echo $num_failed
+fi
+  '';
 in
 {
   enable = true;
@@ -16,9 +24,10 @@ in
       "pulseaudio"
       "cpu"
       "memory"
-      "custom/storage"
+      "disk"
       "network"
       "battery"
+      "custom/failed-units"
       "clock"
     ];
     modules = {
@@ -97,13 +106,21 @@ in
           ""
         ];
       };
-      "custom/storage" = {
-        "format" = " {}";
-        "format-alt" = " {percentage}%";
-        "format-alt-click" = "click-right";
-        "return-type" = "json";
+      # "custom/storage" = {
+      #   "format" = " {}";
+      #   "format-alt" = " {percentage}%";
+      #   "format-alt-click" = "click-right";
+      #   "return-type" = "json";
+      #   "interval" = 60;
+      #   "exec" = "~/.bin/storage.sh";
+      # };
+      "disk" = {
+        "format" = " {free}";
+      };
+      "custom/failed-units" = {
+        "format" = "{}";
         "interval" = 60;
-        "exec" = "~/.config/waybar/storage.sh";
+        "exec" = "${failed-units-bin}/bin/failed-units";
       };
     };
   }];

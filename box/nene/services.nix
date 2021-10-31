@@ -105,4 +105,14 @@ in
     ];
     script = "pueued -v";
   };
+
+  # systemd.services.test-failure = {
+  #   serviceConfig.Type = "oneshot";
+  #   script = "false";
+  # };
+  # systemd.timers.test-failure = {
+  #   wantedBy = [ "timers.target" ];
+  #   partOf = [ "test-failure.service" ];
+  #   timerConfig.OnCalendar = "*:22";
+  # };
 }

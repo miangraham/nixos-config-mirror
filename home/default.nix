@@ -13,7 +13,7 @@ let
   secrets = import ./secrets.nix {};
   starship = import ./starship.nix {};
   tmux = import ./tmux.nix {};
-  waybar = import ./waybar.nix { inherit config lib; };
+  waybar = import ./waybar.nix { inherit config lib pkgs; };
 in
 {
   home.packages = home-packages;
