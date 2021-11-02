@@ -10,6 +10,11 @@ in
   services = {
     inherit (backup) borgbackup;
 
+    adguardhome = {
+      enable = true;
+      port = 9090;
+    };
+
     # box specific due to ACME, rip
     nginx = {
       enable = true;
@@ -60,6 +65,15 @@ in
         "Youtube"
       ];
     };
-  };
 
+    searx = {
+      enable = true;
+      settings = {
+        server.port = 8989;
+        server.bind_address = "0.0.0.0";
+        server.secret_key = "@SEARX_SECRET_KEY@";
+      };
+      environmentFile = /home/ian/.config/searx/env;
+    };
+  };
 }
