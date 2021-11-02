@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, lib, ... }:
 let
   pkgs = import ../../common/stable.nix {};
   filter-tweets = import ../../../filter-tweets/default.nix { inherit pkgs; };
@@ -20,7 +20,17 @@ in
     # "net.ipv4.tcp_fin_timeout" = 10;
   };
 
-  networking.firewall.allowedTCPPorts = [ 22 80 443 2222 8384 8443 8989 ];
+  networking = {
+    # nameservers = [ "192.168.0.128" ];
+    firewall.allowedTCPPorts = [ 22 80 443 2222 8384 8443 8989 ];
+  };
+
+  # environment.etc."resolv.conf" = with lib; with pkgs; {
+  #   source = writeText "resolv.conf" ''
+  #     ${concatStringsSep "\n" (map (ns: "nameserver ${ns}") config.networking.nameservers)}
+  #     options edns0
+  #   '';
+  # };
 
   programs.steam.enable = true;
 
