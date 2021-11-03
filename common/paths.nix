@@ -3,12 +3,12 @@ let
 in
 {
   stable = fetchTarball {
-    url = "https://releases.nixos.org/nixos/21.05/nixos-21.05.3740.ce7a1190a0f/nixexprs.tar.xz";
-    sha256 = "112drvixj81vscj8cncmks311rk2ik5gydpd03d3r0yc939zjskg";
+    url = "https://releases.nixos.org/nixos/21.05/nixos-21.05.3990.372e59d2af7/nixexprs.tar.xz";
+    sha256 = "1hh8yig9nhky3p3grxky62a809hrzy2n4jxffw7pyridghwxpfbr";
   };
   unstable = fetchTarball {
-    url = "https://releases.nixos.org/nixos/unstable/nixos-21.11pre322215.9bf75dd50b7/nixexprs.tar.xz";
-    sha256 = "04bvfkr28xks9qqpn3fixcn8rdlyjhnqnbrg4ynwzqick0j3zcgw";
+    url = "https://releases.nixos.org/nixos/unstable/nixos-21.11pre327669.b67e752c29f/nixexprs.tar.xz";
+    sha256 = "15h2d5s6lqxyrmqd6ghbkizqr0ml3qjrwasmapj07m6cpkwpxc7i";
   };
   emacs-overlay = fetchTarball {
     url = "https://github.com/nix-community/emacs-overlay/archive/de536fa76c469b25e377674028641f6fe03b602d.tar.gz";
