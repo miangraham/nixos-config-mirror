@@ -1,6 +1,5 @@
-{ ... }:
+{ pkgs, ... }:
 let
-  pkgs = import ../common/stable.nix {};
   tmuxPlugins = pkgs.tmuxPlugins;
 in
 {

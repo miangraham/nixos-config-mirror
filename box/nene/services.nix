@@ -1,7 +1,6 @@
-{ config, ... }:
+{ pkgs, inputs, config, ... }:
 let
-  pkgs = import ../../common/stable.nix {};
-  unstable = import ../../common/unstable.nix {};
+  unstable = import ../../common/unstable.nix {inherit pkgs inputs;};
   backup = import ../../system/backup.nix {
     inherit pkgs;
     backupTime = "*-*-* *:02:00";

@@ -1,7 +1,4 @@
-{ ... }:
-let
-  pkgs = import ../common/stable.nix {};
-in
+{ pkgs, ... }:
 {
   enable = true;
   package = pkgs.starship;

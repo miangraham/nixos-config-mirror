@@ -1,7 +1,6 @@
-{ ... }:
+{ pkgs, inputs, ... }:
 let
-  pkgs = import ../../common/stable.nix {};
-  filter-tweets = import /home/ian/filter-tweets/default.nix { inherit pkgs; };
+  filter-tweets = import inputs.filter-tweets { inherit pkgs; };
 in
 {
   # systemd.services.twitter-expire-favorites = {

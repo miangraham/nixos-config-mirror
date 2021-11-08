@@ -1,7 +1,4 @@
-{ ... }:
-let
-  pkgs = import ../common/stable.nix {};
-in
+{ pkgs, ... }:
 {
   programs.gpg = {
     enable = true;

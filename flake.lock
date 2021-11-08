@@ -1,0 +1,101 @@
+{
+  "nodes": {
+    "emacs-overlay": {
+      "locked": {
+        "narHash": "sha256-497CIfv2rayC5uafav42cGhkhtIMLWBsfXS6EtLGRcI=",
+        "type": "tarball",
+        "url": "https://github.com/nix-community/emacs-overlay/archive/de536fa76c469b25e377674028641f6fe03b602d.tar.gz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://github.com/nix-community/emacs-overlay/archive/de536fa76c469b25e377674028641f6fe03b602d.tar.gz"
+      }
+    },
+    "filter-tweets": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-IxvRUn3envdmfu1h2UfxKJvoFQXnhFy/YbkUSHn4Ehs=",
+        "path": "/home/ian/filter-tweets",
+        "type": "path"
+      },
+      "original": {
+        "path": "/home/ian/filter-tweets",
+        "type": "path"
+      }
+    },
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "narHash": "sha256-RlRQBaAHfdWqfRyHdWuDPMkplBTYwuyDQqDcNbP/Sog=",
+        "type": "tarball",
+        "url": "https://github.com/nix-community/home-manager/archive/release-21.05.tar.gz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://github.com/nix-community/home-manager/archive/release-21.05.tar.gz"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1636365387,
+        "narHash": "sha256-vdfglSQglUrcZQ6lvHGKF6EEb+TVhvmgFNzrRf+k8uQ=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "65938173c243e0268f9ba01642fa5a69f3857fd1",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
+        "narHash": "sha256-ebnbOXwtZn8Pd65LYoX/GSaAlDB+9vzGHX5Cm170CMI=",
+        "type": "tarball",
+        "url": "https://releases.nixos.org/nixos/21.05/nixos-21.05.3990.372e59d2af7/nixexprs.tar.xz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://releases.nixos.org/nixos/21.05/nixos-21.05.3990.372e59d2af7/nixexprs.tar.xz"
+      }
+    },
+    "root": {
+      "inputs": {
+        "emacs-overlay": "emacs-overlay",
+        "filter-tweets": "filter-tweets",
+        "home-manager": "home-manager",
+        "nixpkgs": "nixpkgs_2",
+        "tdlib": "tdlib",
+        "unstable": "unstable"
+      }
+    },
+    "tdlib": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-uzWyXdG7NI34dR2CxqJcE2MbB+zurKbRAXDv2KoGgtY=",
+        "type": "tarball",
+        "url": "https://github.com/tdlib/td/archive/49282f35a5eb6a53a6005a8a7d3cbb2fd99c992b.tar.gz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://github.com/tdlib/td/archive/49282f35a5eb6a53a6005a8a7d3cbb2fd99c992b.tar.gz"
+      }
+    },
+    "unstable": {
+      "locked": {
+        "narHash": "sha256-8bB++bzM1APkVVUrniUetIKMf5wLPtNwzb5janRpApY=",
+        "type": "tarball",
+        "url": "https://releases.nixos.org/nixos/unstable/nixos-21.11pre327669.b67e752c29f/nixexprs.tar.xz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://releases.nixos.org/nixos/unstable/nixos-21.11pre327669.b67e752c29f/nixexprs.tar.xz"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

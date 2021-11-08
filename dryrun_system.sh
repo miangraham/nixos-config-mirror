@@ -11,7 +11,7 @@ if ! test -f $CONF_LOC; then
 fi
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  NIXOS_CONFIG=$CONF_LOC nixos-rebuild dry-build -I $CONF_LOC
+  nixos-rebuild dry-build --flake '.#' --show-trace
 else
   echo "Unexpected OS"
   exit 1

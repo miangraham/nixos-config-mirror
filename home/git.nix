@@ -1,7 +1,5 @@
-{ ... }:
+{ pkgs, ... }:
 let
-  pkgs = import ../common/stable.nix {};
-
   obfuscatedAddr = ["es@" "am" "" "graham" "g" "" "mian"];
   unshuffle = builtins.sort (a: b: (builtins.stringLength a) < (builtins.stringLength b));
   userEmail = builtins.concatStringsSep "" ((unshuffle obfuscatedAddr) ++ [".com"]);

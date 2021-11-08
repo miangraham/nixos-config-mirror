@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ lib, pkgs, ... }:
 let
   failed-units-bin = pkgs.writeShellScriptBin "failed-units" ''
 num_failed=$(systemctl --failed --no-legend | wc -l)

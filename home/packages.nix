@@ -1,8 +1,4 @@
-{ ... }:
-let
-  pkgs = import ../common/stable.nix {};
-  unstable = import ../common/unstable.nix {};
-in
+{ pkgs, unstable, ... }:
 builtins.attrValues {
   inherit (pkgs)
     alacritty

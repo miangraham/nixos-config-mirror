@@ -1,9 +1,13 @@
-{ ... }:
+{ pkgs, inputs, ... }:
 let
-  emacsOverlay = import ((import ./paths.nix {}).emacs-overlay);
-  swayOverlay = import ./sway-overlay.nix {};
+  tdOverlay = (self: super: {
+    tdlib = super.tdlib.overrideAttrs(old: {
+      version = "unstable";
+      src = inputs.tdlib;
+    });
+  });
 in
 [
-  emacsOverlay
-  # swayOverlay
+  tdOverlay
+  inputs.emacs-overlay.overlay
 ]

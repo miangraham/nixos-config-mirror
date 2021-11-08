@@ -1,7 +1,4 @@
-{ ... }:
-let
-  unstable = import ../common/unstable.nix {};
-in
+{ unstable, ... }:
 {
   enable = true;
   package = unstable.firefox-wayland;

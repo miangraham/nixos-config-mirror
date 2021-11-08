@@ -1,7 +1,4 @@
-{ ... }:
-let
-  pkgs = import ./unstable.nix {};
-in
+{ pkgs, ... }:
 pkgs.emacsWithPackagesFromUsePackage {
   config = "";
   package = pkgs.emacsPgtk;

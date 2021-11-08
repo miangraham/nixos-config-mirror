@@ -1,30 +1,33 @@
-{ config, lib, ... }:
+{ inputs, ... }: { pkgs, ... }:
 let
-  pkgs = import ../common/stable.nix {};
-  unstable = import ../common/unstable.nix {};
-  home-packages = import ./packages.nix {};
+  lib = pkgs.lib;
+  unstable = import ../common/unstable.nix { inherit pkgs inputs; };
+  home-packages = import ./packages.nix { inherit pkgs unstable; };
 
-  alacritty = import ./alacritty.nix {};
+  alacritty = import ./alacritty.nix { inherit pkgs; };
   bash = import ./bash.nix {};
   direnv = import ./direnv.nix {};
-  firefox = import ./firefox.nix {};
-  git = import ./git.nix {};
+  firefox = import ./firefox.nix { inherit unstable; };
+  git = import ./git.nix { inherit pkgs; };
   mpv = import ./mpv.nix {};
-  secrets = import ./secrets.nix {};
-  starship = import ./starship.nix {};
-  tmux = import ./tmux.nix {};
-  waybar = import ./waybar.nix { inherit config lib pkgs; };
+  secrets = import ./secrets.nix { inherit pkgs; };
+  starship = import ./starship.nix { inherit pkgs; };
+  tmux = import ./tmux.nix { inherit pkgs; };
+  waybar = import ./waybar.nix { inherit lib pkgs; };
 in
 {
-  home.packages = home-packages;
-  home.stateVersion = "21.05";
-  home.username = "ian";
-  home.homeDirectory = "/home/ian";
+  home = {
+    packages = home-packages;
+    stateVersion = "21.05";
+    username = "ian";
+    homeDirectory = "/home/ian";
+  };
 
   programs = {
     inherit alacritty bash direnv firefox git mpv starship tmux waybar;
     inherit (secrets.programs) gpg password-store;
 
+    home-manager.enable = true;
     feh.enable = true;
 
     obs-studio = {

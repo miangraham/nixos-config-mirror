@@ -1,6 +1,5 @@
-{ ... }:
+{ pkgs, ... }:
 let
-  pkgs = import ../common/stable.nix {};
   rtmp = import ./rtmp.nix {inherit pkgs;};
 in
 {

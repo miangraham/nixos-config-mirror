@@ -1,7 +1,4 @@
-{ lib, ... }:
-let
-  pkgs = import ../common/stable.nix {};
-in
+{ pkgs, lib, ... }:
 {
   programs.sway = {
     enable = true;

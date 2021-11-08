@@ -20,12 +20,10 @@ if ! test -f $CONF_LOC; then
   exit 1
 fi
 
-sudo -v
+# nixos-rebuild build --flake '.#' --show-trace
 
-NIXOS_CONFIG=$CONF_LOC nixos-rebuild build -I $CONF_LOC --show-trace
+# echo "Build done. Switching..."
 
-sudo NIXOS_CONFIG=$CONF_LOC nixos-rebuild switch -I $CONF_LOC --show-trace
+sudo nixos-rebuild switch --flake '.#' --show-trace
 
-NIXOS_CONFIG=$CONF_LOC home-manager switch -I $CONF_LOC --show-trace
-
-rm $DIR/result
+# rm $DIR/result

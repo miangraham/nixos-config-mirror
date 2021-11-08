@@ -1,8 +1,4 @@
-{ config, lib, ... }:
-let
-  pkgs = import ../../common/stable.nix {};
-  filter-tweets = import ../../../filter-tweets/default.nix { inherit pkgs; };
-in
+{ config, lib, modulesPath, inputs, pkgs, system, ... }:
 {
   imports = [
     ./hardware-configuration.nix

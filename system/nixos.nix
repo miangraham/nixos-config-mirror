@@ -1,12 +1,9 @@
-{ ... }:
+{ pkgs, inputs, ... }:
 let
-  pkgs = import ../common/stable.nix {};
   fonts = import ./fonts.nix {inherit pkgs;};
-  packages = import ./packages.nix {};
-  overlays = import ../common/overlays-stable.nix {};
-  services = import ./services.nix {};
-
-  nixpkgsPathCfg = (import ../common/paths.nix {}).stable;
+  packages = import ./packages.nix {inherit pkgs inputs;};
+  overlays = import ../common/overlays-stable.nix {inherit inputs pkgs;};
+  services = import ./services.nix {inherit pkgs;};
 in
 {
   imports = [
@@ -46,14 +43,14 @@ in
 
   nix = {
     package = pkgs.nixUnstable;
-    nixPath = [
-      # NIX_PATH=nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos:nixos-config=/etc/nixos/configuration.nix:/nix/var/nix/profiles/per-user/root/channels
-      # "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos"
-      # "nixpkgs=${fetchTarball (builtins.readFile ../nix/stable_nixpkgs_tarball_url)}"
-      "nixpkgs=${nixpkgsPathCfg}"
-      "nixos-config=/home/ian/.nix/configuration.nix"
-      # "/nix/var/nix/profiles/per-user/root/channels"
-    ];
+    # nixPath = [
+    #   # NIX_PATH=nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos:nixos-config=/etc/nixos/configuration.nix:/nix/var/nix/profiles/per-user/root/channels
+    #   # "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos"
+    #   # "nixpkgs=${fetchTarball (builtins.readFile ../nix/stable_nixpkgs_tarball_url)}"
+    #   "nixpkgs=${nixpkgsPathCfg}"
+    #   "nixos-config=/home/ian/.nix/configuration.nix"
+    #   # "/nix/var/nix/profiles/per-user/root/channels"
+    # ];
     allowedUsers = ["@wheel"];
     trustedUsers = ["@wheel"];
     extraOptions = ''

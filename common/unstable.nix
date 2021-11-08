@@ -1,11 +1,11 @@
-{ ... }:
+{ pkgs, inputs, ... }:
 let
-  path = (import ./paths.nix {}).unstable;
-  overlays = import ./overlays-unstable.nix {};
+  overlays = import ./overlays-unstable.nix {inherit pkgs inputs;};
   conf = {
+    inherit (pkgs) system;
     inherit overlays;
     config.allowUnfree = true;
   };
-  unstable = import path conf;
+  unstable = (import inputs.unstable conf).pkgs;
 in
 unstable
