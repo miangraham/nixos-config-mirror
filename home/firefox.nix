@@ -10,6 +10,7 @@
         "browser.aboutConfig.showWarning" = false;
         "browser.shell.checkDefaultBrowser" = false;
         "signon.rememberSignons" = false;
+        "extensions.pocket.enabled" = false;
         # Allow userChrome
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
 
@@ -29,6 +30,7 @@
         "browser.tabs.showAudioPlayingIcon" = false;
         "browser.tabs.warnOnClose" = false;
         "browser.tabs.warnOnOpen" = false;
+        "browser.warnOnQuit" = false;
 
         # Sync defaults
         "services.sync.engine.addresses" = false;
