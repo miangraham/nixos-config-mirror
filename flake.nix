@@ -3,9 +3,9 @@
   inputs = {
     nixpkgs = { url = "github:NixOS/nixpkgs/release-21.05"; };
     unstable = { url = "github:NixOS/nixpkgs"; };
-    emacs-overlay = { url = "https://github.com/nix-community/emacs-overlay/archive/de536fa76c469b25e377674028641f6fe03b602d.tar.gz"; };
-    tdlib = { url = "https://github.com/tdlib/td/archive/49282f35a5eb6a53a6005a8a7d3cbb2fd99c992b.tar.gz"; flake = false; };
     home-manager = { url = "github:nix-community/home-manager/release-21.05"; };
+    emacs-overlay = { url = "github:nix-community/emacs-overlay"; };
+    tdlib = { url = "github:tdlib/td"; flake = false; };
     filter-tweets = { url = "path:/home/ian/filter-tweets"; flake = false; };
   };
   outputs = inputs: {
@@ -17,9 +17,11 @@
           ./box/nene/default.nix
           inputs.home-manager.nixosModules.home-manager
           {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.ian = import ./home/default.nix {inherit inputs;};
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.ian = import ./home/default.nix {inherit inputs;};
+            };
           }
         ];
       };

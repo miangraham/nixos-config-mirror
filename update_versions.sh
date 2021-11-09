@@ -2,4 +2,4 @@
 
 set -e
 
-niv update
+nix flake lock --recreate-lock-file
