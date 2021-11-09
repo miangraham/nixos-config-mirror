@@ -21,4 +21,7 @@ in
     ".direnv"
     "__pycache__"
   ];
+  extraConfig = {
+    init.defaultBranch = "master";
+  };
 }
