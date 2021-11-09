@@ -1,25 +1,13 @@
 { pkgs, inputs, ... }:
 let
-  filter-tweets = import inputs.filter-tweets { inherit pkgs; };
+  # inherit (inputs) filter-tweets;
+  # filter-tweets = inputs.filter-tweets;
+  filter-tweets = (import inputs.filter-tweets { inherit pkgs; }).package;
 in
 {
-  # systemd.services.twitter-expire-favorites = {
-  #   serviceConfig.Type = "oneshot";
-  #   script = ''
-  #     ${pkgs.t}/bin/t favorites -l --profile=/home/ian/.trc \
-  #     | ${pkgs.gawk}/bin/awk '{print $1}' \
-  #     | xargs -r ${pkgs.t}/bin/t delete favorite --force --profile=/home/ian/.trc
-  #   '';
-  # };
-  # systemd.timers.twitter-expire-favorites = {
-  #   wantedBy = [ "timers.target" ];
-  #   partOf = [ "twitter-expire-favorites.service" ];
-  #   timerConfig.OnCalendar = "Sun 06:00";
-  # };
-
   systemd.services.twitter-filter-likes = {
     serviceConfig.Type = "oneshot";
-    script = "${filter-tweets.package}/bin/likes";
+    script = "${filter-tweets}/bin/likes";
   };
   systemd.timers.twitter-filter-likes = {
     wantedBy = [ "timers.target" ];
@@ -29,7 +17,7 @@ in
 
   systemd.services.twitter-filter-rts = {
     serviceConfig.Type = "oneshot";
-    script = "${filter-tweets.package}/bin/rts";
+    script = "${filter-tweets}/bin/rts";
   };
   systemd.timers.twitter-filter-rts = {
     wantedBy = [ "timers.target" ];
@@ -39,7 +27,7 @@ in
 
   systemd.services.twitter-filter-replies = {
     serviceConfig.Type = "oneshot";
-    script = "${filter-tweets.package}/bin/replies";
+    script = "${filter-tweets}/bin/replies";
   };
   systemd.timers.twitter-filter-replies = {
     wantedBy = [ "timers.target" ];

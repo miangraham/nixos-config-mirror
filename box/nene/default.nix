@@ -1,4 +1,4 @@
-{ config, lib, modulesPath, inputs, pkgs, system, ... }:
+{ config, lib, modulesPath, inputs, pkgs, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -6,40 +6,22 @@
     ./twitter.nix
     ./services.nix
   ];
-  system.stateVersion = "20.03";
-  networking.hostName = "nene";
-  networking.interfaces.enp5s0.useDHCP = true;
-  networking.interfaces.wlp4s0.useDHCP = true;
+
+  networking = {
+    hostName = "nene";
+    interfaces.enp5s0.useDHCP = true;
+    interfaces.wlp4s0.useDHCP = true;
+    firewall.allowedTCPPorts = [ 22 80 443 2222 8384 8443 8989 ];
+    # nameservers = [ "192.168.0.128" ];
+  };
+
   boot.kernel.sysctl = {
     "fs.file-max" = 9000000;
     # "fs.inotify.max_user_instances" = 4096;
     # "net.ipv4.tcp_fin_timeout" = 10;
   };
 
-  networking = {
-    # nameservers = [ "192.168.0.128" ];
-    firewall.allowedTCPPorts = [ 22 80 443 2222 8384 8443 8989 ];
-  };
-
-  # environment.etc."resolv.conf" = with lib; with pkgs; {
-  #   source = writeText "resolv.conf" ''
-  #     ${concatStringsSep "\n" (map (ns: "nameserver ${ns}") config.networking.nameservers)}
-  #     options edns0
-  #   '';
-  # };
-
   programs.steam.enable = true;
 
-  # virtualisation.oci-containers = {
-  #   backend = "podman";
-  #   containers = {
-  #     whoogle = {
-  #       image = "benbusby/whoogle-search";
-  #       ports = ["127.0.0.1:5000:5000"];
-  #       volumes = [
-  #         "/var/db/isso:/db"
-  #       ];
-  #     };
-  #   };
-  # };
+  system.stateVersion = "20.03";
 }

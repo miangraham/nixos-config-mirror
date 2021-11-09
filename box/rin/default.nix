@@ -1,6 +1,5 @@
-{ ... }:
+{ pkgs, config, modulesPath, ... }:
 let
-  pkgs = import ../../common/stable.nix {};
   backup = import ../../system/backup.nix {
     inherit pkgs;
     backupTime = "*-*-* *:06:00";
@@ -12,17 +11,15 @@ in
     ../../system/nixos.nix
   ];
 
-  system.stateVersion = "20.03";
-
-  networking.hostName = "rin";
-
-  networking.networkmanager.enable = true;
-
-  networking.resolvconf.dnsExtensionMechanism = false;
-
-  networking.interfaces.enp2s0f0.useDHCP = true;
-  networking.interfaces.enp5s0.useDHCP = true;
-  networking.interfaces.wlp3s0.useDHCP = true;
+  networking = {
+    hostName = "rin";
+    networkmanager.enable = true;
+    resolvconf.dnsExtensionMechanism = false;
+    interfaces.enp2s0f0.useDHCP = true;
+    interfaces.enp5s0.useDHCP = true;
+    interfaces.wlp3s0.useDHCP = true;
+    firewall.allowedTCPPorts = [ 22 80 443 8443 8989 ];
+  };
 
   programs.light.enable = true;
   services.upower.enable = true;
@@ -44,5 +41,5 @@ in
 
   programs.steam.enable = true;
 
-  networking.firewall.allowedTCPPorts = [ 22 80 443 8443 8989 ];
+  system.stateVersion = "20.03";
 }

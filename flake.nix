@@ -8,23 +8,43 @@
     tdlib = { url = "github:tdlib/td"; flake = false; };
     filter-tweets = { url = "path:/home/ian/filter-tweets"; flake = false; };
   };
-  outputs = inputs: {
-    nixosConfigurations = {
-      nene = inputs.nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./box/nene/default.nix
-          inputs.home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.ian = import ./home/default.nix {inherit inputs;};
-            };
-          }
-        ];
+  outputs = inputs:
+    let
+      specialArgs = { inherit inputs; };
+      home-manager = {
+        useGlobalPkgs = true;
+        useUserPackages = true;
+        users.ian = import ./home/default.nix {inherit inputs;};
+      };
+    in {
+      nixosConfigurations = {
+        nene = inputs.nixpkgs.lib.nixosSystem {
+          inherit specialArgs;
+          system = "x86_64-linux";
+          modules = [
+            ./box/nene/default.nix
+            inputs.home-manager.nixosModules.home-manager
+            { inherit home-manager; }
+          ];
+        };
+        futaba = inputs.nixpkgs.lib.nixosSystem {
+          inherit specialArgs;
+          system = "x86_64-linux";
+          modules = [
+            ./box/futaba/default.nix
+            inputs.home-manager.nixosModules.home-manager
+            { inherit home-manager; }
+          ];
+        };
+        rin = inputs.nixpkgs.lib.nixosSystem {
+          inherit specialArgs;
+          system = "x86_64-linux";
+          modules = [
+            ./box/rin/default.nix
+            inputs.home-manager.nixosModules.home-manager
+            { inherit home-manager; }
+          ];
+        };
       };
     };
-  };
 }

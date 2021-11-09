@@ -9,4 +9,8 @@ if [[ "$OSTYPE" != "linux-gnu"* ]]; then
   exit 1
 fi
 
-nixos-rebuild dry-build --flake '.#' --show-trace
+if [[ "$HOSTNAME" == "nene" ]]; then
+  nixos-rebuild dry-build --flake '.#' --show-trace
+else
+  nixos-rebuild dry-build --flake '.#' --show-trace --override-input filter-tweets path:/home/ian/.nix/common/filter-tweets
+fi

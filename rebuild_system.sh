@@ -9,4 +9,8 @@ if [[ "$OSTYPE" != "linux-gnu"* ]]; then
   exit 1
 fi
 
-sudo nixos-rebuild switch --flake '.#' --show-trace
+if [[ "$HOSTNAME" == "nene" ]]; then
+  sudo nixos-rebuild switch --flake '.#' --show-trace
+else
+  sudo nixos-rebuild switch --flake '.#' --show-trace --override-input filter-tweets path:/home/ian/.nix/common/filter-tweets
+fi
