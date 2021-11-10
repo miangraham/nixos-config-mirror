@@ -16,14 +16,5 @@
     };
   };
 
-  nix = {
-    binaryCaches = [
-      "ssh://nene"
-    ];
-    binaryCachePublicKeys = [
-      "nene-1:AAAAC3NzaC1lZDI1NTE5AAAAIPDpJxzKkHNfFMo0hZtFmsT1cC8wWOkjfUiRHn0E9Kek"
-    ];
-  };
-
   system.stateVersion = "21.05";
 }
