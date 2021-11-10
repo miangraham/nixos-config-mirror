@@ -1,5 +1,6 @@
 { pkgs, inputs, ... }:
 let
+  unstable = import ../common/unstable.nix {inherit pkgs inputs;};
   fonts = import ./fonts.nix {inherit pkgs;};
   packages = import ./packages.nix {inherit pkgs inputs;};
   overlays = import ../common/overlays-stable.nix {inherit inputs pkgs;};
@@ -11,6 +12,11 @@ in
     ./sway.nix
   ];
 
+  inherit fonts services;
+
+  time.timeZone = "Asia/Tokyo";
+  systemd.coredump.enable = true;
+
   nixpkgs = {
     config = {
       allowUnfree = true;
@@ -18,54 +24,47 @@ in
     inherit overlays;
   };
 
-  fonts = {
-    fontDir.enable = true;
-    inherit fonts;
+  boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
+    loader = {
+      systemd-boot = {
+        enable = true;
+        configurationLimit = 20;
+        consoleMode = "max";
+      };
+      efi.canTouchEfiVariables = true;
+    };
   };
 
-  environment.systemPackages = packages;
-  environment.pathsToLink = [
-    "/share/nix-direnv"
-  ];
-
-  time.timeZone = "Asia/Tokyo";
-
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
-  boot.loader.systemd-boot = {
-    enable = true;
-    configurationLimit = 20;
-    consoleMode = "max";
+  environment = {
+    systemPackages = packages;
+    pathsToLink = [
+      "/share/nix-direnv"
+    ];
   };
-  boot.loader.efi.canTouchEfiVariables = true;
 
-  systemd.coredump.enable = true;
+  security = {
+    rtkit.enable = true;
+    sudo.extraConfig = ''
+      Defaults timestamp_timeout=20
+    '';
+  };
 
   nix = {
-    package = pkgs.nixUnstable;
-    # nixPath = [
-    #   # NIX_PATH=nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos:nixos-config=/etc/nixos/configuration.nix:/nix/var/nix/profiles/per-user/root/channels
-    #   # "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos"
-    #   # "nixpkgs=${fetchTarball (builtins.readFile ../nix/stable_nixpkgs_tarball_url)}"
-    #   "nixpkgs=${nixpkgsPathCfg}"
-    #   "nixos-config=/home/ian/.nix/configuration.nix"
-    #   # "/nix/var/nix/profiles/per-user/root/channels"
-    # ];
+    package = unstable.nix_2_4;
     allowedUsers = ["@wheel"];
     trustedUsers = ["@wheel"];
-    extraOptions = ''
-      keep-outputs = true
-      keep-derivations = true
-      experimental-features = nix-command flakes
-    '';
     autoOptimiseStore = true;
     gc = {
       automatic = true;
       dates = "weekly";
       options = "--delete-older-than 7d";
     };
-    # sshServe.enable = true;
-    # sshServe.keys = [ "ssh-dss AAAAB3NzaC1k... bob@example.org" ];
+    extraOptions = ''
+      keep-outputs = true
+      keep-derivations = true
+      experimental-features = nix-command flakes
+    '';
   };
 
   users.users.ian = {
@@ -80,12 +79,4 @@ in
       fcitx.engines = with pkgs.fcitx-engines; [ mozc ];
     };
   };
-
-  security = {
-    rtkit.enable = true;
-    sudo.extraConfig = ''
-      Defaults timestamp_timeout=20
-    '';
-  };
-  inherit services;
 }

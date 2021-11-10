@@ -5,6 +5,7 @@
   profiles = {
     ian = {
       id = 0;
+      userChrome = builtins.readFile ./userChrome.css;
       settings = {
         # Important
         "app.update.auto" = false;
@@ -78,8 +79,6 @@
         "devtools.everOpened" = true;
         "extensions.pocket.enabled" = false;
       };
-
-      userChrome = builtins.readFile ./userChrome.css;
     };
   };
 }

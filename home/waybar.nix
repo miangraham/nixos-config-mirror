@@ -106,14 +106,6 @@ in
           ""
         ];
       };
-      # "custom/storage" = {
-      #   "format" = " {}";
-      #   "format-alt" = " {percentage}%";
-      #   "format-alt-click" = "click-right";
-      #   "return-type" = "json";
-      #   "interval" = 60;
-      #   "exec" = "~/.bin/storage.sh";
-      # };
       "disk" = {
         "format" = " {free}";
       };
