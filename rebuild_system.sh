@@ -13,6 +13,8 @@ if [[ "$HOSTNAME" == "nene" ]]; then
   sudo nixos-rebuild switch --flake '.#' --show-trace
 elif [[ "$HOSTNAME" == "futaba" ]]; then
   sudo nixos-rebuild switch --flake '.#' --show-trace --override-input filter-tweets path:/home/ian/.nix/common/filter-tweets --option substituters ssh://nix-ssh@nene
+elif [[ "$HOSTNAME" == "rin" ]]; then
+  sudo nixos-rebuild switch --flake '.#' --show-trace --override-input filter-tweets path:/home/ian/.nix/common/filter-tweets --option substituters ssh://nix-ssh@nene
 else
   sudo nixos-rebuild switch --flake '.#' --show-trace --override-input filter-tweets path:/home/ian/.nix/common/filter-tweets
 fi
