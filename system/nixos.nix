@@ -52,7 +52,7 @@ in
 
   nix = {
     package = unstable.nix_2_4;
-    allowedUsers = ["@wheel"];
+    allowedUsers = ["@wheel" "nix-ssh"];
     trustedUsers = ["@wheel"];
     autoOptimiseStore = true;
     gc = {

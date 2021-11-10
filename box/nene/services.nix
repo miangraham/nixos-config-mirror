@@ -7,6 +7,14 @@ let
   };
 in
 {
+  nix.sshServe = {
+    enable = true;
+    protocol = "ssh";
+    keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBcbC9h0gXGiyRCKE4Pj8jJ4loQ89QyeG7m3H2hLm6Fc ian@futaba"
+    ];
+  };
+
   services = {
     inherit (backup) borgbackup;
 
