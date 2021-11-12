@@ -69,7 +69,7 @@ in
 
   users.users.ian = {
     isNormalUser = true;
-    extraGroups = ["wheel" "audio" "video" "nginx"];
+    extraGroups = ["wheel" "audio" "video" "nginx" "dialout"];
   };
 
   i18n = {
