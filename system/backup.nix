@@ -4,6 +4,7 @@ let
 
   exclude-home-paths = [
     "downloads"
+    "git"
     "mounts"
     "music"
     "nixpkgs"

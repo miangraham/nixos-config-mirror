@@ -36,20 +36,6 @@ in
     };
   };
 
-  environment = {
-    systemPackages = packages;
-    pathsToLink = [
-      "/share/nix-direnv"
-    ];
-  };
-
-  security = {
-    rtkit.enable = true;
-    sudo.extraConfig = ''
-      Defaults timestamp_timeout=20
-    '';
-  };
-
   nix = {
     package = unstable.nix_2_4;
     allowedUsers = ["@wheel" "nix-ssh"];
@@ -70,6 +56,20 @@ in
   users.users.ian = {
     isNormalUser = true;
     extraGroups = ["wheel" "audio" "video" "nginx" "dialout"];
+  };
+
+  environment = {
+    systemPackages = packages;
+    pathsToLink = [
+      "/share/nix-direnv"
+    ];
+  };
+
+  security = {
+    rtkit.enable = true;
+    sudo.extraConfig = ''
+      Defaults timestamp_timeout=20
+    '';
   };
 
   i18n = {
