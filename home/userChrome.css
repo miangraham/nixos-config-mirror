@@ -57,3 +57,12 @@
 #context-sendlinktodevice, #context-sep-sendlinktodevice {
   display: none !important;
 }
+
+/* Hide Tree Style Tab header */
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
+  visibility: collapse;
+}
+
+#TabsToolbar {
+  visibility: collapse !important;
+}
