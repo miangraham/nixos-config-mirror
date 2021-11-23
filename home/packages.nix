@@ -19,19 +19,16 @@ builtins.attrValues {
     grim
     imagemagick
     john
+    jq
     lftp
-    libreoffice
     mu
     neofetch
     niv
     nix-direnv
-    nyxt
     pandoc
-    protonmail-bridge
     qdirstat
     ranger
     speedtest-cli
-    t
     tdesktop
     terraform
     tldr
@@ -39,14 +36,9 @@ builtins.attrValues {
     valgrind
     vlc
     vscodium
-    wofi
     zeal
     zenith
     zotero
-
-    # js
-    nodejs
-    yarn
 
     # themes
     adapta-gtk-theme
