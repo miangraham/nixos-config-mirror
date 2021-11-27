@@ -59,8 +59,12 @@
 }
 
 /* Hide Tree Style Tab header */
-#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
+#sidebar-box #sidebar-header {
   visibility: collapse;
+}
+
+#sidebar {
+  min-width: 36px !important;
 }
 
 #TabsToolbar {
