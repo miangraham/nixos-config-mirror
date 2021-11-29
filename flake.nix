@@ -1,8 +1,8 @@
 {
   description = "";
   inputs = {
-    nixpkgs = { url = "github:NixOS/nixpkgs/release-21.05"; };
-    unstable = { url = "github:NixOS/nixpkgs"; };
+    nixpkgs = { url = "github:NixOS/nixpkgs/nixos-21.05"; };
+    unstable = { url = "github:NixOS/nixpkgs/nixos-unstable"; };
     home-manager = { url = "github:nix-community/home-manager/release-21.05"; };
     emacs-overlay = { url = "github:nix-community/emacs-overlay"; };
     tdlib = { url = "github:tdlib/td"; flake = false; };
