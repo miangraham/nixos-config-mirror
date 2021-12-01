@@ -8,7 +8,10 @@ in
     pulse.enable = true;
   };
 
-  openssh.enable = true;
+  openssh = {
+    enable = true;
+    permitRootLogin = "no";
+  };
 
   earlyoom.enable = true;
 
