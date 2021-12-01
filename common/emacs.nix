@@ -92,6 +92,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     vterm
     web-mode
     weblorg
+    webpaste
     which-key
     with-editor
     writeroom-mode
