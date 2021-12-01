@@ -13,9 +13,9 @@ if [[ "$HOSTNAME" == "nene" ]]; then
   sudo nixos-rebuild switch --flake '.#' --show-trace
   sudo nix store sign -k /var/keys/nix-cache-key.priv --all
 elif [[ "$HOSTNAME" == "futaba" ]]; then
-  sudo nixos-rebuild switch --flake '.#' --show-trace --override-input filter-tweets path:/home/ian/.nix/common/filter-tweets --option extra-substituters ssh-ng://nix-ssh@nene
+  sudo nixos-rebuild switch --flake '.#' --show-trace --override-input filter-tweets path:/home/ian/.nix/common/filter-tweets --option extra-substituters ssh-ng://nix-ssh@nene --option extra-trusted-public-keys 'nene-1:tETUAQxI2/WCqFqS0J+32RgAqFrZXAkLtIHByUT7AjQ='
 elif [[ "$HOSTNAME" == "rin" ]]; then
-  sudo nixos-rebuild switch --flake '.#' --show-trace --override-input filter-tweets path:/home/ian/.nix/common/filter-tweets --option extra-substituters ssh-ng://nix-ssh@nene
+  sudo nixos-rebuild switch --flake '.#' --show-trace --override-input filter-tweets path:/home/ian/.nix/common/filter-tweets --option extra-substituters ssh-ng://nix-ssh@nene --option extra-trusted-public-keys 'nene-1:tETUAQxI2/WCqFqS0J+32RgAqFrZXAkLtIHByUT7AjQ='
 else
   sudo nixos-rebuild switch --flake '.#' --show-trace --override-input filter-tweets path:/home/ian/.nix/common/filter-tweets
 fi
