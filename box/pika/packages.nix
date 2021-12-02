@@ -4,6 +4,7 @@ builtins.attrValues {
     emacs-nox
     git
     htop
+    libraspberrypi
     nano
     neofetch
     ripgrep

@@ -60,7 +60,14 @@ in
     users = {
       ian = {
         isNormalUser = true;
-        extraGroups = [ "audio" "dialout" "networkmanager" "wheel" "video" ];
+        extraGroups = [
+          "audio"
+          "dialout"
+          "gpio"
+          "networkmanager"
+          "video"
+          "wheel"
+        ];
         openssh.authorizedKeys.keys = [
           "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBcbC9h0gXGiyRCKE4Pj8jJ4loQ89QyeG7m3H2hLm6Fc ian@futaba"
           "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICD/gQKLw/+A7JQLLvX+pz7MS0g17hf3GHrzCmOaPUH1 ian@maho"
@@ -69,6 +76,7 @@ in
         ];
       };
     };
+    groups.gpio = {};
   };
 
   fileSystems = {
@@ -82,7 +90,14 @@ in
   nixpkgs.config.allowUnfree = true;
   powerManagement.cpuFreqGovernor = "ondemand";
 
-  services.openssh.enable = true;
+  services = {
+    openssh.enable = true;
+    udev.extraRules = ''
+      SUBSYSTEM=="bcm2835-gpiomem", KERNEL=="gpiomem", GROUP="gpio",MODE="0660"
+      SUBSYSTEM=="gpio", KERNEL=="gpiochip*", ACTION=="add", RUN+="${unstable-small.bash}/bin/bash -c 'chown root:gpio  /sys/class/gpio/export /sys/class/gpio/unexport ; chmod 220 /sys/class/gpio/export /sys/class/gpio/unexport'"
+      SUBSYSTEM=="gpio", KERNEL=="gpio*", ACTION=="add",RUN+="${unstable-small.bash}/bin/bash -c 'chown root:gpio /sys%p/active_low /sys%p/direction /sys%p/edge /sys%p/value ; chmod 660 /sys%p/active_low /sys%p/direction /sys%p/edge /sys%p/value'"
+  '';
+  };
   time.timeZone = "Asia/Tokyo";
   system.stateVersion = "21.11";
 }
