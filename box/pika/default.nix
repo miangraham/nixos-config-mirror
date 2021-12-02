@@ -3,6 +3,14 @@ let
   unstable-small = import ../../common/unstable-small.nix { inherit pkgs inputs; };
 in
 {
+  networking = {
+    hostName = "pika";
+  };
+
+  time.timeZone = "Asia/Tokyo";
+
+  nixpkgs.config.allowUnfree = true;
+
   boot = {
     kernelPackages = unstable-small.linuxPackages_rpi4;
     tmpOnTmpfs = true;
@@ -47,15 +55,6 @@ in
     ];
   };
 
-  hardware.enableRedistributableFirmware = true;
-
-  networking = {
-    hostName = "pika";
-    networkmanager.enable = true;
-  };
-
-  environment.systemPackages = import ./packages.nix { pkgs = unstable-small; };
-
   users = {
     users = {
       ian = {
@@ -87,8 +86,11 @@ in
     };
   };
 
-  nixpkgs.config.allowUnfree = true;
+  hardware.enableRedistributableFirmware = true;
+
   powerManagement.cpuFreqGovernor = "ondemand";
+
+  environment.systemPackages = import ./packages.nix { pkgs = unstable-small; };
 
   services = {
     openssh.enable = true;
@@ -98,6 +100,6 @@ in
       SUBSYSTEM=="gpio", KERNEL=="gpio*", ACTION=="add",RUN+="${unstable-small.bash}/bin/bash -c 'chown root:gpio /sys%p/active_low /sys%p/direction /sys%p/edge /sys%p/value ; chmod 660 /sys%p/active_low /sys%p/direction /sys%p/edge /sys%p/value'"
   '';
   };
-  time.timeZone = "Asia/Tokyo";
+
   system.stateVersion = "21.11";
 }
