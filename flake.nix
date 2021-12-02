@@ -3,6 +3,7 @@
   inputs = {
     nixpkgs = { url = "github:NixOS/nixpkgs/nixos-21.05"; };
     unstable = { url = "github:NixOS/nixpkgs/nixos-unstable"; };
+    unstable-small = { url = "github:NixOS/nixpkgs/nixos-unstable-small"; };
     home-manager = { url = "github:nix-community/home-manager/release-21.05"; };
     emacs-overlay = { url = "github:miangraham/emacs-overlay"; };
     tdlib = { url = "github:tdlib/td"; flake = false; };
@@ -43,6 +44,13 @@
             ./box/rin/default.nix
             inputs.home-manager.nixosModules.home-manager
             { inherit home-manager; }
+          ];
+        };
+        pika = inputs.unstable-small.lib.nixosSystem {
+          inherit specialArgs;
+          system = "aarch64-linux";
+          modules = [
+            ./box/pika/default.nix
           ];
         };
       };

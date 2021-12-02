@@ -83,7 +83,8 @@
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs_2",
         "tdlib": "tdlib",
-        "unstable": "unstable"
+        "unstable": "unstable",
+        "unstable-small": "unstable-small"
       }
     },
     "tdlib": {
@@ -114,6 +115,22 @@
       "original": {
         "owner": "NixOS",
         "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "unstable-small": {
+      "locked": {
+        "lastModified": 1638393813,
+        "narHash": "sha256-R1OyNqKoGSNL35VHSEAD5wJvb6/FF5NvhPm4AlSKI+8=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "a77874bb9c35445a00875e9de5758edda78f8326",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable-small",
         "repo": "nixpkgs",
         "type": "github"
       }
