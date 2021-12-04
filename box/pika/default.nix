@@ -1,6 +1,10 @@
 { pkgs, inputs, ... }:
 let
   unstable-small = import ../../common/unstable-small.nix { inherit pkgs inputs; };
+  inherit (import ./backup-shared.nix {
+    pkgs = unstable-small;
+    backupTime = "*-*-* *:08:00";
+  }) job;
 in
 {
   networking = {
@@ -100,6 +104,23 @@ in
       SUBSYSTEM=="gpio", KERNEL=="gpiochip*", ACTION=="add", RUN+="${unstable-small.bash}/bin/bash -c 'chgrp -R gpio /sys/class/gpio ; chmod -R g=u /sys/class/gpio ; chmod 220 /sys/class/gpio/export /sys/class/gpio/unexport'"
       SUBSYSTEM=="gpio", KERNEL=="gpio*", ACTION=="add",RUN+="${unstable-small.bash}/bin/bash -c 'chgrp -R gpio /sys%p && chmod -R g=u /sys%p'"
   '';
+    # borgbackup.jobs.home-ian-to-usb = job {
+    #   repo = "/run/media/ian/70F8-1012/borg";
+    #   user = "ian";
+    #   doInit = false;
+    #   removableDevice = true;
+    # };
+  };
+  systemd.services.udiskie = {
+    serviceConfig = {
+      Type = "simple";
+      User = "ian";
+    };
+    wantedBy = [ "multi-user.target" ];
+    path = [
+      unstable-small.udiskie
+    ];
+    script = "udiskie -aNT";
   };
 
   system.stateVersion = "21.11";
