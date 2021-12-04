@@ -10,8 +10,10 @@ builtins.attrValues {
     ripgrep
     rsync
     silver-searcher
+    udiskie
     unzip
     wget
+    xdg_utils
     zip
   ;
 }
