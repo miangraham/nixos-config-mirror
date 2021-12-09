@@ -16,9 +16,7 @@ in
   nixpkgs.config.allowUnfree = true;
 
   boot = {
-    kernelPackages = unstable-small.linuxPackages_rpi4;
     tmpOnTmpfs = true;
-    initrd.availableKernelModules = [ "usbhid" "usb_storage" ];
     kernelParams = [
       "8250.nr_uarts=1"
       "console=ttyAMA0,115200"
@@ -29,11 +27,13 @@ in
       raspberryPi = {
         enable = true;
         version = 4;
+        uboot.enable = true;
       };
-      grub.enable = false;
-      generic-extlinux-compatible.enable = true;
     };
   };
+
+  hardware.raspberry-pi."4".i2c1.enable = true;
+  powerManagement.cpuFreqGovernor = "ondemand";
 
   nix = {
     package = unstable-small.nix_2_4;
@@ -67,6 +67,7 @@ in
           "audio"
           "dialout"
           "gpio"
+          "i2c"
           "networkmanager"
           "storage"
           "video"
@@ -92,10 +93,6 @@ in
     };
   };
 
-  hardware.enableRedistributableFirmware = true;
-
-  powerManagement.cpuFreqGovernor = "ondemand";
-
   environment.systemPackages = import ./packages.nix { pkgs = unstable-small; };
 
   services = {
@@ -120,6 +117,7 @@ in
       removableDevice = true;
     };
   };
+
   systemd.services.udiskie = {
     serviceConfig = {
       Type = "simple";

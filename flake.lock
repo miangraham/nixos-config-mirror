@@ -46,6 +46,22 @@
         "type": "github"
       }
     },
+    "nixos-hardware": {
+      "locked": {
+        "lastModified": 1639201349,
+        "narHash": "sha256-BO6uRcPNxH7nuGlOR/lxxLR9ziGbZeaGceONEq6isYY=",
+        "owner": "NixOS",
+        "repo": "nixos-hardware",
+        "rev": "324414d2fb7c975640bc105cd6cf4d6864cfd646",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "master",
+        "repo": "nixos-hardware",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1638349090,
@@ -81,6 +97,7 @@
         "emacs-overlay": "emacs-overlay",
         "filter-tweets": "filter-tweets",
         "home-manager": "home-manager",
+        "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
         "tdlib": "tdlib",
         "unstable": "unstable",

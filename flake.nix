@@ -4,6 +4,7 @@
     nixpkgs = { url = "github:NixOS/nixpkgs/nixos-21.05"; };
     unstable = { url = "github:NixOS/nixpkgs/nixos-unstable"; };
     unstable-small = { url = "github:NixOS/nixpkgs/nixos-unstable-small"; };
+    nixos-hardware = { url = "github:NixOS/nixos-hardware/master"; };
     home-manager = { url = "github:nix-community/home-manager/release-21.05"; };
     emacs-overlay = { url = "github:miangraham/emacs-overlay"; };
     tdlib = { url = "github:tdlib/td"; flake = false; };
@@ -50,6 +51,7 @@
           inherit specialArgs;
           system = "aarch64-linux";
           modules = [
+            inputs.nixos-hardware.nixosModules.raspberry-pi-4
             ./box/pika/default.nix
           ];
         };

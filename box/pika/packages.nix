@@ -4,6 +4,7 @@ builtins.attrValues {
     emacs-nox
     git
     htop
+    i2c-tools
     libraspberrypi
     nano
     neofetch
