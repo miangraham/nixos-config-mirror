@@ -6,7 +6,7 @@
     unstable-small = { url = "github:NixOS/nixpkgs/nixos-unstable-small"; };
     nixos-hardware = { url = "github:NixOS/nixos-hardware/master"; };
     home-manager = { url = "github:nix-community/home-manager/release-21.05"; };
-    emacs-overlay = { url = "github:miangraham/emacs-overlay"; };
+    emacs-overlay = { url = "github:nix-community/emacs-overlay"; };
     tdlib = { url = "github:tdlib/td"; flake = false; };
     filter-tweets = { url = "path:/home/ian/filter-tweets"; flake = false; };
   };

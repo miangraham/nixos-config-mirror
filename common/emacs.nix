@@ -58,7 +58,8 @@ pkgs.emacsWithPackagesFromUsePackage {
     nix-mode
     no-littering
     orderless
-    org-plus-contrib
+    org
+    org-contrib
     org-randomnote
     org-ref
     org-roam
