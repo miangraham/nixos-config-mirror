@@ -2,6 +2,7 @@
 builtins.attrValues {
   inherit (pkgs)
     emacs-nox
+    gh
     git
     htop
     i2c-tools

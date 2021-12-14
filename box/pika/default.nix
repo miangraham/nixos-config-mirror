@@ -32,8 +32,24 @@ in
     };
   };
 
-  hardware.raspberry-pi."4".i2c1.enable = true;
   powerManagement.cpuFreqGovernor = "ondemand";
+  hardware.raspberry-pi."4".i2c1.enable = true;
+  hardware.deviceTree.overlays = [{
+    name = "spi-okay-overlay";
+    dtsText = ''
+      /dts-v1/;
+      /plugin/;
+      / {
+        compatible = "brcm,bcm2711";
+        fragment@0 {
+          target = <&spi>;
+          __overlay__ {
+            status = "okay";
+          };
+        };
+      };
+    '';
+  }];
 
   nix = {
     package = unstable-small.nix_2_4;
@@ -69,6 +85,7 @@ in
           "gpio"
           "i2c"
           "networkmanager"
+          "spi"
           "storage"
           "video"
           "wheel"
@@ -82,6 +99,7 @@ in
       };
     };
     groups.gpio = {};
+    groups.spi = {};
     groups.storage = {};
   };
 
@@ -106,6 +124,8 @@ in
       SUBSYSTEM=="gpio", GROUP="gpio", MODE="0660"
       SUBSYSTEM=="gpio", KERNEL=="gpiochip*", ACTION=="add", RUN+="${unstable-small.bash}/bin/bash -c 'chgrp -R gpio /sys/class/gpio ; chmod -R g=u /sys/class/gpio ; chmod 220 /sys/class/gpio/export /sys/class/gpio/unexport'"
       SUBSYSTEM=="gpio", KERNEL=="gpio*", ACTION=="add",RUN+="${unstable-small.bash}/bin/bash -c 'chgrp -R gpio /sys%p && chmod -R g=u /sys%p'"
+
+      SUBSYSTEM=="spidev", GROUP="spi", MODE="0660"
   '';
     udisks2 = {
       enable = true;
