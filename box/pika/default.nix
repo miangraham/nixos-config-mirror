@@ -121,6 +121,7 @@ in
           "dialout"
           "gpio"
           "i2c"
+          "lirc"
           "networkmanager"
           "spi"
           "storage"
@@ -163,6 +164,8 @@ in
       SUBSYSTEM=="gpio", KERNEL=="gpio*", ACTION=="add",RUN+="${unstable-small.bash}/bin/bash -c 'chgrp -R gpio /sys%p && chmod -R g=u /sys%p'"
 
       SUBSYSTEM=="spidev", GROUP="spi", MODE="0660"
+
+      SUBSYSTEM=="lirc", GROUP="lirc", MODE="0660"
   '';
     udisks2 = {
       enable = true;
@@ -172,6 +175,14 @@ in
       user = "ian";
       doInit = false;
       removableDevice = true;
+    };
+    lirc = {
+      enable = true;
+      configs = [];
+      options = ''
+        [lircd]
+        nodaemon = False
+      '';
     };
   };
 
