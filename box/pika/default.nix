@@ -49,6 +49,43 @@ in
         };
       };
     '';
+  } {
+    name = "gpio-ir-pin-overlay";
+    dtsText = ''
+      /dts-v1/;
+      /plugin/;
+      / {
+        compatible = "brcm,bcm2711";
+        fragment@0 {
+                target-path = "/";
+                __overlay__ {
+                        gpio_ir: ir-receiver@12 {
+                                compatible = "gpio-ir-receiver";
+                                pinctrl-names = "default";
+                                pinctrl-0 = <&gpio_ir_pins>;
+
+                                // pin number, high or low
+                                gpios = <&gpio 21 1>;
+
+                                // parameter for keymap name
+                                linux,rc-map-name = "rc-rc6-mce";
+
+                                status = "okay";
+                        };
+                };
+        };
+        fragment@1 {
+                target = <&gpio>;
+                __overlay__ {
+                        gpio_ir_pins: gpio_ir_pins@12 {
+                                brcm,pins = <21>;                       // pin 18
+                                brcm,function = <0>;                    // in
+                                brcm,pull = <2>;                        // up
+                        };
+                };
+        };
+      };
+    '';
   }];
 
   nix = {
