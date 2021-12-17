@@ -13,6 +13,7 @@ builtins.attrValues {
     exa
     fd
     ffmpeg
+    fontforge-gtk
     foot
     gimp
     graphviz
@@ -26,6 +27,7 @@ builtins.attrValues {
     niv
     nix-direnv
     pandoc
+    picocom
     qdirstat
     ranger
     speedtest-cli
