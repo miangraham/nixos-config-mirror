@@ -19,11 +19,9 @@ in
       enable = true;
       user = "nginx";
       virtualHosts = {
-        nene = {
-          serverName = "localhost";
-          locations."/" = {
-            return = "404";
-          };
+        futaba = {
+          serverName = "192.168.0.128";
+          root = "/var/www";
         };
 
         rss-bridge = {
@@ -74,5 +72,20 @@ in
       };
       environmentFile = /home/ian/.config/searx/env;
     };
+  };
+
+  systemd.services.pre-nginx = {
+    serviceConfig = {
+      Type = "oneshot";
+      User = "root";
+    };
+    wantedBy = [ "nginx.service" ];
+    path = [
+      pkgs.coreutils
+    ];
+    script = ''
+      mkdir -p /var/www
+      chown nginx:nginx /var/www
+    '';
   };
 }
