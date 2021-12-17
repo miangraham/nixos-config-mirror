@@ -49,6 +49,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     ivy-bibtex
     js2-mode
     json-mode
+    kaolin-themes
     ledger-mode
     lsp-mode
     lsp-ui
