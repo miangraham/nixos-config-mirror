@@ -80,6 +80,7 @@ in
     path = [
       unstable.pueue
       unstable.yt-dlp
+      unstable.aria2
     ];
     script = "pueued -v";
   };

@@ -55,6 +55,7 @@ builtins.attrValues {
     pueue
     youtube-dl
     yt-dlp
+    aria2
   ;
 
   inherit (pkgs.gitAndTools) git-subrepo;
