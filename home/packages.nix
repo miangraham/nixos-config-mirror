@@ -1,4 +1,4 @@
-{ pkgs, unstable, ... }:
+{ pkgs, inputs, unstable, ... }:
 builtins.attrValues {
   inherit (pkgs)
     alacritty
@@ -12,7 +12,6 @@ builtins.attrValues {
     evince
     exa
     fd
-    # ffmpeg
     fontforge-gtk
     foot
     gimp
@@ -53,8 +52,6 @@ builtins.attrValues {
   inherit (unstable)
     freetube
     pueue
-    youtube-dl
-    yt-dlp
     aria2
   ;
 
@@ -64,4 +61,6 @@ builtins.attrValues {
   inherit (pkgs.xfce) thunar;
 
   texliveCombined = (pkgs.texlive.combine { inherit (pkgs.texlive) scheme-small koma-script collection-latexextra; });
+
+  yt-dlp = (import ./yt-dlp.nix { inherit pkgs inputs; });
 }

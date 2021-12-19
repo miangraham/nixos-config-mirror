@@ -5,6 +5,7 @@ let
     inherit pkgs;
     backupTime = "*-*-* *:02:00";
   };
+  yt-dlp = import ../../home/yt-dlp.nix { inherit pkgs inputs; };
 in
 {
   nix = {
@@ -78,8 +79,8 @@ in
     };
     wantedBy = [ "multi-user.target" ];
     path = [
+      yt-dlp
       unstable.pueue
-      unstable.yt-dlp
       unstable.aria2
     ];
     script = "pueued -v";
