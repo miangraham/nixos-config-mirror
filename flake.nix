@@ -8,6 +8,7 @@
     home-manager = { url = "github:nix-community/home-manager/release-21.05"; };
     emacs-overlay = { url = "github:nix-community/emacs-overlay"; };
     tdlib = { url = "github:tdlib/td"; flake = false; };
+    ffmpeg-patch = { url = "github:yt-dlp/FFmpeg-Builds"; flake = false; };
     filter-tweets = { url = "path:/home/ian/filter-tweets"; flake = false; };
   };
   outputs = inputs:

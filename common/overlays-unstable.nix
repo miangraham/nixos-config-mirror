@@ -7,9 +7,11 @@ let
     });
   });
 
+  ffmpegPatch = "${inputs.ffmpeg-patch}/patches/ffmpeg/0001-Fixes-ticket-9086.patch";
+
   ffmpegOverlay = (self: super: {
     ffmpeg = super.ffmpeg.overrideAttrs(old: {
-      patches = old.patches ++ [ ./ffmpeg.patch ];
+      patches = old.patches ++ [ ffmpegPatch ];
     });
   });
 in
