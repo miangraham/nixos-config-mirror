@@ -12,10 +12,11 @@ builtins.attrValues {
     evince
     exa
     fd
-    ffmpeg
+    # ffmpeg
     fontforge-gtk
     foot
     gimp
+    godot
     graphviz
     grim
     imagemagick
@@ -51,7 +52,6 @@ builtins.attrValues {
 
   inherit (unstable)
     freetube
-    godot
     pueue
     youtube-dl
     yt-dlp

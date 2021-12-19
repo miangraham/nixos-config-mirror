@@ -1,7 +1,7 @@
-{ unstable, ... }:
+{ pkgs, ... }:
 {
   enable = true;
-  package = unstable.firefox-wayland;
+  package = pkgs.firefox-wayland;
   profiles = {
     ian = {
       id = 0;

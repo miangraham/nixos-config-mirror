@@ -7,7 +7,7 @@ let
   alacritty = import ./alacritty.nix { inherit pkgs; };
   bash = import ./bash.nix {};
   direnv = import ./direnv.nix {};
-  firefox = import ./firefox.nix { inherit unstable; };
+  firefox = import ./firefox.nix { inherit pkgs; };
   git = import ./git.nix { inherit pkgs; };
   mpv = import ./mpv.nix {};
   secrets = import ./secrets.nix { inherit pkgs; };
@@ -32,7 +32,7 @@ in
 
     obs-studio = {
       enable = true;
-      package = unstable.obs-studio;
+      package = pkgs.obs-studio;
     };
 
     rofi = {
