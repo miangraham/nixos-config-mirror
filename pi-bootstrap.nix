@@ -2,7 +2,7 @@
 {
   boot = {
     kernelPackages = pkgs.linuxPackages_rpi4;
-    tmpOnTmpfs = true;
+    # tmpOnTmpfs = true;
     initrd.availableKernelModules = [ "usbhid" "usb_storage" ];
     kernelParams = [
       "8250.nr_uarts=1"
@@ -53,6 +53,7 @@
 
   environment.systemPackages = with pkgs; [
     emacs
+    git
     nano
   ];
 

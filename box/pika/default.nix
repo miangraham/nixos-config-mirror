@@ -16,7 +16,6 @@ in
   nixpkgs.config.allowUnfree = true;
 
   boot = {
-    tmpOnTmpfs = true;
     kernelParams = [
       "8250.nr_uarts=1"
       "console=ttyAMA0,115200"
@@ -35,6 +34,21 @@ in
   powerManagement.cpuFreqGovernor = "ondemand";
   hardware.raspberry-pi."4".i2c1.enable = true;
   hardware.deviceTree.overlays = [{
+    name = "sd-poll-once-overlay";
+    dtsText = ''
+      /dts-v1/;
+      /plugin/;
+      / {
+        compatible = "brcm,bcm2711";
+        fragment@0 {
+          target = <&emmc2>;
+          __overlay__ {
+            non-removable;
+          };
+        };
+      };
+    '';
+  } {
     name = "spi-okay-overlay";
     dtsText = ''
       /dts-v1/;
