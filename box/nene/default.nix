@@ -21,6 +21,14 @@
     # "net.ipv4.tcp_fin_timeout" = 10;
   };
 
+  sound = {
+    enable = true;
+    extraConfig = ''
+      defaults.pcm.!card "USB";
+      defaults.ctl.!card "USB";
+    '';
+  };
+
   programs.steam.enable = true;
 
   system.stateVersion = "20.03";
