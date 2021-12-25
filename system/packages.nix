@@ -12,6 +12,7 @@ builtins.attrValues {
     bzip2
     exfat
     file
+    ffmpeg
     gawk
     git
     gzip
