@@ -63,4 +63,6 @@ builtins.attrValues {
   texliveCombined = (pkgs.texlive.combine { inherit (pkgs.texlive) scheme-small koma-script collection-latexextra; });
 
   yt-dlp = (import ./yt-dlp.nix { inherit pkgs inputs; });
+
+  otf2bdf = pkgs.callPackage (import "${inputs.otf2bdf}/packages/otf2bdf") {};
 }

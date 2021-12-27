@@ -10,6 +10,7 @@
     tdlib = { url = "github:tdlib/td"; flake = false; };
     ffmpeg-patch = { url = "github:yt-dlp/FFmpeg-Builds"; flake = false; };
     filter-tweets = { url = "path:/home/ian/filter-tweets"; flake = false; };
+    otf2bdf = { url = "github:thefloweringash/kevin-nix"; flake = false; };
   };
   outputs = inputs:
     let
