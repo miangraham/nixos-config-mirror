@@ -38,10 +38,7 @@ in
     rofi = {
       enable = true;
       location = "bottom-right";
-      width = 30;
       yoffset = -30;
-      scrollbar = false;
-      separator = "solid";
     };
   };
 
