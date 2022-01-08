@@ -39,6 +39,7 @@ in
       enable = true;
       location = "bottom-right";
       yoffset = -30;
+      theme = "gruvbox-dark";
     };
   };
 

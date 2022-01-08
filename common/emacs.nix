@@ -90,6 +90,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     treemacs-magit
     treemacs-projectile
     use-package
+    vertico
     visual-fill-column
     vterm
     web-mode
