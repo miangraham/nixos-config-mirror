@@ -19,6 +19,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     bongo
     company
     consult
+    consult-projectile
     dante
     diminish
     direnv
