@@ -26,6 +26,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     doom-themes
     drag-stuff
     editorconfig
+    eglot
     elfeed
     elfeed-org
     emacsql

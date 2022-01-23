@@ -35,7 +35,8 @@ in
         nene = {
           serverName = "localhost";
           locations."/" = {
-            return = "404";
+            root = "/var/www";
+            # return = "404";
           };
         };
 
