@@ -22,13 +22,13 @@ in
       "console=tty1"
       "cma=128M"
     ];
-    loader = {
-      raspberryPi = {
-        enable = true;
-        version = 4;
-        uboot.enable = true;
-      };
-    };
+    # loader = {
+    #   raspberryPi = {
+    #     enable = true;
+    #     version = 4;
+    #     # uboot.enable = true;
+    #   };
+    # };
   };
 
   powerManagement.cpuFreqGovernor = "ondemand";
