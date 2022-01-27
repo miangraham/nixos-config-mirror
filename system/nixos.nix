@@ -1,6 +1,5 @@
 { pkgs, inputs, ... }:
 let
-  unstable = import ../common/unstable.nix {inherit pkgs inputs;};
   fonts = import ./fonts.nix {inherit pkgs;};
   packages = import ./packages.nix {inherit pkgs inputs;};
   overlays = import ../common/overlays-stable.nix {inherit inputs pkgs;};
@@ -37,7 +36,7 @@ in
   };
 
   nix = {
-    package = unstable.nix_2_4;
+    package = pkgs.nix_2_4;
     allowedUsers = ["@wheel" "nix-ssh"];
     trustedUsers = ["@wheel"];
     autoOptimiseStore = true;
