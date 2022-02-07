@@ -10,6 +10,7 @@
         # Important
         "app.update.auto" = false;
         "browser.contentblocking.category" = "standard";
+        "browser.sessionstore.resume_from_crash" = false;
         "browser.startup.homepage" = "about:blank";
         "signon.rememberSignons" = false;
 
