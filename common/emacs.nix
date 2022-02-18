@@ -21,6 +21,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     consult
     consult-projectile
     dante
+    diff-hl
     diminish
     direnv
     doom-themes
