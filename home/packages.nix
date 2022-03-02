@@ -14,6 +14,7 @@ builtins.attrValues {
     fd
     fontforge-gtk
     foot
+    fuzzel
     gimp
     godot
     graphviz
