@@ -31,6 +31,7 @@ builtins.attrValues {
     picocom
     qdirstat
     ranger
+    shortwave
     speedtest-cli
     tdesktop
     terraform
