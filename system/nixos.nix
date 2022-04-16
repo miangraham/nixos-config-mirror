@@ -36,7 +36,7 @@ in
   };
 
   nix = {
-    package = pkgs.nix_2_4;
+    package = pkgs.nix_2_7;
     allowedUsers = ["@wheel" "nix-ssh"];
     trustedUsers = ["@wheel"];
     autoOptimiseStore = true;
