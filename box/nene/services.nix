@@ -86,4 +86,9 @@ in
     ];
     script = "pueued -v";
   };
+
+  systemd.services.searx.serviceConfig = {
+    RuntimeMaxSec = "30m";
+    Restart = "always";
+  };
 }
