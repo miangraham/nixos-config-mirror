@@ -72,6 +72,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     org-tree-slide
     ox-hugo
     pdf-tools
+    popper
     projectile
     psci
     purescript-mode
