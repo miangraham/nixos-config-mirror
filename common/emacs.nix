@@ -12,11 +12,9 @@ pkgs.emacsWithPackagesFromUsePackage {
     ag
     aggressive-indent
     anzu
-    avy
     beacon
     biblio
     bibtex-completion
-    bongo
     company
     consult
     consult-projectile
@@ -36,23 +34,19 @@ pkgs.emacsWithPackagesFromUsePackage {
     forge
     flycheck
     flycheck-rust
-    fstar-mode
     fullframe
     git-link
     git-timemachine
     golden-ratio
     haskell-mode
     hcl-mode
-    helm
     helpful
     highlight-indent-guides
     htmlize
-    hydra
     ivy
     ivy-bibtex
     js2-mode
     json-mode
-    kaolin-themes
     ledger-mode
     lsp-mode
     lsp-ui
@@ -69,13 +63,10 @@ pkgs.emacsWithPackagesFromUsePackage {
     org-roam
     org-roam-bibtex
     org-superstar
-    org-tree-slide
     ox-hugo
     pdf-tools
     popper
     projectile
-    psci
-    purescript-mode
     rainbow-delimiters
     ripgrep
     ron-mode
@@ -84,7 +75,6 @@ pkgs.emacsWithPackagesFromUsePackage {
     selectrum-prescient
     shackle
     smartparens
-    solaire-mode
     spinner
     telega
     templatel

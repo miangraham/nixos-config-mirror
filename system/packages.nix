@@ -13,7 +13,6 @@ builtins.attrValues {
     file
     ffmpeg
     gawk
-    git
     gzip
     home-manager
     htop

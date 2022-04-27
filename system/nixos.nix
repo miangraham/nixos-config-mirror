@@ -98,4 +98,12 @@ in
       fcitx.engines = with pkgs.fcitx-engines; [ mozc ];
     };
   };
+
+  programs.git = {
+    enable = true;
+    config = {
+      init.defaultBranch = "master";
+      safe.directory = "/home/ian/.nix";
+    };
+  };
 }
