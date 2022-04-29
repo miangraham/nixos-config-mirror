@@ -12,6 +12,7 @@
         "browser.contentblocking.category" = "standard";
         "browser.sessionstore.resume_from_crash" = false;
         "browser.startup.homepage" = "about:blank";
+        "general.autoScroll" = false;
         "signon.rememberSignons" = false;
 
         # Allow userChrome
@@ -66,12 +67,14 @@
         "services.sync.engine.history" = false;
         "services.sync.engine.passwords" = false;
         "services.sync.engine.tabs" = false;
+        "services.sync.prefs.sync.general.autoScroll" = false;
 
         # Remove noise
         "browser.aboutConfig.showWarning" = false;
         "browser.aboutwelcome.enabled" = false;
         "browser.discovery.enabled" = false;
         "browser.messaging-system.whatsNewPanel.enabled" = false;
+        "browser.preferences.moreFromMozilla" = false;
         "browser.shell.checkDefaultBrowser" = false;
         "browser.topsites.contile.enabled" = false;
         "browser.uitour.enabled" = false;
