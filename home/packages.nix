@@ -27,6 +27,7 @@ builtins.attrValues {
     neofetch
     niv
     nix-direnv
+    nix-prefetch-git
     pandoc
     picocom
     qdirstat
