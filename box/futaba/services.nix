@@ -72,6 +72,15 @@ in
       };
       environmentFile = /home/ian/.config/searx/env;
     };
+
+    navidrome = {
+      enable = true;
+      settings = {
+        Address = "0.0.0.0";
+        MusicFolder = "/srv/music";
+        ScanSchedule = "@daily";
+      };
+    };
   };
 
   systemd.services.pre-nginx = {
