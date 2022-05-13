@@ -13,7 +13,7 @@ $ git clone https://github.com/miangraham/nixos-config.git ~/.nix
 $ cd ~/.nix
 $ vim box/somebox/default.nix
 $ vim flake.nix # add box config to nixosConfigurations
-$ nix flake update
+$ ./update_versions.sh
 $ ./rebuild_system.sh
 ```
 
