@@ -22,6 +22,7 @@
         "browser.compactmode.show" = true;
         "browser.toolbars.bookmarks.visibility" = "always";
         "browser.uidensity" = 1;
+        "layout.testing.overlay-scrollbars.always-visible" = 1;
 
         # Search, URL bar
         "browser.search.defaultenginename" = "DuckDuckGo";
