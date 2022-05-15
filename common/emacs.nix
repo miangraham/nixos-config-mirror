@@ -76,6 +76,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     shackle
     smartparens
     spinner
+    sweet-theme
     telega
     templatel
     tide
