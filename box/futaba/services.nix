@@ -85,6 +85,13 @@ in
     smokeping = {
       enable = true;
       hostName = "futaba";
+      host = null;
+      probeConfig = ''
+          + FPing
+          binary = ${config.security.wrapperDir}/fping
+          + FPing6
+          binary = ${config.security.wrapperDir}/fping
+      '';
       targetConfig = ''
           probe = FPing
           menu = Top
@@ -108,18 +115,22 @@ in
           menu = SpeedTest
           title = SpeedTest
           host = www.speedtest.net
-          ++ Fast
-          menu = Fast
-          title = Fast
-          host = fast.com
-          ++ Google
-          menu = Google
-          title = Google
-          host = google.com
+          ++ CloudflareDNS
+          menu = CloudflareDNS
+          title = CloudflareDNS
+          host = 1.1.1.1
           ++ Steam
           menu = Steam
           title = Steam
           host = store.steampowered.com
+          ++ Misaka
+          menu = Misaka
+          title = Misaka
+          host = misaka.io
+          ++ AmazonJP
+          menu = AmazonJP
+          title = AmazonJP
+          host = amazon.co.jp
       '';
     };
   };
