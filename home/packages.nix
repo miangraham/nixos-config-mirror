@@ -22,6 +22,7 @@ builtins.attrValues {
     imagemagick
     john
     jq
+    kiwix
     lftp
     mu
     neofetch

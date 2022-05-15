@@ -81,6 +81,47 @@ in
         ScanSchedule = "@daily";
       };
     };
+
+    smokeping = {
+      enable = true;
+      hostName = "futaba";
+      targetConfig = ''
+          probe = FPing
+          menu = Top
+          title = Ping Graphs
+          remark = WAH
+          + Local
+          menu = Local
+          title = Local Network
+          ++ LocalMachine
+          menu = Local Machine
+          title = This host
+          host = localhost
+          ++ Nene
+          menu = Nene
+          title = Nene
+          host = nene
+          + Remote
+          menu = Remote
+          title = Remote
+          ++ SpeedTest
+          menu = SpeedTest
+          title = SpeedTest
+          host = www.speedtest.net
+          ++ Fast
+          menu = Fast
+          title = Fast
+          host = fast.com
+          ++ Google
+          menu = Google
+          title = Google
+          host = google.com
+          ++ Steam
+          menu = Steam
+          title = Steam
+          host = store.steampowered.com
+      '';
+    };
   };
 
   systemd.services.pre-nginx = {
