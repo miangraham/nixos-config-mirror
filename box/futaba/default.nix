@@ -4,6 +4,7 @@
     ./hardware-configuration.nix
     ../../system/nixos.nix
     ./services.nix
+    ./containers.nix
   ];
 
   networking = {

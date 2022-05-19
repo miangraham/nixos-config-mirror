@@ -4,14 +4,13 @@ let
     inherit pkgs;
     backupTime = "*-*-* *:04:00";
   };
-  network = "futabanet";
 in
 {
   services = {
     inherit (backup) borgbackup;
 
     adguardhome = {
-      enable = true;
+      enable = false;
       port = 9090;
     };
 
@@ -25,29 +24,29 @@ in
           root = "/var/www";
         };
 
-        rss-bridge = {
-          serverName = "rss-bridge";
-          root = "${pkgs.rss-bridge}";
+        # rss-bridge = {
+        #   serverName = "rss-bridge";
+        #   root = "${pkgs.rss-bridge}";
 
-          locations."/" = {
-            tryFiles = "$uri /index.php$is_args$args";
-          };
+        #   locations."/" = {
+        #     tryFiles = "$uri /index.php$is_args$args";
+        #   };
 
-          locations."~ ^/index.php(/|$)" = {
-            extraConfig = ''
-              include ${pkgs.nginx}/conf/fastcgi_params;
-              fastcgi_split_path_info ^(.+\.php)(/.+)$;
-              fastcgi_pass unix:${config.services.phpfpm.pools.${config.services.rss-bridge.pool}.socket};
-              fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-              fastcgi_param RSSBRIDGE_DATA ${config.services.rss-bridge.dataDir};
-            '';
-          };
-        };
+        #   locations."~ ^/index.php(/|$)" = {
+        #     extraConfig = ''
+        #       include ${pkgs.nginx}/conf/fastcgi_params;
+        #       fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        #       fastcgi_pass unix:${config.services.phpfpm.pools.${config.services.rss-bridge.pool}.socket};
+        #       fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        #       fastcgi_param RSSBRIDGE_DATA ${config.services.rss-bridge.dataDir};
+        #     '';
+        #   };
+        # };
       };
     };
 
     rss-bridge = {
-      enable = true;
+      enable = false;
       virtualHost = null;
       whitelist = [
         "DevTo"
@@ -149,46 +148,5 @@ in
       mkdir -p /var/www
       chown nginx:nginx /var/www
     '';
-  };
-
-  systemd.services."init-docker-network-${network}" = {
-    description = "Create docker network bridge: ${network}";
-    after = [ "network.target" ];
-    wantedBy = [ "multi-user.target" ];
-
-    serviceConfig.Type = "oneshot";
-    script = let dockercli = "${config.virtualisation.docker.package}/bin/docker";
-             in ''
-               # Put a true at the end to prevent getting non-zero return code, which will
-               # crash the whole service.
-               check=$(${dockercli} network ls | grep "${network}" || true)
-               if [ -z "$check" ]; then
-                 ${dockercli} network create ${network}
-               else
-                 echo "${network} already exists in docker"
-               fi
-             '';
-  };
-
-  virtualisation.oci-containers.containers = {
-    freshrss = {
-      image = "freshrss/freshrss:latest";
-      dependsOn = [];
-      extraOptions = [
-        "--pull=always"
-        # "--device=/dev/ttyACM0:/dev/ttyACM0"
-        "--network=${network}"
-      ];
-      ports = [
-        "8088:80"
-      ];
-      volumes = [
-        "/srv/freshrss/data:/var/www/FreshRSS/data"
-        "/srv/freshrss/extensions:/var/www/FreshRSS/extensions"
-      ];
-      environment = {
-        TZ = "Asia/Tokyo";
-      };
-    };
   };
 }
