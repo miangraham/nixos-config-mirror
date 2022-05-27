@@ -45,6 +45,7 @@
           system = "x86_64-linux";
           modules = [
             ./box/rin/default.nix
+            inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t14-amd-gen1
             inputs.home-manager.nixosModules.home-manager
             { inherit home-manager; }
           ];
