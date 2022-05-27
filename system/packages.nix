@@ -25,6 +25,7 @@ builtins.attrValues {
     pavucontrol
     pciutils
     psmisc
+    pulseaudio
     ripgrep
     rsync
     silver-searcher
