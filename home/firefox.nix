@@ -23,6 +23,7 @@
         "browser.toolbars.bookmarks.visibility" = "always";
         "browser.uidensity" = 1;
         "layout.testing.overlay-scrollbars.always-visible" = 1;
+        "widget.non-native-theme.scrollbar.style" = 4;
 
         # Search, URL bar
         "browser.search.defaultenginename" = "DuckDuckGo";
