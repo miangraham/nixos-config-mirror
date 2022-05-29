@@ -1,9 +1,10 @@
 { pkgs, config, modulesPath, ... }:
 let
-  backup = import ../../system/backup.nix {
-    inherit pkgs;
-    backupTime = "*-*-* *:06:00";
-  };
+  # Temporarily disable backup for travel
+  # backup = import ../../system/backup.nix {
+  #   inherit pkgs;
+  #   backupTime = "*-*-* *:06:00";
+  # };
 in
 {
   imports = [
@@ -27,7 +28,7 @@ in
 
   services.fwupd.enable = true;
   services = {
-    inherit (backup) borgbackup;
+    # inherit (backup) borgbackup;
   };
 
   # box specific due to ACME, rip
