@@ -9,6 +9,7 @@ builtins.attrValues {
     diskonaut
     du-dust
     element-desktop
+    entr
     evince
     exa
     fd
@@ -33,6 +34,7 @@ builtins.attrValues {
     picocom
     qdirstat
     ranger
+    shellcheck
     shortwave
     speedtest-cli
     tdesktop
