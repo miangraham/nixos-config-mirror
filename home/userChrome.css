@@ -67,6 +67,6 @@
   min-width: 36px !important;
 }
 
-/* #TabsToolbar {
-   visibility: collapse !important;
-   } */
+#TabsToolbar {
+  visibility: collapse !important;
+}
