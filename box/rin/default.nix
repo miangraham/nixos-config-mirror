@@ -22,6 +22,9 @@ in
     firewall.allowedTCPPorts = [ 22 80 443 8443 8989 ];
   };
 
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
+
   programs.light.enable = true;
   services.upower.enable = true;
   powerManagement.powertop.enable = true;
