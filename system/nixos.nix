@@ -82,6 +82,9 @@ in
     pathsToLink = [
       "/share/nix-direnv"
     ];
+    variables = {
+      XDG_DESKTOP_DIR = "/dev/null";
+    };
   };
 
   security = {

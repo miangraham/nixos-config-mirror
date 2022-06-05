@@ -1,7 +1,23 @@
 { pkgs, ... }:
+let
+  firefox = pkgs.wrapFirefox pkgs.firefox-esr-unwrapped {
+    forceWayland = true;
+    extraPolicies = {
+      AppAutoUpdate = false;
+      BackgroundAppUpdate = false;
+      DisableAppUpdate = true;
+      DisableFirefoxStudies = true;
+      DisablePocket = true;
+      DisableTelemetry = true;
+      DisplayBookmarksToolbar = true;
+      OfferToSaveLogins = false;
+      OverridePostUpdatePage = "";
+    };
+  };
+in
 {
   enable = true;
-  package = pkgs.firefox-wayland;
+  package = firefox;
   profiles = {
     ian = {
       id = 0;
