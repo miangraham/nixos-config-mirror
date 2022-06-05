@@ -9,7 +9,7 @@ let
   direnv = import ./direnv.nix {};
   firefox = import ./firefox.nix { inherit pkgs; };
   git = import ./git.nix { inherit pkgs; };
-  mpv = import ./mpv.nix {};
+  mpv = import ./mpv.nix { inherit pkgs; };
   secrets = import ./secrets.nix { inherit pkgs; };
   starship = import ./starship.nix { inherit pkgs; };
   tmux = import ./tmux.nix { inherit pkgs; };

@@ -1,11 +1,13 @@
-{ ... }:
+{ pkgs, ... }:
 {
   enable = true;
+  scripts = [ pkgs.mpvScripts.thumbnail ];
   config = {
-    # profile = "gpu-hq";
-    # gpu-api = "vulkan";
+    # thumbnail script replaces default osc
+    osc = "no";
 
-    idle = "yes";
+    # close after playback
+    idle = "no";
 
     volume = 90;
     volume-max = 100;
@@ -18,18 +20,6 @@
 
     alang  = "jpn,jp,eng,en";
     slang  = "eng,en,enUS";
-
-    # deband = "yes";
-    # deband-iterations = 2;
-    # deband-threshold = 35;
-    # deband-range = 20;
-    # deband-grain = 5;
-
-    # dither-depth = "auto";
-
-    # scale = "ewa_lanczossharp";
-    # dscale = "mitchell";
-    # cscale = "spline36";
   };
   bindings = {
     WHEEL_UP = "ignore";
