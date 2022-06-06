@@ -21,6 +21,7 @@ builtins.attrValues {
     graphviz
     grim
     imagemagick
+    ispell
     john
     jq
     kiwix

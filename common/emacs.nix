@@ -15,6 +15,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     beacon
     biblio
     bibtex-completion
+    burly
     company
     consult
     consult-projectile
@@ -80,6 +81,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     telega
     templatel
     tide
+    tldr
     toml-mode
     treemacs
     treemacs-magit
