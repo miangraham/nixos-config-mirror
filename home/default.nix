@@ -21,6 +21,9 @@ in
     stateVersion = "21.05";
     username = "ian";
     homeDirectory = "/home/ian";
+    sessionPath = [
+      "$HOME/.bin"
+    ];
   };
 
   programs = {

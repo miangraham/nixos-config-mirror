@@ -19,6 +19,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     company
     consult
     consult-projectile
+    corfu
     dante
     diff-hl
     diminish
