@@ -1,6 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 let
-  emacs = import ../common/emacs.nix {inherit pkgs;};
+  unstable = import ../common/unstable.nix {inherit pkgs inputs;};
+  emacs = import ../common/emacs.nix {pkgs = unstable;};
   startSwayScript = import ./startsway.nix {inherit pkgs;};
 in
 builtins.attrValues {
