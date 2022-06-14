@@ -2,7 +2,7 @@
 let
   # inherit (inputs) filter-tweets;
   # filter-tweets = inputs.filter-tweets;
-  filter-tweets = (import inputs.filter-tweets { inherit pkgs; }).package;
+  filter-tweets = (import inputs.filter-tweets { inherit pkgs; inherit (pkgs) nodejs; }).package;
 in
 {
   systemd.services.twitter-filter-likes = {
