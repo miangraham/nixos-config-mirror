@@ -60,6 +60,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     orderless
     org
     org-contrib
+    org-modern
     org-randomnote
     org-ref
     org-roam
