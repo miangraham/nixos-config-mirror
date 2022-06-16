@@ -14,10 +14,7 @@ with pkgs; {
     hack-font
     roboto-mono
     anonymousPro
-
-    # broken in 22.05
-    # mplus-outline-fonts
-
+    mplus-outline-fonts.githubRelease
     ibm-plex
     ia-writer-duospace
     overpass

@@ -27,7 +27,7 @@
       use_thin_strokes = false;
       normal.family = "Inconsolata";
     };
-    background_opacity = 0.75;
+    window.opacity = 0.75;
     colors = {
       primary = {
         background = "#000000";

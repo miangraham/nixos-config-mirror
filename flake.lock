@@ -39,7 +39,8 @@
     "filter-tweets": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-DlE4Js+620p+RlNZeCMXBttkqpolNGYd22ve1N4mtxA=",
+        "lastModified": 1655366175,
+        "narHash": "sha256-4BHDIzPZ09rrGM9+dFdHjBuAqxLsCJ1IHXu4E19HIQg=",
         "path": "/home/ian/filter-tweets",
         "type": "path"
       },
@@ -100,11 +101,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1655273078,
-        "narHash": "sha256-jlcD35mFKn7CQHUgUa0E79QrS5+5A+/Gh3BI2y/PC3U=",
+        "lastModified": 1655302974,
+        "narHash": "sha256-Sa0c2xrj2N1Y8zIOGVq+osB7IqY3vCCNDaeheKvb2Xg=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "29399e5ad1660668b61247c99894fc2fb97b4e74",
+        "rev": "9c587c51acccdcf0683e78eb8fe7f8b1db61b02a",
         "type": "github"
       },
       "original": {
@@ -114,11 +115,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1655273078,
-        "narHash": "sha256-jlcD35mFKn7CQHUgUa0E79QrS5+5A+/Gh3BI2y/PC3U=",
+        "lastModified": 1655302974,
+        "narHash": "sha256-Sa0c2xrj2N1Y8zIOGVq+osB7IqY3vCCNDaeheKvb2Xg=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "29399e5ad1660668b61247c99894fc2fb97b4e74",
+        "rev": "9c587c51acccdcf0683e78eb8fe7f8b1db61b02a",
         "type": "github"
       },
       "original": {
@@ -128,11 +129,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1655200170,
-        "narHash": "sha256-/yzkX+10sJhYNIcTtZ5ObS+nh/HrJp01XLaubzbRDcU=",
+        "lastModified": 1655278232,
+        "narHash": "sha256-H6s7tnHYiDKFCcLADS4sl1sUq0dDJuRQXCieguk/6SA=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "9ff91ce2e4c5d70551d4c8fd8830931c6c6b26b8",
+        "rev": "8b538fcb329a7bc3d153962f17c509ee49166973",
         "type": "github"
       },
       "original": {

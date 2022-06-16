@@ -69,7 +69,7 @@ in
   };
 
   security.acme = {
-    defaults.email = "spamisevil@ijin.net";
+    defaults.email = import ../../common/email.nix {};
     acceptTerms = true;
   };
 

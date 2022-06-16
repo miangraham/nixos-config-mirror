@@ -1,25 +1,20 @@
 { pkgs, ... }:
-let
-  obfuscatedAddr = ["es@" "am" "" "graham" "g" "" "mian"];
-  unshuffle = builtins.sort (a: b: (builtins.stringLength a) < (builtins.stringLength b));
-  userEmail = builtins.concatStringsSep "" ((unshuffle obfuscatedAddr) ++ [".com"]);
-in
 {
   enable = true;
   package = pkgs.git;
   userName = "M. Ian Graham";
-  inherit userEmail;
+  userEmail = import ../common/email.nix {};
   ignores = [
     "*~"
-    ".projectile"
+    ".direnv"
     ".emacs.desktop*."
+    ".envrc"
+    ".indium.json"
+    ".projectile"
+    ".stack-work"
+    "__pycache__"
     "dir-locals.el"
     "node_modules"
-    ".stack-work"
-    ".indium.json"
-    ".envrc"
-    ".direnv"
-    "__pycache__"
   ];
   extraConfig = {
     init.defaultBranch = "master";

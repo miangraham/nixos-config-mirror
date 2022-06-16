@@ -90,6 +90,13 @@ in
         # Remove noise
         "browser.aboutConfig.showWarning" = false;
         "browser.aboutwelcome.enabled" = false;
+        "browser.contentblocking.cfr-milestone.enabled" = false;
+        "browser.contentblocking.report.hide_vpn_banner" = true;
+        "browser.contentblocking.report.lockwise.enabled" = false;
+        "browser.contentblocking.report.monitor.enabled" = false;
+        "browser.contentblocking.report.proxy.enabled" = false;
+        "browser.contentblocking.report.show_mobile_app" = false;
+        "browser.contentblocking.report.vpn.enabled" = false;
         "browser.discovery.enabled" = false;
         "browser.messaging-system.whatsNewPanel.enabled" = false;
         "browser.preferences.moreFromMozilla" = false;
