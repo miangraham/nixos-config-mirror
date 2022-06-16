@@ -1,12 +1,12 @@
 { pkgs, ... }:
 with pkgs; {
   fontDir.enable = true;
+  enableDefaultFonts = true;
   fonts = [
     # general use
     fantasque-sans-mono
     inconsolata
     terminus_font_ttf
-
     cascadia-code
     fira-code
     jetbrains-mono
@@ -14,13 +14,15 @@ with pkgs; {
     hack-font
     roboto-mono
     anonymousPro
-    mplus-outline-fonts
+
+    # broken in 22.05
+    # mplus-outline-fonts
+
     ibm-plex
     ia-writer-duospace
     overpass
     alegreya
     source-code-pro
-
     oxygenfonts
 
     # icons

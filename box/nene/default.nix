@@ -3,7 +3,8 @@
   imports = [
     ./hardware-configuration.nix
     ../../system/nixos.nix
-    ./twitter.nix
+    # broken in 22.05
+    # ./twitter.nix
     ./services.nix
   ];
 

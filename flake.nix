@@ -1,11 +1,11 @@
 {
   description = "";
   inputs = {
-    nixpkgs = { url = "github:NixOS/nixpkgs/nixos-21.11"; };
+    nixpkgs = { url = "github:NixOS/nixpkgs/nixos-22.05"; };
     unstable = { url = "github:NixOS/nixpkgs/nixos-unstable"; };
     unstable-small = { url = "github:NixOS/nixpkgs/nixos-unstable-small"; };
     nixos-hardware = { url = "github:NixOS/nixos-hardware/master"; };
-    home-manager = { url = "github:nix-community/home-manager/release-21.11"; };
+    home-manager = { url = "github:nix-community/home-manager/release-22.05"; };
     emacs-overlay = { url = "github:nix-community/emacs-overlay"; };
     tdlib = { url = "github:tdlib/td"; flake = false; };
     ffmpeg-patch = { url = "github:yt-dlp/FFmpeg-Builds?rev=d1b456152d2618cf9266ec5ca84ed8b110acb423"; flake = false; };
