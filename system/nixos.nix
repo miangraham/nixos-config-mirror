@@ -19,6 +19,9 @@ in
   nixpkgs = {
     config = {
       allowUnfree = true;
+      permittedInsecurePackages = [
+        "nodejs-12.22.12"
+      ];
     };
     inherit overlays;
   };
