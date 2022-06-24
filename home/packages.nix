@@ -5,6 +5,7 @@ builtins.attrValues {
     audacity
     awscli
     bitwarden
+    cachix
     cmus
     diskonaut
     du-dust
@@ -28,6 +29,7 @@ builtins.attrValues {
     lftp
     mu
     neofetch
+    netlify-cli
     niv
     nix-direnv
     nix-prefetch-git
