@@ -21,6 +21,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     consult-projectile
     corfu
     dante
+    delight
     diff-hl
     diminish
     direnv
