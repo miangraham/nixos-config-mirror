@@ -62,6 +62,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     org
     org-contrib
     org-modern
+    org-present
     org-randomnote
     org-ref
     org-roam
