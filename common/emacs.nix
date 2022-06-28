@@ -12,7 +12,6 @@ pkgs.emacsWithPackagesFromUsePackage {
     ag
     aggressive-indent
     anzu
-    beacon
     biblio
     bibtex-completion
     burly
@@ -20,10 +19,8 @@ pkgs.emacsWithPackagesFromUsePackage {
     consult
     consult-projectile
     corfu
-    dante
     delight
     diff-hl
-    diminish
     direnv
     doom-themes
     drag-stuff
@@ -40,14 +37,11 @@ pkgs.emacsWithPackagesFromUsePackage {
     fullframe
     git-link
     git-timemachine
-    golden-ratio
     haskell-mode
     hcl-mode
     helpful
     highlight-indent-guides
     htmlize
-    ivy
-    ivy-bibtex
     js2-mode
     json-mode
     ledger-mode
@@ -67,21 +61,15 @@ pkgs.emacsWithPackagesFromUsePackage {
     org-ref
     org-roam
     org-roam-bibtex
-    org-superstar
     ox-hugo
     pdf-tools
     popper
-    projectile
     rainbow-delimiters
     ripgrep
     ron-mode
     rust-mode
-    selectrum
-    selectrum-prescient
     shackle
     smartparens
-    spinner
-    sweet-theme
     telega
     templatel
     tide
@@ -89,7 +77,6 @@ pkgs.emacsWithPackagesFromUsePackage {
     toml-mode
     treemacs
     treemacs-magit
-    treemacs-projectile
     use-package
     vertico
     visual-fill-column
@@ -103,6 +90,5 @@ pkgs.emacsWithPackagesFromUsePackage {
     ws-butler
     yaml-mode
     yasnippet
-    zenburn-theme
   ];
 }
