@@ -7,6 +7,8 @@ pkgs.emacsWithPackagesFromUsePackage {
     telega = epkgs.melpaPackages.telega;
   };
   extraEmacsPackages = epkgs: with epkgs; [
+    (pkgs.callPackage ./elfeed-tube.nix {})
+
     ace-window
     adaptive-wrap
     ag
