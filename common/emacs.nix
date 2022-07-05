@@ -7,8 +7,6 @@ pkgs.emacsWithPackagesFromUsePackage {
     telega = epkgs.melpaPackages.telega;
   };
   extraEmacsPackages = epkgs: with epkgs; [
-    (pkgs.callPackage ./elfeed-tube.nix {})
-
     ace-window
     adaptive-wrap
     ag
@@ -30,6 +28,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     eglot
     elfeed
     elfeed-org
+    elfeed-tube
     emacsql
     emacsql-sqlite3
     eslint-fix
@@ -92,5 +91,6 @@ pkgs.emacsWithPackagesFromUsePackage {
     ws-butler
     yaml-mode
     yasnippet
+    zig-mode
   ];
 }
