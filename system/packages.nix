@@ -2,10 +2,9 @@
 let
   unstable = import ../common/unstable.nix {inherit pkgs inputs;};
   emacs = import ../common/emacs.nix {pkgs = unstable;};
-  startSwayScript = import ./startsway.nix {inherit pkgs;};
 in
 builtins.attrValues {
-  inherit emacs startSwayScript;
+  inherit emacs;
 
   inherit (pkgs)
     bashmount
@@ -14,7 +13,6 @@ builtins.attrValues {
     file
     gawk
     gzip
-    home-manager
     htop
     hwinfo
     lshw
