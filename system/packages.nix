@@ -12,14 +12,12 @@ builtins.attrValues {
     bzip2
     exfat
     file
-    ffmpeg
     gawk
     gzip
     home-manager
     htop
     hwinfo
     lshw
-    micro
     nix-index
     pamixer
     parted
@@ -29,7 +27,6 @@ builtins.attrValues {
     pulseaudio
     ripgrep
     rsync
-    silver-searcher
     sqlite
     sshfs-fuse
     tarssh

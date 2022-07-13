@@ -31,6 +31,7 @@ in
     inherit (secrets.programs) gpg password-store;
 
     home-manager.enable = true;
+    autojump.enable = true;
     feh.enable = true;
 
     obs-studio = {

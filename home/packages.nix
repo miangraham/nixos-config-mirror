@@ -14,6 +14,7 @@ builtins.attrValues {
     evince
     exa
     fd
+    ffmpeg
     fontforge-gtk
     foot
     fuzzel
@@ -27,6 +28,7 @@ builtins.attrValues {
     jq
     kiwix
     lftp
+    micro
     mu
     neofetch
     netlify-cli
