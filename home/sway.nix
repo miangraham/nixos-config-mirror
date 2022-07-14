@@ -37,6 +37,8 @@
       "*" = {
         xkb_layout = "us";
         xkb_options = "ctrl:nocaps";
+      };
+      "type:mouse" = {
         pointer_accel = "-0.99";
       };
       "type:touchpad" = {
