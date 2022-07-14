@@ -58,6 +58,11 @@ builtins.attrValues {
     arc-theme
     equilux-theme
     nordic
+
+    # sway
+    swayidle
+    swaylock
+    waybar
   ;
 
   inherit (unstable)

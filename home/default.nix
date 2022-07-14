@@ -26,6 +26,8 @@ in
     ];
   };
 
+  wayland.windowManager.sway = import ./sway.nix { inherit pkgs; };
+
   programs = {
     inherit alacritty bash direnv firefox git mpv starship tmux waybar;
     inherit (secrets.programs) gpg password-store;
