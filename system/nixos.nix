@@ -8,13 +8,13 @@ in
 {
   imports = [
     ./network.nix
-    ./sway.nix
+    ./xdg.nix
   ];
 
   inherit fonts services;
 
   time.timeZone = "Asia/Tokyo";
-  systemd.coredump.enable = true;
+  systemd.coredump.enable = false; # true
 
   nixpkgs = {
     config = {
@@ -82,9 +82,6 @@ in
     pathsToLink = [
       "/share/nix-direnv"
     ];
-    variables = {
-      XDG_DESKTOP_DIR = "/dev/null";
-    };
   };
 
   security = {

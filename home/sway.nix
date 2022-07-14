@@ -2,6 +2,7 @@
 {
   enable = true;
   wrapperFeatures.gtk = true;
+  systemdIntegration = true;
   config = {
     modifier = "Mod4";
     left = "j";
@@ -15,11 +16,56 @@
     keybindings = {};
     bars = [];
 
+    window = {
+      border = 0;
+      hideEdgeBorders = "none";
+    };
+
     gaps = {
       smartGaps = true;
-      smartBorders = "on";
+      smartBorders = "no_gaps";
       inner = 20;
       outer = 0;
+    };
+
+    focus = {
+      newWindow = "urgent";
+      followMouse = "yes";
+    };
+
+    input = {
+      "*" = {
+        xkb_layout = "us";
+        xkb_options = "ctrl:nocaps";
+        pointer_accel = "-0.99";
+      };
+      "type:touchpad" = {
+        natural_scroll = "enabled";
+      };
+      "Topre Corporation HHKB Professional" = {
+        xkb_model = "hhk";
+      };
+      "Logitech USB Receiver Mouse" = {
+        pointer_accel = "-0.99";
+      };
+      "1133:50495:Logitech_USB_Receiver_Mouse" = {
+        pointer_accel = "-0.99";
+      };
+      "1390:228:ELECOM_ELECOM_BlueLED_Mouse" = {
+        accel_profile = "flat";
+        pointer_accel = "0";
+      };
+    };
+
+    output = {
+      "*" = {
+        bg = "/home/ian/.background-image fill";
+      };
+    };
+
+    fonts = {
+      names = [ "Fantasque Sans Mono" ];
+      size = 15.0;
     };
 
     colors = {
