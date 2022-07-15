@@ -13,7 +13,6 @@ builtins.attrValues {
     file
     gawk
     gzip
-    htop
     hwinfo
     lshw
     nix-index

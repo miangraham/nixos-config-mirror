@@ -1,4 +1,4 @@
-{ inputs, ... }: { pkgs, ... }:
+{ inputs, ... }: { pkgs, config, ... }:
 let
   lib = pkgs.lib;
   unstable = import ../common/unstable.nix { inherit pkgs inputs; };
@@ -47,6 +47,15 @@ in
       yoffset = -30;
       theme = "gruvbox-dark";
     };
+
+    htop = {
+      enable = true;
+      settings = {
+        sort_key = config.lib.htop.fields.PERCENT_CPU;
+        hide_kernel_threads = 1;
+        hide_userland_threads = 1;
+      };
+    };
   };
 
   services = {
@@ -57,9 +66,13 @@ in
     kanshi = {
       enable = true;
       package = pkgs.kanshi;
-      extraConfig = ''
-output "Ancor Communications Inc ROG PG279Q G1LMQS019376" mode 2560x1440 position 0,0
-      '';
+    };
+  };
+
+  systemd.user.targets.tray = {
+    Unit = {
+      Description = "Home Manager System Tray";
+      Requires = [ "graphical-session-pre.target" ];
     };
   };
 }
