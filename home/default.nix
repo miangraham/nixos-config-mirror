@@ -33,13 +33,10 @@ in
     inherit (secrets.programs) gpg password-store;
 
     home-manager.enable = true;
+
     autojump.enable = true;
     feh.enable = true;
-
-    obs-studio = {
-      enable = true;
-      package = pkgs.obs-studio;
-    };
+    obs-studio.enable = true;
 
     rofi = {
       enable = true;
@@ -63,10 +60,7 @@ in
 
     lorri.enable = true;
 
-    kanshi = {
-      enable = true;
-      package = pkgs.kanshi;
-    };
+    kanshi.enable = true;
 
     udiskie = {
       enable = true;
