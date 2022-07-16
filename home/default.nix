@@ -73,6 +73,15 @@ in
       notify = false;
       tray = "never";
     };
+
+    swayidle = {
+      enable = true;
+      timeouts = [{
+        timeout = 600;
+        command = "swaymsg \"output * dpms off\"";
+        resumeCommand = "swaymsg \"output * dpms on\"";
+      }];
+    };
   };
 
   systemd.user.targets.tray = {
