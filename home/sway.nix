@@ -38,8 +38,9 @@
         xkb_layout = "us";
         xkb_options = "ctrl:nocaps";
       };
-      "type:mouse" = {
-        pointer_accel = "-0.99";
+      "type:pointer" = {
+        pointer_accel = "0";
+        accel_profile = "flat";
       };
       "type:touchpad" = {
         natural_scroll = "enabled";
