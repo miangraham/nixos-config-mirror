@@ -11,6 +11,7 @@ fi
 in
 {
   enable = true;
+  systemd.enable = true;
   style = builtins.readFile ./waybarStyle.css;
   settings = [{
     layer = "top";
