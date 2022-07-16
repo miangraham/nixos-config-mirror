@@ -67,6 +67,12 @@ in
       enable = true;
       package = pkgs.kanshi;
     };
+
+    udiskie = {
+      enable = true;
+      notify = false;
+      tray = "never";
+    };
   };
 
   systemd.user.targets.tray = {

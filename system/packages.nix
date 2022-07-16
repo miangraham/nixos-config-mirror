@@ -28,7 +28,6 @@ builtins.attrValues {
     sshfs-fuse
     tarssh
     tree
-    udiskie
     unrar
     unzip
     vim
