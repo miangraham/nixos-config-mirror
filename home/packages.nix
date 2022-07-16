@@ -37,6 +37,7 @@ builtins.attrValues {
     nix-prefetch-git
     pandoc
     picocom
+    protonmail-bridge
     qdirstat
     ranger
     shellcheck

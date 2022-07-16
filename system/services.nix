@@ -25,6 +25,8 @@ in
     guiAddress = "0.0.0.0:8384";
   };
 
+  gnome.gnome-keyring.enable = true;
+
   udisks2 = {
     enable = true;
   };
