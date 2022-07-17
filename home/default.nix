@@ -78,10 +78,17 @@ in
     };
   };
 
-  systemd.user.targets.tray = {
-    Unit = {
-      Description = "Home Manager System Tray";
-      Requires = [ "graphical-session-pre.target" ];
+  systemd.user = {
+    targets.tray = {
+      Unit = {
+        Description = "Home Manager System Tray";
+        Requires = [ "graphical-session-pre.target" ];
+      };
+    };
+
+    services.fcitx-daemon = {
+      Install.WantedBy = [ "graphical-session.target" ];
+      Service.ExecStart = "/run/current-system/sw/bin/fcitx -D";
     };
   };
 }
