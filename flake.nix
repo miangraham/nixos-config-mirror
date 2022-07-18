@@ -7,6 +7,7 @@
     nixos-hardware = { url = "github:NixOS/nixos-hardware/master"; };
     home-manager = { url = "github:nix-community/home-manager/release-22.05"; };
     emacs-overlay = { url = "github:nix-community/emacs-overlay"; };
+    rust-overlay = { url = "github:oxalica/rust-overlay"; inputs.nixpkgs.follows = "nixpkgs"; };
     tdlib = { url = "github:tdlib/td?rev=d48901435017783b5cb91000c29940f9b348158d"; flake = false; };
     ffmpeg-patch = { url = "github:yt-dlp/FFmpeg-Builds?rev=d1b456152d2618cf9266ec5ca84ed8b110acb423"; flake = false; };
     filter-tweets = { url = "path:/home/ian/filter-tweets"; flake = false; };

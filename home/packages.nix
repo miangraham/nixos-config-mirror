@@ -84,4 +84,6 @@ builtins.attrValues {
   otf2bdf = pkgs.callPackage (import "${inputs.otf2bdf}/packages/otf2bdf") {};
 
   node2nix = pkgs.nodePackages.node2nix;
+
+  twitch-tui = (unstable.callPackage ./twitch-tui {});
 }
