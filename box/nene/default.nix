@@ -2,7 +2,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../system/nixos.nix
+    ../../system
     ./twitter.nix
     ./services.nix
   ];

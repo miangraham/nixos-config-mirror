@@ -1,7 +1,7 @@
 {
   description = "";
   inputs = {
-    nixpkgs = { url = "github:NixOS/nixpkgs/release-21.05"; };
+    nixpkgs = { url = "github:NixOS/nixpkgs/release-22.05"; };
   };
   outputs = {self, nixpkgs}:
     let

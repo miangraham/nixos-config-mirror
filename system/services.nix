@@ -3,6 +3,10 @@ let
   rtmp = import ./rtmp.nix {inherit pkgs;};
 in
 {
+  earlyoom.enable = true;
+  udisks2.enable = true;
+  gnome.gnome-keyring.enable = true;
+
   pipewire = {
     enable = true;
     pulse.enable = true;
@@ -14,8 +18,6 @@ in
     permitRootLogin = "no";
   };
 
-  earlyoom.enable = true;
-
   syncthing = {
     enable = true;
     openDefaultPorts = true;
@@ -23,19 +25,5 @@ in
     dataDir = "/home/ian/share";
     configDir = "/home/ian/.config/syncthing";
     guiAddress = "0.0.0.0:8384";
-  };
-
-  gnome.gnome-keyring.enable = true;
-
-  udisks2 = {
-    enable = true;
-  };
-
-  coturn = {
-    enable = false;
-  };
-
-  rabbitmq = {
-    enable = false;
   };
 }

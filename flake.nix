@@ -18,7 +18,7 @@
       home-manager = {
         useGlobalPkgs = true;
         useUserPackages = true;
-        users.ian = import ./home/default.nix {inherit inputs;};
+        users.ian = import ./home {inherit inputs;};
       };
     in {
       nixosConfigurations = {
@@ -26,7 +26,7 @@
           inherit specialArgs;
           system = "x86_64-linux";
           modules = [
-            ./box/nene/default.nix
+            ./box/nene
             inputs.home-manager.nixosModules.home-manager
             { inherit home-manager; }
           ];
@@ -35,7 +35,7 @@
           inherit specialArgs;
           system = "x86_64-linux";
           modules = [
-            ./box/futaba/default.nix
+            ./box/futaba
             inputs.home-manager.nixosModules.home-manager
             { inherit home-manager; }
           ];
@@ -44,7 +44,7 @@
           inherit specialArgs;
           system = "x86_64-linux";
           modules = [
-            ./box/rin/default.nix
+            ./box/rin
             inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t14-amd-gen1
             inputs.home-manager.nixosModules.home-manager
             { inherit home-manager; }
@@ -55,7 +55,7 @@
           system = "aarch64-linux";
           modules = [
             inputs.nixos-hardware.nixosModules.raspberry-pi-4
-            ./box/pika/default.nix
+            ./box/pika
           ];
         };
       };

@@ -33,9 +33,9 @@ in
     inherit (secrets.programs) gpg password-store;
 
     home-manager.enable = true;
-
     autojump.enable = true;
     feh.enable = true;
+
     obs-studio = {
       enable = true;
       plugins = [ pkgs.obs-studio-plugins.obs-websocket ];
@@ -62,7 +62,6 @@ in
     inherit (secrets.services) gpg-agent;
 
     lorri.enable = true;
-
     kanshi.enable = true;
 
     udiskie = {

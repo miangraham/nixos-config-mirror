@@ -9,7 +9,7 @@ in
 {
   imports = [
     ./hardware-configuration.nix
-    ../../system/nixos.nix
+    ../../system
   ];
 
   networking = {
