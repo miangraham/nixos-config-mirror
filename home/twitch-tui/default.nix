@@ -1,11 +1,4 @@
 { pkgs, lib, stdenv, fetchFromGitHub, openssl, pkg-config, curl, rustPlatform }:
-let
-  # rust = pkgs.rust-bin.stable.latest.default;
-  # rustPlatform = pkgs.makeRustPlatform {
-  #   cargo = rust;
-  #   rustc = rust;
-  # };
-in
 rustPlatform.buildRustPackage rec {
   pname = "twitch-tui";
   version = "v2.0.0-alpha6";
