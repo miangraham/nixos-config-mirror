@@ -9,15 +9,13 @@ pkgs.emacsWithPackagesFromUsePackage {
   extraEmacsPackages = epkgs: with epkgs; [
     ace-window
     adaptive-wrap
-    ag
     aggressive-indent
     anzu
     biblio
     bibtex-completion
     burly
-    company
     consult
-    consult-projectile
+    consult-project-extra
     corfu
     delight
     diff-hl
@@ -55,14 +53,12 @@ pkgs.emacsWithPackagesFromUsePackage {
     no-littering
     orderless
     org
-    org-contrib
     org-modern
     org-present
     org-randomnote
     org-ref
     org-roam
     org-roam-bibtex
-    ox-hugo
     pdf-tools
     popper
     rainbow-delimiters
