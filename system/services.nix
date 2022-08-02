@@ -1,7 +1,4 @@
 { pkgs, ... }:
-let
-  rtmp = import ./rtmp.nix {inherit pkgs;};
-in
 {
   earlyoom.enable = true;
   udisks2.enable = true;
