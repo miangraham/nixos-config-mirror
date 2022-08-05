@@ -40,8 +40,8 @@ builtins.attrValues {
     protonmail-bridge
     qdirstat
     ranger
+    reaper
     shellcheck
-    shortwave
     speedtest-cli
     tdesktop
     terraform
@@ -49,7 +49,6 @@ builtins.attrValues {
     ungoogled-chromium
     valgrind
     vlc
-    vscodium
     zeal
     zenith
     zotero
