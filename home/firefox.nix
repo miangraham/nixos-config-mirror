@@ -8,10 +8,34 @@ let
       DisableAppUpdate = true;
       DisableFirefoxStudies = true;
       DisablePocket = true;
+      DisableSetDesktopBackground = true;
       DisableTelemetry = true;
       DisplayBookmarksToolbar = true;
+      DontCheckDefaultBrowser = true;
+      DownloadDirectory = "\$\{home\}/downloads";
+      NoDefaultBookmarks = true;
       OfferToSaveLogins = false;
+      OverrideFirstRunPage = "";
       OverridePostUpdatePage = "";
+      PasswordManagerEnabled = false;
+      Permissions = {
+        Notifications = {
+          BlockNewRequests = true;
+          Locked = true;
+        };
+      };
+      PictureInPicture = {
+        Enabled = false;
+        Locked = true;
+      };
+      UserMessaging = {
+        WhatsNew = false;
+        ExtensionRecommendations = false;
+        FeatureRecommendations = false;
+        UrlbarInterventions = false;
+        SkipOnboarding = true;
+        MoreFromMozilla = false;
+      };
     };
   };
 in
