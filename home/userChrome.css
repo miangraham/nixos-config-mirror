@@ -1,3 +1,11 @@
+:root {
+  /* Bookmark menu compacting */
+  --arrowpanel-border-radius: 0px !important;
+  --arrowpanel-menuitem-border-radius: 0px !important;
+  --panel-subview-body-padding: 2px 0 !important;
+  --panel-separator-margin-vertical: 2px !important;
+}
+
 /* Adjust tab corner shape, optionally remove space below tabs */
 @media (-moz-proton) {
   .tab-background {
@@ -69,4 +77,19 @@
 
 #TabsToolbar {
   visibility: collapse !important;
+}
+
+
+/* Bookmark menu compacting */
+
+#BMB_bookmarksPopup .subviewbutton,
+#PlacesToolbar menupopup[placespopup] .bookmark-item,
+#PlacesToolbar menupopup[placespopup] .openintabs-menuitem {
+  padding-block: 1px !important;
+}
+
+#BMB_bookmarksPopup .bookmark-item,
+#PlacesToolbar menupopup[placespopup] .bookmark-item {
+  min-height: unset !important;
+  /* Original: 24px */
 }

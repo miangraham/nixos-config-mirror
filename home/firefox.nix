@@ -1,6 +1,6 @@
 { pkgs, ... }:
 let
-  firefox = pkgs.wrapFirefox pkgs.firefox-esr-unwrapped {
+  firefox = pkgs.wrapFirefox pkgs.firefox-esr-102-unwrapped {
     forceWayland = true;
     extraPolicies = {
       AppAutoUpdate = false;
@@ -131,6 +131,10 @@ in
         "browser.warnOnQuitShortcut" = false;
         "devtools.everOpened" = true;
         "extensions.pocket.enabled" = false;
+
+        # Dev
+        "devtools.chrome.enabled" = true;
+        "devtools.debugger.remote-enabled" = true;
       };
     };
   };
