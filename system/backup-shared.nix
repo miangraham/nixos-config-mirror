@@ -27,6 +27,7 @@ let
     ".vscode"
     ".zoom"
     ".zotero"
+    "core.*"
 
     ".config/.git"
     ".config/Bitwarden"
