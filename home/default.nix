@@ -71,7 +71,7 @@ in
     };
 
     swayidle = {
-      enable = true;
+      enable = false;
       timeouts = [{
         timeout = 600;
         command = "swaymsg \"output * dpms off\"";
