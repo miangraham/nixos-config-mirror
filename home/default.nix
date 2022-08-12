@@ -93,4 +93,17 @@ in
       Service.ExecStart = "/run/current-system/sw/bin/fcitx -D";
     };
   };
+
+  xdg.userDirs = {
+    enable = true;
+    createDirectories = true;
+    desktop = "$HOME/.config/dummyxdgdesktop";
+    documents = "$HOME/documents";
+    download = "$HOME/downloads";
+    music = "$HOME/music";
+    pictures = "$HOME/pictures";
+    publicShare = "$HOME/.config/dummyxdgpublicshare";
+    templates = "$HOME/.config/dummyxdgtemplates";
+    videos = "$HOME/videos";
+  };
 }
