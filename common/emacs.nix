@@ -20,6 +20,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     delight
     diff-hl
     direnv
+    dirvish
     doom-themes
     drag-stuff
     editorconfig
