@@ -1,13 +1,27 @@
-{ obs-studio, obs-studio-plugins, symlinkJoin, makeWrapper, writeShellScriptBin }:
+{ obs-studio, symlinkJoin, makeWrapper }:
+
+{ plugins ? [] }:
+
 let
-  paths = [ obs-studio-plugins.obs-websocket ];
-  plugins = symlinkJoin {
-    name = "obs-plugins-joined";
-    inherit paths;
+  plugins-joined = symlinkJoin {
+    name = "obs-plugins";
+    paths = plugins;
   };
 in
-writeShellScriptBin "obs" ''
-  OBS_PLUGINS_PATH="${plugins}/lib/obs-plugins" \
-  OBS_PLUGINS_DATA_PATH="${plugins}/share/obs/obs-plugins" \
-  ${obs-studio}/bin/obs --verbose
-''
+symlinkJoin {
+  name = "wrapped-${obs-studio.name}";
+
+  nativeBuildInputs = [ makeWrapper ];
+  paths = [ obs-studio ];
+
+  postBuild = ''
+    wrapProgram $out/bin/obs \
+      --set OBS_PLUGINS_PATH      "${plugins-joined}/lib/obs-plugins" \
+      --set OBS_PLUGINS_DATA_PATH "${plugins-joined}/share/obs/obs-plugins"
+  '';
+
+  inherit (obs-studio) meta;
+  passthru = obs-studio.passthru // {
+    passthru.unwrapped = obs-studio;
+  };
+}

@@ -82,5 +82,5 @@ builtins.attrValues {
 
   twitch-tui = (unstable.callPackage ./twitch-tui {});
 
-  obs-studio = pkgs.callPackage ./obs.nix {};
+  obs-studio = pkgs.callPackage ./obs.nix {} { plugins = pkgs.obs-studio-plugins.obs-websocket; };
 }
