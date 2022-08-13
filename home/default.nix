@@ -32,7 +32,7 @@ in
     inherit alacritty bash direnv firefox git mpv starship tmux waybar;
     inherit (secrets.programs) gpg password-store;
 
-    home-manager.enable = true;
+    # home-manager.enable = true;
     autojump.enable = true;
     feh.enable = true;
 
@@ -42,7 +42,7 @@ in
     };
 
     rofi = {
-      enable = true;
+      enable = false;
       location = "bottom-right";
       yoffset = -30;
       theme = "gruvbox-dark";

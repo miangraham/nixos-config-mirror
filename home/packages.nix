@@ -16,7 +16,6 @@ builtins.attrValues {
     fd
     ffmpeg
     fontforge-gtk
-    foot
     fuzzel
     gimp
     godot
@@ -32,7 +31,6 @@ builtins.attrValues {
     mu
     neofetch
     netlify-cli
-    niv
     nix-direnv
     nix-prefetch-git
     pandoc
@@ -44,7 +42,6 @@ builtins.attrValues {
     shellcheck
     speedtest-cli
     tdesktop
-    terraform
     tldr
     ungoogled-chromium
     valgrind
@@ -73,10 +70,9 @@ builtins.attrValues {
 
   inherit (pkgs.gitAndTools) git-subrepo;
   inherit (pkgs.gnome3) adwaita-icon-theme;
-  inherit (pkgs.terraform-providers) aws;
   inherit (pkgs.xfce) thunar;
 
-  texliveCombined = (pkgs.texlive.combine { inherit (pkgs.texlive) scheme-small koma-script collection-latexextra; });
+  # texliveCombined = (pkgs.texlive.combine { inherit (pkgs.texlive) scheme-small koma-script collection-latexextra; });
 
   yt-dlp = (import ./yt-dlp.nix { inherit pkgs inputs; });
 
