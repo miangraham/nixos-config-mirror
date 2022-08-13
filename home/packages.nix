@@ -81,4 +81,6 @@ builtins.attrValues {
   node2nix = pkgs.nodePackages.node2nix;
 
   twitch-tui = (unstable.callPackage ./twitch-tui {});
+
+  obs-studio = pkgs.callPackage ./obs.nix {};
 }

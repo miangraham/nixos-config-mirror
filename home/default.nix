@@ -36,10 +36,10 @@ in
     autojump.enable = true;
     feh.enable = true;
 
-    obs-studio = {
-      enable = true;
-      plugins = [ pkgs.obs-studio-plugins.obs-websocket ];
-    };
+    # obs-studio = {
+    #   enable = true;
+    #   plugins = [ pkgs.obs-studio-plugins.obs-websocket ];
+    # };
 
     rofi = {
       enable = false;
