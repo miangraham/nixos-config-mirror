@@ -40,12 +40,12 @@ in
           };
         };
 
-        # "testlocal.ian.tokyo" = {
-        #   serverName = "testlocal.ian.tokyo";
-        #   root = "/var/www";
-        #   addSSL = true;
-        #   enableACME = true;
-        # };
+        "testlocal.ian.tokyo" = {
+          serverName = "testlocal.ian.tokyo";
+          root = "/var/www";
+          addSSL = true;
+          enableACME = true;
+        };
       };
     };
 
@@ -68,10 +68,10 @@ in
     };
   };
 
-  # security.acme = {
-  #   defaults.email = import ../../common/email.nix {};
-  #   acceptTerms = true;
-  # };
+  security.acme = {
+    defaults.email = import ../../common/email.nix {};
+    acceptTerms = true;
+  };
 
   systemd.services.pueue = {
     serviceConfig = {
