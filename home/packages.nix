@@ -40,7 +40,9 @@ builtins.attrValues {
     ranger
     reaper
     shellcheck
+    sonixd
     speedtest-cli
+    sublime-music
     tdesktop
     tldr
     ungoogled-chromium
