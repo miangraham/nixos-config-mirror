@@ -42,5 +42,20 @@ in
         TZ = "Asia/Tokyo";
       };
     };
+
+    reddit-top-rss = {
+      image = "johnny5w/reddit-top-rss@sha256:cb1ea08ab0be1a583f5d95105d0226f80804180c10843390ac0bf226701537df";
+      dependsOn = [];
+      extraOptions = [
+        "--pull=always"
+        "--network=${network}"
+      ];
+      ports = [
+        "8089:8080"
+      ];
+      environment = {
+        TZ = "Asia/Tokyo";
+      };
+    };
   };
 }
