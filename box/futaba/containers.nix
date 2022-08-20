@@ -28,7 +28,6 @@ in
       dependsOn = [];
       extraOptions = [
         "--pull=always"
-        # "--device=/dev/ttyACM0:/dev/ttyACM0"
         "--network=${network}"
       ];
       ports = [
@@ -52,6 +51,21 @@ in
       ];
       ports = [
         "8089:8080"
+      ];
+      environment = {
+        TZ = "Asia/Tokyo";
+      };
+    };
+
+    mercury-parser-api = {
+      image = "wangqiru/mercury-parser-api@sha256:4cb7e73e6ea146bef7343d61da4337b0fccf87eb914aca428237cd9dcf5c8f43";
+      dependsOn = [];
+      extraOptions = [
+        "--pull=always"
+        "--network=${network}"
+      ];
+      ports = [
+        "8090:3000"
       ];
       environment = {
         TZ = "Asia/Tokyo";
