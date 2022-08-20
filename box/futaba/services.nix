@@ -149,4 +149,17 @@ in
       chown nginx:nginx /var/www
     '';
   };
+
+  systemd.services.rss-refresh = {
+    serviceConfig.Type = "oneshot";
+    path = [
+      pkgs.curl
+    ];
+    script = "curl 'http://localhost:8088/i/?c=feed&a=actualize&ajax=1'";
+  };
+  systemd.timers.rss-refresh = {
+    wantedBy = [ "timers.target" ];
+    partOf = [ "rss-refresh.service" ];
+    timerConfig.OnCalendar = "*-*-* *:00:00";
+  };
 }
