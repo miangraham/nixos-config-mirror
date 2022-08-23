@@ -37,4 +37,8 @@ builtins.attrValues {
     xdg_utils
     zip
   ;
+
+  inherit (unstable)
+    git
+  ;
 }
