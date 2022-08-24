@@ -39,8 +39,8 @@
     "filter-tweets": {
       "flake": false,
       "locked": {
-        "lastModified": 1658080100,
-        "narHash": "sha256-3f0q+UWahs8boTQsUdL+OESJwFOgTxdfiTOQZSzBV74=",
+        "lastModified": 1661349438,
+        "narHash": "sha256-fOSSMiV3StcNhqohxAoyc7YlvS9jRo5euOvLO/x59BU=",
         "path": "/home/ian/filter-tweets",
         "type": "path"
       },

@@ -3,10 +3,15 @@ let
   # inherit (inputs) filter-tweets;
   # filter-tweets = inputs.filter-tweets;
   filter-tweets = import inputs.filter-tweets { inherit pkgs; };
+  serviceConfig = {
+    Type = "oneshot";
+    User = "ian";
+    EnvironmentFile = /home/ian/.config/filter-tweets/env;
+  };
 in
 {
   systemd.services.twitter-filter-likes = {
-    serviceConfig.Type = "oneshot";
+    inherit serviceConfig;
     script = "${filter-tweets}/bin/likes";
   };
   systemd.timers.twitter-filter-likes = {
@@ -16,7 +21,7 @@ in
   };
 
   systemd.services.twitter-filter-rts = {
-    serviceConfig.Type = "oneshot";
+    inherit serviceConfig;
     script = "${filter-tweets}/bin/rts";
   };
   systemd.timers.twitter-filter-rts = {
@@ -26,7 +31,7 @@ in
   };
 
   systemd.services.twitter-filter-replies = {
-    serviceConfig.Type = "oneshot";
+    inherit serviceConfig;
     script = "${filter-tweets}/bin/replies";
   };
   systemd.timers.twitter-filter-replies = {
