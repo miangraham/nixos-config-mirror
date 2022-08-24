@@ -1,13 +1,10 @@
 { config, pkgs, ... }:
 let
-  backup = import ../../system/backup.nix {
-    inherit pkgs;
-    backupTime = "*-*-* *:04:00";
-  };
+  borgbackup = import ./backup.nix { inherit pkgs; };
 in
 {
   services = {
-    inherit (backup) borgbackup;
+    inherit borgbackup;
 
     adguardhome = {
       enable = false;
