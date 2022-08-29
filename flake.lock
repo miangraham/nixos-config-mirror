@@ -39,11 +39,11 @@
     "filter-tweets": {
       "flake": false,
       "locked": {
-        "lastModified": 1661350673,
-        "narHash": "sha256-b/E96TTFztxfysexo3FwV8QIc0qZfGt54gs8zy6pFHU=",
+        "lastModified": 1661774133,
+        "narHash": "sha256-WPtFpGCt7y/Ga8a2zhXxPJ7gmOjZPRg//s+oO5IOt5o=",
         "ref": "master",
-        "rev": "c6d63c595d9420b67fec8c631b7491b55e025e6f",
-        "revCount": 1,
+        "rev": "a45b809e148189a14f620e2803b4a7fe0203f94e",
+        "revCount": 2,
         "type": "git",
         "url": "ssh://git@github.com/miangraham/filter-tweets.git"
       },
