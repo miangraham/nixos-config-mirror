@@ -21,36 +21,26 @@
         useUserPackages = true;
         users.ian = import ./home {inherit inputs;};
       };
+      boxConfig = addModules: (inputs.nixpkgs.lib.nixosSystem) {
+        inherit specialArgs;
+        system = "x86_64-linux";
+        modules = addModules ++ [
+          inputs.home-manager.nixosModules.home-manager
+          { inherit home-manager; }
+        ];
+      };
     in {
       nixosConfigurations = {
-        nene = inputs.nixpkgs.lib.nixosSystem {
-          inherit specialArgs;
-          system = "x86_64-linux";
-          modules = [
-            ./box/nene
-            inputs.home-manager.nixosModules.home-manager
-            { inherit home-manager; }
-          ];
-        };
-        futaba = inputs.nixpkgs.lib.nixosSystem {
-          inherit specialArgs;
-          system = "x86_64-linux";
-          modules = [
-            ./box/futaba
-            inputs.home-manager.nixosModules.home-manager
-            { inherit home-manager; }
-          ];
-        };
-        rin = inputs.nixpkgs.lib.nixosSystem {
-          inherit specialArgs;
-          system = "x86_64-linux";
-          modules = [
-            ./box/rin
-            inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t14-amd-gen1
-            inputs.home-manager.nixosModules.home-manager
-            { inherit home-manager; }
-          ];
-        };
+        nene = boxConfig [
+          ./box/nene
+        ];
+        futaba = boxConfig [
+          ./box/futaba
+        ];
+        rin = boxConfig [
+          ./box/rin
+          inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t14-amd-gen1
+        ];
         pika = inputs.unstable-small.lib.nixosSystem {
           inherit specialArgs;
           system = "aarch64-linux";
