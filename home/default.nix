@@ -12,6 +12,7 @@ let
   mpv = import ./mpv.nix { inherit pkgs; };
   secrets = import ./secrets.nix { inherit pkgs; };
   starship = import ./starship.nix { inherit pkgs; };
+  sworkstyle = pkgs.callPackage ./sworkstyle.nix {};
   tmux = import ./tmux.nix { inherit pkgs; };
   waybar = import ./waybar.nix { inherit lib pkgs; };
 in
@@ -91,6 +92,11 @@ in
     services.fcitx-daemon = {
       Install.WantedBy = [ "graphical-session.target" ];
       Service.ExecStart = "/run/current-system/sw/bin/fcitx -D";
+    };
+
+    services.sworkstyle = {
+      Install.WantedBy = [ "graphical-session.target" ];
+      Service.ExecStart = "${sworkstyle}/bin/sworkstyle -d";
     };
   };
 
