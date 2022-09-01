@@ -6,11 +6,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1661856816,
-        "narHash": "sha256-pb/Xu1p5q3xtk5nxBj25eoeM02SFSQ53FjSBqT+FNhE=",
+        "lastModified": 1661971922,
+        "narHash": "sha256-s330P67qcbTvWoCjMocrZ4XrE5weP9HwDS7+ZYCkEmw=",
         "owner": "nix-community",
         "repo": "emacs-overlay",
-        "rev": "b726259df1d6defe5af8c5be45ff6457885f2a5f",
+        "rev": "4b8f329fb51cd65be249f478672f70dbf1c0a5ad",
         "type": "github"
       },
       "original": {
@@ -147,11 +147,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1661788116,
-        "narHash": "sha256-bLPHlcCGZYojB/Z7L/lmbLAMsxGgqrFhlxF0jMsIm/I=",
+        "lastModified": 1661864979,
+        "narHash": "sha256-ajXYYTE1uoY3ei/P1v+Knklf2QNCBxMtw1gByaPTGU4=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "cc634d9aa08ed89c9ff655de06ab2e593c72ebc1",
+        "rev": "a28adc36c20fd2fbaeb06ec9bbd79b6bf7443979",
         "type": "github"
       },
       "original": {
@@ -200,11 +200,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1661828444,
-        "narHash": "sha256-PDVS1L+rfCanIzmtpjouySfeS1UoPGOj/hZzz3POjPA=",
+        "lastModified": 1661915084,
+        "narHash": "sha256-+csJO6Ffp9A51N6GlwrhS+U35STAxNbp42vpKmaBrck=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "6bc5e02b2bcd94568813ab238e3b567c84647b84",
+        "rev": "790cf08a011248a881a516cadf125bbc47f1a420",
         "type": "github"
       },
       "original": {
@@ -232,27 +232,27 @@
     },
     "unstable": {
       "locked": {
-        "lastModified": 1661874040,
-        "narHash": "sha256-NxA0I/o/yMzCUPX6mXGPOJePfG+fSPuCZykvKaXlpXM=",
+        "lastModified": 1661959735,
+        "narHash": "sha256-P6x+vSU8S+rng46xgO19pAuG0g8QFfa16CPQ4NWyiLU=",
         "owner": "miangraham",
         "repo": "nixpkgs",
-        "rev": "d62da90accec4af4ffe9c2dfbffe996f35e090b9",
+        "rev": "cc0f5950c29950e84a06eb7e9c92aa9b313acd1c",
         "type": "github"
       },
       "original": {
         "owner": "miangraham",
-        "ref": "master",
+        "ref": "swayest-workstyle-init",
         "repo": "nixpkgs",
         "type": "github"
       }
     },
     "unstable-small": {
       "locked": {
-        "lastModified": 1661846789,
-        "narHash": "sha256-gpizELTzMLw/UislEW9rp4B5ZLcgHkQbkqoxCoDZurc=",
+        "lastModified": 1661984032,
+        "narHash": "sha256-IG9bSw8FLe8Ztms+lOb/Vn2bIqxwj6/a9T1xU5Wc8Y0=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "1cc8a7ba8844f68a646da509a3976b52f406a28c",
+        "rev": "034175e4bea4e4b735d35fd06e04213f0777d4ff",
         "type": "github"
       },
       "original": {

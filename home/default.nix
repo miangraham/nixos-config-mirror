@@ -12,7 +12,7 @@ let
   mpv = import ./mpv.nix { inherit pkgs; };
   secrets = import ./secrets.nix { inherit pkgs; };
   starship = import ./starship.nix { inherit pkgs; };
-  sworkstyle = pkgs.callPackage ./sworkstyle.nix {};
+  sworkstyle = unstable.swayest-workstyle;
   tmux = import ./tmux.nix { inherit pkgs; };
   waybar = import ./waybar.nix { inherit lib pkgs; };
 in
