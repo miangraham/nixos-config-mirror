@@ -98,6 +98,11 @@ in
       Install.WantedBy = [ "graphical-session.target" ];
       Service.ExecStart = "${sworkstyle}/bin/sworkstyle -d";
     };
+
+    services.autotiling = {
+      Install.WantedBy = [ "graphical-session.target" ];
+      Service.ExecStart = "${pkgs.autotiling}/bin/autotiling";
+    };
   };
 
   xdg.userDirs = {
