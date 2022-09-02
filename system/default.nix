@@ -62,6 +62,7 @@ in
   users.users.ian = {
     isNormalUser = true;
     extraGroups = [
+      "adbusers"
       "audio"
       "dialout"
       "networkmanager"
@@ -99,11 +100,16 @@ in
     };
   };
 
-  programs.git = {
-    enable = true;
-    config = {
-      init.defaultBranch = "master";
-      safe.directory = "/home/ian/.nix";
+  programs = {
+    git = {
+      enable = true;
+      config = {
+        init.defaultBranch = "master";
+        safe.directory = "/home/ian/.nix";
+      };
     };
+
+    adb.enable = true;
   };
+
 }
