@@ -135,6 +135,9 @@ in
         # Dev
         "devtools.chrome.enabled" = true;
         "devtools.debugger.remote-enabled" = true;
+
+        # DRM
+        "media.gmp-widevinecdm.enabled" = true;
       };
     };
   };
