@@ -2,6 +2,7 @@
 let
   lib = pkgs.lib;
   unstable = import ../common/unstable.nix { inherit pkgs inputs; };
+  dev = import ../common/dev.nix { inherit pkgs inputs; };
   home-packages = import ./packages.nix { inherit pkgs inputs unstable; };
 
   alacritty = import ./alacritty.nix { inherit pkgs; };
@@ -12,7 +13,7 @@ let
   mpv = import ./mpv.nix { inherit pkgs; };
   secrets = import ./secrets.nix { inherit pkgs; };
   starship = import ./starship.nix { inherit pkgs; };
-  sworkstyle = unstable.swayest-workstyle;
+  sworkstyle = dev.swayest-workstyle;
   tmux = import ./tmux.nix { inherit pkgs; };
   waybar = import ./waybar.nix { inherit lib pkgs; };
 in

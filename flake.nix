@@ -2,8 +2,9 @@
   description = "";
   inputs = {
     nixpkgs = { url = "github:NixOS/nixpkgs/nixos-22.05"; };
-    unstable = { url = "github:miangraham/nixpkgs/swayest-workstyle-init"; };
+    unstable = { url = "github:NixOS/nixpkgs/nixos-unstable"; };
     unstable-small = { url = "github:NixOS/nixpkgs/nixos-unstable-small"; };
+    dev = { url = "github:miangraham/nixpkgs/swayest-workstyle-init"; };
     nixos-hardware = { url = "github:NixOS/nixos-hardware/master"; };
     home-manager = { url = "github:nix-community/home-manager/release-22.05"; };
     emacs-overlay = { url = "github:nix-community/emacs-overlay"; };
