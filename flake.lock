@@ -2,16 +2,16 @@
   "nodes": {
     "dev": {
       "locked": {
-        "lastModified": 1661959735,
-        "narHash": "sha256-P6x+vSU8S+rng46xgO19pAuG0g8QFfa16CPQ4NWyiLU=",
-        "owner": "miangraham",
+        "lastModified": 1662371094,
+        "narHash": "sha256-tnlqjdZdNZhx87+r524/IPNroNPPaV8VGrMSLNTt+Jg=",
+        "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "cc0f5950c29950e84a06eb7e9c92aa9b313acd1c",
+        "rev": "2b04260f044581d2ed90bc388e9ac2a0797a7532",
         "type": "github"
       },
       "original": {
-        "owner": "miangraham",
-        "ref": "swayest-workstyle-init",
+        "owner": "NixOS",
+        "ref": "master",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -24,11 +24,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1662202388,
-        "narHash": "sha256-hZTorUPwStlQ1ownYG7oCDZ26V+NAAC+JGSJYjMTE4o=",
+        "lastModified": 1662352075,
+        "narHash": "sha256-xh8VqTB2TZOGqPwjx7Nb1YATvDNWm+fxppSk+1wdX7I=",
         "owner": "nix-community",
         "repo": "emacs-overlay",
-        "rev": "ee09bacab85d5fa4384466905831a2c9f9bf6514",
+        "rev": "3633040a41dc3379b5c4d53a4ec0fc0eb68b236d",
         "type": "github"
       },
       "original": {
@@ -193,11 +193,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1662173844,
-        "narHash": "sha256-+ZgW98Y8fZkgFSylE+Mzalumw+kw3SVivZznbJqQaj8=",
+        "lastModified": 1662346831,
+        "narHash": "sha256-kV2/98qORIAD1PJG3QMoatDxtj7u1l594YT7QwIuZiA=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "8ac6d40380dc4ec86f1ff591d5c14c8ae1d77a18",
+        "rev": "10d890fee54e15deec4312fed58d538e3a1a01a6",
         "type": "github"
       },
       "original": {
