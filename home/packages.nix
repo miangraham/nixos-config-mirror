@@ -68,6 +68,10 @@ builtins.attrValues {
     freetube
     pueue
     aria2
+
+    # sway
+    sov
+    wev
   ;
 
   inherit (pkgs.gitAndTools) git-subrepo;

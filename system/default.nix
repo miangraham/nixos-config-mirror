@@ -110,6 +110,7 @@ in
     };
 
     adb.enable = true;
+    wshowkeys.enable = true;
   };
 
 }
