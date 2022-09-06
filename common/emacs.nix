@@ -30,6 +30,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     elfeed-tube
     emacsql
     emacsql-sqlite3
+    ement
     eslint-fix
     forge
     flycheck
@@ -45,8 +46,6 @@ pkgs.emacsWithPackagesFromUsePackage {
     js2-mode
     json-mode
     ledger-mode
-    lsp-mode
-    lsp-ui
     magit
     marginalia
     markdown-mode
