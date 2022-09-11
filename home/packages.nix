@@ -26,6 +26,7 @@ builtins.attrValues {
     john
     jq
     kiwix
+    krita
     lftp
     micro
     mu
@@ -46,6 +47,7 @@ builtins.attrValues {
     tdesktop
     tldr
     ungoogled-chromium
+    write_stylus
     valgrind
     vlc
     zeal
