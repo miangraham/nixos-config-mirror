@@ -14,6 +14,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     biblio
     bibtex-completion
     burly
+    command-log-mode
     consult
     consult-project-extra
     corfu
@@ -45,6 +46,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     htmlize
     js2-mode
     json-mode
+    keycast
     ledger-mode
     magit
     marginalia
