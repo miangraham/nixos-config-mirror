@@ -11,7 +11,7 @@
     };
 
     cmd_duration.disabled = true;
-    hostname.ssh_only = false;
-    username.show_always = true;
+    # hostname.ssh_only = false;
+    # username.show_always = true;
   };
 }

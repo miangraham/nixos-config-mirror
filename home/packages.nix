@@ -2,10 +2,12 @@
 builtins.attrValues {
   inherit (pkgs)
     alacritty
+    aseprite
     audacity
     awscli
     bitwarden
     cachix
+    chatterino2
     cmus
     diskonaut
     du-dust
