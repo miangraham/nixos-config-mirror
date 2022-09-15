@@ -93,7 +93,7 @@ builtins.attrValues {
 
   node2nix = pkgs.nodePackages.node2nix;
 
-  # twitch-tui = (unstable.callPackage ./twitch-tui {});
+  twitch-chat-tui = (unstable.callPackage ./twitch-chat-tui.nix {});
 
   obs-studio = unstable.wrapOBS { plugins = [ unstable.obs-studio-plugins.obs-websocket ]; };
 }
