@@ -11,6 +11,7 @@ builtins.attrValues {
     cmus
     diskonaut
     du-dust
+    easyeffects
     element-desktop
     entr
     evince
@@ -25,6 +26,7 @@ builtins.attrValues {
     grim
     imagemagick
     ispell
+    jamesdsp
     john
     jq
     kiwix

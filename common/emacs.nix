@@ -42,6 +42,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     haskell-mode
     hcl-mode
     helpful
+    hide-mode-line
     highlight-indent-guides
     htmlize
     js2-mode

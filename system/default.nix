@@ -110,6 +110,7 @@ in
     };
 
     adb.enable = true;
+    noisetorch.enable = true;
     wshowkeys.enable = true;
   };
 
