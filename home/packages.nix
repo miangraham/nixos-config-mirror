@@ -66,6 +66,7 @@ builtins.attrValues {
     swayidle
     swaylock
     waybar
+    libnotify
   ;
 
   inherit (unstable)
@@ -76,6 +77,8 @@ builtins.attrValues {
     # sway
     sov
     wev
+
+    twitch-tui
   ;
 
   inherit (pkgs.gitAndTools) git-subrepo;
@@ -90,7 +93,7 @@ builtins.attrValues {
 
   node2nix = pkgs.nodePackages.node2nix;
 
-  twitch-tui = (unstable.callPackage ./twitch-tui {});
+  # twitch-tui = (unstable.callPackage ./twitch-tui {});
 
   obs-studio = unstable.wrapOBS { plugins = [ unstable.obs-studio-plugins.obs-websocket ]; };
 }

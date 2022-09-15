@@ -58,6 +58,21 @@ in
         hide_userland_threads = 1;
       };
     };
+
+    mako = {
+      enable = true;
+      maxVisible = 1;
+      defaultTimeout = 10000;
+      ignoreTimeout = true;
+      actions = false;
+      anchor = "top-right";
+      # margin = "20,20,100,20"; # top right bottom left
+      margin = "20"; # top right bottom left
+      width = 500;
+      height = 500;
+      borderSize = 0;
+      backgroundColor = "#68217AFF";
+    };
   };
 
   services = {

@@ -50,6 +50,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     ledger-mode
     magit
     marginalia
+    marquee-header
     markdown-mode
     nix-mode
     no-littering
