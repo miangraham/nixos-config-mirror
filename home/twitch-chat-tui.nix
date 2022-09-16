@@ -1,16 +1,16 @@
-{ pkgs, lib, stdenv, fetchFromGitHub, openssl, pkg-config, curl, rustPlatform }:
+{ pkgs, lib, stdenv, fetchFromSourcehut, openssl, pkg-config, curl, rustPlatform }:
 rustPlatform.buildRustPackage rec {
   pname = "twitch-chat-tui";
-  version = "unstable-2022-09-15";
+  version = "unstable-2022-09-16";
 
-  src = fetchFromGitHub {
-    owner = "stuck-overflow";
+  src = fetchFromSourcehut {
+    owner = "~mian";
     repo = pname;
-    rev = "ab62af7a58df5e6dd13e8d6ad019a97ff5f68126";
-    sha256 = "sha256-uOdMB8Dp/4XI5EzbPpxiFiQmHFVAtFxusCrHqwBC03M=";
+    rev = "a97290976c4a98cd92f85b5150c6940f41e74f82";
+    sha256 = "sha256-gabNM1nNFOveMmaL8crYUOcgaIZ74880wYO89ql6lDE=";
   };
 
-  cargoSha256 = "sha256-Bo+BINKYINJVk+k8MAMx+db9+WDLyrMz0luvQFlcnEU=";
+  cargoSha256 = "sha256-Lw9VY3BORIrfE5gZDXUGqjpAQB4aKzWcW+DMAIGFky0=";
 
   nativeBuildInputs = [ pkg-config ];
   buildInputs = [ openssl ];
