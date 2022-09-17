@@ -11,7 +11,8 @@ builtins.attrValues {
     cmus
     diskonaut
     du-dust
-    easyeffects
+    # broke pipewire?
+    # easyeffects
     element-desktop
     entr
     evince
@@ -24,6 +25,7 @@ builtins.attrValues {
     godot
     graphviz
     grim
+    helvum
     imagemagick
     ispell
     jamesdsp
@@ -97,5 +99,8 @@ builtins.attrValues {
 
   twitch-chat-tui = (unstable.callPackage ./twitch-chat-tui.nix {});
 
-  obs-studio = unstable.wrapOBS { plugins = [ unstable.obs-studio-plugins.obs-websocket ]; };
+  obs-studio = unstable.wrapOBS { plugins = with unstable.obs-studio-plugins; [
+    obs-pipewire-audio-capture
+    obs-websocket
+  ]; };
 }
