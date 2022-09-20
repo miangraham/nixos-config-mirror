@@ -133,4 +133,28 @@ in
     templates = "$HOME/.config/dummyxdgtemplates";
     videos = "$HOME/videos";
   };
+
+  gtk = let
+    t = {
+      package = pkgs.dracula-theme;
+      name = "Dracula";
+    };
+    ex = { gtk-application-prefer-dark-theme = true; };
+  in {
+    enable = true;
+    theme = t;
+    iconTheme = t;
+    cursorTheme = t;
+    gtk3.extraConfig = ex;
+    gtk4.extraConfig = ex;
+  };
+
+  qt = {
+    enable = false;
+    platformTheme = "gnome";
+    style = {
+      name = "adwaita-dark";
+      package = pkgs.adwaita-qt;
+    };
+  };
 }

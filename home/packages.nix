@@ -65,10 +65,10 @@ builtins.attrValues {
     zotero
 
     # themes
-    adapta-gtk-theme
-    arc-theme
-    equilux-theme
-    nordic
+    # adapta-gtk-theme
+    # arc-theme
+    # equilux-theme
+    # nordic
 
     # sway
     swayidle
