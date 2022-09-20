@@ -7,6 +7,8 @@ builtins.attrValues {
     awscli
     bitwarden
     cachix
+    calf
+    carla
     chatterino2
     cmus
     diskonaut
@@ -34,6 +36,7 @@ builtins.attrValues {
     kiwix
     krita
     lftp
+    lsp-plugins
     micro
     mu
     neofetch
@@ -50,6 +53,7 @@ builtins.attrValues {
     sonixd
     speedtest-cli
     sublime-music
+    tap-plugins
     tdesktop
     tldr
     ungoogled-chromium
