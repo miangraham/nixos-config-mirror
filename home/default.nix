@@ -144,7 +144,14 @@ in
     enable = true;
     theme = t;
     iconTheme = t;
-    cursorTheme = t;
+    # cursorTheme = {
+    #   package = pkgs.capitaine-cursors;
+    #   name = "capitaine-cursors";
+    #   package = pkgs.quintom-cursor-theme;
+    #   name = "Quintom_Ink";
+    #   package = pkgs.nordzy-cursor-theme;
+    #   name = "Nordzy-cursors";
+    # };
     gtk3.extraConfig = ex;
     gtk4.extraConfig = ex;
   };

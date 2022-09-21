@@ -30,7 +30,7 @@
 
     focus = {
       newWindow = "urgent";
-      followMouse = "yes";
+      followMouse = "always";
     };
 
     input = {
