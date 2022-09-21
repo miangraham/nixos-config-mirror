@@ -21,6 +21,7 @@ builtins.attrValues {
     exa
     fd
     ffmpeg
+    flac
     fontforge-gtk
     fuzzel
     gimp
@@ -47,6 +48,7 @@ builtins.attrValues {
     picocom
     protonmail-bridge
     qdirstat
+    qpwgraph
     ranger
     reaper
     shellcheck
