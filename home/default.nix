@@ -62,7 +62,7 @@ in
     mako = {
       enable = true;
       maxVisible = 1;
-      defaultTimeout = 10000;
+      defaultTimeout = 5000;
       ignoreTimeout = true;
       actions = false;
       anchor = "top-right";

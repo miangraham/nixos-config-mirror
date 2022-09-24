@@ -30,7 +30,11 @@
 
     focus = {
       newWindow = "urgent";
-      followMouse = "always";
+      followMouse = "no";
+    };
+
+    seat = {
+      "*" = { hide_cursor = "when-typing enable"; };
     };
 
     input = {
