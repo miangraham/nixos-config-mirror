@@ -3,17 +3,19 @@
   enable = true;
   wrapperFeatures.gtk = true;
   systemdIntegration = true;
-  config = {
+  config = let
     modifier = "Mod4";
+    terminal = "alacritty";
+  in {
+    inherit modifier terminal;
+
     left = "j";
     down = "k";
     up = "l";
     right = "semicolon";
 
-    terminal = "alacritty";
     menu = "fuzzel --font=Inconsolata:size=20,Terminus,monospace --border-radius=3 --inner-pad=10 --background=1f1f1fef --text-color=dcdcccff --match-color=ce3eceff --selection-color=3f5f3fff --selection-text-color=ffffefff --border-color=acac9cff";
 
-    keybindings = {};
     bars = [];
 
     window = {
@@ -112,6 +114,35 @@
         indicator = "#000000";
         childBorder = "#0c0c0c";
       };
+    };
+
+    keybindings = let
+      mod = modifier;
+      menu = "fuzzel --font=Inconsolata:size=20,Terminus,monospace --border-radius=3 --inner-pad=10 --background=1f1f1fef --text-color=dcdcccff --match-color=ce3eceff --selection-color=3f5f3fff --selection-text-color=ffffefff --border-color=acac9cff"
+;
+    in {
+      "${mod}+Return" = "exec ${terminal}";
+      "${mod}+d" = "exec \"${menu}\"";
+      "${mod}+Shift+q" = "kill";
+      "${mod}+Shift+c" = "reload";
+      "${mod}+Shift+e" = "exec \"swaymsg exit\"";
+      "${mod}+h" = "split h";
+      "${mod}+v" = "split v";
+      "${mod}+f" = "fullscreen toggle";
+      "${mod}+r" = "mode resize";
+
+      "${mod}+space" = "focus mode_toggle";
+      "${mod}+a" = "focus parent";
+
+      "${mod}+s" = "layout stacking";
+      "${mod}+w" = "layout tabbed";
+      "${mod}+e" = "layout toggle split";
+
+      "${mod}+Shift+space" = "floating toggle";
+      "${mod}+Shift+s" = "sticky toggle";
+
+      # Side panel
+      "${mod}+p" = "resize set width 20 ppt";
     };
   };
 
