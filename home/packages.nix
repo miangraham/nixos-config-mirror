@@ -52,6 +52,7 @@ builtins.attrValues {
     ranger
     reaper
     shellcheck
+    slurp
     sonixd
     speedtest-cli
     sublime-music
