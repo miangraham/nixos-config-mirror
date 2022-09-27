@@ -3,6 +3,7 @@ builtins.attrValues {
   inherit (pkgs)
     alacritty
     aseprite
+    asunder
     audacity
     awscli
     bitwarden
@@ -110,4 +111,6 @@ builtins.attrValues {
     obs-pipewire-audio-capture
     obs-websocket
   ]; };
+
+  obs-remote = (unstable.callPackage ./obs-remote.nix {});
 }
