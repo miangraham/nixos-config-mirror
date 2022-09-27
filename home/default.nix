@@ -60,7 +60,7 @@ in
     };
 
     mako = {
-      enable = true;
+      enable = false;
       maxVisible = 1;
       defaultTimeout = 5000;
       ignoreTimeout = true;
@@ -94,6 +94,30 @@ in
         command = "swaymsg \"output * dpms off\"";
         resumeCommand = "swaymsg \"output * dpms on\"";
       }];
+    };
+
+    dunst = {
+      enable = true;
+      settings = {
+        global = {
+          notification_limit = 1;
+          progress_bar = false;
+          indicate_hidden = false;
+          show_indicators = false;
+          timeout = "5s";
+          ignore_dbusclose = true;
+          min_icon_size = 64;
+          max_icon_size = 64;
+          # horizontal_padding = 16;
+          width = "(300, 800)";
+          origin = "top-right";
+          offset = "20x20";
+          corner_radius = 0;
+          frame_width = 0;
+          background = "#68217AFF";
+          font = "Noto Sans 10";
+        };
+      };
     };
   };
 
