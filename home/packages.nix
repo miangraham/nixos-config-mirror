@@ -106,7 +106,7 @@ builtins.attrValues {
 
   node2nix = pkgs.nodePackages.node2nix;
 
-  twitch-chat-tui = (unstable.callPackage ./twitch-chat-tui.nix {});
+  twitch-chat-tui = (pkgs.callPackage ./twitch-chat-tui.nix {});
 
   obs-studio = unstable.wrapOBS { plugins = with unstable.obs-studio-plugins; [
     obs-pipewire-audio-capture
