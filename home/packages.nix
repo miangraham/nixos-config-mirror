@@ -39,6 +39,7 @@ builtins.attrValues {
     krita
     lftp
     lsp-plugins
+    lyrebird
     micro
     mu
     neofetch

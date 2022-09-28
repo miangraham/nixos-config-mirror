@@ -1,8 +1,12 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 let
-  # inherit (inputs) filter-tweets;
-  # filter-tweets = inputs.filter-tweets;
-  filter-tweets = import inputs.filter-tweets { inherit pkgs; };
+  filter-tweets-src = pkgs.fetchFromSourcehut {
+    owner = "~mian";
+    repo = "filter-tweets";
+    rev = "9d696646745aadd06d4ba854fc4d4b55b55797e8";
+    sha256 = "sha256-Y2onVg/WMlKiBZES/vrzbtnbJA+lSLN7CVSWgMrpksY=";
+  };
+  filter-tweets = import filter-tweets-src { inherit pkgs; };
   serviceConfig = {
     Type = "oneshot";
     User = "ian";
