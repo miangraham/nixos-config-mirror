@@ -48,6 +48,7 @@ builtins.attrValues {
     nix-prefetch-git
     pandoc
     picocom
+    playerctl
     protonmail-bridge
     qdirstat
     qpwgraph
