@@ -12,6 +12,7 @@ let
   git = import ./git.nix { pkgs = unstable; };
   mpv = import ./mpv.nix { inherit pkgs; };
   secrets = import ./secrets.nix { inherit pkgs; };
+  ssh = import ./ssh.nix { inherit pkgs; };
   starship = import ./starship.nix { inherit pkgs; };
   sworkstyle = dev.swayest-workstyle;
   tmux = import ./tmux.nix { inherit pkgs; };
@@ -31,10 +32,9 @@ in
   wayland.windowManager.sway = import ./sway.nix { inherit pkgs; };
 
   programs = {
-    inherit alacritty bash direnv firefox git mpv starship tmux waybar;
+    inherit alacritty bash direnv firefox git mpv ssh starship tmux waybar;
     inherit (secrets.programs) gpg password-store;
 
-    # home-manager.enable = true;
     autojump.enable = true;
     feh.enable = true;
 
@@ -42,13 +42,6 @@ in
     #   enable = true;
     #   plugins = [ pkgs.obs-studio-plugins.obs-websocket ];
     # };
-
-    rofi = {
-      enable = false;
-      location = "bottom-right";
-      yoffset = -30;
-      theme = "gruvbox-dark";
-    };
 
     htop = {
       enable = true;
@@ -66,7 +59,6 @@ in
       ignoreTimeout = true;
       actions = false;
       anchor = "top-right";
-      # margin = "20,20,100,20"; # top right bottom left
       margin = "20"; # top right bottom left
       width = 500;
       height = 500;
