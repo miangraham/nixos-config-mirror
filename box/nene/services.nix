@@ -1,10 +1,7 @@
 { pkgs, inputs, config, ... }:
 let
   unstable = import ../../common/unstable.nix {inherit pkgs inputs;};
-  backup = import ../../system/backup.nix {
-    inherit pkgs;
-    backupTime = "*-*-* *:02:00";
-  };
+  borgbackup = import ./backup.nix { inherit pkgs; };
   yt-dlp = import ../../home/yt-dlp.nix { inherit pkgs inputs; };
 in
 {
@@ -25,7 +22,7 @@ in
   };
 
   services = {
-    inherit (backup) borgbackup;
+    inherit borgbackup;
 
     # box specific due to ACME, rip
     nginx = {

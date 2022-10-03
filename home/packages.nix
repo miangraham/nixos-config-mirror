@@ -30,6 +30,7 @@ builtins.attrValues {
     graphviz
     grim
     helvum
+    iftop
     imagemagick
     ispell
     jamesdsp
@@ -43,6 +44,7 @@ builtins.attrValues {
     micro
     mu
     neofetch
+    nethogs
     netlify-cli
     nix-direnv
     nix-prefetch-git
