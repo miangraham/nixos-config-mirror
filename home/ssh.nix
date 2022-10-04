@@ -29,10 +29,10 @@ in
       hostname = rid + rhost;
     };
 
-    "*" = {
-      extraOptions = {
-        AddressFamily = "inet";
-      };
-    };
+    # "*" = {
+    #   extraOptions = {
+    #     AddressFamily = "inet";
+    #   };
+    # };
   };
 }
