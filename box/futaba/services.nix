@@ -42,24 +42,6 @@ in
       };
     };
 
-    rss-bridge = {
-      enable = false;
-      virtualHost = null;
-      whitelist = [
-        "DevTo"
-        "Facebook"
-        "GithubIssue"
-        "Instagram"
-        "Mastodon"
-        "Pixiv"
-        "Reddit"
-        "Twitter"
-        "Vimeo"
-        "Wikipedia"
-        "Youtube"
-      ];
-    };
-
     searx = {
       enable = true;
       settings = {

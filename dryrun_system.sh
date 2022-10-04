@@ -12,5 +12,5 @@ fi
 if [[ "$HOSTNAME" == "nene" ]]; then
   nixos-rebuild dry-build --flake '.#' --show-trace
 else
-  nixos-rebuild dry-build --flake '.#' --show-trace --override-input filter-tweets path:/home/ian/.nix/common/filter-tweets
+  nixos-rebuild dry-build --flake '.#' --show-trace
 fi
