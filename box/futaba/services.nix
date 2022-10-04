@@ -6,11 +6,6 @@ in
   services = {
     inherit borgbackup;
 
-    adguardhome = {
-      enable = false;
-      port = 9090;
-    };
-
     # box specific due to ACME, rip
     nginx = {
       enable = true;
@@ -20,25 +15,6 @@ in
           serverName = "192.168.0.128";
           root = "/var/www";
         };
-
-        # rss-bridge = {
-        #   serverName = "rss-bridge";
-        #   root = "${pkgs.rss-bridge}";
-
-        #   locations."/" = {
-        #     tryFiles = "$uri /index.php$is_args$args";
-        #   };
-
-        #   locations."~ ^/index.php(/|$)" = {
-        #     extraConfig = ''
-        #       include ${pkgs.nginx}/conf/fastcgi_params;
-        #       fastcgi_split_path_info ^(.+\.php)(/.+)$;
-        #       fastcgi_pass unix:${config.services.phpfpm.pools.${config.services.rss-bridge.pool}.socket};
-        #       fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-        #       fastcgi_param RSSBRIDGE_DATA ${config.services.rss-bridge.dataDir};
-        #     '';
-        #   };
-        # };
       };
     };
 
@@ -67,6 +43,15 @@ in
         passBlock = "";
       };
       # extraFlags = [ "--debug" ];
+    };
+    logrotate.settings.znc = {
+      files = "/var/lib/znc/moddata/log/libera/libera/*/*.log";
+      frequency = "daily";
+      su = "znc znc";
+      rotate = 9000;
+      compress = true;
+      delaycompress = true;
+      copytruncate = true;
     };
 
     smokeping = {

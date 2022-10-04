@@ -39,6 +39,7 @@ builtins.attrValues {
     kiwix
     krita
     lftp
+    logrotate
     lsp-plugins
     lyrebird
     micro
