@@ -61,6 +61,14 @@ in
       };
     };
 
+    znc = {
+      enable = true;
+      confOptions = {
+        passBlock = "";
+      };
+      # extraFlags = [ "--debug" ];
+    };
+
     smokeping = {
       enable = true;
       hostName = "futaba";

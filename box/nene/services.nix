@@ -55,14 +55,6 @@ in
       };
       environmentFile = /home/ian/.config/searx/env;
     };
-
-    znc = {
-      enable = true;
-      confOptions = {
-        passBlock = "";
-      };
-      # extraFlags = [ "--debug" ];
-    };
   };
 
   security.acme = {
