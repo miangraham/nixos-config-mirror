@@ -11,13 +11,6 @@ in
     '';
   };
 
-  borgbackup.jobs.home-ian-to-usb = job {
-    repo = "/run/media/ian/70F3-5B2F/borg";
-    user = "ian";
-    doInit = false;
-    removableDevice = true;
-  };
-
   borgbackup.jobs.home-ian-to-homura = job {
     repo = "/home/ian/mounts/homuraborg";
     user = "ian";
