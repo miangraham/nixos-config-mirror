@@ -45,16 +45,6 @@ in
         };
       };
     };
-
-    searx = {
-      enable = true;
-      settings = {
-        server.port = 8989;
-        server.bind_address = "0.0.0.0";
-        server.secret_key = "@SEARX_SECRET_KEY@";
-      };
-      environmentFile = /home/ian/.config/searx/env;
-    };
   };
 
   security.acme = {
@@ -74,10 +64,5 @@ in
       unstable.aria2
     ];
     script = "pueued -v";
-  };
-
-  systemd.services.searx.serviceConfig = {
-    RuntimeMaxSec = "30m";
-    Restart = "always";
   };
 }

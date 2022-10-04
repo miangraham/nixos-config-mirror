@@ -136,4 +136,9 @@ in
     partOf = [ "rss-refresh.service" ];
     timerConfig.OnCalendar = "*-*-* *:00:00";
   };
+
+  systemd.services.searx.serviceConfig = {
+    RuntimeMaxSec = "30m";
+    Restart = "always";
+  };
 }
