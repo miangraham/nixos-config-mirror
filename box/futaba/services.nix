@@ -39,13 +39,15 @@ in
 
     znc = {
       enable = true;
+      openFirewall = true;
+      dataDir = "/srv/znc";
       confOptions = {
         passBlock = "";
       };
       # extraFlags = [ "--debug" ];
     };
     logrotate.settings.znc = {
-      files = "/var/lib/znc/moddata/log/libera/libera/*/*.log";
+      files = "/srv/znc/moddata/log/libera/libera/*/*.log";
       frequency = "daily";
       su = "znc znc";
       rotate = 9000;
