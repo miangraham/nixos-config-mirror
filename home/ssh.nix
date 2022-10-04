@@ -27,6 +27,9 @@ in
     rnet = {
       user = rid;
       hostname = rid + rhost;
+      extraOptions = {
+        AddressFamily = "inet";
+      };
     };
 
     # "*" = {

@@ -43,6 +43,7 @@ builtins.attrValues {
     lsp-plugins
     lyrebird
     micro
+    mtr
     mu
     neofetch
     nethogs
@@ -65,6 +66,7 @@ builtins.attrValues {
     tap-plugins
     tdesktop
     tldr
+    traceroute
     ungoogled-chromium
     write_stylus
     valgrind
