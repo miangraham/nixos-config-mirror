@@ -3,7 +3,8 @@ let
   fonts = import ./fonts.nix {inherit pkgs;};
   packages = import ./packages.nix {inherit pkgs inputs;};
   overlays = import ../common/overlays-stable.nix {inherit inputs pkgs;};
-  services = import ./services.nix {inherit pkgs;};
+  dev = import ../common/dev.nix { inherit pkgs inputs; };
+  services = import ./services.nix {inherit pkgs dev;};
 in
 {
   imports = [

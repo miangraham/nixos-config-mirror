@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, dev, ... }:
 {
   earlyoom.enable = true;
   udisks2.enable = true;
@@ -28,7 +28,10 @@
   dictd = {
     enable = true;
     DBs = with pkgs.dictdDBs; [
-      wiktionary wordnet
+      # wiktionary
+      wordnet
+      dev.dictdDBs.eng2jpn
+      dev.dictdDBs.jpn2eng
     ];
   };
 }

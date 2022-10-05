@@ -14,7 +14,7 @@ let
   secrets = import ./secrets.nix { inherit pkgs; };
   ssh = import ./ssh.nix { inherit pkgs; };
   starship = import ./starship.nix { inherit pkgs; };
-  sworkstyle = dev.swayest-workstyle;
+  sworkstyle = unstable.swayest-workstyle;
   tmux = import ./tmux.nix { inherit pkgs; };
   waybar = import ./waybar.nix { inherit lib pkgs; };
 in

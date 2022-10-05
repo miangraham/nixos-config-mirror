@@ -2,16 +2,16 @@
   "nodes": {
     "dev": {
       "locked": {
-        "lastModified": 1664365302,
-        "narHash": "sha256-pKxQgXdc0wCvcdsnnWJuCyxYVmt/wmfkAM/g8MihbgQ=",
-        "owner": "NixOS",
+        "lastModified": 1665003833,
+        "narHash": "sha256-LVva+/Q0e/7dIYZkk6qggEcVXkRQqHjOcgaRBfonsbc=",
+        "owner": "miangraham",
         "repo": "nixpkgs",
-        "rev": "b6fe86fd453702d76a8a14d0c1f94ecee28d9cbb",
+        "rev": "f43e2655307e4cdadbb77dc4fff8b8773a48e591",
         "type": "github"
       },
       "original": {
-        "owner": "NixOS",
-        "ref": "master",
+        "owner": "miangraham",
+        "ref": "dict-add-jpn-dbs",
         "repo": "nixpkgs",
         "type": "github"
       }
