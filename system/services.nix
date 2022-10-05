@@ -24,4 +24,11 @@
     configDir = "/home/ian/.config/syncthing";
     guiAddress = "0.0.0.0:8384";
   };
+
+  dictd = {
+    enable = true;
+    DBs = with pkgs.dictdDBs; [
+      wiktionary wordnet
+    ];
+  };
 }
