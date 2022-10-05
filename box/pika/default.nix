@@ -1,7 +1,7 @@
 { pkgs, inputs, ... }:
 let
   unstable-small = import ../../common/unstable-small.nix { inherit pkgs inputs; };
-  inherit (import ../../system/backup-shared.nix {
+  inherit (import ../../system/backup-utils.nix {
     pkgs = unstable-small;
     backupTime = "*-*-* *:10:00";
   }) job;

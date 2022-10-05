@@ -18,5 +18,5 @@ elif [[ "$HOSTNAME" == "futaba" ]]; then
 elif [[ "$HOSTNAME" == "rin" ]]; then
   sudo nixos-rebuild switch --flake '.#' --show-trace --option extra-substituters ssh-ng://nix-ssh@nene --option extra-trusted-public-keys 'nene-1:tETUAQxI2/WCqFqS0J+32RgAqFrZXAkLtIHByUT7AjQ='
 else
-  sudo nixos-rebuild switch --flake '.#' --show-trace path:/home/ian/.nix/common/filter-tweets
+  sudo nixos-rebuild switch --flake '.#' --show-trace
 fi

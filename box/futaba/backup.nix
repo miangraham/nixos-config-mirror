@@ -4,8 +4,19 @@ let
   backup = import ../../system/backup.nix {
     inherit pkgs backupTime;
   };
-  inherit (import ../../system/backup-shared.nix {inherit pkgs backupTime;}) job;
+  inherit (import ../../system/backup-utils.nix {inherit pkgs backupTime;}) job;
   jobs = {
+    home-ian-to-rnet = job {
+      repo = "rnet:futaba";
+      user = "ian";
+      doInit = false;
+      encryption = {
+        mode = "keyfile-blake2";
+        passCommand = "cat /home/ian/.ssh/rnet_futaba_phrase";
+      };
+      extraArgs = "--remote-path=borg1";
+    };
+
     rss-to-local = job {
       paths = [ "/srv/freshrss" ];
       startAt = "*-*-* *:07:00";

@@ -4,7 +4,7 @@ let
   backup = import ../../system/backup.nix {
     inherit pkgs backupTime;
   };
-  inherit (import ../../system/backup-shared.nix {inherit pkgs backupTime;}) job;
+  inherit (import ../../system/backup-utils.nix {inherit pkgs backupTime;}) job;
   jobs = {
     home-ian-to-rnet = job {
       repo = "rnet:rin";

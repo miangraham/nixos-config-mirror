@@ -4,7 +4,7 @@ let
   backup = import ../../system/backup.nix {
     inherit pkgs backupTime;
   };
-  inherit (import ../../system/backup-shared.nix {inherit pkgs backupTime;}) job;
+  inherit (import ../../system/backup-utils.nix {inherit pkgs backupTime;}) job;
   jobs = {
     home-ian-to-usb = job {
       repo = "/run/media/ian/70F3-5B2F/borg";
