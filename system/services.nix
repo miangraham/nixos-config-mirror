@@ -1,4 +1,7 @@
 { pkgs, dev, ... }:
+let
+  gcide = import ./gcide.nix { inherit pkgs; };
+in
 {
   earlyoom.enable = true;
   udisks2.enable = true;
@@ -28,7 +31,7 @@
   dictd = {
     enable = true;
     DBs = with pkgs.dictdDBs; [
-      # wiktionary
+      gcide
       wordnet
       dev.dictdDBs.eng2jpn
       dev.dictdDBs.jpn2eng
