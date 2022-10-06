@@ -108,7 +108,7 @@ in
         ];
       };
       "disk" = {
-        "format" = " {free}";
+        "format" = " {percentage_used}%";
       };
       "custom/failed-units" = {
         "format" = "{}";
