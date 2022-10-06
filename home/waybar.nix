@@ -52,16 +52,18 @@ in
       };
 
       "pulseaudio" = {
-        "format" = "{icon}  {volume}%";
-        "format-bluetooth" = "{icon}  {volume}%";
+        "format" = "{icon}";
+        "format-bluetooth" = "{icon} ";
         "format-muted" = "";
         "format-icons" = {
           "headphones" = "";
           "default" = [
             ""
             ""
-              ];
+          ];
         };
+        # hides if name, how to get back?
+        "tooltip-format" = "{desc} | {volume}%";
         "scroll-step" = 5;
         "on-click" = "pamixer -t";
         "on-click-right" = "pavucontrol";
@@ -83,11 +85,25 @@ in
       };
       "cpu" = {
         "interval" = 5;
-        "format" = " {usage:2}%";
+        "format" = "";
+        "format-alt" = " {usage:2}%";
+        "states" = {
+          "low" = 0;
+          "mid" = 25;
+          "high" = 75;
+          "crit" = 90;
+        };
       };
       "memory" = {
         "interval" = 5;
-        "format" = " {}%";
+        "format" = "";
+        "format-alt" = " {}%";
+        "states" = {
+          "low" = 0;
+          "mid" = 50;
+          "high" = 75;
+          "crit" = 90;
+        };
       };
       "battery" = {
         "states" = {
@@ -108,7 +124,14 @@ in
         ];
       };
       "disk" = {
-        "format" = " {percentage_used}%";
+        "format" = "";
+        "format-alt" = " {percentage_used}%";
+        "states" = {
+          "low" = 0;
+          "mid" = 50;
+          "high" = 75;
+          "crit" = 90;
+        };
       };
       "custom/failed-units" = {
         "format" = "{}";
