@@ -49,11 +49,11 @@ in
     logrotate.settings.znc = {
       files = "/srv/znc/moddata/log/libera/libera/*/*.log";
       frequency = "daily";
+      minage = 3;
       su = "znc znc";
       rotate = 9000;
       compress = true;
-      delaycompress = true;
-      copytruncate = true;
+      nocreate = true;
     };
 
     smokeping = {
