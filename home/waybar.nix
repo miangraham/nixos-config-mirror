@@ -15,18 +15,22 @@ in
   style = builtins.readFile ./waybarStyle.css;
   settings = [{
     layer = "top";
-    position = "bottom";
+    position = "left";
+    mode = "dock";
+    # super broken, with gtk-layer-shell off docking works but resizes on tooltip
+    # width = 50;
+    # gtk-layer-shell = false;
     modules-left = [
       "sway/workspaces"
     ];
     modules-center = [];
     modules-right = [
-      "idle_inhibitor"
-      "pulseaudio"
       "cpu"
       "memory"
       "disk"
       "network"
+      "idle_inhibitor"
+      "pulseaudio"
       "battery"
       "custom/failed-units"
       "clock"
@@ -38,8 +42,10 @@ in
       };
 
       "clock" = {
+        "format" = "λ";
+        # "format" = "";
+        "format-alt" = "{:%H:%M}";
         "tooltip-format" = "{:%Y-%m-%d | %H:%M}";
-        "format-alt" = "{:%Y-%m-%d}";
       };
 
       "idle_inhibitor" = {
@@ -70,7 +76,8 @@ in
       };
 
       "network" = {
-        "format" = "{icon}";
+        # "format" = "{icon}";
+        "format" = "";
         "format-wifi" = "{icon} {essid}";
         "format-alt" = "{icon} {ipaddr}/{cidr}";
         "format-alt-click" = "click-right";

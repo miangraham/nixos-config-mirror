@@ -29,18 +29,31 @@ window#waybar {
 }
 
 #clock, #clock.1, #clock.2, #clock.3, #pulseaudio, #backlight, #memory, #cpu, #temperature, #battery, #tray, #custom-storage, #disk, #network, #idle_inhibitor {
-  padding: 0 20px;
+  padding: 10px 5px;
+}
+
+#clock {
+  font-size: 26px;
+  padding: 10px 5px;
+  font-family: "Noto Sans";
 }
 
 #workspaces {
   /* margin-right: 10px; */
 }
 #workspaces button {
-    padding: 0 20px;
-    color: #fdf6e3;
+  padding: 10px 5px;
+  /*   color: #fdf6e3; */
+  color: #6c71c4;
 }
 #workspaces button.focused {
-    color: #268bd2;
+  /*   color: #268bd2; */
+  /*   color: #68217A; */
+  /*   color: #6c71c4; */
+  /*   color: #c747ff; */
+  /*   color: #ad3cdf; */
+  /*   color: #DDC53B */
+  color: #fdf6e3;
 }
 #workspaces button:hover {
   box-shadow: inherit;
@@ -50,7 +63,10 @@ window#waybar {
 }
 
 #idle_inhibitor {
-    color: #f9c0cc;
+  /*   color: #f9c0cc; */
+  /*   color: #eb96a8; */
+  /*   color: #c08a95;  */
+  color: #c8909c;
 }
 #pulseaudio {
     color: #268bd2;
