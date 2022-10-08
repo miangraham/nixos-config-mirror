@@ -25,6 +25,7 @@ builtins.attrValues {
     flac
     fontforge-gtk
     fuzzel
+    gh
     gimp
     godot
     graphviz
@@ -50,6 +51,7 @@ builtins.attrValues {
     netlify-cli
     nix-direnv
     nix-prefetch-git
+    nixpkgs-review
     pandoc
     picocom
     playerctl

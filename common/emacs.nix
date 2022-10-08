@@ -14,6 +14,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     biblio
     bibtex-completion
     burly
+    cmake-mode
     command-log-mode
     consult
     consult-project-extra
