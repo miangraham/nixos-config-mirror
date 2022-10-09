@@ -10,7 +10,7 @@ if [[ "$OSTYPE" != "linux-gnu"* ]]; then
 fi
 
 if [[ "$HOSTNAME" == "nene" ]]; then
-  nixos-rebuild dry-build --flake '.#' --show-trace
+  nixos-rebuild dry-build --flake '.#'
 else
   nixos-rebuild dry-build --flake '.#' --show-trace
 fi

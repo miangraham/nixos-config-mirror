@@ -28,13 +28,13 @@ in
     guiAddress = "0.0.0.0:8384";
   };
 
-  dictd = {
+  dicod = {
     enable = true;
-    DBs = with pkgs.dictdDBs; [
-      gcide
-      wordnet
+    dictOrgDbs = with pkgs.dictdDBs; [
+      # gcide
+      # wordnet
       dev.dictdDBs.eng2jpn
       dev.dictdDBs.jpn2eng
-    ];
+     ];
   };
 }

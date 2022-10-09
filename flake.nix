@@ -25,6 +25,7 @@
         inherit specialArgs;
         system = "x86_64-linux";
         modules = addModules ++ [
+          ./system/dicod.nix
           inputs.home-manager.nixosModules.home-manager
           { inherit home-manager; }
         ];
