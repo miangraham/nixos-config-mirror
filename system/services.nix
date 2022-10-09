@@ -30,9 +30,7 @@ in
 
   dicod = {
     enable = true;
-    dictOrgDbs = with pkgs.dictdDBs; [
-      # gcide
-      # wordnet
+    dictdDBs = with pkgs.dictdDBs; [
       dev.dictdDBs.eng2jpn
       dev.dictdDBs.jpn2eng
      ];
