@@ -93,5 +93,6 @@ pkgs.emacsWithPackagesFromUsePackage {
     yaml-mode
     yasnippet
     zig-mode
+    zoom
   ];
 }
