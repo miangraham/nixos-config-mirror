@@ -5,15 +5,19 @@ with lib;
 let
   cfg = config.services.dicod;
 
+  dico = pkgs.dico.overrideAttrs (final: old: {
+    buildInputs = [ pkgs.wordnet ] ++ old.buildInputs;
+  });
+
   gcide = pkgs.stdenv.mkDerivation rec {
     name = "gcide";
     src = pkgs.fetchurl {
       url = "mirror://gnu/gcide/gcide-0.53.tar.xz";
       sha256 = "sha256-06y9mE3hzgItXROZA4h7NiMuQ24w7KLLD7HAWN1/MZ8=";
     };
-    nativeBuildInputs = [ pkgs.dico ];
+    nativeBuildInputs = [ dico ];
     buildPhase = ''
-      ${pkgs.dico}/libexec/idxgcide .
+      ${dico}/libexec/idxgcide .
     '';
     installPhase = ''
       mkdir -p $out
@@ -22,7 +26,6 @@ let
   };
 
   wiktionary = pkgs.dictdDBs.wiktionary;
-  wordnet = pkgs.dictdDBs.wordnet;
 in
 
 {
@@ -95,6 +98,15 @@ in
       "eng-jpn" = ["en" "jp"];
     };
 
+    customEnDictOrgConf = dbPkg: dbName: fileBaseName: ''
+      database {
+        name "${dbName}";
+        handler "dictorg database=${dbPkg}/share/dictd/${fileBaseName}";
+        languages-from "en";
+        languages-to "en";
+      }
+    '';
+
     dbToFromToConf = dbPkg: if
       (hasAttr "dbName" dbPkg) &&
       (hasAttr dbPkg.dbName langFromToMap)
@@ -125,42 +137,46 @@ in
       }
     '' else "";
 
-    wiktionaryConf = if cfg.enableWiktionary then ''
-      database {
-        name "wiktionary";
-        handler "dictorg database=${wiktionary}/share/dictd/wiktionary-en";
-        languages-from "en";
-        languages-to "en";
-      }
-    '' else "";
+    wiktionaryConf = if
+      cfg.enableWiktionary
+      then
+        (customEnDictOrgConf wiktionary "wiktionary" "wiktionary-en")
+      else
+        ""
+    ;
 
-    wordnetConf = if cfg.enableWiktionary then ''
+    wordnetConf = if cfg.enableWordnet then ''
+      load-module wordnet {
+        command "wordnet";
+      }
       database {
         name "wordnet";
-        handler "dictorg database=${wordnet}/share/dictd/wn";
+        handler "wordnet merge-defs";
         languages-from "en";
         languages-to "en";
       }
     '' else "";
 
-    dictOrgDbConf = concatMapStringsSep "\n" dbToConfig cfg.dictOrgDbs;
+    dictOrgDbConf = ''
+      load-module dictorg {
+        command "dictorg";
+      }
+    '' + (concatMapStringsSep "\n" dbToConfig cfg.dictOrgDbs);
 
     dicod-conf = pkgs.writeTextFile {
       name = "dicod.conf";
-      text = ''
-        ${portConf}
-        ${gcideConf}
-        load-module dictorg {
-          command "dictorg";
-        }
-        ${dictOrgDbConf}
-        ${wiktionaryConf}
-        ${wordnetConf}
-        '' + cfg.extraConfig;
+      text = concatStringsSep "\n" [
+        portConf
+        gcideConf
+        dictOrgDbConf
+        wiktionaryConf
+        wordnetConf
+        cfg.extraConfig
+      ];
     };
   in mkIf cfg.enable {
 
-    environment.systemPackages = [ pkgs.dico ];
+    environment.systemPackages = [ dico ];
 
     users.users.dicod = {
       group = "dicod";
@@ -173,7 +189,7 @@ in
 
     systemd.services.dicod = {
       description = "GNU dico dictionary server";
-      path = [ gcide ];
+      path = [ ];
       serviceConfig = {
         Type = "simple";
         User = "dicod";
@@ -181,7 +197,7 @@ in
       wantedBy = [ "multi-user.target" ];
       environment = { LOCALE_ARCHIVE = "/run/current-system/sw/lib/locale/locale-archive"; };
       # serviceConfig.Type = "forking";
-      script = "${pkgs.dico}/bin/dicod --foreground --stderr --config=${dicod-conf}";
+      script = "${dico}/bin/dicod --foreground --stderr --config=${dicod-conf}";
     };
   };
 }

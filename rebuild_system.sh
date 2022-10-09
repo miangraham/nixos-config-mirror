@@ -11,7 +11,7 @@ fi
 
 if [[ "$HOSTNAME" == "nene" ]]; then
   nixos-rebuild dry-build --flake '.#'
-  sudo nixos-rebuild switch --flake '.#'
+  sudo nixos-rebuild switch --flake '.#' --print-build-logs
   sudo nix store sign -k /var/keys/nix-cache-key.priv --all
 elif [[ "$HOSTNAME" == "futaba" ]]; then
   sudo nixos-rebuild switch --flake '.#' --show-trace --option extra-substituters ssh-ng://nix-ssh@nene --option extra-trusted-public-keys 'nene-1:tETUAQxI2/WCqFqS0J+32RgAqFrZXAkLtIHByUT7AjQ='
