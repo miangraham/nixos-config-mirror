@@ -22,6 +22,8 @@ builtins.attrValues {
     pciutils
     psmisc
     pulseaudio
+    qmk
+    qmk-udev-rules
     ripgrep
     rsync
     sqlite
@@ -30,6 +32,7 @@ builtins.attrValues {
     tree
     unrar
     unzip
+    via
     vim
     watch
     wget

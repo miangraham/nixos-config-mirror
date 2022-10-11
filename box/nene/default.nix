@@ -28,6 +28,8 @@
     '';
   };
 
+  services.udev.packages = [ pkgs.via ];
+
   programs.steam.enable = true;
 
   system.stateVersion = "20.03";

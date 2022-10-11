@@ -72,7 +72,6 @@ builtins.attrValues {
     ungoogled-chromium
     write_stylus
     valgrind
-    via
     vlc
     zeal
     zenith
