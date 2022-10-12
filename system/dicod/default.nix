@@ -71,7 +71,8 @@ in
     pidfile = "/run/dicod/dicod.pid";
 
     dicoWithLibs = pkgs.dico.overrideAttrs (final: old: {
-      buildInputs = [ pkgs.wordnet ] ++ old.buildInputs;
+      buildInputs = with pkgs; [ wordnet ] ++ old.buildInputs;
+      nativeBuildInputs = with pkgs; [ python3 ] ++ old.nativeBuildInputs;
     });
 
     gcide = pkgs.callPackage ./gcide.nix { dico = dicoWithLibs; };

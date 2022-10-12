@@ -35,9 +35,8 @@ let
   # It's this or a lookup table or adding more flags to the dictdDB data.
   dbToLangs = dbPkg: with builtins; let
     dbName = dbPkg.dbName or "";
-    matched = match "(...)-(...)" dbName;
-    pair = if matched != null then matched else ["eng" "eng"];
-    langs = map (substring 0 2) pair;
+    matched = match "(..).-(..)." dbName;
+    langs = if matched != null then matched else ["en" "en"];
   in
     mapAttrs (_: elemAt langs) { from = 0; to = 1; };
 
