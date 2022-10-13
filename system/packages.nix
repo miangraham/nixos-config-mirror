@@ -23,7 +23,6 @@ builtins.attrValues {
     psmisc
     pulseaudio
     qmk
-    qmk-udev-rules
     ripgrep
     rsync
     sqlite
