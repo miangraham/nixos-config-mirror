@@ -1,4 +1,4 @@
-{ pkgs, dev, ... }:
+{ pkgs, unstable, ... }:
 let
   gcide = import ./gcide.nix { inherit pkgs; };
 in
@@ -31,8 +31,8 @@ in
   dicod = {
     enable = true;
     dictdDBs = with pkgs.dictdDBs; [
-      dev.dictdDBs.eng2jpn
-      dev.dictdDBs.jpn2eng
+      unstable.dictdDBs.eng2jpn
+      unstable.dictdDBs.jpn2eng
      ];
   };
 }
