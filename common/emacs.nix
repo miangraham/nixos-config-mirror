@@ -38,6 +38,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     flycheck
     flycheck-rust
     fullframe
+    geiser-guile
     git-link
     git-timemachine
     haskell-mode

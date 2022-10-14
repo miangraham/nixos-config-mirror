@@ -1,0 +1,28 @@
+diff --git a/modules/guile/tests/lev.at b/modules/guile/tests/lev.at
+index 4c2d8ca..cbb7d0a 100644
+--- a/modules/guile/tests/lev.at
++++ b/modules/guile/tests/lev.at
+@@ -26,5 +26,7 @@ plnum "seven"
+ .
+ 250
+ 221
+-])
++],
++[],
++[sed  's/^dicod: Error: //;/^;;;/d'])
+ AT_CLEANUP
+diff --git a/modules/guile/tests/showdb.at b/modules/guile/tests/showdb.at
+index fa58c41..0117fac 100644
+--- a/modules/guile/tests/showdb.at
++++ b/modules/guile/tests/showdb.at
+@@ -25,7 +25,9 @@ plnum "Short English-Polish numerals dictionary"
+ .
+ 250
+ 221
+-])
++],
++[],
++[sed  's/^dicod: Error: //;/^;;;/d'])
+ AT_CLEANUP
+ 
+ 
