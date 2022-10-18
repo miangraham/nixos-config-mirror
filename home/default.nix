@@ -93,6 +93,7 @@ in
       enable = true;
       settings = {
         global = {
+          follow = "keyboard";
           notification_limit = 1;
           progress_bar = false;
           indicate_hidden = false;
