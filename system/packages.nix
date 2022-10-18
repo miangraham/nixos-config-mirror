@@ -25,13 +25,12 @@ builtins.attrValues {
     qmk
     ripgrep
     rsync
-    sqlite
+    # sqlite
     sshfs-fuse
     tarssh
     tree
     unrar
     unzip
-    via
     vim
     watch
     wget

@@ -122,4 +122,6 @@ builtins.attrValues {
   ]; };
 
   obs-remote = (unstable.callPackage ./obs-remote.nix {});
+
+  guileInfo = pkgs.guile.info;
 }

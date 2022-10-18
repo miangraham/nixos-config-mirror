@@ -5,16 +5,16 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "obs-remote";
-  version = "unstable-2022-09-28";
+  version = "unstable-2022-10-18";
 
   src = fetchFromSourcehut {
     owner = "~mian";
     repo = pname;
-    rev = "517b77dfc350ba33a651e41f0ce8b647c342ed29";
-    sha256 = "sha256-6MrHHyS6R+r4eMjSORdYOnFdbbXd0kVgCZFyC900TpE=";
+    rev = "5d84606ecba585a91f40c72e1585693534ca1a59";
+    sha256 = "sha256-UVaZmIWnRcHiveG2WLWSBlq6Hbxes7nIMDRkFKsCDuM=";
   };
 
-  cargoSha256 = "sha256-RHdyfZFRDdcfsnzuAYIW9g7cdPv6adbmtLEgC08EE70=";
+  cargoSha256 = "sha256-ypUu4q32BTZPK1T9+GMDZCAs0n0qvUxmnCq/nkGeLvo=";
 
   doCheck = false; # No tests
 }
