@@ -19,7 +19,7 @@ in
       hostname = "homura";
       identityFile = "~/.ssh/id_rsa_fallback";
       extraOptions = {
-        PubkeyAcceptedAlgorithms = "+ssh-rsa";
+        PubkeyAcceptedKeyTypes = "+ssh-rsa";
         HostkeyAlgorithms = "+ssh-rsa";
       };
     };
