@@ -45,6 +45,25 @@ in
         };
       };
     };
+
+    dicod = {
+      enable = true;
+      dictdDBs = with pkgs.dictdDBs; [
+        unstable.dictdDBs.eng2jpn
+        unstable.dictdDBs.jpn2eng
+      ];
+      extraConfig = ''
+      load-module guile {
+        command "guile debug"
+          " init-script=/var/lib/dicod/testdict.scm"
+          " init-fun=example-init";
+      }
+      database {
+        name "testdb";
+        handler "guile foo /var/lib/dicod/test.db";
+      }
+    '';
+    };
   };
 
   security.acme = {

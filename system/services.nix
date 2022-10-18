@@ -27,12 +27,4 @@ in
     configDir = "/home/ian/.config/syncthing";
     guiAddress = "0.0.0.0:8384";
   };
-
-  dicod = {
-    enable = true;
-    dictdDBs = with pkgs.dictdDBs; [
-      unstable.dictdDBs.eng2jpn
-      unstable.dictdDBs.jpn2eng
-     ];
-  };
 }
