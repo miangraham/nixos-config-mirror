@@ -113,19 +113,11 @@ in
       # probably don't need this long-term
       home = "/var/lib/dicod";
       createHome = true;
+      homeMode = "770";
     };
 
     users.groups.dicod = {};
 
-    # systemd.tmpfiles.rules = [
-    #   "d '/var/lib/peertube/config' 0700 ${cfg.user} ${cfg.group} - -"
-    #   "z '/var/lib/peertube/config' 0700 ${cfg.user} ${cfg.group} - -"
-    # ];
-    # preStart = ''
-    #   mkdir -p ${cfg.dataDir}/configs
-    # ReadWritePaths = [ cfg.dataDir ];
-    # home = smokepingHome;
-    # createHome = true;
     systemd.services.dicod = {
       description = "GNU dictionary server";
       path = [ ];

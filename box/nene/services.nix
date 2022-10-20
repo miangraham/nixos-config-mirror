@@ -53,18 +53,34 @@ in
         unstable.dictdDBs.jpn2eng
       ];
       extraConfig = ''
-      load-module guile {
-        command "guile debug"
-          " init-script=/var/lib/dicod/testdict.scm"
-          " init-fun=example-init";
-      }
-      database {
-        name "testdb";
-        handler "guile foo /var/lib/dicod/test.db";
-      }
-    '';
+        load-module testdict {
+          command "guile debug"
+            " init-script=/var/lib/dicod/testdict.scm"
+            " init-fun=example-init";
+        }
+        database {
+          name "testdb";
+          handler "testdict foo /var/lib/dicod/test.db";
+        }
+        load-module moby {
+          command "guile debug"
+            " init-script=/var/lib/dicod/moby.scm"
+            " init-fun=example-init";
+        }
+        database {
+          name "moby";
+          handler "moby foo /var/lib/dicod/test.db";
+        }
+      '';
     };
   };
+
+  security.sudo.extraRules = [{
+    users = ["ian"];
+    commands = [{
+      command = "/run/current-system/sw/bin/systemctl restart dicod"; options = [ "NOPASSWD" ];
+    }];
+  }];
 
   security.acme = {
     defaults.email = import ../../common/email.nix {};

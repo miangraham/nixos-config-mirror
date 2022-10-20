@@ -63,6 +63,7 @@ let
     "**/target"
     "**/*.dump"
     "**/*.log"
+    "moby/moby.scm"
   ];
 
   common = {
