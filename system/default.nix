@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, config, ... }:
 let
   fonts = import ./fonts.nix {inherit pkgs;};
   packages = import ./packages.nix {inherit pkgs inputs;};
@@ -61,16 +61,22 @@ in
     ];
   };
 
+  users.groups = {
+    znc.gid = config.ids.gids.znc;
+  };
+
   users.users.ian = {
     isNormalUser = true;
     extraGroups = [
       "adbusers"
       "audio"
       "dialout"
+      "dicod"
       "networkmanager"
       "nginx"
       "video"
       "wheel"
+      "znc"
     ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBcbC9h0gXGiyRCKE4Pj8jJ4loQ89QyeG7m3H2hLm6Fc ian@futaba"
