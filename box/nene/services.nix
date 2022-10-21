@@ -52,18 +52,12 @@ in
         unstable.dictdDBs.eng2jpn
         unstable.dictdDBs.jpn2eng
       ];
-      extraConfig = ''
-        load-module testdict {
-          command "guile debug"
-            " init-script=/var/lib/dicod/testdict.scm"
-            " init-fun=example-init";
-        }
-        database {
-          name "testdb";
-          handler "testdict foo /var/lib/dicod/test.db";
-        }
+
+      extraConfig = let
+        guile-sqlite3 = (pkgs.callPackage ../../system/dicod/guile-sqlite3.nix {});
+      in ''
         load-module moby {
-          command "guile debug"
+          command "guile debug load-path=${guile-sqlite3}/share/guile/site/2.2"
             " init-script=/var/lib/dicod/moby.scm"
             " init-fun=example-init";
         }

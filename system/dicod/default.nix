@@ -125,7 +125,7 @@ in
       serviceConfig = {
         Type = "forking";
         User = "dicod";
-        RuntimeDirectory = [ "dicod" ];
+        RuntimeDirectory = [ "dicod" ]; # XXX wtf is this
         PIDFile = pidfile;
         ExecStart = "${dicoWithLibs}/bin/dicod --config=${dicod-conf}";
       };
