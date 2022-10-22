@@ -1,9 +1,10 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 with lib;
 
 let
   cfg = config.services.dicod;
+  moby = import inputs.moby { inherit pkgs; };
 in
 {
 
@@ -122,6 +123,9 @@ in
       description = "GNU dictionary server";
       path = [ ];
       wantedBy = [ "multi-user.target" ];
+      environment = {
+        GUILE_LOAD_PATH = "${moby}/share/guile/site/2.2";
+      };
       serviceConfig = {
         Type = "forking";
         User = "dicod";

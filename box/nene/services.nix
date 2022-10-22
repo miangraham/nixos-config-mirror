@@ -3,6 +3,7 @@ let
   unstable = import ../../common/unstable.nix {inherit pkgs inputs;};
   borgbackup = import ./backup.nix { inherit pkgs; };
   yt-dlp = import ../../home/yt-dlp.nix { inherit pkgs inputs; };
+  moby = import inputs.moby { inherit pkgs; };
 in
 {
   nix = {
@@ -53,17 +54,16 @@ in
         unstable.dictdDBs.jpn2eng
       ];
 
-      extraConfig = let
-        guile-sqlite3 = (pkgs.callPackage ../../system/dicod/guile-sqlite3.nix {});
-      in ''
+      extraConfig = ''
+        capability xlev;
         load-module moby {
-          command "guile debug load-path=${guile-sqlite3}/share/guile/site/2.2"
-            " init-script=/var/lib/dicod/moby.scm"
-            " init-fun=example-init";
+          command "guile debug"
+            " init-script=${moby}/moby.scm"
+            " init-fun=moby-init";
         }
         database {
           name "moby";
-          handler "moby foo /var/lib/dicod/test.db";
+          handler "moby ${moby}/mthesaur.db";
         }
       '';
     };

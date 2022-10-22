@@ -12,6 +12,7 @@
     tdlib = { url = "github:tdlib/td?rev=d48901435017783b5cb91000c29940f9b348158d"; flake = false; };
     ffmpeg-patch = { url = "github:yt-dlp/FFmpeg-Builds?rev=d1b456152d2618cf9266ec5ca84ed8b110acb423"; flake = false; };
     otf2bdf = { url = "github:thefloweringash/kevin-nix"; flake = false; };
+    moby = { url = "sourcehut:~mian/dico-moby-prototype"; };
   };
   outputs = inputs:
     let
