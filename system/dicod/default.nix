@@ -123,15 +123,13 @@ in
       description = "GNU dictionary server";
       path = [ ];
       wantedBy = [ "multi-user.target" ];
-      environment = {
-        GUILE_LOAD_PATH = "${moby}/share/guile/site/2.2";
-      };
       serviceConfig = {
         Type = "forking";
         User = "dicod";
         RuntimeDirectory = [ "dicod" ]; # XXX wtf is this
         PIDFile = pidfile;
         ExecStart = "${dicoWithLibs}/bin/dicod --config=${dicod-conf}";
+        EnvironmentFile = "${moby}/env";
       };
     };
 

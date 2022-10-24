@@ -224,11 +224,11 @@
         "sys": "sys"
       },
       "locked": {
-        "lastModified": 1666443081,
-        "narHash": "sha256-NV5Tk9S/wRfOn5FLhz/N8RZqulfw3E5FgrretIU7/IQ=",
+        "lastModified": 1666587420,
+        "narHash": "sha256-We9IqG9DX+oT8LW3RSV0CPrlhH2kDhx9WuKMC5iwIEE=",
         "owner": "~mian",
         "repo": "dico-moby-prototype",
-        "rev": "18266eef2489b8f36fcf25fb4e11bbe2bed468a4",
+        "rev": "bc906037bd2c11feae06c9ecd9e11578b9bd9068",
         "type": "sourcehut"
       },
       "original": {
