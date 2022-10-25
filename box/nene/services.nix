@@ -1,9 +1,10 @@
 { pkgs, inputs, config, ... }:
 let
   unstable = import ../../common/unstable.nix {inherit pkgs inputs;};
+  dev = import ../../common/dev.nix {inherit pkgs inputs;};
   borgbackup = import ./backup.nix { inherit pkgs; };
   yt-dlp = import ../../home/yt-dlp.nix { inherit pkgs inputs; };
-  moby = import inputs.moby { inherit pkgs; };
+  moby = import inputs.moby { pkgs = dev; };
 in
 {
   nix = {

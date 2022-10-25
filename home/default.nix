@@ -2,7 +2,6 @@
 let
   lib = pkgs.lib;
   unstable = import ../common/unstable.nix { inherit pkgs inputs; };
-  dev = import ../common/dev.nix { inherit pkgs inputs; };
   home-packages = import ./packages.nix { inherit pkgs inputs unstable; };
 
   alacritty = import ./alacritty.nix { inherit pkgs; };

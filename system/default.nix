@@ -4,7 +4,6 @@ let
   packages = import ./packages.nix {inherit pkgs inputs;};
   overlays = import ../common/overlays-stable.nix {inherit inputs pkgs;};
   unstable = import ../common/unstable.nix { inherit pkgs inputs; };
-  dev = import ../common/dev.nix { inherit pkgs inputs; };
   services = import ./services.nix {inherit pkgs unstable;};
 in
 {

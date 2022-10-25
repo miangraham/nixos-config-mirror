@@ -4,7 +4,8 @@ with lib;
 
 let
   cfg = config.services.dicod;
-  moby = import inputs.moby { inherit pkgs; };
+  dev = import ../../common/dev.nix {inherit pkgs inputs;};
+  moby = import inputs.moby { pkgs = dev; };
 in
 {
 
@@ -110,11 +111,6 @@ in
       group = "dicod";
       description = "GNU dictionary server";
       isSystemUser = true;
-
-      # probably don't need this long-term
-      home = "/var/lib/dicod";
-      createHome = true;
-      homeMode = "770";
     };
 
     users.groups.dicod = {};
@@ -126,7 +122,8 @@ in
       serviceConfig = {
         Type = "forking";
         User = "dicod";
-        RuntimeDirectory = [ "dicod" ]; # XXX wtf is this
+        # Can't make pidfile without this you dummy
+        RuntimeDirectory = [ "dicod" ];
         PIDFile = pidfile;
         ExecStart = "${dicoWithLibs}/bin/dicod --config=${dicod-conf}";
         EnvironmentFile = "${moby}/env";

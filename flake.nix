@@ -4,7 +4,7 @@
     nixpkgs = { url = "github:NixOS/nixpkgs/nixos-22.05"; };
     unstable = { url = "github:NixOS/nixpkgs/nixos-unstable"; };
     unstable-small = { url = "github:NixOS/nixpkgs/nixos-unstable-small"; };
-    dev = { url = "github:NixOS/nixpkgs/master"; };
+    dev = { url = "github:miangraham/nixpkgs/guile-sqlite3-init"; };
     nixos-hardware = { url = "github:NixOS/nixos-hardware/master"; };
     home-manager = { url = "github:nix-community/home-manager/release-22.05"; inputs.nixpkgs.follows = "nixpkgs"; };
     emacs-overlay = { url = "github:nix-community/emacs-overlay"; inputs.nixpkgs.follows = "nixpkgs"; };
@@ -13,6 +13,7 @@
     ffmpeg-patch = { url = "github:yt-dlp/FFmpeg-Builds?rev=d1b456152d2618cf9266ec5ca84ed8b110acb423"; flake = false; };
     otf2bdf = { url = "github:thefloweringash/kevin-nix"; flake = false; };
     moby = { url = "sourcehut:~mian/dico-moby-prototype"; };
+    # moby = { url = "path:/home/ian/moby"; };
   };
   outputs = inputs:
     let
