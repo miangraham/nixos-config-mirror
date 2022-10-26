@@ -2,16 +2,16 @@
   "nodes": {
     "dev": {
       "locked": {
-        "lastModified": 1666619190,
-        "narHash": "sha256-TzkeZy4HcywJIK06X4JOCy4dfFDTQvooYXsNfl7vI2U=",
-        "owner": "miangraham",
+        "lastModified": 1666783011,
+        "narHash": "sha256-+dj94zW0vWowJXZWS8qQYV8v44KfX2a1A6/hZMjaWyY=",
+        "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "a86410b33b358122d3538dc7ceed514d93b7cc41",
+        "rev": "b3c0c4979e3405f3b267e9fd1c81c4f82d8ba44d",
         "type": "github"
       },
       "original": {
-        "owner": "miangraham",
-        "ref": "guile-sqlite3-init",
+        "owner": "NixOS",
+        "ref": "master",
         "repo": "nixpkgs",
         "type": "github"
       }
