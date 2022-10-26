@@ -55,18 +55,9 @@ in
         unstable.dictdDBs.jpn2eng
       ];
 
-      extraConfig = ''
-        capability xlev;
-        load-module moby {
-          command "guile debug"
-            " init-script=${moby}/share/guile/site/2.2/moby.scm"
-            " init-fun=moby-init";
-        }
-        database {
-          name "moby";
-          handler "moby ${moby}/share/guile/site/2.2/data/mthesaur.db";
-        }
-      '';
+      guileDBs = [
+        moby
+      ];
     };
   };
 

@@ -4,8 +4,7 @@ with lib;
 
 let
   cfg = config.services.dicod;
-  dev = import ../../common/dev.nix {inherit pkgs inputs;};
-  moby = import inputs.moby { pkgs = dev; };
+  dev = import ../../common/dev.nix { inherit pkgs inputs; };
 in
 {
 
@@ -60,6 +59,16 @@ in
       description = mdDoc "Whether to enable the database for WordNet.";
     };
 
+    guileDBs = mkOption {
+      type = listOf package;
+      default = [ ];
+      defaultText = literalExpression "[ ]";
+      example = literalExpression "[ pkgs.dicoGuileDBs.dico-moby-thesaurus ]";
+      description = mdDoc ''
+        List of guile database packages to make available.
+      '';
+    };
+
     extraConfig = mkOption {
       type = lines;
       default = "";
@@ -72,40 +81,19 @@ in
   config = let
     pidfile = "/run/dicod/dicod.pid";
 
-    dicoWithLibs = pkgs.dico.overrideAttrs (final: old: {
-      nativeBuildInputs = with pkgs; [
-        autoconf
-        gettext
-        gsasl
-        guile
-        libffi
-        libtool
-        m4
-        pcre
-        perl
-        pkg-config
-        python3
-        readline
-        zlib
-      ] ++ old.nativeBuildInputs;
+    dicodWithLibs = import ./dicod-with-libs.nix {
+      inherit pkgs lib;
+      inherit (cfg) guileDBs;
+    };
 
-      buildInputs = with pkgs; [
-        wordnet
-      ] ++ old.buildInputs;
+    gcide = pkgs.callPackage ./gcide.nix { dico = dicodWithLibs; };
 
-      patches = [
-        ./killtests.patch
-      ];
-    });
-
-    gcide = pkgs.callPackage ./gcide.nix { dico = dicoWithLibs; };
-
-    dicod-conf = import ./dicod-conf.nix {
-      inherit pkgs lib pidfile dicoWithLibs gcide;
-      inherit (cfg) port dictdDBs enableGCIDE enableWiktionary enableWordnet extraConfig;
+    dicodConf = import ./dicod-conf.nix {
+      inherit pkgs lib pidfile gcide;
+      inherit (cfg) port dictdDBs enableGCIDE enableWiktionary enableWordnet guileDBs extraConfig;
     };
   in mkIf cfg.enable {
-    environment.systemPackages = [ dicoWithLibs ];
+    environment.systemPackages = [ dicodWithLibs ];
 
     users.users.dicod = {
       group = "dicod";
@@ -115,7 +103,8 @@ in
 
     users.groups.dicod = {};
 
-    systemd.services.dicod = {
+    systemd.services.dicod = let
+    in {
       description = "GNU dictionary server";
       path = [ ];
       wantedBy = [ "multi-user.target" ];
@@ -125,8 +114,7 @@ in
         # Can't make pidfile without this you dummy
         RuntimeDirectory = [ "dicod" ];
         PIDFile = pidfile;
-        ExecStart = "${dicoWithLibs}/bin/dicod --config=${dicod-conf}";
-        EnvironmentFile = "${moby}/env";
+        ExecStart = "${dicodWithLibs}/bin/dicod --config=${dicodConf}";
       };
     };
 

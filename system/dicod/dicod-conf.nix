@@ -2,10 +2,10 @@
   pkgs,
   lib,
   pidfile,
-  dicoWithLibs,
   gcide,
   port,
   dictdDBs,
+  guileDBs,
   enableGCIDE,
   enableWiktionary,
   enableWordnet,
@@ -31,6 +31,17 @@ let
       handler = "dictorg database=${pkg}/share/dictd/${fileBaseName}";
     };
 
+  guileDbSection = { name, init-script, init-fun, handler }:
+    ''
+      load-module ${name} {
+        command "guile debug"
+          " init-script=${init-script}"
+          " init-fun=${init-fun}";
+      }
+    '' + (dbSection {
+      inherit name handler;
+    });
+
   # Hacky bilingual language code grabbing from pkg.dbName.
   # It's this or a lookup table or adding more flags to the dictdDB data.
   dbToLangs = dbPkg: with builtins; let
@@ -47,17 +58,28 @@ let
     inherit (dbToLangs pkg) from to;
   };
 
+  guileDBToConf = db: guileDbSection rec {
+    name = db.dicodDBName;
+    init-script = "${db}/${db.dicodInitScript}";
+    init-fun = db.dicodInitFun;
+    handler = "${name} ${db}/${db.dicodHandler}";
+  };
+
   ## conf sections
 
   pidfileConf = "pidfile ${pidfile};";
 
   listenConf = "listen :${builtins.toString port};";
 
+  capabilityConf = "capability xlev;";
+
   dictOrgDbConf = ''
     load-module dictorg {
       command "dictorg";
     }
   '' + (concatMapStringsSep "\n" dictOrgToConf dictdDBs);
+
+  guileDbConf = concatMapStringsSep "\n" guileDBToConf guileDBs;
 
   # Use dicod's native GCIDE support.
   gcideConf = ''
@@ -91,7 +113,9 @@ pkgs.writeTextFile {
   text = concatStringsSep "\n" [
     pidfileConf
     listenConf
+    capabilityConf
     dictOrgDbConf
+    guileDbConf
     (if enableGCIDE then gcideConf else "")
     (if enableWiktionary then wiktionaryConf else "")
     (if enableWordnet then wordnetConf else "")

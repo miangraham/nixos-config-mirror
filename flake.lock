@@ -110,11 +110,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1666620356,
-        "narHash": "sha256-hPDpgyi/W9W8Dzv6MrGUl061NzGVZjz6g9Tbx30OPAE=",
+        "lastModified": 1666776633,
+        "narHash": "sha256-zZWDjEigRMndT0t0tO7ljhShnzP5aPT21BDQa1POzAk=",
         "owner": "~mian",
         "repo": "dico-moby-prototype",
-        "rev": "17c04d05194ae81a4383ed8c0ae793cce8df3d9f",
+        "rev": "521e9f42af9df2fc34141bf3a4c37160fcf46eda",
         "type": "sourcehut"
       },
       "original": {
