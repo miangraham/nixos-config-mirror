@@ -93,22 +93,27 @@ in
       settings = {
         global = {
           follow = "keyboard";
-          notification_limit = 1;
           progress_bar = false;
           indicate_hidden = false;
           show_indicators = false;
-          timeout = "5s";
           ignore_dbusclose = true;
+          notification_limit = 5;
+          timeout = "5s";
           min_icon_size = 64;
           max_icon_size = 64;
-          # horizontal_padding = 16;
-          width = "(300, 800)";
-          origin = "top-right";
-          offset = "20x20";
           corner_radius = 0;
           frame_width = 0;
-          background = "#68217AFF";
+          origin = "top-right";
+          offset = "20x20";
+          width = "(300, 800)";
           font = "Noto Sans 10";
+          background = "#68217AFF";
+        };
+
+        # Overrideable settings listed at https://github.com/dunst-project/dunst/blob/master/dunstrc#L346
+        urgency_critical = {
+          timeout = "60s";
+          background = "#F14949FF";
         };
       };
     };

@@ -15,7 +15,7 @@ in
   inherit fonts services;
 
   time.timeZone = "Asia/Tokyo";
-  systemd.coredump.enable = false; # true
+  systemd.coredump.enable = true; # false
 
   nixpkgs = {
     config = {
