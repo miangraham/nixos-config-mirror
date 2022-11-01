@@ -14,6 +14,7 @@
     otf2bdf = { url = "github:thefloweringash/kevin-nix"; flake = false; };
     moby = { url = "sourcehut:~mian/dico-moby-prototype"; };
     # moby = { url = "path:/home/ian/moby"; };
+    twitch-alerts = { url = "sourcehut:~mian/twitch-alerts"; inputs.nixpkgs.follows = "nixpkgs"; };
   };
   outputs = inputs:
     let
@@ -21,7 +22,7 @@
       home-manager = {
         useGlobalPkgs = true;
         useUserPackages = true;
-        users.ian = import ./home {inherit inputs;};
+        users.ian = import ./home {inherit inputs; system = "x86_64-linux";};
       };
       boxConfig = addModules: (inputs.nixpkgs.lib.nixosSystem) {
         inherit specialArgs;

@@ -1,4 +1,4 @@
-{ inputs, ... }: { pkgs, config, ... }:
+{ inputs, system, ... }: { pkgs, config, ... }:
 let
   lib = pkgs.lib;
   unstable = import ../common/unstable.nix { inherit pkgs inputs; };
@@ -140,6 +140,18 @@ in
     services.autotiling = {
       Install.WantedBy = [ "graphical-session.target" ];
       Service.ExecStart = "${pkgs.autotiling}/bin/autotiling";
+    };
+
+    services.twitch-alerts = let
+      twitch-alerts = inputs.twitch-alerts.packages.${system}.default;
+    in {
+      Install.WantedBy = [ "graphical-session.target" ];
+      Service = {
+        ExecStart = "${twitch-alerts}/bin/ctrlfreak-twitch-alerts";
+        EnvironmentFile = "/home/ian/.config/twitch-alerts/env";
+        SyslogIdentifier="twitch-alerts";
+        Restart = "always";
+      };
     };
   };
 
