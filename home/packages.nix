@@ -1,4 +1,5 @@
-{ pkgs, inputs, unstable, ... }:
+{ pkgs, inputs, unstable, system, ... }: let
+in
 builtins.attrValues {
   inherit (pkgs)
     alacritty
@@ -124,4 +125,6 @@ builtins.attrValues {
   obs-remote = (unstable.callPackage ./obs-remote.nix {});
 
   guileInfo = pkgs.guile.info;
+
+  eww = inputs.eww.packages.${system}.eww-wayland;
 }

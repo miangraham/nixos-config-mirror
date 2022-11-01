@@ -15,6 +15,7 @@
     moby = { url = "sourcehut:~mian/dico-moby-prototype"; };
     # moby = { url = "path:/home/ian/moby"; };
     twitch-alerts = { url = "sourcehut:~mian/twitch-alerts"; inputs.nixpkgs.follows = "nixpkgs"; };
+    eww = { url = "github:elkowar/eww"; inputs.nixpkgs.follows = "unstable"; };
   };
   outputs = inputs:
     let
