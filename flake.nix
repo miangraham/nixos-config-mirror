@@ -9,13 +9,15 @@
     home-manager = { url = "github:nix-community/home-manager/release-22.05"; inputs.nixpkgs.follows = "nixpkgs"; };
     emacs-overlay = { url = "github:nix-community/emacs-overlay"; inputs.nixpkgs.follows = "nixpkgs"; };
     rust-overlay = { url = "github:oxalica/rust-overlay"; inputs.nixpkgs.follows = "nixpkgs"; };
+
     tdlib = { url = "github:tdlib/td?rev=92f8093486f19c049de5446cc20950e641c6ade0"; flake = false; };
     ffmpeg-patch = { url = "github:yt-dlp/FFmpeg-Builds?rev=d1b456152d2618cf9266ec5ca84ed8b110acb423"; flake = false; };
     otf2bdf = { url = "github:thefloweringash/kevin-nix"; flake = false; };
-    moby = { url = "sourcehut:~mian/dico-moby-prototype"; };
-    # moby = { url = "path:/home/ian/moby"; };
-    twitch-alerts = { url = "sourcehut:~mian/twitch-alerts"; inputs.nixpkgs.follows = "nixpkgs"; };
     eww = { url = "github:elkowar/eww"; inputs.nixpkgs.follows = "unstable"; };
+
+    moby = { url = "sourcehut:~mian/dico-moby-prototype"; };
+    twitch-alerts = { url = "sourcehut:~mian/twitch-alerts"; inputs.nixpkgs.follows = "nixpkgs"; };
+    # moby = { url = "path:/home/ian/moby"; };
   };
   outputs = inputs:
     let

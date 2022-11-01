@@ -107,13 +107,21 @@ in
           offset = "20x20";
           width = "(300, 800)";
           font = "Noto Sans 10";
+          foreground = "#FFFFFFFF";
           background = "#68217AFF";
         };
 
         # Overrideable settings listed at https://github.com/dunst-project/dunst/blob/master/dunstrc#L346
         urgency_critical = {
           timeout = "60s";
+          foreground = "#FFFFFFFF";
           background = "#F14949FF";
+        };
+
+        urgency_low = {
+          timeout = "10s";
+          foreground = "#FFFFFFFF";
+          background = "#579C4CFF";
         };
       };
     };
@@ -147,7 +155,7 @@ in
     in {
       Install.WantedBy = [ "graphical-session.target" ];
       Service = {
-        ExecStart = "${twitch-alerts}/bin/ctrlfreak-twitch-alerts";
+        ExecStart = "${twitch-alerts}/bin/twitch-alerts";
         EnvironmentFile = "/home/ian/.config/twitch-alerts/env";
         SyslogIdentifier="twitch-alerts";
         Restart = "always";
