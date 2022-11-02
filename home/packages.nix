@@ -56,7 +56,7 @@ builtins.attrValues {
     pandoc
     picocom
     playerctl
-    protonmail-bridge
+    # protonmail-bridge Do not run until https://github.com/ProtonMail/proton-bridge/issues/220 is fixed
     qdirstat
     qpwgraph
     ranger
