@@ -46,6 +46,7 @@ let
     ".config/obs-studio/logs"
     ".config/protonmail"
     ".config/Slack"
+    ".config/Sonixd"
     ".config/syncthing/*.db"
     ".config/VSCodium"
 
