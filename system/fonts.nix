@@ -2,6 +2,7 @@
 with pkgs; {
   fontDir.enable = true;
   enableDefaultFonts = true;
+  # fontconfig.enable = true;
   fonts = [
     # general use
     fantasque-sans-mono
@@ -21,6 +22,7 @@ with pkgs; {
     alegreya
     source-code-pro
     oxygenfonts
+    proggyfonts
 
     # icons
     font-awesome
