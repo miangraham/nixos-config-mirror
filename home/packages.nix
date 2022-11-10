@@ -31,6 +31,7 @@ builtins.attrValues {
     godot
     graphviz
     grim
+    gthumb # quick image cropping
     helvum
     iftop
     imagemagick
