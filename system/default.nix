@@ -120,6 +120,11 @@ in
     adb.enable = true;
     noisetorch.enable = true;
     wshowkeys.enable = true;
+
+    hyprland = {
+      enable = true;
+      recommendedEnvironment = true;
+    };
   };
 
 }

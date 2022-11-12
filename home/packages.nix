@@ -128,4 +128,6 @@ builtins.attrValues {
   guileInfo = pkgs.guile.info;
 
   eww = inputs.eww.packages.${system}.eww-wayland;
+
+  hyprpaper = inputs.hyprpaper.packages.${system}.default;
 }

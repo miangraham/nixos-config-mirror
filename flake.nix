@@ -10,6 +10,9 @@
     emacs-overlay = { url = "github:nix-community/emacs-overlay"; inputs.nixpkgs.follows = "nixpkgs"; };
     rust-overlay = { url = "github:oxalica/rust-overlay"; inputs.nixpkgs.follows = "nixpkgs"; };
 
+    hyprland = { url = "github:hyprwm/Hyprland/v0.17.0beta"; inputs.nixpkgs.follows = "unstable"; };
+    hyprpaper = { url = "github:hyprwm/hyprpaper"; inputs.nixpkgs.follows = "unstable"; };
+
     tdlib = { url = "github:tdlib/td?rev=92f8093486f19c049de5446cc20950e641c6ade0"; flake = false; };
     ffmpeg-patch = { url = "github:yt-dlp/FFmpeg-Builds?rev=d1b456152d2618cf9266ec5ca84ed8b110acb423"; flake = false; };
     otf2bdf = { url = "github:thefloweringash/kevin-nix"; flake = false; };
@@ -32,6 +35,7 @@
         system = "x86_64-linux";
         modules = addModules ++ [
           ./system/dicod/default.nix
+          inputs.hyprland.nixosModules.default
           inputs.home-manager.nixosModules.home-manager
           { inherit home-manager; }
         ];
