@@ -2,7 +2,6 @@
 in
 builtins.attrValues {
   inherit (pkgs)
-    alacritty
     aseprite
     asunder
     audacity
@@ -25,6 +24,7 @@ builtins.attrValues {
     ffmpeg
     flac
     fontforge-gtk
+    fractal
     fuzzel
     gh
     gimp
