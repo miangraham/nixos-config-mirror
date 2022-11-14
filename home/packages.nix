@@ -120,7 +120,6 @@ builtins.attrValues {
 
   obs-studio = unstable.wrapOBS { plugins = with unstable.obs-studio-plugins; [
     obs-pipewire-audio-capture
-    obs-websocket
   ]; };
 
   obs-remote = (unstable.callPackage ./obs-remote.nix {});
