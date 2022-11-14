@@ -15,7 +15,6 @@
 
     tdlib = { url = "github:tdlib/td?rev=92f8093486f19c049de5446cc20950e641c6ade0"; flake = false; };
     ffmpeg-patch = { url = "github:yt-dlp/FFmpeg-Builds?rev=d1b456152d2618cf9266ec5ca84ed8b110acb423"; flake = false; };
-    otf2bdf = { url = "github:thefloweringash/kevin-nix"; flake = false; };
     eww = { url = "github:elkowar/eww"; inputs.nixpkgs.follows = "unstable"; };
 
     moby = { url = "sourcehut:~mian/dico-moby-prototype"; };

@@ -415,22 +415,6 @@
         "type": "github"
       }
     },
-    "otf2bdf": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1630961435,
-        "narHash": "sha256-NGu/K3f5LTjiIcO9URYs41umbW9ONClXOY8HJbJW2Bc=",
-        "owner": "thefloweringash",
-        "repo": "kevin-nix",
-        "rev": "fedcf821bca2ff4798e4436b1bc5813962bea8b5",
-        "type": "github"
-      },
-      "original": {
-        "owner": "thefloweringash",
-        "repo": "kevin-nix",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "dev": "dev",
@@ -443,7 +427,6 @@
         "moby": "moby",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
-        "otf2bdf": "otf2bdf",
         "rust-overlay": "rust-overlay_2",
         "tdlib": "tdlib",
         "twitch-alerts": "twitch-alerts",
