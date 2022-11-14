@@ -1,5 +1,6 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 let
+  unstable = import ../../common/unstable.nix {inherit pkgs inputs;};
   borgbackup = import ./backup.nix { inherit pkgs; };
 in
 {
@@ -14,6 +15,32 @@ in
         futaba = {
           serverName = "192.168.0.128";
           root = "/var/www";
+        };
+        invid = {
+          enableACME = false;
+          forceSSL = false;
+        };
+      };
+    };
+
+    invidious = {
+      enable = true;
+      package = unstable.invidious;
+      domain = "invid";
+      port = 9999;
+      nginx.enable = true;
+      database.createLocally = true;
+      settings = {
+        registration_enabled = false;
+        login_enabled = true;
+        captcha_enabled = false;
+        popular_enabled = false;
+        default_user_preferences = {
+          region = "JP";
+          related_videos = false;
+          comments = [];
+          feed_menu = [ "Subscriptions" "Trending" ];
+          default_home = "Subscriptions";
         };
       };
     };
