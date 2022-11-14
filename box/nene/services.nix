@@ -86,4 +86,17 @@ in
     ];
     script = "pueued -v";
   };
+
+  systemd.services.monitor-song-changes = {
+    serviceConfig = {
+      Type = "simple";
+      User = "ian";
+    };
+    wantedBy = [ "graphical-session.target" ];
+    path = [
+      pkgs.coreutils
+      pkgs.inotify-tools
+    ];
+    script = "/home/ian/.bin/monitorSongChanges.sh";
+  };
 }
