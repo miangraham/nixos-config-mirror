@@ -31,15 +31,15 @@ in
       nginx.enable = true;
       database.createLocally = true;
       settings = {
-        registration_enabled = false;
+        registration_enabled = true;
         login_enabled = true;
         captcha_enabled = false;
         popular_enabled = false;
         default_user_preferences = {
           region = "JP";
           related_videos = false;
-          comments = [];
-          feed_menu = [ "Subscriptions" "Trending" ];
+          comments = [ "" "" ];
+          feed_menu = [ "Subscriptions" "Trending" "none" "none" ];
           default_home = "Subscriptions";
         };
       };
