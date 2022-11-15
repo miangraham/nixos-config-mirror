@@ -9,6 +9,7 @@ let
   direnv = import ./direnv.nix {};
   firefox = import ./firefox.nix { inherit pkgs; };
   git = import ./git.nix { pkgs = unstable; };
+  kitty = import ./kitty.nix { pkgs = unstable; };
   mpv = import ./mpv.nix { inherit pkgs; };
   secrets = import ./secrets.nix { inherit pkgs; };
   ssh = import ./ssh.nix { inherit pkgs; };
@@ -31,7 +32,7 @@ in
   wayland.windowManager.sway = import ./sway.nix { inherit pkgs; };
 
   programs = {
-    inherit alacritty bash direnv firefox git mpv ssh starship tmux waybar;
+    inherit alacritty bash direnv firefox git kitty mpv ssh starship tmux waybar;
     inherit (secrets.programs) gpg password-store;
 
     autojump.enable = true;
@@ -49,20 +50,6 @@ in
         hide_kernel_threads = 1;
         hide_userland_threads = 1;
       };
-    };
-
-    mako = {
-      enable = false;
-      maxVisible = 1;
-      defaultTimeout = 5000;
-      ignoreTimeout = true;
-      actions = false;
-      anchor = "top-right";
-      margin = "20"; # top right bottom left
-      width = 500;
-      height = 500;
-      borderSize = 0;
-      backgroundColor = "#68217AFF";
     };
   };
 
