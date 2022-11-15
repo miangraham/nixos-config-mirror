@@ -4,7 +4,6 @@ with lib;
 
 let
   cfg = config.services.dicod;
-  dev = import ../../common/dev.nix { inherit pkgs inputs; };
 in
 {
 

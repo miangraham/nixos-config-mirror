@@ -33,22 +33,6 @@
         "type": "github"
       }
     },
-    "dev": {
-      "locked": {
-        "lastModified": 1668432929,
-        "narHash": "sha256-lqUkrnUcXVwfiKpBClBBXVLnzavCHXPfpVLb7+QXCGQ=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "4b14567454aa524f6393ba2810930f54e47e3b33",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "master",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "devshell": {
       "flake": false,
       "locked": {
@@ -325,6 +309,22 @@
         "type": "github"
       }
     },
+    "invid-testing": {
+      "locked": {
+        "lastModified": 1668249148,
+        "narHash": "sha256-t1HV+cWkAu/XdrDhRGVqc8PaHuZE2DEkt/2Rg/WjBnI=",
+        "owner": "geopjr-forks",
+        "repo": "nixpkgs",
+        "rev": "b8ae9f94aa85b154963779cc5e75f1937525a8bd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "geopjr-forks",
+        "ref": "update/crystal",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "moby": {
       "inputs": {
         "nixpkgs": "nixpkgs"
@@ -417,13 +417,13 @@
     },
     "root": {
       "inputs": {
-        "dev": "dev",
         "emacs-overlay": "emacs-overlay",
         "eww": "eww",
         "ffmpeg-patch": "ffmpeg-patch",
         "home-manager": "home-manager",
         "hyprland": "hyprland",
         "hyprpaper": "hyprpaper",
+        "invid-testing": "invid-testing",
         "moby": "moby",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
@@ -533,16 +533,16 @@
     },
     "unstable": {
       "locked": {
-        "lastModified": 1668432929,
-        "narHash": "sha256-lqUkrnUcXVwfiKpBClBBXVLnzavCHXPfpVLb7+QXCGQ=",
+        "lastModified": 1668417584,
+        "narHash": "sha256-yeuEyxKPwsm5fIHN49L/syn9g5coxnPp3GsVquhrv5A=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "4b14567454aa524f6393ba2810930f54e47e3b33",
+        "rev": "013fcdd106823416918004bb684c3c186d3c460f",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "master",
+        "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
