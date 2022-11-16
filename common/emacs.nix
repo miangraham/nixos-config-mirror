@@ -19,6 +19,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     consult
     consult-project-extra
     corfu
+    crystal-mode
     delight
     diff-hl
     direnv

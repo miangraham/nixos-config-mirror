@@ -7,11 +7,7 @@ let
       src = inputs.tdlib;
     });
   });
-  invidTestingOverlay = (self: super: {
-    crystal = inputs.invid-testing.legacyPackages.${system}.crystal;
-  });
 in
 [
-  invidTestingOverlay
   inputs.emacs-overlay.overlay
 ]

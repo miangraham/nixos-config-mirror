@@ -311,16 +311,16 @@
     },
     "invid-testing": {
       "locked": {
-        "lastModified": 1668249148,
-        "narHash": "sha256-t1HV+cWkAu/XdrDhRGVqc8PaHuZE2DEkt/2Rg/WjBnI=",
-        "owner": "geopjr-forks",
+        "lastModified": 1668698102,
+        "narHash": "sha256-fYpKdO6ctKVHIKF8I6YPrj+oS2/7X/23siCbWWHH+OM=",
+        "owner": "miangraham",
         "repo": "nixpkgs",
-        "rev": "b8ae9f94aa85b154963779cc5e75f1937525a8bd",
+        "rev": "14159c91a6c6f684190bdb0fa4825cedf43f3483",
         "type": "github"
       },
       "original": {
-        "owner": "geopjr-forks",
-        "ref": "update/crystal",
+        "owner": "miangraham",
+        "ref": "invid-tweaks",
         "repo": "nixpkgs",
         "type": "github"
       }

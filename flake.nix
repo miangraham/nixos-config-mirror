@@ -5,7 +5,7 @@
     unstable = { url = "github:NixOS/nixpkgs/nixos-unstable"; };
     unstable-small = { url = "github:NixOS/nixpkgs/nixos-unstable-small"; };
     # dev = { url = "github:NixOS/nixpkgs/master"; };
-    invid-testing = { url = "github:geopjr-forks/nixpkgs/update/crystal"; };
+    invid-testing = { url = "github:miangraham/nixpkgs/invid-tweaks"; };
     nixos-hardware = { url = "github:NixOS/nixos-hardware/master"; };
     home-manager = { url = "github:nix-community/home-manager/release-22.05"; inputs.nixpkgs.follows = "nixpkgs"; };
     emacs-overlay = { url = "github:nix-community/emacs-overlay"; inputs.nixpkgs.follows = "nixpkgs"; };

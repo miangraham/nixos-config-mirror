@@ -102,7 +102,6 @@ builtins.attrValues {
     wev
 
     twitch-tui
-    invidious
   ;
 
   inherit (pkgs.gitAndTools) git-subrepo;
@@ -128,4 +127,6 @@ builtins.attrValues {
   eww = inputs.eww.packages.${system}.eww-wayland;
 
   hyprpaper = inputs.hyprpaper.packages.${system}.default;
+
+  invidious = inputs.invid-testing.legacyPackages.${system}.invidious;
 }
