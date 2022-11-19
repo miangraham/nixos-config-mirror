@@ -11,7 +11,7 @@
     emacs-overlay = { url = "github:nix-community/emacs-overlay"; inputs.nixpkgs.follows = "nixpkgs"; };
     rust-overlay = { url = "github:oxalica/rust-overlay"; inputs.nixpkgs.follows = "nixpkgs"; };
 
-    hyprland = { url = "github:hyprwm/Hyprland/v0.17.0beta"; inputs.nixpkgs.follows = "unstable"; };
+    hyprland = { url = "github:hyprwm/Hyprland/v0.18.0beta"; inputs.nixpkgs.follows = "unstable"; };
     hyprpaper = { url = "github:hyprwm/hyprpaper"; inputs.nixpkgs.follows = "unstable"; };
 
     tdlib = { url = "github:tdlib/td?rev=92f8093486f19c049de5446cc20950e641c6ade0"; flake = false; };
