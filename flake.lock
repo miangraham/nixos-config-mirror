@@ -428,7 +428,6 @@
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
         "rust-overlay": "rust-overlay_2",
-        "tdlib": "tdlib",
         "twitch-alerts": "twitch-alerts",
         "unstable": "unstable",
         "unstable-small": "unstable-small"
@@ -490,23 +489,6 @@
       "original": {
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "type": "github"
-      }
-    },
-    "tdlib": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1666776552,
-        "narHash": "sha256-gCp3cpvzCXllTIh+p4BMwNiP5r5QeYjsTmc6ZWDfoIk=",
-        "owner": "tdlib",
-        "repo": "td",
-        "rev": "92f8093486f19c049de5446cc20950e641c6ade0",
-        "type": "github"
-      },
-      "original": {
-        "owner": "tdlib",
-        "repo": "td",
-        "rev": "92f8093486f19c049de5446cc20950e641c6ade0",
         "type": "github"
       }
     },
