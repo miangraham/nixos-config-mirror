@@ -24,7 +24,7 @@ in
 
   virtualisation.oci-containers.containers = {
     freshrss = {
-      image = "freshrss/freshrss@sha256:09e379a4c6046e29c26272d135abfb9b5078bbeb19eba0826741afe3f6f21815";
+      image = "freshrss/freshrss@sha256:4b8300f34bb1a5ed6adf738e827c58821b3dc62862973d9f679fb784ced523a5";
       dependsOn = [];
       extraOptions = [
         "--pull=always"
