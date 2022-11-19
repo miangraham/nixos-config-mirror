@@ -311,16 +311,16 @@
     },
     "invid-testing": {
       "locked": {
-        "lastModified": 1668698102,
-        "narHash": "sha256-fYpKdO6ctKVHIKF8I6YPrj+oS2/7X/23siCbWWHH+OM=",
+        "lastModified": 1668849465,
+        "narHash": "sha256-2j2VjWSyGM1FHDVfiPHGJsYdSuC8Z3N6Bn5Z2z8GZaA=",
         "owner": "miangraham",
         "repo": "nixpkgs",
-        "rev": "14159c91a6c6f684190bdb0fa4825cedf43f3483",
+        "rev": "619d5a1b6c70e9e2b8e699371605c42c5d13b0d1",
         "type": "github"
       },
       "original": {
         "owner": "miangraham",
-        "ref": "invid-tweaks",
+        "ref": "invid-tweaks-2",
         "repo": "nixpkgs",
         "type": "github"
       }
