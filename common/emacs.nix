@@ -56,6 +56,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     marginalia
     marquee-header
     markdown-mode
+    mastodon
     nix-mode
     no-littering
     orderless

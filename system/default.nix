@@ -26,6 +26,8 @@ in
 
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
+    extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
+    kernelModules = [ "v4l2loopback" ];
     loader = {
       systemd-boot = {
         enable = true;
