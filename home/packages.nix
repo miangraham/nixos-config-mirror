@@ -10,8 +10,6 @@ builtins.attrValues {
     cachix
     calf
     carla
-    chatterino2
-    cmus
     diskonaut
     du-dust
     # broke pipewire?
@@ -36,8 +34,6 @@ builtins.attrValues {
     iftop
     imagemagick
     ispell
-    jamesdsp
-    john
     jq
     kiwix
     krita
@@ -66,7 +62,6 @@ builtins.attrValues {
     slurp
     sonixd
     speedtest-cli
-    sublime-music
     tap-plugins
     tdesktop
     tldr
