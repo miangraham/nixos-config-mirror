@@ -95,9 +95,15 @@ in
         "browser.newtabpage.activity-stream.feeds.places" = false;
         "browser.newtabpage.activity-stream.feeds.prefs" = false;
         "browser.newtabpage.activity-stream.feeds.recommendationprovider" = false;
+        "browser.newtabpage.activity-stream.feeds.system.topsites" = false;
+        "browser.newtabpage.activity-stream.feeds.system.topstories" = false;
         "browser.newtabpage.activity-stream.feeds.telemetry" = false;
         "browser.newtabpage.activity-stream.feeds.topsites" = false;
         "browser.newtabpage.activity-stream.feeds.section.topstories" = false;
+        "browser.newtabpage.activity-stream.section.highlights.includeBookmarks" = false;
+        "browser.newtabpage.activity-stream.section.highlights.includeDownloads" = false;
+        "browser.newtabpage.activity-stream.section.highlights.includePocket" = false;
+        "browser.newtabpage.activity-stream.section.highlights.includeVisited" = false;
         "browser.newtabpage.activity-stream.showSearch" = false;
         "browser.newtabpage.activity-stream.showSponsored" = false;
         "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
@@ -105,7 +111,9 @@ in
 
         # Sync defaults
         "services.sync.engine.addresses" = false;
+        "services.sync.engine.addresses.available" = false;
         "services.sync.engine.creditcards" = false;
+        "services.sync.engine.creditcards.available" = false;
         "services.sync.engine.history" = false;
         "services.sync.engine.passwords" = false;
         "services.sync.engine.tabs" = false;
