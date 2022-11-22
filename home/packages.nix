@@ -2,10 +2,7 @@
 in
 builtins.attrValues {
   inherit (pkgs)
-    aseprite
     asunder
-    audacity
-    awscli
     bitwarden
     cachix
     calf
@@ -21,7 +18,6 @@ builtins.attrValues {
     fd
     ffmpeg
     flac
-    fontforge-gtk
     fractal
     fuzzel
     gh
@@ -30,7 +26,6 @@ builtins.attrValues {
     graphviz
     grim
     gthumb # quick image cropping
-    helvum
     iftop
     imagemagick
     ispell
@@ -40,13 +35,11 @@ builtins.attrValues {
     lftp
     logrotate
     lsp-plugins
-    lyrebird
     micro
     mtr
     mu
     neofetch
     nethogs
-    netlify-cli
     nix-direnv
     nix-prefetch-git
     nixpkgs-review
@@ -55,7 +48,6 @@ builtins.attrValues {
     playerctl
     # protonmail-bridge Do not run until https://github.com/ProtonMail/proton-bridge/issues/220 is fixed
     qdirstat
-    qpwgraph
     ranger
     reaper
     shellcheck
@@ -67,8 +59,6 @@ builtins.attrValues {
     tldr
     traceroute
     ungoogled-chromium
-    write_stylus
-    valgrind
     vlc
     zeal
     zenith

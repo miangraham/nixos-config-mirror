@@ -8,14 +8,9 @@ let
     });
   });
 
-  overlays = [ ffmpegOverlay ];
-
   conf = {
     inherit (pkgs) system;
-    inherit overlays;
-    config.allowUnfree = true;
+    overlays = [ ffmpegOverlay ];
   };
-
-  newpkgs = (import inputs.unstable conf).pkgs;
 in
-newpkgs.yt-dlp
+(import inputs.unstable conf).pkgs.yt-dlp
