@@ -60,6 +60,7 @@ builtins.attrValues {
     traceroute
     ungoogled-chromium
     vlc
+    xdg_utils
     zeal
     zenith
     zotero

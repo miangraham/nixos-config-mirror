@@ -71,7 +71,7 @@ in
         # hides if name, how to get back?
         "tooltip-format" = "{desc} | {volume}%";
         "scroll-step" = 5;
-        "on-click" = "pamixer -t";
+        "on-click" = "pactl set-sink-mute 0 toggle";
         "on-click-right" = "pavucontrol";
       };
 

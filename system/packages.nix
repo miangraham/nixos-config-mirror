@@ -16,18 +16,14 @@ builtins.attrValues {
     hwinfo
     lshw
     nix-index
-    pamixer
     parted
     pavucontrol
     pciutils
     psmisc
     pulseaudio
-    qmk
     ripgrep
     rsync
-    # sqlite
     sshfs-fuse
-    tarssh
     tree
     unrar
     unzip
@@ -35,7 +31,6 @@ builtins.attrValues {
     watch
     wget
     xdg-desktop-portal-wlr
-    xdg_utils
     zip
   ;
 
