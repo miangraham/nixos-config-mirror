@@ -1,6 +1,13 @@
 { config, pkgs, ... }:
 let
   network = "futabanet";
+  extraOptions = [
+    "--pull=always"
+    "--network=${network}"
+  ];
+  environment = {
+    TZ = "Asia/Tokyo";
+  };
 in
 {
   systemd.services."init-docker-network-${network}" = {
@@ -24,12 +31,9 @@ in
 
   virtualisation.oci-containers.containers = {
     freshrss = {
+      inherit environment extraOptions;
       image = "freshrss/freshrss@sha256:4b8300f34bb1a5ed6adf738e827c58821b3dc62862973d9f679fb784ced523a5";
       dependsOn = [];
-      extraOptions = [
-        "--pull=always"
-        "--network=${network}"
-      ];
       ports = [
         "8088:80"
       ];
@@ -37,39 +41,24 @@ in
         "/srv/freshrss/data:/var/www/FreshRSS/data"
         "/srv/freshrss/extensions:/var/www/FreshRSS/extensions"
       ];
-      environment = {
-        TZ = "Asia/Tokyo";
-      };
     };
 
     reddit-top-rss = {
+      inherit environment extraOptions;
       image = "johnny5w/reddit-top-rss@sha256:cb1ea08ab0be1a583f5d95105d0226f80804180c10843390ac0bf226701537df";
       dependsOn = [];
-      extraOptions = [
-        "--pull=always"
-        "--network=${network}"
-      ];
       ports = [
         "8089:8080"
       ];
-      environment = {
-        TZ = "Asia/Tokyo";
-      };
     };
 
     mercury-parser-api = {
+      inherit environment extraOptions;
       image = "wangqiru/mercury-parser-api@sha256:4cb7e73e6ea146bef7343d61da4337b0fccf87eb914aca428237cd9dcf5c8f43";
       dependsOn = [];
-      extraOptions = [
-        "--pull=always"
-        "--network=${network}"
-      ];
       ports = [
         "8090:3000"
       ];
-      environment = {
-        TZ = "Asia/Tokyo";
-      };
     };
   };
 }

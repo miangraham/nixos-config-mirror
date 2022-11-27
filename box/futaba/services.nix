@@ -39,7 +39,7 @@ in
           region = "JP";
           related_videos = false;
           comments = [ "" "" ];
-          feed_menu = [ "Subscriptions" "Trending" "none" "none" ];
+          feed_menu = [ "Subscriptions" "none" "none" "none" ];
           default_home = "Subscriptions";
         };
       };
