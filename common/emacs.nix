@@ -82,6 +82,8 @@ pkgs.emacsWithPackagesFromUsePackage {
     toml-mode
     treemacs
     treemacs-magit
+    tree-sitter
+    tree-sitter-langs
     use-package
     vertico
     visual-fill-column
