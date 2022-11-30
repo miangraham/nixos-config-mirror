@@ -8,10 +8,8 @@ builtins.attrValues {
 
   inherit (pkgs)
     bashmount
-    bzip2
     exfat
     file
-    gawk
     gzip
     hwinfo
     lshw
@@ -22,12 +20,9 @@ builtins.attrValues {
     psmisc
     pulseaudio
     ripgrep
-    rsync
     sshfs-fuse
-    tree
     unrar
     unzip
-    vim
     watch
     wget
     xdg-desktop-portal-wlr

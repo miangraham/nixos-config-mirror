@@ -306,6 +306,7 @@
       "original": {
         "owner": "hyprwm",
         "repo": "hyprpaper",
+        "rev": "ab85578dce442b80aa3378fe0304e6cb6f16f593",
         "type": "github"
       }
     },

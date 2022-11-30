@@ -127,6 +127,13 @@ in
       enable = true;
       recommendedEnvironment = true;
     };
-  };
 
+    nano = {
+      nanorc = ''
+        set nowrap
+        set tabstospaces
+        set tabsize 2
+      '';
+    };
+  };
 }

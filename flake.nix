@@ -12,7 +12,7 @@
     rust-overlay = { url = "github:oxalica/rust-overlay"; inputs.nixpkgs.follows = "nixpkgs"; };
 
     hyprland = { url = "github:hyprwm/Hyprland/v0.18.0beta"; inputs.nixpkgs.follows = "unstable"; };
-    hyprpaper = { url = "github:hyprwm/hyprpaper"; inputs.nixpkgs.follows = "unstable"; };
+    hyprpaper = { url = "github:hyprwm/hyprpaper?rev=ab85578dce442b80aa3378fe0304e6cb6f16f593"; inputs.nixpkgs.follows = "unstable"; };
 
     # Unneeded atm. Used when emacs/telega needs something specific
     # tdlib = { url = "github:tdlib/td?rev=92f8093486f19c049de5446cc20950e641c6ade0"; flake = false; };
