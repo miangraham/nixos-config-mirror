@@ -2,7 +2,7 @@
   description = "";
   inputs = {
     nixpkgs = { url = "github:NixOS/nixpkgs/nixos-22.05"; };
-    unstable = { url = "github:NixOS/nixpkgs/release-22.11"; };
+    unstable = { url = "github:NixOS/nixpkgs/nixos-22.11"; };
     unstable-small = { url = "github:NixOS/nixpkgs/nixos-unstable-small"; };
     # dev = { url = "github:NixOS/nixpkgs/master"; };
     invid-testing = { url = "github:miangraham/nixpkgs/invid-tweaks-2"; };
@@ -11,13 +11,13 @@
     emacs-overlay = { url = "github:nix-community/emacs-overlay"; inputs.nixpkgs.follows = "nixpkgs"; };
     rust-overlay = { url = "github:oxalica/rust-overlay"; inputs.nixpkgs.follows = "nixpkgs"; };
 
+    eww = { url = "github:elkowar/eww"; inputs.nixpkgs.follows = "unstable"; };
     hyprland = { url = "github:hyprwm/Hyprland/v0.18.0beta"; inputs.nixpkgs.follows = "unstable"; };
     hyprpaper = { url = "github:hyprwm/hyprpaper?rev=ab85578dce442b80aa3378fe0304e6cb6f16f593"; inputs.nixpkgs.follows = "unstable"; };
 
     # Unneeded atm. Used when emacs/telega needs something specific
     # tdlib = { url = "github:tdlib/td?rev=92f8093486f19c049de5446cc20950e641c6ade0"; flake = false; };
     ffmpeg-patch = { url = "github:yt-dlp/FFmpeg-Builds?rev=d1b456152d2618cf9266ec5ca84ed8b110acb423"; flake = false; };
-    eww = { url = "github:elkowar/eww"; inputs.nixpkgs.follows = "unstable"; };
 
     moby = { url = "sourcehut:~mian/dico-moby-prototype"; };
     twitch-alerts = { url = "sourcehut:~mian/twitch-alerts"; inputs.nixpkgs.follows = "nixpkgs"; };
