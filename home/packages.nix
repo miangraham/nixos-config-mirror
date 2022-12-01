@@ -70,18 +70,16 @@ builtins.attrValues {
     # sway
     swayidle
     swaylock
-    waybar
     libnotify
-  ;
+    waybar
+    wev
 
-  inherit (unstable)
+    # video
     freetube
     pueue
     aria2
 
-    # sway
-    wev
-
+    # streaming
     twitch-tui
   ;
 
@@ -99,12 +97,12 @@ builtins.attrValues {
   # video
   yt-dlp = (import ./yt-dlp.nix { inherit pkgs inputs; });
   invidious = inputs.invid-testing.legacyPackages.${system}.invidious;
-  kodi = (unstable.kodi.withPackages (p: with p; [ pvr-iptvsimple ]));
+  kodi = (pkgs.kodi.withPackages (p: with p; [ pvr-iptvsimple ]));
 
   # streaming
-  obs-studio = unstable.wrapOBS { plugins = with unstable.obs-studio-plugins; [
+  obs-studio = pkgs.wrapOBS { plugins = with pkgs.obs-studio-plugins; [
     obs-pipewire-audio-capture
   ]; };
-  obs-remote = (unstable.callPackage ./obs-remote.nix {});
+  obs-remote = (pkgs.callPackage ./obs-remote.nix {});
   twitch-chat-tui = (pkgs.callPackage ./twitch-chat-tui.nix {});
 }

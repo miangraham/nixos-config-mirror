@@ -13,4 +13,4 @@ let
     overlays = [ ffmpegOverlay ];
   };
 in
-(import inputs.unstable conf).pkgs.yt-dlp
+(import inputs.nixpkgs conf).pkgs.yt-dlp

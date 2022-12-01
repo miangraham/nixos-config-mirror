@@ -1,4 +1,4 @@
-{ pkgs, unstable, ... }:
+{ pkgs, ... }:
 let
   gcide = import ./gcide.nix { inherit pkgs; };
 in

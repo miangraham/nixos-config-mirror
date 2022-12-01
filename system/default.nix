@@ -1,10 +1,9 @@
 { pkgs, inputs, config, ... }:
 let
-  fonts = import ./fonts.nix {inherit pkgs;};
-  packages = import ./packages.nix {inherit pkgs inputs;};
-  overlays = import ../common/overlays-stable.nix {inherit inputs pkgs;};
-  unstable = import ../common/unstable.nix { inherit pkgs inputs; };
-  services = import ./services.nix {inherit pkgs unstable;};
+  fonts = import ./fonts.nix { inherit pkgs; };
+  packages = import ./packages.nix { inherit pkgs inputs; };
+  overlays = import ../common/overlays-stable.nix { inherit inputs pkgs; };
+  services = import ./services.nix { inherit pkgs; };
 in
 {
   imports = [
@@ -114,7 +113,6 @@ in
   programs = {
     git = {
       enable = true;
-      package = unstable.git;
       config = {
         init.defaultBranch = "master";
         safe.directory = "/home/ian/.nix";

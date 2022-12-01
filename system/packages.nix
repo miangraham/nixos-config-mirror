@@ -1,7 +1,6 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 let
-  unstable = import ../common/unstable.nix {inherit pkgs inputs;};
-  emacs = import ../common/emacs.nix {pkgs = unstable;};
+  emacs = import ../common/emacs.nix { inherit pkgs; };
 in
 builtins.attrValues {
   inherit emacs;
@@ -27,9 +26,5 @@ builtins.attrValues {
     wget
     xdg-desktop-portal-wlr
     zip
-  ;
-
-  inherit (unstable)
-    git
   ;
 }

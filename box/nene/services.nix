@@ -1,9 +1,8 @@
 { pkgs, inputs, config, ... }:
 let
-  unstable = import ../../common/unstable.nix {inherit pkgs inputs;};
   borgbackup = import ./backup.nix { inherit pkgs; };
   yt-dlp = import ../../home/yt-dlp.nix { inherit pkgs inputs; };
-  moby = import inputs.moby { pkgs = unstable; };
+  moby = import inputs.moby { inherit pkgs; };
 in
 {
   nix = {
@@ -50,8 +49,8 @@ in
     dicod = {
       enable = true;
       dictdDBs = with pkgs.dictdDBs; [
-        unstable.dictdDBs.eng2jpn
-        unstable.dictdDBs.jpn2eng
+        eng2jpn
+        jpn2eng
       ];
 
       guileDBs = [
@@ -80,8 +79,8 @@ in
     wantedBy = [ "multi-user.target" ];
     path = [
       yt-dlp
-      unstable.pueue
-      unstable.aria2
+      pkgs.pueue
+      pkgs.aria2
     ];
     script = "pueued -v";
   };

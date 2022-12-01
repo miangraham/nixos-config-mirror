@@ -8,13 +8,13 @@ let
   bash = import ./bash.nix {};
   direnv = import ./direnv.nix {};
   firefox = import ./firefox.nix { inherit pkgs; };
-  git = import ./git.nix { pkgs = unstable; };
-  kitty = import ./kitty.nix { pkgs = unstable; };
+  git = import ./git.nix { inherit pkgs; };
+  kitty = import ./kitty.nix { inherit pkgs; };
   mpv = import ./mpv.nix { inherit pkgs; };
   secrets = import ./secrets.nix { inherit pkgs; };
   ssh = import ./ssh.nix { inherit pkgs; };
   starship = import ./starship.nix { inherit pkgs; };
-  sworkstyle = unstable.swayest-workstyle;
+  sworkstyle = pkgs.swayest-workstyle;
   tmux = import ./tmux.nix { inherit pkgs; };
   waybar = import ./waybar.nix { inherit lib pkgs; };
 in
@@ -64,10 +64,6 @@ in
       enable = true;
       notify = false;
       tray = "never";
-      # device_config:
-      #   - device_file: /org/freedesktop/UDisks2/block_devices/mmcblk0p1
-      #     ignore: true
-      #     automount: false
       settings = {
         device_config = [{
           device_file = "/org/freedesktop/UDisks2/block_devices/mmcblk0p1";
