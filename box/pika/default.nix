@@ -1,8 +1,8 @@
 { pkgs, inputs, ... }:
 let
-  unstable-small = import ../../common/unstable-small.nix { inherit pkgs inputs; };
+  small = import ../../common/small.nix { inherit pkgs inputs; };
   inherit (import ../../system/backup-utils.nix {
-    pkgs = unstable-small;
+    pkgs = small;
     backupTime = "*-*-* *:10:00";
   }) job;
 in
@@ -134,7 +134,7 @@ in
   # }
 
   nix = {
-    package = unstable-small.nix_2_4;
+    package = small.nix_2_4;
     allowedUsers = ["@wheel" "nix-ssh"];
     trustedUsers = ["@wheel"];
     autoOptimiseStore = true;
@@ -194,7 +194,7 @@ in
     };
   };
 
-  environment.systemPackages = import ./packages.nix { pkgs = unstable-small; };
+  environment.systemPackages = import ./packages.nix { pkgs = small; };
 
   services = {
     earlyoom.enable = true;
@@ -205,8 +205,8 @@ in
     udev.extraRules = ''
       SUBSYSTEM=="bcm2835-gpiomem", KERNEL=="gpiomem", GROUP="gpio",MODE="0660"
       SUBSYSTEM=="gpio", GROUP="gpio", MODE="0660"
-      SUBSYSTEM=="gpio", KERNEL=="gpiochip*", ACTION=="add", RUN+="${unstable-small.bash}/bin/bash -c 'chgrp -R gpio /sys/class/gpio ; chmod -R g=u /sys/class/gpio ; chmod 220 /sys/class/gpio/export /sys/class/gpio/unexport'"
-      SUBSYSTEM=="gpio", KERNEL=="gpio*", ACTION=="add",RUN+="${unstable-small.bash}/bin/bash -c 'chgrp -R gpio /sys%p && chmod -R g=u /sys%p'"
+      SUBSYSTEM=="gpio", KERNEL=="gpiochip*", ACTION=="add", RUN+="${small.bash}/bin/bash -c 'chgrp -R gpio /sys/class/gpio ; chmod -R g=u /sys/class/gpio ; chmod 220 /sys/class/gpio/export /sys/class/gpio/unexport'"
+      SUBSYSTEM=="gpio", KERNEL=="gpio*", ACTION=="add",RUN+="${small.bash}/bin/bash -c 'chgrp -R gpio /sys%p && chmod -R g=u /sys%p'"
 
       SUBSYSTEM=="spidev", GROUP="spi", MODE="0660"
 
@@ -375,8 +375,8 @@ in
     };
     wantedBy = [ "multi-user.target" ];
     path = [
-      unstable-small.udiskie
-      unstable-small.xdg_utils
+      small.udiskie
+      small.xdg_utils
     ];
     script = "udiskie -aNT";
   };

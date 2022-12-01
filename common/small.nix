@@ -6,6 +6,5 @@ let
     inherit overlays;
     config.allowUnfree = true;
   };
-  unstable-small = (import inputs.unstable-small conf).pkgs;
 in
-unstable-small
+(import inputs.small conf).pkgs;

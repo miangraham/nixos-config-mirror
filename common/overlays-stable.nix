@@ -9,5 +9,4 @@ let
 in
 [
   inputs.emacs-overlay.overlay
-  # inputs.rust-overlay.overlays.default
 ]
