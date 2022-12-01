@@ -64,6 +64,17 @@ in
       enable = true;
       notify = false;
       tray = "never";
+      # device_config:
+      #   - device_file: /org/freedesktop/UDisks2/block_devices/mmcblk0p1
+      #     ignore: true
+      #     automount: false
+      settings = {
+        device_config = [{
+          device_file = "/org/freedesktop/UDisks2/block_devices/mmcblk0p1";
+          ignore = true;
+          automount = false;
+        }];
+      };
     };
 
     swayidle = {

@@ -40,9 +40,18 @@ in
 
   nix = {
     package = pkgs.nixVersions.stable;
-    allowedUsers = ["@wheel" "nix-ssh"];
-    trustedUsers = ["@wheel"];
-    autoOptimiseStore = true;
+    settings = {
+      allowed-users = ["@wheel" "nix-ssh"];
+      trusted-users = ["@wheel"];
+      auto-optimise-store = true;
+      substituters = [
+        "https://nix-community.cachix.org"
+      ];
+      trusted-public-keys = [
+        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+        "nene-1:tETUAQxI2/WCqFqS0J+32RgAqFrZXAkLtIHByUT7AjQ="
+      ];
+    };
     gc = {
       automatic = true;
       dates = "weekly";
@@ -53,13 +62,6 @@ in
       keep-derivations = true
       experimental-features = nix-command flakes
     '';
-    binaryCaches = [
-      "https://nix-community.cachix.org"
-    ];
-    binaryCachePublicKeys = [
-      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-      "nene-1:tETUAQxI2/WCqFqS0J+32RgAqFrZXAkLtIHByUT7AjQ="
-    ];
   };
 
   users.groups = {

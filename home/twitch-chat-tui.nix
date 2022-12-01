@@ -1,4 +1,4 @@
-{ pkgs, lib, stdenv, fetchFromSourcehut, openssl, pkg-config, curl, rustPlatform }:
+{ pkgs, lib, stdenv, fetchFromSourcehut, openssl_1_1, pkg-config, curl, rustPlatform }:
 rustPlatform.buildRustPackage rec {
   pname = "twitch-chat-tui";
   version = "unstable-2022-09-16";
@@ -13,5 +13,5 @@ rustPlatform.buildRustPackage rec {
   cargoSha256 = "sha256-Lw9VY3BORIrfE5gZDXUGqjpAQB4aKzWcW+DMAIGFky0=";
 
   nativeBuildInputs = [ pkg-config ];
-  buildInputs = [ openssl ];
+  buildInputs = [ openssl_1_1 ];
 }

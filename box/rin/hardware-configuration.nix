@@ -25,5 +25,5 @@
     [ { device = "/dev/disk/by-uuid/0230bac9-e397-4562-8d42-e0cbd2401107"; }
     ];
 
-  nix.maxJobs = lib.mkDefault 16;
+  nix.settings.max-jobs = lib.mkDefault 16;
 }

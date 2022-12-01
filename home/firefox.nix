@@ -1,7 +1,6 @@
 { pkgs, ... }:
 let
   firefox = pkgs.wrapFirefox pkgs.firefox-esr-102-unwrapped {
-    forceWayland = true;
     extraPolicies = {
       AppAutoUpdate = false;
       BackgroundAppUpdate = false;

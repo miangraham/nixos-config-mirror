@@ -25,7 +25,7 @@
     [ { device = "/dev/disk/by-uuid/5daa30f4-99ac-4a94-95c9-0ecb0feb0fb4"; }
     ];
 
-  nix.maxJobs = lib.mkDefault 32;
+  nix.settings.max-jobs = lib.mkDefault 32;
 
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   hardware.video.hidpi.enable = lib.mkDefault true;

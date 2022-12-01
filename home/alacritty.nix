@@ -24,7 +24,6 @@
     };
     font = {
       size = 14.0;
-      use_thin_strokes = false;
       normal.family = "Inconsolata";
     };
     window.opacity = 0.75;
