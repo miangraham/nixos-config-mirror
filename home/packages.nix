@@ -34,6 +34,7 @@ builtins.attrValues {
     kiwix
     krita
     lftp
+    lm_sensors
     logrotate
     lsp-plugins
     micro

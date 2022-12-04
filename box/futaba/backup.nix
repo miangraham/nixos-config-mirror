@@ -29,7 +29,8 @@ let
 
     music-to-homura = job {
       paths = [ "/srv/music" ];
-      startAt = "*-*-* *:47:00";
+      startAt = "weekly";
+      # startAt = "*-*-* *:47:00";
       repo = "/home/ian/mounts/homuraborg";
       user = "ian";
       doInit = false;
@@ -52,7 +53,8 @@ let
       paths = [ "/srv/music" ];
       user = "ian";
       doInit = false;
-      startAt = "daily";
+      startAt = "weekly";
+      # startAt = "daily";
       prune = {
         keep = {
           daily = 3;
