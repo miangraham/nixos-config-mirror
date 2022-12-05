@@ -6,6 +6,11 @@ in
   services = {
     inherit borgbackup;
 
+    endlessh = {
+      enable = true;
+      openFirewall = true;
+    };
+
     # box specific due to ACME, rip
     nginx = {
       enable = true;
