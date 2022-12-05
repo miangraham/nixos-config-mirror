@@ -1,7 +1,7 @@
 { pkgs, ... }:
 pkgs.emacsWithPackagesFromUsePackage {
   config = "";
-  package = pkgs.emacsPgtkNativeComp;
+  package = pkgs.emacsPgtk;
   alwaysEnsure = true;
   override = epkgs: epkgs // {
     telega = epkgs.melpaPackages.telega;
