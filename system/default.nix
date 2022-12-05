@@ -14,7 +14,6 @@ in
   inherit fonts services;
 
   time.timeZone = "Asia/Tokyo";
-  systemd.coredump.enable = true; # false
 
   nixpkgs = {
     config = {
@@ -61,6 +60,11 @@ in
       keep-derivations = true
       experimental-features = nix-command flakes
     '';
+  };
+
+  systemd = {
+    coredump.enable = true; # false
+    oomd.enable = false;
   };
 
   users.groups = {
