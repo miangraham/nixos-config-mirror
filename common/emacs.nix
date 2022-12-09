@@ -11,10 +11,9 @@ pkgs.emacsWithPackagesFromUsePackage {
     adaptive-wrap
     aggressive-indent
     anzu
-    biblio
-    bibtex-completion
     burly
     citar
+    citar-org-roam
     cmake-mode
     command-log-mode
     consult
@@ -68,7 +67,6 @@ pkgs.emacsWithPackagesFromUsePackage {
     org-randomnote
     org-ref
     org-roam
-    org-roam-bibtex
     pdf-tools
     popper
     rainbow-delimiters
