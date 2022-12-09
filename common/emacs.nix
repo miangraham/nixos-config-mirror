@@ -84,7 +84,6 @@ pkgs.emacsWithPackagesFromUsePackage {
     treemacs-magit
     tree-sitter
     tree-sitter-langs
-    use-package
     vertico
     visual-fill-column
     vterm
