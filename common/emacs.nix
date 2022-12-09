@@ -15,7 +15,6 @@ pkgs.emacsWithPackagesFromUsePackage {
     citar
     citar-org-roam
     cmake-mode
-    command-log-mode
     consult
     consult-project-extra
     corfu
@@ -23,7 +22,6 @@ pkgs.emacsWithPackagesFromUsePackage {
     delight
     diff-hl
     direnv
-    dirvish
     doom-themes
     drag-stuff
     editorconfig
@@ -44,7 +42,6 @@ pkgs.emacsWithPackagesFromUsePackage {
     git-link
     git-timemachine
     haskell-mode
-    hcl-mode
     helpful
     hide-mode-line
     highlight-indent-guides
@@ -55,7 +52,6 @@ pkgs.emacsWithPackagesFromUsePackage {
     ledger-mode
     magit
     marginalia
-    marquee-header
     markdown-mode
     mastodon
     nix-mode
@@ -63,8 +59,6 @@ pkgs.emacsWithPackagesFromUsePackage {
     orderless
     org
     org-modern
-    org-present
-    org-randomnote
     org-ref
     org-roam
     pdf-tools
@@ -82,8 +76,6 @@ pkgs.emacsWithPackagesFromUsePackage {
     toml-mode
     treemacs
     treemacs-magit
-    tree-sitter
-    tree-sitter-langs
     vertico
     visual-fill-column
     vterm
@@ -96,7 +88,6 @@ pkgs.emacsWithPackagesFromUsePackage {
     ws-butler
     yaml-mode
     yasnippet
-    zig-mode
     zoom
   ];
 }
