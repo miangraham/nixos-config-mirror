@@ -35,6 +35,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     emacsql-sqlite3
     ement
     eslint-fix
+    fancy-compilation
     forge
     flycheck
     flycheck-rust
