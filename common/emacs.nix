@@ -63,6 +63,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     org-roam
     pdf-tools
     popper
+    ppp
     rainbow-delimiters
     ripgrep
     ron-mode
