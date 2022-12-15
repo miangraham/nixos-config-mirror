@@ -110,14 +110,15 @@ in
         };
       };
       "battery" = {
+        "full-at" = 99;
         "states" = {
           "good" = 95;
           "warning" = 50;
           "critical" = 15;
         };
         "format" = "{icon}";
-        # "format-charging" = "{icon} {capacity}%";
-        # "format-discharging" = "{icon} {capacity}% ({time})";
+        "format-alt-charging" = "{icon}  {capacity}% ({time})";
+        "format-alt-discharging" = "{icon}  {capacity}% ({time})";
         # "format-full" = "{icon}";
         "format-icons" = [
           ""
@@ -127,10 +128,9 @@ in
           ""
         ];
         "tooltip-format" = "{capacity}%";
-        "tooltip-format-charging" = "{capacity}% ({time})";
-        "tooltip-format-discharging" = "{capacity}% ({time})";
+        "tooltip-format-charging" = " {capacity}% ({time})";
+        "tooltip-format-discharging" = " {capacity}% ({time})";
         "tooltip-format-full" = "{capacity}%";
-        "full-at" = 95;
       };
       "disk" = {
         "format" = "";
