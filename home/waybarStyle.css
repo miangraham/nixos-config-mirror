@@ -117,6 +117,12 @@ window#waybar {
 #battery {
   color: #859900;
 }
+#battery.warning {
+  color: #DDC53B;
+}
+#battery.critical {
+  color: #BF0000;
+}
 #custom-storage {
   color: #b58900;
 }

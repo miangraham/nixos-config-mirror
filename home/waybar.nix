@@ -25,6 +25,7 @@ in
     ];
     modules-center = [];
     modules-right = [
+      "custom/failed-units"
       "cpu"
       "memory"
       "disk"
@@ -32,7 +33,6 @@ in
       "idle_inhibitor"
       "pulseaudio"
       "battery"
-      "custom/failed-units"
       "clock"
     ];
     modules = {
@@ -76,19 +76,16 @@ in
       };
 
       "network" = {
-        # "format" = "{icon}";
-        "format" = "";
-        "format-wifi" = "{icon} {essid}";
-        "format-alt" = "{icon} {ipaddr}/{cidr}";
-        "format-alt-click" = "click-right";
+        "format" = "{icon}";
+        # "format-alt" = "{icon} {ipaddr}/{cidr}";
+        # "format-alt-click" = "click-right";
         "format-icons" = {
           "wifi" = [""];
           "ethernet" = [""];
-          "disconnected" = ["DISC"];
+          "disconnected" = [""];
         };
-        "on-click" = "termite -e sudo wifi-menu";
-        "tooltip-format" = "{ifname}";
-        "tooltip-format-wifi" = "{essid} ({signalStrength}%)";
+        "tooltip-format" = "{ipaddr}";
+        "tooltip-format-wifi" = "{essid} | {signalStrength}% | {ipaddr}";
       };
       "cpu" = {
         "interval" = 5;
@@ -115,13 +112,13 @@ in
       "battery" = {
         "states" = {
           "good" = 95;
-          "warning" = 30;
+          "warning" = 50;
           "critical" = 15;
         };
-        "format" = "{icon} {capacity}%";
-        "format-charging" = "{icon} {capacity}%";
-        "format-discharging" = "{icon} {capacity}% ({time})";
-        "format-full" = "{icon} {capacity}%";
+        "format" = "{icon}";
+        # "format-charging" = "{icon} {capacity}%";
+        # "format-discharging" = "{icon} {capacity}% ({time})";
+        # "format-full" = "{icon}";
         "format-icons" = [
           ""
           ""
@@ -129,6 +126,11 @@ in
           ""
           ""
         ];
+        "tooltip-format" = "{capacity}%";
+        "tooltip-format-charging" = "{capacity}% ({time})";
+        "tooltip-format-discharging" = "{capacity}% ({time})";
+        "tooltip-format-full" = "{capacity}%";
+        "full-at" = 95;
       };
       "disk" = {
         "format" = "";
