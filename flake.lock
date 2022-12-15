@@ -298,11 +298,11 @@
     },
     "invid-testing": {
       "locked": {
-        "lastModified": 1670332530,
-        "narHash": "sha256-VXpEh5/ZFTbiEPhuVjmWsvPDKqnEAxWMIv4g0wrqqO0=",
+        "lastModified": 1671140157,
+        "narHash": "sha256-hIbGS9qayhL1yAej7t99EzDb4KedYEtsK6qwhfesFxk=",
         "owner": "miangraham",
         "repo": "nixpkgs",
-        "rev": "7c6edb5b212a922ca4b47b083fae10a614dc89ea",
+        "rev": "085531eaf6651b5fa4112d069377f632660f30f5",
         "type": "github"
       },
       "original": {
