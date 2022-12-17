@@ -6,6 +6,8 @@ in
   services = {
     inherit borgbackup;
 
+    syncthing.guiAddress = "0.0.0.0:8384";
+
     endlessh = {
       enable = true;
       openFirewall = true;

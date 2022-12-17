@@ -12,34 +12,39 @@ in
     hostName = "rin";
     networkmanager.enable = true;
     resolvconf.dnsExtensionMechanism = false;
-    interfaces.enp2s0f0.useDHCP = true;
-    interfaces.enp5s0.useDHCP = true;
-    interfaces.wlp3s0.useDHCP = true;
-    firewall.allowedTCPPorts = [ 22 80 443 8443 8989 ];
-  };
-
-  hardware.bluetooth.enable = true;
-  services.blueman.enable = true;
-
-  programs.light.enable = true;
-  services.upower.enable = true;
-  powerManagement.powertop.enable = true;
-
-  services.fwupd.enable = true;
-  services = {
-    inherit borgbackup;
-  };
-
-  # box specific due to ACME, rip
-  services.nginx = {
-    enable = false;
-    user = "nginx";
-    virtualHosts._ = {
-      root = "/var/www";
+    firewall.allowedTCPPorts = [ 22 8443 ];
+    interfaces = {
+      enp2s0f0.useDHCP = true;
+      enp5s0.useDHCP = true;
+      wlp3s0.useDHCP = true;
     };
   };
 
+  # Power
+  powerManagement.powertop.enable = true;
+  programs.light.enable = true;
+  services.upower.enable = true;
+
+  # BT
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
+
   programs.steam.enable = true;
+
+  services = {
+    inherit borgbackup;
+
+    fwupd.enable = true;
+
+    # box specific due to ACME, rip
+    nginx = {
+      enable = false;
+      user = "nginx";
+      virtualHosts._ = {
+        root = "/var/www";
+      };
+    };
+  };
 
   system.stateVersion = "20.03";
 }

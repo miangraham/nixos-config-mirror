@@ -10,7 +10,7 @@
     hostName = "nene";
     interfaces.enp5s0.useDHCP = true;
     interfaces.wlp4s0.useDHCP = true;
-    firewall.allowedTCPPorts = [ 22 80 443 2222 8384 8443 8989 ];
+    firewall.allowedTCPPorts = [ 22 80 443 8443 ];
     # nameservers = [ "192.168.0.128" ];
   };
 

@@ -1,7 +1,4 @@
 { pkgs, ... }:
-let
-  gcide = import ./gcide.nix { inherit pkgs; };
-in
 {
   earlyoom.enable = true;
   udisks2.enable = true;
@@ -25,6 +22,5 @@ in
     user = "ian";
     dataDir = "/home/ian/share";
     configDir = "/home/ian/.config/syncthing";
-    guiAddress = "0.0.0.0:8384";
   };
 }
