@@ -70,6 +70,15 @@ in
       };
     };
 
+    freshrss = {
+      enable = true;
+      baseUrl = "http://freshrss";
+      dataDir = "/srv/freshrss/data";
+      defaultUser = "ian";
+      passwordFile = "/srv/freshrss/freshrss_admin_phrase";
+    };
+    phpfpm.pools.freshrss.phpEnv.FRESHRSS_THIRDPARTY_EXTENSIONS_PATH = "/srv/freshrss/extensions";
+
     znc = {
       enable = true;
       openFirewall = true;
@@ -157,21 +166,18 @@ in
     '';
   };
 
-  systemd.services.rss-refresh = {
-    serviceConfig.Type = "oneshot";
-    path = [
-      pkgs.curl
-    ];
-    script = "curl 'http://localhost:8088/i/?c=feed&a=actualize&ajax=1'";
-  };
-  systemd.timers.rss-refresh = {
-    wantedBy = [ "timers.target" ];
-    partOf = [ "rss-refresh.service" ];
-    timerConfig.OnCalendar = "*-*-* *:00:00";
-  };
-
   systemd.services.searx.serviceConfig = {
     RuntimeMaxSec = "30m";
     Restart = "always";
+  };
+
+  systemd.services.freshrss-config = {
+    serviceConfig.ReadWritePaths = [ "/srv/freshrss" ];
+    environment.FRESHRSS_THIRDPARTY_EXTENSIONS_PATH = "/srv/freshrss/extensions";
+  };
+  systemd.services.freshrss-updater = {
+    serviceConfig.ReadWritePaths = [ "/srv/freshrss" ];
+    environment.FRESHRSS_THIRDPARTY_EXTENSIONS_PATH = "/srv/freshrss/extensions";
+    startAt = pkgs.lib.mkForce "hourly";
   };
 }

@@ -30,19 +30,6 @@ in
   };
 
   virtualisation.oci-containers.containers = {
-    freshrss = {
-      inherit environment extraOptions;
-      image = "freshrss/freshrss@sha256:4b8300f34bb1a5ed6adf738e827c58821b3dc62862973d9f679fb784ced523a5";
-      dependsOn = [];
-      ports = [
-        "8088:80"
-      ];
-      volumes = [
-        "/srv/freshrss/data:/var/www/FreshRSS/data"
-        "/srv/freshrss/extensions:/var/www/FreshRSS/extensions"
-      ];
-    };
-
     reddit-top-rss = {
       inherit environment extraOptions;
       image = "johnny5w/reddit-top-rss@sha256:cb1ea08ab0be1a583f5d95105d0226f80804180c10843390ac0bf226701537df";
