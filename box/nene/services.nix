@@ -47,7 +47,7 @@ in
     };
 
     dicod = {
-      enable = true;
+      enable = false;
       dictdDBs = with pkgs.dictdDBs; [
         eng2jpn
         jpn2eng

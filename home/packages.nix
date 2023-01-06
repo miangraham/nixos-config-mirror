@@ -88,7 +88,7 @@ builtins.attrValues {
   inherit (pkgs.gnome3) adwaita-icon-theme;
   inherit (pkgs.xfce) thunar;
   eww = inputs.eww.packages.${system}.eww-wayland;
-  hyprpaper = inputs.hyprpaper.packages.${system}.default;
+  # hyprpaper = inputs.hyprpaper.packages.${system}.default;
 
   # dev
   inherit (pkgs.gitAndTools) git-subrepo;

@@ -127,10 +127,10 @@ in
     noisetorch.enable = true;
     wshowkeys.enable = true;
 
-    hyprland = {
-      enable = true;
-      recommendedEnvironment = true;
-    };
+    # hyprland = {
+    #   enable = true;
+    #   recommendedEnvironment = true;
+    # };
 
     nano = {
       nanorc = ''

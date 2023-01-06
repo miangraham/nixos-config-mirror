@@ -11,8 +11,8 @@
     emacs-overlay = { url = "github:nix-community/emacs-overlay"; inputs.nixpkgs.follows = "nixpkgs"; };
 
     eww = { url = "github:elkowar/eww"; inputs.nixpkgs.follows = "nixpkgs"; };
-    hyprland = { url = "github:hyprwm/Hyprland/v0.18.0beta"; inputs.nixpkgs.follows = "nixpkgs"; };
-    hyprpaper = { url = "github:hyprwm/hyprpaper?rev=ab85578dce442b80aa3378fe0304e6cb6f16f593"; inputs.nixpkgs.follows = "nixpkgs"; };
+    # hyprland = { url = "github:hyprwm/Hyprland/v0.18.0beta"; inputs.nixpkgs.follows = "nixpkgs"; };
+    # hyprpaper = { url = "github:hyprwm/hyprpaper?rev=ab85578dce442b80aa3378fe0304e6cb6f16f593"; inputs.nixpkgs.follows = "nixpkgs"; };
 
     # Unneeded atm. Used when emacs/telega needs something specific
     # tdlib = { url = "github:tdlib/td?rev=92f8093486f19c049de5446cc20950e641c6ade0"; flake = false; };
@@ -34,7 +34,7 @@
         system = "x86_64-linux";
         modules = addModules ++ [
           ./system/dicod/default.nix
-          inputs.hyprland.nixosModules.default
+          # inputs.hyprland.nixosModules.default
           inputs.home-manager.nixosModules.home-manager
           { inherit home-manager; }
         ];
