@@ -36,7 +36,8 @@
     };
 
     seat = {
-      "*" = { hide_cursor = "when-typing enable"; };
+      # bug with this not reappearing, kill for now
+      # "*" = { hide_cursor = "when-typing enable"; };
     };
 
     input = {
