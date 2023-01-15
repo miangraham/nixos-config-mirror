@@ -172,11 +172,9 @@ in
   };
 
   systemd.services.freshrss-config = {
-    serviceConfig.ReadWritePaths = [ "/srv/freshrss" ];
     environment.FRESHRSS_THIRDPARTY_EXTENSIONS_PATH = "/srv/freshrss/extensions";
   };
   systemd.services.freshrss-updater = {
-    serviceConfig.ReadWritePaths = [ "/srv/freshrss" ];
     environment.FRESHRSS_THIRDPARTY_EXTENSIONS_PATH = "/srv/freshrss/extensions";
     startAt = pkgs.lib.mkForce "hourly";
   };
