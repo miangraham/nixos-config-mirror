@@ -25,7 +25,6 @@ pkgs.emacsWithPackagesFromUsePackage {
     doom-themes
     drag-stuff
     editorconfig
-    eglot
     elfeed
     elfeed-org
     elfeed-tube
@@ -65,6 +64,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     popper
     ppp
     rainbow-delimiters
+    reformatter
     ripgrep
     ron-mode
     rust-mode
