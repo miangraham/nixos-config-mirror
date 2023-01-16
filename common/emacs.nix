@@ -92,14 +92,9 @@ pkgs.emacsWithPackagesFromUsePackage {
     zoom
 
     # theme testing
-    avk-emacs-themes
     darktooth-theme
-    green-phosphor-theme
     jazz-theme
-    labburn-theme
     mood-one-theme
     underwater-theme
-    weyland-yutani-theme
-    zerodark-theme
   ];
 }

@@ -74,6 +74,7 @@ builtins.attrValues {
     libnotify
     waybar
     wev
+    wl-mirror
 
     # video
     freetube
