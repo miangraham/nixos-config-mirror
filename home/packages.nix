@@ -107,4 +107,21 @@ builtins.attrValues {
   ]; };
   obs-remote = (pkgs.callPackage ./obs-remote.nix {});
   twitch-chat-tui = (pkgs.callPackage ./twitch-chat-tui.nix {});
+
+  # authoring
+  texliveCombined = (pkgs.texlive.combine {
+    inherit (pkgs.texlive)
+      beamer
+      collection-latexextra
+      koma-script
+      scheme-small
+
+      noto
+      mweights
+      cm-super
+      cmbright
+      fontaxes
+      beamertheme-metropolis
+    ;
+  });
 }
