@@ -179,6 +179,13 @@ in
     videos = "$HOME/videos";
   };
 
+  home.pointerCursor = {
+    package = pkgs.capitaine-cursors;
+    name = "capitaine-cursors";
+    size = 24;
+    gtk.enable = true;
+  };
+
   gtk = let
     t = {
       package = pkgs.dracula-theme;
@@ -189,9 +196,6 @@ in
     enable = true;
     theme = t;
     iconTheme = t;
-    # cursorTheme = {
-    #   package = pkgs.capitaine-cursors;
-    #   name = "capitaine-cursors";
     #   package = pkgs.quintom-cursor-theme;
     #   name = "Quintom_Ink";
     #   package = pkgs.nordzy-cursor-theme;

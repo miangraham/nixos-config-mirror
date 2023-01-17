@@ -57,6 +57,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     no-littering
     orderless
     org
+    org-attach-screenshot
     org-modern
     org-ref
     org-roam

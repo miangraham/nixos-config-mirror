@@ -74,6 +74,7 @@ builtins.attrValues {
     libnotify
     waybar
     wev
+    wl-clipboard
     wl-mirror
 
     # video
@@ -122,6 +123,8 @@ builtins.attrValues {
       cmbright
       fontaxes
       beamertheme-metropolis
+      collection-langjapanese
+      collection-langchinese
     ;
   });
 }
