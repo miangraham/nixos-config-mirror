@@ -65,7 +65,6 @@ pkgs.emacsWithPackagesFromUsePackage {
     popper
     ppp
     rainbow-delimiters
-    reformatter
     ripgrep
     ron-mode
     rust-mode
