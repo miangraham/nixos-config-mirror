@@ -14,6 +14,11 @@ in
   systemd.enable = true;
   style = builtins.readFile ./waybarStyle.css;
   settings = [{
+    output = [
+      "eDP-1"
+      "HDMI-A-2"
+      "Ancor Communications Inc ROG PG279Q G1LMQS019376"
+    ];
     layer = "top";
     position = "left";
     mode = "dock";
