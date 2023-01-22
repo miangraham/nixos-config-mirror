@@ -9,7 +9,10 @@ with pkgs; {
     inconsolata
     terminus_font_ttf
     cascadia-code
+    fira
     fira-code
+    fira-code-symbols
+    fira-mono
     jetbrains-mono
     iosevka
     hack-font

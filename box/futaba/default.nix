@@ -5,7 +5,6 @@
     ../../system
     ./services.nix
     ./containers.nix
-    ./twitter.nix
   ];
 
   networking = {
