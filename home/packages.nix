@@ -58,6 +58,7 @@ builtins.attrValues {
     speedtest-cli
     tap-plugins
     tdesktop
+    terraform
     tldr
     traceroute
     tree
@@ -96,6 +97,7 @@ builtins.attrValues {
   inherit (pkgs.gitAndTools) git-subrepo;
   inherit (pkgs.nodePackages) node2nix;
   inherit (pkgs.guile) info;
+  inherit (pkgs.terraform-providers) aws;
 
   # video
   yt-dlp = (import ./yt-dlp.nix { inherit pkgs inputs; });
