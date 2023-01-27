@@ -72,6 +72,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     smartparens
     telega
     templatel
+    terraform-mode
     tide
     tldr
     toml-mode
