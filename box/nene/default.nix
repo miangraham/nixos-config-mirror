@@ -32,5 +32,13 @@
 
   programs.steam.enable = true;
 
+  virtualisation.docker = {
+    # enable = true;
+    rootless = {
+      enable = true;
+      setSocketVariable = true;
+    };
+  };
+
   system.stateVersion = "20.03";
 }
