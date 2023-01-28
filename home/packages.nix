@@ -3,6 +3,7 @@ in
 builtins.attrValues {
   inherit (pkgs)
     asunder
+    awscli2
     bitwarden
     cachix
     calf
