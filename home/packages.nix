@@ -30,6 +30,7 @@ builtins.attrValues {
     gthumb # quick image cropping
     iftop
     imagemagick
+    inframap
     ispell
     jq
     kiwix
@@ -97,7 +98,8 @@ builtins.attrValues {
   inherit (pkgs.gitAndTools) git-subrepo;
   inherit (pkgs.nodePackages) node2nix;
   inherit (pkgs.guile) info;
-  terraform = (pkgs.terraform.withPlugins (p: [ p.aws ]));
+  # terraform = (pkgs.terraform.withPlugins (p: [ p.aws ]));
+  inherit (pkgs) terraform;
 
   # video
   yt-dlp = (import ./yt-dlp.nix { inherit pkgs inputs; });
