@@ -36,6 +36,7 @@ builtins.attrValues {
     kiwix
     krita
     lftp
+    libreoffice
     lm_sensors
     logrotate
     lsp-plugins
