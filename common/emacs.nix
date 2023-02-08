@@ -64,6 +64,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     pdf-tools
     popper
     ppp
+    quickrun
     rainbow-delimiters
     ripgrep
     ron-mode

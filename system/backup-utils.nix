@@ -13,14 +13,19 @@ let
     "videos"
     "zotero"
 
+    ".bin/go"
     ".cabal"
     ".cache"
     ".cargo"
     ".compose-cache"
     ".debug"
+    ".emacs.d/eln-cache"
     ".gnupg"
+    ".kodi"
+    ".local/share"
     ".m2"
     ".mozilla"
+    ".npm"
     ".paradoxlauncher"
     ".pki"
     ".rustup"
@@ -31,13 +36,13 @@ let
     ".vscode"
     ".zoom"
     ".zotero"
-    "core.*"
 
     ".config/.git"
     ".config/Bitwarden"
     ".config/borg"
     ".config/chromium"
     ".config/Code"
+    ".config/Electron"
     ".config/Element"
     ".config/FreeTube/Cache"
     ".config/fcitx"
@@ -45,14 +50,11 @@ let
     ".config/libreoffice"
     ".config/obs-studio/logs"
     ".config/protonmail"
+    ".config/REAPER"
     ".config/Slack"
     ".config/Sonixd"
     ".config/syncthing/*.db"
     ".config/VSCodium"
-
-    ".emacs.d/eln-cache"
-
-    ".local/share"
 
     "share/p4acamera"
     "share/videos"
@@ -65,6 +67,7 @@ let
     "**/*.dump"
     "**/*.log"
     "moby/moby.scm"
+    "core.*"
   ];
 
   common = {
