@@ -37,8 +37,8 @@ in
           };
         };
 
-        "testlocal.ian.tokyo" = {
-          serverName = "testlocal.ian.tokyo";
+        "ian.tokyo" = {
+          serverName = "ian.tokyo";
           root = "/var/www";
           addSSL = true;
           enableACME = true;
