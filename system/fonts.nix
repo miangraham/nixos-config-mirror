@@ -5,27 +5,29 @@ with pkgs; {
   # fontconfig.enable = true;
   fonts = [
     # general use
-    fantasque-sans-mono
-    inconsolata
-    terminus_font_ttf
+    alegreya
+    anonymousPro
     cascadia-code
+    fantasque-sans-mono
     fira
     fira-code
     fira-code-symbols
     fira-mono
-    jetbrains-mono
-    iosevka
     hack-font
-    roboto-mono
-    anonymousPro
-    mplus-outline-fonts.githubRelease
-    ibm-plex
     ia-writer-duospace
+    ibm-plex
+    inconsolata
+    iosevka
+    jetbrains-mono
+    mplus-outline-fonts.githubRelease
     overpass
-    alegreya
-    source-code-pro
     oxygenfonts
     proggyfonts
+    recursive
+    roboto-mono
+    source-code-pro
+    terminus_font_ttf
+    victor-mono
 
     # icons
     font-awesome
