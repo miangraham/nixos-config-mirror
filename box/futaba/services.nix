@@ -79,6 +79,19 @@ in
     };
     phpfpm.pools.freshrss.phpEnv.FRESHRSS_THIRDPARTY_EXTENSIONS_PATH = "/srv/freshrss/extensions";
 
+    nextcloud = {
+      enable = false;
+      package = pkgs.nextcloud25;
+      hostName = "nextcloud";
+      https = false;
+      home = "/srv/nextcloud";
+      appstoreEnable = false;
+      config = {
+        adminuser = "admin";
+        adminpassFile = "/srv/nextcloud/nextcloud-admin-pass";
+      };
+    };
+
     znc = {
       enable = true;
       openFirewall = true;
