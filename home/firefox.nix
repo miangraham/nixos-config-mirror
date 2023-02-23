@@ -3,6 +3,7 @@ let
   firefox = pkgs.wrapFirefox pkgs.firefox-esr-102-unwrapped {
     extraPolicies = {
       AppAutoUpdate = false;
+      AppUpdatePin = "102.";
       BackgroundAppUpdate = false;
       DisableAppUpdate = true;
       DisableFirefoxStudies = true;
