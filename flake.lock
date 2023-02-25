@@ -370,6 +370,7 @@
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
         "small": "small",
+        "tdlib": "tdlib",
         "twitch-alerts": "twitch-alerts",
         "unstable": "unstable"
       }
@@ -425,6 +426,23 @@
         "owner": "NixOS",
         "ref": "nixos-22.11-small",
         "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "tdlib": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1677145935,
+        "narHash": "sha256-+DHXAeO7dayJPUsKlPjM1+8qboHc90gqaMrBArlQg2M=",
+        "owner": "tdlib",
+        "repo": "td",
+        "rev": "1543c41f3411bd6aa74713c8aba4e93fa8d952c7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tdlib",
+        "repo": "td",
+        "rev": "1543c41f3411bd6aa74713c8aba4e93fa8d952c7",
         "type": "github"
       }
     },

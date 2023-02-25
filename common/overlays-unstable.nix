@@ -9,5 +9,6 @@ let
   });
 in
 [
+  tdOverlay
   inputs.emacs-overlay.overlay
 ]
