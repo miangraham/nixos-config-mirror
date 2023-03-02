@@ -2,7 +2,7 @@
   description = "";
   inputs = {
     nixpkgs = { url = "github:NixOS/nixpkgs/nixos-22.11"; };
-    unstable = { url = "github:NixOS/nixpkgs/nixos-22.11"; };
+    unstable = { url = "github:NixOS/nixpkgs/nixos-unstable"; };
     small = { url = "github:NixOS/nixpkgs/nixos-22.11-small"; };
     invid-testing = { url = "github:miangraham/nixpkgs/invid-tweaks-6"; };
 
