@@ -52,7 +52,6 @@ builtins.attrValues {
     pandoc
     picocom
     playerctl
-    # protonmail-bridge Do not run until https://github.com/ProtonMail/proton-bridge/issues/220 is fixed
     qdirstat
     ranger
     reaper
@@ -62,6 +61,7 @@ builtins.attrValues {
     speedtest-cli
     tap-plugins
     tdesktop
+    thunderbird
     tldr
     traceroute
     tree
@@ -114,6 +114,8 @@ builtins.attrValues {
   ]; };
   obs-remote = (pkgs.callPackage ./obs-remote.nix {});
   twitch-chat-tui = (pkgs.callPackage ./twitch-chat-tui.nix {});
+
+  inherit (unstable) protonmail-bridge;
 
   # authoring
   texliveCombined = (pkgs.texlive.combine {
