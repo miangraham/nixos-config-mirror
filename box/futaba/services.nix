@@ -31,7 +31,8 @@ in
 
     invidious = {
       enable = true;
-      package = inputs.invid-testing.legacyPackages.x86_64-linux.invidious;
+      # package = inputs.invid-testing.legacyPackages.x86_64-linux.invidious;
+      package = pkgs.invidious;
       domain = "invid";
       port = 9999;
       nginx.enable = true;

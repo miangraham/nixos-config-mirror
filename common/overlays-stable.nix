@@ -15,9 +15,29 @@ let
       '';
     });
   });
+  invidOverlay = (self: super: {
+    invidious = super.callPackage "${inputs.nixpkgs}/pkgs/servers/invidious" {
+      crystal = super.crystal // {
+        buildCrystalPackage = args:
+          super.crystal.buildCrystalPackage (args // {
+            src = pkgs.fetchFromGitHub {
+              owner = "miangraham";
+              repo = "invidious";
+              fetchSubmodules = true;
+              rev = "89adcad99f290b500d09569a53d9e3d094c2db18";
+              sha256 = "sha256-0AhdTUVobepzDJXGiZsiiKJhDCUx+442t5TeN8Fqiw8=";
+            };
+            version = "custom-mian-2023-03-03";
+          });
+      };
+      lsquic = super.callPackage "${inputs.nixpkgs}/pkgs/servers/invidious/lsquic.nix" { };
+      videojs = super.callPackage "${inputs.nixpkgs}/pkgs/servers/invidious/videojs.nix" { };
+    };
+  });
 in
 [
   tdOverlay
   inputs.emacs-overlay.overlay
   freshOverlay
+  invidOverlay
 ]

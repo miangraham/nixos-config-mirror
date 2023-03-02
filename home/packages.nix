@@ -105,7 +105,8 @@ builtins.attrValues {
 
   # video
   yt-dlp = (import ./yt-dlp.nix { inherit pkgs inputs; });
-  invidious = inputs.invid-testing.legacyPackages.${system}.invidious;
+  # invidious = inputs.invid-testing.legacyPackages.${system}.invidious;
+  invidious = pkgs.invidious;
   kodi = (pkgs.kodi.withPackages (p: with p; [ pvr-iptvsimple ]));
 
   # streaming

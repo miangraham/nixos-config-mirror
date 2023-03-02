@@ -253,22 +253,6 @@
         "type": "github"
       }
     },
-    "invid-testing": {
-      "locked": {
-        "lastModified": 1676506262,
-        "narHash": "sha256-SiWN0hq8R5cnHVD+hCBUjpQ8UeuXuUzYq1NE9msiepY=",
-        "owner": "miangraham",
-        "repo": "nixpkgs",
-        "rev": "334c5020483bb26a7bda95cbcd5d2ce07e8dc292",
-        "type": "github"
-      },
-      "original": {
-        "owner": "miangraham",
-        "ref": "invid-tweaks-6",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "moby": {
       "inputs": {
         "nixpkgs": "nixpkgs"
@@ -365,7 +349,6 @@
         "eww": "eww",
         "ffmpeg-patch": "ffmpeg-patch",
         "home-manager": "home-manager",
-        "invid-testing": "invid-testing",
         "moby": "moby",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
