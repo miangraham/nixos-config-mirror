@@ -38,11 +38,6 @@ in
     autojump.enable = true;
     feh.enable = true;
 
-    # obs-studio = {
-    #   enable = true;
-    #   plugins = [ pkgs.obs-studio-plugins.obs-websocket ];
-    # };
-
     htop = {
       enable = true;
       settings = {
@@ -153,17 +148,17 @@ in
       Service.ExecStart = "${pkgs.autotiling}/bin/autotiling";
     };
 
-    services.twitch-alerts = let
-      twitch-alerts = inputs.twitch-alerts.packages.${system}.default;
-    in {
-      Install.WantedBy = [ "graphical-session.target" ];
-      Service = {
-        ExecStart = "${twitch-alerts}/bin/twitch-alerts";
-        EnvironmentFile = "/home/ian/.config/twitch-alerts/env";
-        SyslogIdentifier="twitch-alerts";
-        Restart = "always";
-      };
-    };
+    # services.twitch-alerts = let
+    #   twitch-alerts = inputs.twitch-alerts.packages.${system}.default;
+    # in {
+    #   Install.WantedBy = [ "graphical-session.target" ];
+    #   Service = {
+    #     ExecStart = "${twitch-alerts}/bin/twitch-alerts";
+    #     EnvironmentFile = "/home/ian/.config/twitch-alerts/env";
+    #     SyslogIdentifier="twitch-alerts";
+    #     Restart = "always";
+    #   };
+    # };
   };
 
   xdg.userDirs = {
@@ -196,11 +191,6 @@ in
     enable = true;
     theme = t;
     iconTheme = t;
-    #   package = pkgs.quintom-cursor-theme;
-    #   name = "Quintom_Ink";
-    #   package = pkgs.nordzy-cursor-theme;
-    #   name = "Nordzy-cursors";
-    # };
     gtk3.extraConfig = ex;
     gtk4.extraConfig = ex;
   };

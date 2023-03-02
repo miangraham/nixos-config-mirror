@@ -43,6 +43,7 @@ builtins.attrValues {
     micro
     mtr
     mu
+    ncdu
     neofetch
     nethogs
     nix-direnv
