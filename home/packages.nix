@@ -10,8 +10,6 @@ builtins.attrValues {
     carla
     diskonaut
     du-dust
-    # broke pipewire?
-    # easyeffects
     element-desktop
     entr
     evince
@@ -31,6 +29,7 @@ builtins.attrValues {
     iftop
     imagemagick
     inframap
+    invidious # precaching build for reuse on tiny server
     ispell
     jq
     kiwix
@@ -93,20 +92,15 @@ builtins.attrValues {
   # GUI bits
   inherit (pkgs.gnome3) adwaita-icon-theme;
   inherit (pkgs.xfce) thunar;
-  eww = inputs.eww.packages.${system}.eww-wayland;
-  # hyprpaper = inputs.hyprpaper.packages.${system}.default;
 
   # dev
   inherit (pkgs.gitAndTools) git-subrepo;
   inherit (pkgs.nodePackages) node2nix;
   inherit (pkgs.guile) info;
-  # terraform = (pkgs.terraform.withPlugins (p: [ p.aws ]));
   inherit (pkgs) terraform;
 
   # video
   yt-dlp = (import ./yt-dlp.nix { inherit pkgs inputs; });
-  # invidious = inputs.invid-testing.legacyPackages.${system}.invidious;
-  invidious = pkgs.invidious;
   kodi = (pkgs.kodi.withPackages (p: with p; [ pvr-iptvsimple ]));
 
   # streaming

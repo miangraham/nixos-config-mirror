@@ -2,7 +2,7 @@
 let
   borgbackup = import ./backup.nix { inherit pkgs; };
   yt-dlp = import ../../home/yt-dlp.nix { inherit pkgs inputs; };
-  moby = import inputs.moby { inherit pkgs; };
+  # moby = import inputs.moby { inherit pkgs; };
 in
 {
   nix = {
@@ -46,17 +46,17 @@ in
       };
     };
 
-    dicod = {
-      enable = false;
-      dictdDBs = with pkgs.dictdDBs; [
-        eng2jpn
-        jpn2eng
-      ];
+    # dicod = {
+    #   enable = false;
+    #   dictdDBs = with pkgs.dictdDBs; [
+    #     eng2jpn
+    #     jpn2eng
+    #   ];
 
-      guileDBs = [
-        moby
-      ];
-    };
+    #   guileDBs = [
+    #     moby
+    #   ];
+    # };
   };
 
   security.sudo.extraRules = [{
