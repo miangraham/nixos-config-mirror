@@ -22,18 +22,13 @@ pkgs.emacsWithPackagesFromUsePackage {
     delight
     diff-hl
     direnv
-    doom-themes
     drag-stuff
     editorconfig
     elfeed
     elfeed-org
     elfeed-tube
-    emacsql
-    emacsql-sqlite3
-    ement
     eslint-fix
     fancy-compilation
-    forge
     flycheck
     flycheck-rust
     fullframe
@@ -53,6 +48,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     marginalia
     markdown-mode
     mastodon
+    mood-one-theme
     nix-mode
     no-littering
     orderless
@@ -86,7 +82,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     weblorg
     webpaste
     which-key
-    with-editor
+    # with-editor
     writeroom-mode
     ws-butler
     yaml-mode
@@ -94,9 +90,9 @@ pkgs.emacsWithPackagesFromUsePackage {
     zoom
 
     # theme testing
-    darktooth-theme
-    jazz-theme
-    mood-one-theme
-    underwater-theme
+    # darktooth-theme
+    # jazz-theme
+    # underwater-theme
+    # catppuccin-theme
   ];
 }
