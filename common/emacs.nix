@@ -62,7 +62,6 @@ pkgs.emacsWithPackagesFromUsePackage {
     ppp
     quickrun
     rainbow-delimiters
-    ripgrep
     ron-mode
     rust-mode
     shackle
@@ -83,6 +82,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     webpaste
     which-key
     # with-editor
+    whitespace-cleanup-mode
     writeroom-mode
     ws-butler
     yaml-mode
