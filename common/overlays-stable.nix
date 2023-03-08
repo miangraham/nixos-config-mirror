@@ -20,14 +20,15 @@ let
       crystal = super.crystal // {
         buildCrystalPackage = args:
           super.crystal.buildCrystalPackage (args // {
+            version = "custom-mian-2023-03-09";
+            patches = [ ./invidious-customization.patch ];
             src = pkgs.fetchFromGitHub {
-              owner = "miangraham";
+              owner = "iv-org";
               repo = "invidious";
               fetchSubmodules = true;
-              rev = "89adcad99f290b500d09569a53d9e3d094c2db18";
-              sha256 = "sha256-0AhdTUVobepzDJXGiZsiiKJhDCUx+442t5TeN8Fqiw8=";
+              rev = "0995e0447c2b54d80b55231830b847d41c19b404";
+              sha256 = "sha256-hXF836jxMriMJ/qcBJIF5cRvQG719PStKqTZQcIRqlw=";
             };
-            version = "custom-mian-2023-03-03";
           });
       };
       lsquic = super.callPackage "${inputs.nixpkgs}/pkgs/servers/invidious/lsquic.nix" { };
