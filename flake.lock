@@ -75,6 +75,25 @@
         "type": "github"
       }
     },
+    "invidious": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1677073302,
+        "narHash": "sha256-hXF836jxMriMJ/qcBJIF5cRvQG719PStKqTZQcIRqlw=",
+        "ref": "refs/heads/master",
+        "rev": "0995e0447c2b54d80b55231830b847d41c19b404",
+        "revCount": 4306,
+        "submodules": true,
+        "type": "git",
+        "url": "git+ssh://git@github.com/iv-org/invidious.git"
+      },
+      "original": {
+        "rev": "0995e0447c2b54d80b55231830b847d41c19b404",
+        "submodules": true,
+        "type": "git",
+        "url": "git+ssh://git@github.com/iv-org/invidious.git"
+      }
+    },
     "nixos-hardware": {
       "locked": {
         "lastModified": 1678095239,
@@ -112,6 +131,7 @@
         "emacs-overlay": "emacs-overlay",
         "ffmpeg-patch": "ffmpeg-patch",
         "home-manager": "home-manager",
+        "invidious": "invidious",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
         "small": "small",

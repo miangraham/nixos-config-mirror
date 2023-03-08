@@ -22,13 +22,7 @@ let
           super.crystal.buildCrystalPackage (args // {
             version = "custom-mian-2023-03-09";
             patches = [ ./invidious-customization.patch ];
-            src = pkgs.fetchFromGitHub {
-              owner = "iv-org";
-              repo = "invidious";
-              fetchSubmodules = true;
-              rev = "0995e0447c2b54d80b55231830b847d41c19b404";
-              sha256 = "sha256-hXF836jxMriMJ/qcBJIF5cRvQG719PStKqTZQcIRqlw=";
-            };
+            src = inputs.invidious;
           });
       };
       lsquic = super.callPackage "${inputs.nixpkgs}/pkgs/servers/invidious/lsquic.nix" { };
