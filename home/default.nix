@@ -3,6 +3,7 @@ let
   lib = pkgs.lib;
   unstable = import ../common/unstable.nix { inherit pkgs inputs; };
   home-packages = import ./packages.nix { inherit pkgs inputs unstable system; };
+  accounts = import ./accounts.nix { inherit pkgs; };
 
   alacritty = import ./alacritty.nix { inherit pkgs; };
   bash = import ./bash.nix {};
@@ -19,6 +20,7 @@ let
   waybar = import ./waybar.nix { inherit lib pkgs; };
 in
 {
+  inherit accounts;
   home = {
     packages = home-packages;
     stateVersion = "21.05";
@@ -37,6 +39,8 @@ in
 
     autojump.enable = true;
     feh.enable = true;
+    mbsync.enable = true;
+    mu.enable = true;
 
     htop = {
       enable = true;

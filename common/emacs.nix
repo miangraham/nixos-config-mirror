@@ -89,6 +89,8 @@ pkgs.emacsWithPackagesFromUsePackage {
     yasnippet
     zoom
 
+    pkgs.mu
+
     # theme testing
     # darktooth-theme
     # jazz-theme
