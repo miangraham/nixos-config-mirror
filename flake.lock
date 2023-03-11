@@ -78,16 +78,16 @@
     "invidious": {
       "flake": false,
       "locked": {
-        "lastModified": 1677073302,
-        "narHash": "sha256-hXF836jxMriMJ/qcBJIF5cRvQG719PStKqTZQcIRqlw=",
-        "rev": "0995e0447c2b54d80b55231830b847d41c19b404",
-        "revCount": 4306,
+        "lastModified": 1678220980,
+        "narHash": "sha256-bek+tUAT99WikwVTKAC9sJxTauD9NoebWujWHO006a8=",
+        "ref": "refs/heads/master",
+        "rev": "d79d6f38b20376f27b3472e7f359f286b54760a1",
+        "revCount": 4337,
         "submodules": true,
         "type": "git",
         "url": "git+ssh://git@github.com/iv-org/invidious.git"
       },
       "original": {
-        "rev": "0995e0447c2b54d80b55231830b847d41c19b404",
         "submodules": true,
         "type": "git",
         "url": "git+ssh://git@github.com/iv-org/invidious.git"
