@@ -9,7 +9,6 @@ builtins.attrValues {
     calf
     carla
     diskonaut
-    du-dust
     element-desktop
     entr
     evince
@@ -40,11 +39,9 @@ builtins.attrValues {
     logrotate
     lsp-plugins
     micro
-    mtr
     mu
     ncdu
     neofetch
-    nethogs
     nix-direnv
     nix-prefetch-git
     nixpkgs-review
@@ -55,12 +52,12 @@ builtins.attrValues {
     ranger
     reaper
     shellcheck
+    sioyek
     slurp
     sonixd
     speedtest-cli
     tap-plugins
     tdesktop
-    thunderbird
     tldr
     traceroute
     tree
@@ -68,7 +65,6 @@ builtins.attrValues {
     vlc
     xdg_utils
     zeal
-    zenith
     zotero
 
     # sway
@@ -81,7 +77,6 @@ builtins.attrValues {
     wl-mirror
 
     # video
-    freetube
     pueue
     aria2
 
