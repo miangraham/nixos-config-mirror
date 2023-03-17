@@ -9,7 +9,6 @@ builtins.attrValues {
     calf
     carla
     diskonaut
-    element-desktop
     entr
     evince
     exa
@@ -20,8 +19,6 @@ builtins.attrValues {
     fuzzel
     gawk
     gh
-    gimp
-    godot
     graphviz
     grim
     gthumb # quick image cropping
@@ -34,7 +31,6 @@ builtins.attrValues {
     kiwix
     krita
     lftp
-    libreoffice
     lm_sensors
     logrotate
     lsp-plugins
@@ -46,7 +42,6 @@ builtins.attrValues {
     nix-prefetch-git
     nixpkgs-review
     pandoc
-    picocom
     playerctl
     qdirstat
     ranger
@@ -57,7 +52,6 @@ builtins.attrValues {
     sonixd
     speedtest-cli
     tap-plugins
-    tdesktop
     tldr
     traceroute
     tree
@@ -79,9 +73,6 @@ builtins.attrValues {
     # video
     pueue
     aria2
-
-    # streaming
-    twitch-tui
   ;
 
   # GUI bits

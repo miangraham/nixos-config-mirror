@@ -40,5 +40,16 @@
     };
   };
 
+  home-manager.users.ian.home.packages = with pkgs; [
+    element-desktop
+    gimp
+    godot
+    libreoffice
+    picocom
+    tdesktop
+    twitch-tui
+    unityhub
+  ];
+
   system.stateVersion = "20.03";
 }
