@@ -24,6 +24,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     direnv
     drag-stuff
     editorconfig
+    ef-themes
     elfeed
     elfeed-org
     elfeed-tube
