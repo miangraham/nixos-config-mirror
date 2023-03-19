@@ -1,5 +1,6 @@
 { config, pkgs, inputs, ... }:
 let
+  unstable = import ../../common/unstable.nix { inherit pkgs inputs; };
   borgbackup = import ./backup.nix { inherit pkgs; };
 in
 {
@@ -31,7 +32,7 @@ in
 
     invidious = {
       enable = true;
-      package = pkgs.invidious;
+      package = unstable.invidious;
       domain = "invid";
       port = 9999;
       nginx.enable = true;

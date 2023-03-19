@@ -15,14 +15,15 @@ let
       '';
     });
   });
+  # unused for now
   invidOverlay = (self: super: {
     invidious = super.callPackage "${inputs.nixpkgs}/pkgs/servers/invidious" {
       crystal = super.crystal // {
         buildCrystalPackage = args:
           super.crystal.buildCrystalPackage (args // {
-            version = "custom-mian-2023-03-09";
+            version = "custom-mian-unused";
             patches = [ ./invidious-customization.patch ];
-            src = inputs.invidious;
+            src = null; # inputs.invidious;
           });
       };
       lsquic = super.callPackage "${inputs.nixpkgs}/pkgs/servers/invidious/lsquic.nix" { };

@@ -25,7 +25,6 @@ builtins.attrValues {
     iftop
     imagemagick
     inframap
-    invidious # precaching build for reuse on tiny server
     ispell
     jq
     kiwix
@@ -96,7 +95,10 @@ builtins.attrValues {
   obs-remote = (pkgs.callPackage ./obs-remote.nix {});
   twitch-chat-tui = (pkgs.callPackage ./twitch-chat-tui.nix {});
 
-  inherit (unstable) protonmail-bridge;
+  inherit (unstable)
+    invidious # precaching build for reuse on tiny server
+    protonmail-bridge
+  ;
 
   # authoring
   texliveCombined = (pkgs.texlive.combine {
