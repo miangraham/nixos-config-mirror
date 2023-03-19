@@ -23,6 +23,7 @@ let
     ".gnupg"
     ".kodi"
     ".local/share"
+    ".local/unity3d"
     ".m2"
     ".mozilla"
     ".npm"
