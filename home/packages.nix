@@ -41,6 +41,7 @@ builtins.attrValues {
     nix-prefetch-git
     nixpkgs-review
     pandoc
+    parallel
     playerctl
     qdirstat
     ranger
