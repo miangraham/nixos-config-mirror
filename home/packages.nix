@@ -32,6 +32,7 @@ builtins.attrValues {
     lm_sensors
     logrotate
     lsp-plugins
+    magic-wormhole
     micro
     mu
     ncdu
