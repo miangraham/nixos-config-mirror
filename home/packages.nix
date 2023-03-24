@@ -2,7 +2,6 @@
 in
 builtins.attrValues {
   inherit (pkgs)
-    asunder
     awscli2
     bitwarden
     cachix
@@ -15,7 +14,6 @@ builtins.attrValues {
     fd
     ffmpeg
     flac
-    fractal
     fuzzel
     gh
     graphviz
@@ -23,7 +21,6 @@ builtins.attrValues {
     gthumb # quick image cropping
     iftop
     imagemagick
-    inframap
     ispell
     jq
     kiwix
