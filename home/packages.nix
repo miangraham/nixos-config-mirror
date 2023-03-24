@@ -17,7 +17,6 @@ builtins.attrValues {
     flac
     fractal
     fuzzel
-    gawk
     gh
     graphviz
     grim

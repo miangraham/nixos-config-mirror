@@ -9,7 +9,6 @@ builtins.attrValues {
     bashmount
     exfat
     file
-    gzip
     hwinfo
     lshw
     nix-index
