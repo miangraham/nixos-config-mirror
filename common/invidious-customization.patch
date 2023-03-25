@@ -8,7 +8,7 @@ index 3d19d888..4c0e4740 100644
 -	url = ../mocks
 +	url = https://github.com/iv-org/mocks
 diff --git a/src/invidious/users.cr b/src/invidious/users.cr
-index b763596b..39ce83a2 100644
+index b763596b..bec9942a 100644
 --- a/src/invidious/users.cr
 +++ b/src/invidious/users.cr
 @@ -176,7 +176,7 @@ def get_subscription_feed(user, max_results = 40, page = 1)
@@ -16,15 +16,46 @@ index b763596b..39ce83a2 100644
            values = "VALUES #{user.watched.map { |id| %(('#{id}')) }.join(",")}"
          end
 -        videos = PG_DB.query_all("SELECT * FROM #{view_name} WHERE NOT id = ANY (#{values}) ORDER BY published DESC LIMIT $1 OFFSET $2", limit, offset, as: ChannelVideo)
-+        videos = PG_DB.query_all("SELECT * FROM #{view_name} WHERE NOT id = ANY (#{values}) AND NOT title ILIKE '%shorts%' AND views > 0 AND (live_now IS NOT TRUE) AND (length_seconds IS NULL OR length_seconds < 1 OR 61 < length_seconds) AND (NOW() - interval '1 month') < published AND published < (NOW() - interval '1 day') AND (premiere_timestamp IS NULL OR premiere_timestamp < (NOW() - interval '1 day')) ORDER BY published DESC LIMIT $1 OFFSET $2", limit, offset, as: ChannelVideo)
++        videos = PG_DB.query_all("SELECT * FROM #{view_name} WHERE NOT id = ANY (#{values}) AND NOT title ILIKE '%shorts%' AND NOT title ILIKE '%vtuber%' AND views > 10 AND (live_now IS NOT TRUE) AND (length_seconds IS NULL OR length_seconds < 1 OR 91 < length_seconds) AND (NOW() - interval '1 month') < published AND published < (NOW() - interval '1 day') AND (premiere_timestamp IS NULL OR premiere_timestamp < (NOW() - interval '1 day')) ORDER BY published DESC LIMIT $1 OFFSET $2", limit, offset, as: ChannelVideo)
        else
          # Sort subscriptions as normal
  
 diff --git a/src/invidious/views/template.ecr b/src/invidious/views/template.ecr
-index 77265679..b043f514 100644
+index 77265679..e9a5b7f5 100644
 --- a/src/invidious/views/template.ecr
 +++ b/src/invidious/views/template.ecr
-@@ -147,8 +147,7 @@
+@@ -116,39 +116,14 @@
+             <footer>
+                 <div class="pure-g">
+                     <div class="pure-u-1 pure-u-md-1-3">
+-                        <span>
+-                            <i class="icon ion-logo-github"></i>
+-                        <% if CONFIG.modified_source_code_url %>
+-                            <a href="https://github.com/iv-org/invidious"><%= translate(locale, "footer_original_source_code") %></a>&nbsp;/
+-                            <a href="<%= CONFIG.modified_source_code_url %>"><%= translate(locale, "footer_modfied_source_code") %></a>
+-                        <% else %>
+-                            <a href="https://github.com/iv-org/invidious"><%= translate(locale, "footer_source_code") %></a>
+-                        <% end %>
+-                        </span>
+-                        <span>
+-                            <i class="icon ion-ios-paper"></i>
+-                            <a href="https://github.com/iv-org/documentation"><%= translate(locale, "footer_documentation") %></a>
+-                        </span>
+                     </div>
+ 
+                     <div class="pure-u-1 pure-u-md-1-3">
+-                        <span>
+-                            <a href="https://github.com/iv-org/invidious/blob/master/LICENSE"><%= translate(locale, "Released under the AGPLv3 on Github.") %></a>
+-                        </span>
+-                        <span>
+-                            <i class="icon ion-logo-javascript"></i>
+-                            <a rel="jslicense" href="/licenses"><%= translate(locale, "View JavaScript license information.") %></a>
+-                        </span>
+-                        <span>
+-                            <i class="icon ion-ios-paper"></i>
+-                            <a href="/privacy"><%= translate(locale, "View privacy policy.") %></a>
+-                        </span>
+                     </div>
  
                      <div class="pure-u-1 pure-u-md-1-3">
                          <span>

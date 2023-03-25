@@ -42,6 +42,7 @@ in
         login_enabled = true;
         captcha_enabled = false;
         popular_enabled = false;
+        enable_user_notifications = false;
         default_user_preferences = {
           region = "JP";
           related_videos = false;
