@@ -1,7 +1,7 @@
 { lib, pkgs, ... }:
 let
   failed-units-bin = pkgs.writeShellScriptBin "failed-units" ''
-num_failed=$(systemctl --failed --no-legend | wc -l)
+num_failed=$(systemctl --failed --no-legend | ${pkgs.coreutils}/bin/wc -l)
 
 if [ $num_failed -gt 0 ]
 then
