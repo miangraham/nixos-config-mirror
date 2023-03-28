@@ -42,14 +42,10 @@
 
   home-manager.users.ian.home.packages = with pkgs; [
     asunder
-    element-desktop
     gimp
-    godot
     libreoffice
     picocom
-    tdesktop
     twitch-tui
-    unityhub
   ];
 
   system.stateVersion = "20.03";
