@@ -24,6 +24,8 @@ in
   services = {
     inherit borgbackup;
 
+    flatpak.enable = true;
+
     # box specific due to ACME, rip
     nginx = {
       enable = true;
