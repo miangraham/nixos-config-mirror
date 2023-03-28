@@ -53,6 +53,7 @@ builtins.attrValues {
     traceroute
     tree
     ungoogled-chromium
+    usbutils
     vlc
     xdg_utils
     zeal
