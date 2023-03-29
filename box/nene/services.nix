@@ -24,11 +24,11 @@ in
   services = {
     inherit borgbackup;
 
-    flatpak.enable = true;
+    flatpak.enable = false;
 
     # box specific due to ACME, rip
     nginx = {
-      enable = true;
+      enable = false;
       user = "nginx";
       virtualHosts = {
         nene = {
@@ -68,10 +68,10 @@ in
     }];
   }];
 
-  security.acme = {
-    defaults.email = import ../../common/email.nix {};
-    acceptTerms = true;
-  };
+  # security.acme = {
+  #   defaults.email = import ../../common/email.nix {};
+  #   acceptTerms = true;
+  # };
 
   systemd.services.pueue = {
     serviceConfig = {

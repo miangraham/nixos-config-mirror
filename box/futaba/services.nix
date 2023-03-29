@@ -22,6 +22,13 @@ in
         futaba = {
           serverName = "192.168.0.128";
           root = "/var/www";
+          default = true;
+        };
+        "ian.tokyo" = {
+          serverName = "ian.tokyo";
+          root = "/var/www";
+          addSSL = true;
+          enableACME = true;
         };
         invid = {
           enableACME = false;
@@ -164,6 +171,11 @@ in
           host = amazon.co.jp
       '';
     };
+  };
+
+  security.acme = {
+    defaults.email = import ../../common/email.nix {};
+    acceptTerms = true;
   };
 
   systemd.services.pre-nginx = {
