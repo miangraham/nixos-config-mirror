@@ -66,6 +66,8 @@ pkgs.emacsWithPackagesFromUsePackage {
     ron-mode
     rust-mode
     shackle
+    sideline
+    sideline-flymake
     smartparens
     telega
     templatel
