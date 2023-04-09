@@ -28,6 +28,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     elfeed
     elfeed-org
     elfeed-tube
+    embark
     eslint-fix
     fancy-compilation
     flycheck
