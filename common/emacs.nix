@@ -1,7 +1,7 @@
 { pkgs, ... }:
 pkgs.emacsWithPackagesFromUsePackage {
   config = "";
-  package = pkgs.emacsPgtk;
+  package = pkgs.emacsUnstable;
   alwaysEnsure = true;
   override = epkgs: epkgs // {
     telega = epkgs.melpaPackages.telega;
@@ -28,6 +28,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     elfeed
     elfeed-org
     elfeed-tube
+    emacsql-sqlite-builtin
     embark
     embark-consult
     eslint-fix
