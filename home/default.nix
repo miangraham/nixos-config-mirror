@@ -196,6 +196,7 @@ in
       "application/x-www-browser" = "firefox.desktop";
       "x-www-browser" = "firefox.desktop";
       "x-scheme-handler/webcal" = "firefox.desktop";
+      "application/pdf" = "org.gnome.Evince.desktop";
     };
     defaultApplications = {
       "x-scheme-handler/http" = "firefox.desktop";
@@ -213,6 +214,7 @@ in
       "application/x-www-browser" = "firefox.desktop";
       "x-www-browser" = "firefox.desktop";
       "x-scheme-handler/webcal" = "firefox.desktop";
+      "application/pdf" = "org.gnome.Evince.desktop";
     };
   };
 

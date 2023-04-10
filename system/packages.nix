@@ -23,6 +23,7 @@ builtins.attrValues {
     unzip
     watch
     wget
+    # xdg-desktop-portal-gtk
     xdg-desktop-portal-wlr
     zip
   ;
