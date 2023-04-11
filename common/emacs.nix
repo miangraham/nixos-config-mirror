@@ -28,7 +28,6 @@ pkgs.emacsWithPackagesFromUsePackage {
     elfeed
     elfeed-org
     elfeed-tube
-    emacsql-sqlite-builtin
     embark
     embark-consult
     eslint-fix
