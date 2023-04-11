@@ -1,7 +1,7 @@
 { pkgs, ... }:
 pkgs.emacsWithPackagesFromUsePackage {
   config = "";
-  package = pkgs.emacsUnstable;
+  package = pkgs.emacsUnstablePgtk;
   alwaysEnsure = true;
   override = epkgs: epkgs // {
     telega = epkgs.melpaPackages.telega;
