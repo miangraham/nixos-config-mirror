@@ -8,6 +8,7 @@ builtins.attrValues {
     calf
     carla
     diskonaut
+    dmidecode
     entr
     evince
     exa
