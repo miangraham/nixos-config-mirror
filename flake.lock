@@ -8,15 +8,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1681210607,
-        "narHash": "sha256-KmiNlNPIqYBU17lGoGGORiR2V9K7kyNWDB+Dw9O4eXk=",
-        "owner": "miangraham",
+        "lastModified": 1681270840,
+        "narHash": "sha256-xYULk0ApWGgG/K1b+eJoF4sVGoic5zHw4zBvp7HQQWo=",
+        "owner": "nix-community",
         "repo": "emacs-overlay",
-        "rev": "84bd07c9ed01ba3e728a31074de5bf90dea40980",
+        "rev": "1be00f42d07320f4fd0230172ceb27ec40330f53",
         "type": "github"
       },
       "original": {
-        "owner": "miangraham",
+        "owner": "nix-community",
         "repo": "emacs-overlay",
         "type": "github"
       }
@@ -157,17 +157,17 @@
     "tdlib": {
       "flake": false,
       "locked": {
-        "lastModified": 1677145935,
-        "narHash": "sha256-+DHXAeO7dayJPUsKlPjM1+8qboHc90gqaMrBArlQg2M=",
+        "lastModified": 1679907932,
+        "narHash": "sha256-d7G7T3iOe7XwD8BZpL61dcWfFFfyQ2Za3596TuAvg0A=",
         "owner": "tdlib",
         "repo": "td",
-        "rev": "1543c41f3411bd6aa74713c8aba4e93fa8d952c7",
+        "rev": "c95598e5e1493881d31211c1329bdbe4630f6136",
         "type": "github"
       },
       "original": {
         "owner": "tdlib",
         "repo": "td",
-        "rev": "1543c41f3411bd6aa74713c8aba4e93fa8d952c7",
+        "rev": "c95598e5e1493881d31211c1329bdbe4630f6136",
         "type": "github"
       }
     },

@@ -7,9 +7,9 @@
 
     home-manager = { url = "github:nix-community/home-manager/release-22.11"; inputs.nixpkgs.follows = "nixpkgs"; };
     nixos-hardware = { url = "github:NixOS/nixos-hardware/master"; };
-    emacs-overlay = { url = "github:miangraham/emacs-overlay"; inputs.nixpkgs.follows = "nixpkgs"; };
+    emacs-overlay = { url = "github:nix-community/emacs-overlay"; inputs.nixpkgs.follows = "nixpkgs"; };
 
-    tdlib = { url = "github:tdlib/td?rev=1543c41f3411bd6aa74713c8aba4e93fa8d952c7"; flake = false; };
+    tdlib = { url = "github:tdlib/td?rev=c95598e5e1493881d31211c1329bdbe4630f6136"; flake = false; };
     ffmpeg-patch = { url = "github:yt-dlp/FFmpeg-Builds?rev=d1b456152d2618cf9266ec5ca84ed8b110acb423"; flake = false; };
     invidious = { url = "git+ssh://git@github.com/iv-org/invidious.git"; flake = false; type = "git"; submodules = true; };
 
