@@ -41,7 +41,7 @@ in
 
     mercury-parser-api = {
       inherit environment extraOptions;
-      image = "wangqiru/mercury-parser-api@sha256:4cb7e73e6ea146bef7343d61da4337b0fccf87eb914aca428237cd9dcf5c8f43";
+      image = "wangqiru/mercury-parser-api@sha256:da06e19694c85816b6c2f9870e66beaa03bbd0043d8a759b86e2bb16020ee5c2";
       dependsOn = [];
       ports = [
         "8090:3000"
