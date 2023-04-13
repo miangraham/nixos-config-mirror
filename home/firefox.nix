@@ -7,6 +7,8 @@ let
       BackgroundAppUpdate = false;
       DisableAppUpdate = true;
       DisableFirefoxStudies = true;
+      DisableMasterPasswordCreation = true;
+      DisablePasswordReveal = true;
       DisablePocket = true;
       DisableSetDesktopBackground = true;
       DisableTelemetry = true;
@@ -23,6 +25,12 @@ let
           BlockNewRequests = true;
           Locked = true;
         };
+        Autoplay = {
+          Default = "block-audio-video";
+          Block = [
+            "https://youtube.com"
+          ];
+        };
       };
       PictureInPicture = {
         Enabled = false;
@@ -35,6 +43,12 @@ let
         UrlbarInterventions = false;
         SkipOnboarding = true;
         MoreFromMozilla = false;
+      };
+      SearchEngines = {
+        Remove = [
+          "Bing"
+          "eBay"
+        ];
       };
     };
   };
@@ -67,12 +81,13 @@ in
 
         # Search, URL bar
         "browser.search.defaultenginename" = "DuckDuckGo";
-        "browser.search.hiddenOneOffs" = "Amazon.com,Bing,eBay,Wikipedia (en)";
+        "browser.search.hiddenOneOffs" = "Amazon.com,Wikipedia (en)";
         "browser.search.region" = "US";
         "browser.search.suggest.enabled" = false;
         "browser.urlbar.shortcuts.bookmarks" = false;
         "browser.urlbar.shortcuts.history" = false;
         "browser.urlbar.shortcuts.tabs" = false;
+        "browser.urlbar.sponsoredTopSites" = false;
         "browser.urlbar.suggest.bookmark" = false;
         "browser.urlbar.suggest.history" = false;
         "browser.urlbar.suggest.openpage" = false;
@@ -146,6 +161,10 @@ in
 
         # DRM
         "media.gmp-widevinecdm.enabled" = true;
+
+        # Misc safety
+        "extensions.formautofill.creditCards.available" = false;
+        "extensions.formautofill.creditCards.enabled" = false;
       };
     };
   };
