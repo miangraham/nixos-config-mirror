@@ -23,4 +23,12 @@
     dataDir = "/home/ian/share";
     configDir = "/home/ian/.config/syncthing";
   };
+
+  clamav = {
+    daemon.enable = true;
+    updater = {
+      enable = true;
+      interval = "daily";
+    };
+  };
 }
