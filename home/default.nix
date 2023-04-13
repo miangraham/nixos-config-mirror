@@ -18,6 +18,7 @@ let
   sworkstyle = pkgs.swayest-workstyle;
   tmux = import ./tmux.nix { inherit pkgs; };
   waybar = import ./waybar.nix { inherit lib pkgs; };
+  zsh = import ./zsh.nix {};
 in
 {
   inherit accounts;
@@ -34,7 +35,7 @@ in
   wayland.windowManager.sway = import ./sway.nix { inherit pkgs; };
 
   programs = {
-    inherit alacritty bash direnv firefox git kitty mpv ssh starship tmux waybar;
+    inherit alacritty bash direnv firefox git kitty mpv ssh starship tmux waybar zsh;
     inherit (secrets.programs) gpg password-store;
 
     autojump.enable = true;
