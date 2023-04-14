@@ -23,6 +23,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     diff-hl
     direnv
     drag-stuff
+    eat
     editorconfig
     ef-themes
     elfeed
@@ -71,6 +72,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     sideline
     sideline-flymake
     smartparens
+    sudo-edit
     telega
     templatel
     terraform-mode

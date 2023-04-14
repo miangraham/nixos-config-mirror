@@ -45,11 +45,7 @@
       };
     };
     key_bindings = [
-      { key = "Space";     mods = "Control";       chars = "\x00";     }
-      # { key = "Key0";      mods = "Control";       action = "ResetFontSize"; }
-      # { key = "Equals";    mods = "Control";       action = "IncreaseFontSize"; }
-      # { key = "Plus";      mods = "Control";       action = "IncreaseFontSize"; }
-      # { key = "Minus";     mods = "Control";       action = "DecreaseFontSize"; }
+      { key = "Space";     mods = "Control";       chars = "\\x00";     }
     ];
   };
 }
