@@ -42,6 +42,7 @@ in
     feh.enable = true;
     mbsync.enable = true;
     mu.enable = true;
+    zoxide.enable = true;
 
     htop = {
       enable = true;

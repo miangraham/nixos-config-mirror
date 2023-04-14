@@ -96,6 +96,7 @@ in
     systemPackages = packages;
     pathsToLink = [
       "/share/nix-direnv"
+      "/share/zsh"
     ];
   };
 
