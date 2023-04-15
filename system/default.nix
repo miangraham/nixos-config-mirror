@@ -84,6 +84,7 @@ in
       "wheel"
       "znc"
     ];
+    shell = pkgs.zsh;
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBcbC9h0gXGiyRCKE4Pj8jJ4loQ89QyeG7m3H2hLm6Fc ian@futaba"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICD/gQKLw/+A7JQLLvX+pz7MS0g17hf3GHrzCmOaPUH1 ian@maho"
@@ -97,6 +98,9 @@ in
     pathsToLink = [
       "/share/nix-direnv"
       "/share/zsh"
+    ];
+    shells = [
+      pkgs.zsh
     ];
   };
 
@@ -127,6 +131,7 @@ in
     adb.enable = true;
     noisetorch.enable = true;
     wshowkeys.enable = true;
+    zsh.enable = true;
 
     # hyprland = {
     #   enable = true;
