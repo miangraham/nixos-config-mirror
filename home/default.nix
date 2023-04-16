@@ -14,7 +14,7 @@ let
   mpv = import ./mpv.nix { inherit pkgs; };
   secrets = import ./secrets.nix { inherit pkgs; };
   ssh = import ./ssh.nix { inherit pkgs; };
-  starship = import ./starship.nix { inherit pkgs; };
+  starship = import ./starship.nix { pkgs = unstable; };
   sworkstyle = pkgs.swayest-workstyle;
   tmux = import ./tmux.nix { inherit pkgs; };
   waybar = import ./waybar.nix { inherit lib pkgs; };
