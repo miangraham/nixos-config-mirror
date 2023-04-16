@@ -38,7 +38,7 @@ in
     inherit alacritty bash direnv firefox git kitty mpv ssh starship tmux waybar zsh;
     inherit (secrets.programs) gpg password-store;
 
-    autojump.enable = true;
+    bat.enable = true;
     feh.enable = true;
     fzf.enable = true;
     mbsync.enable = true;
