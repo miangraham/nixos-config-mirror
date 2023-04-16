@@ -40,6 +40,7 @@ in
 
     autojump.enable = true;
     feh.enable = true;
+    fzf.enable = true;
     mbsync.enable = true;
     mu.enable = true;
     zoxide.enable = true;
