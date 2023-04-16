@@ -18,7 +18,7 @@ let
   sworkstyle = pkgs.swayest-workstyle;
   tmux = import ./tmux.nix { inherit pkgs; };
   waybar = import ./waybar.nix { inherit lib pkgs; };
-  zsh = import ./zsh.nix {};
+  zsh = import ./zsh.nix { inherit pkgs; };
 in
 {
   inherit accounts;
