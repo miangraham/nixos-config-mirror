@@ -17,6 +17,6 @@
     };
     # hostname.ssh_only = false;
     # username.show_always = true;
-    nix_shell.heuristic = true;
+    # nix_shell.heuristic = true;
   };
 }
