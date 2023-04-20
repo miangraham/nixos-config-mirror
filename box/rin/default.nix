@@ -38,7 +38,7 @@ in
 
     # box specific due to ACME, rip
     nginx = {
-      enable = false;
+      enable = true;
       user = "nginx";
       virtualHosts._ = {
         root = "/var/www";
