@@ -53,6 +53,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     markdown-mode
     mastodon
     mood-one-theme
+    moody
     nix-mode
     no-littering
     orderless
