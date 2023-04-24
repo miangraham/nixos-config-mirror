@@ -52,7 +52,7 @@ in
     };
     gc = {
       automatic = true;
-      dates = "weekly";
+      dates = "Sat *-*-* 00:00:00";
       options = "--delete-older-than 7d";
     };
     extraOptions = ''
