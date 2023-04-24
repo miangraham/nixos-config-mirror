@@ -36,7 +36,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     flycheck
     flycheck-rust
     fullframe
-    geiser-guile
+    # geiser-guile # hash failure
     git-link
     git-timemachine
     haskell-mode
