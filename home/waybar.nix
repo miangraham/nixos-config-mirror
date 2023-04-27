@@ -16,8 +16,10 @@ in
   settings = [{
     output = [
       "eDP-1"
+      # "HDMI-A-1"
       "HDMI-A-2"
       "Ancor Communications Inc ROG PG279Q G1LMQS019376"
+      "Dell Inc. Dell AW3423DW #tBszGDAYEB0K"
     ];
     layer = "top";
     position = "left";
