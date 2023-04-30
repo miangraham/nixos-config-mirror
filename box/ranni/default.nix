@@ -22,6 +22,7 @@
     supportedFilesystems = [ "zfs" ];
     zfs = {
       devNodes = "/dev/disk/by-partuuid";
+      extraPools = [ "srv" ];
       forceImportRoot = false;
     };
   };
