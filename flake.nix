@@ -42,6 +42,9 @@
         futaba = boxConfig [
           ./box/futaba
         ];
+        ranni = boxConfig [
+          ./box/ranni
+        ];
         rin = boxConfig [
           ./box/rin
           inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t14-amd-gen1
