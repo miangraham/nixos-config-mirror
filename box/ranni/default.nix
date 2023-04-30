@@ -8,6 +8,7 @@
 
   networking = {
     hostName = "ranni";
+    hostId = "cd1da50a";
     interfaces.enp9s0f1np0.useDHCP = true;
     interfaces.enp9s0f1np1.useDHCP = true;
     firewall = {
@@ -16,7 +17,18 @@
     };
   };
 
+  boot = {
+    kernelPackages = pkgs.lib.mkForce config.boot.zfs.package.latestCompatibleLinuxPackages;
+    supportedFilesystems = [ "zfs" ];
+    zfs = {
+      devNodes = "/dev/disk/by-partuuid";
+      forceImportRoot = false;
+    };
+  };
+
   security.rtkit.enable = pkgs.lib.mkForce false;
+
+  home-manager.users.ian.services.playerctld.enable = pkgs.lib.mkForce false;
 
   system.stateVersion = "22.11";
 }
