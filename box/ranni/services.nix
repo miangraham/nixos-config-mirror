@@ -7,6 +7,10 @@ in
   services = {
     # inherit borgbackup;
 
+    zfs = {
+      autoScrub.enable = true;
+    };
+
     syncthing.guiAddress = "0.0.0.0:8384";
 
     pipewire.enable = pkgs.lib.mkForce false;
