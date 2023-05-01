@@ -27,6 +27,37 @@ in
       };
     };
 
+    samba = {
+      enable = true;
+      openFirewall = true;
+      securityType = "user";
+      extraConfig = ''
+        workgroup = WORKGROUP
+        server string = ranni
+        netbios name = ranni
+        security = user
+        #use sendfile = yes
+        #max protocol = smb2
+        # note: localhost is the ipv6 localhost ::1
+        hosts allow = 192.168.0. 127.0.0.1 localhost
+        hosts deny = 0.0.0.0/0
+        guest account = nobody
+        map to guest = bad user
+      '';
+      shares = {
+        timemachine = {
+          path = "/srv/timemachine";
+          "valid users" = "ian";
+          public = "no";
+          writeable = "yes";
+          "force user" = "ian";
+          "fruit:aapl" = "yes";
+          "fruit:time machine" = "yes";
+          "vfs objects" = "catia fruit streams_xattr";
+        };
+      };
+    };
+
     syncthing.guiAddress = "0.0.0.0:8384";
 
     pipewire.enable = pkgs.lib.mkForce false;
