@@ -21,7 +21,7 @@
     kernelPackages = pkgs.lib.mkForce config.boot.zfs.package.latestCompatibleLinuxPackages;
     supportedFilesystems = [ "zfs" ];
     zfs = {
-      devNodes = "/dev/disk/by-partuuid";
+      devNodes = "/dev/disk/by-partlabel";
       extraPools = [ "srv" ];
       forceImportRoot = false;
     };
