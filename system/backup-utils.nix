@@ -55,6 +55,7 @@ let
     ".config/Slack"
     ".config/Sonixd"
     ".config/syncthing/*.db"
+    ".config/unity3d"
     ".config/VSCodium"
 
     "share/p4acamera"
@@ -63,6 +64,7 @@ let
 
     "**/.cache"
     "**/.terraform"
+    "**/Library"
     "**/node_modules"
     "**/target"
     "**/*.dump"

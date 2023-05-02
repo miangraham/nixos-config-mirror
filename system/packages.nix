@@ -9,7 +9,9 @@ builtins.attrValues {
     bashmount
     exfat
     file
+    hddtemp
     hwinfo
+    i2c-tools
     lshw
     nix-index
     parted
