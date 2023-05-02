@@ -14,6 +14,7 @@ builtins.attrValues {
     i2c-tools
     lshw
     nix-index
+    nvme-cli
     parted
     pavucontrol
     pciutils
