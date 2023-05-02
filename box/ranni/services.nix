@@ -36,9 +36,6 @@ in
         server string = ranni
         netbios name = ranni
         security = user
-        #use sendfile = yes
-        #max protocol = smb2
-        # note: localhost is the ipv6 localhost ::1
         hosts allow = 192.168.0. 127.0.0.1 localhost
         hosts deny = 0.0.0.0/0
         guest account = nobody
@@ -47,12 +44,21 @@ in
       shares = {
         timemachine = {
           path = "/srv/timemachine";
-          "valid users" = "timemachine";
           public = "no";
           writeable = "yes";
+          "valid users" = "timemachine";
           "force user" = "timemachine";
           "fruit:aapl" = "yes";
           "fruit:time machine" = "yes";
+          "vfs objects" = "catia fruit streams_xattr";
+        };
+        videos = {
+          path = "/srv/videos";
+          public = "no";
+          writeable = "no";
+          "valid users" = "ian";
+          "force user" = "ian";
+          "fruit:aapl" = "yes";
           "vfs objects" = "catia fruit streams_xattr";
         };
       };
