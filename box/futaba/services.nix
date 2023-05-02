@@ -61,7 +61,7 @@ in
     };
 
     searx = {
-      enable = true;
+      enable = false;
       settings = {
         server.port = 8989;
         server.bind_address = "0.0.0.0";
@@ -193,10 +193,10 @@ in
     '';
   };
 
-  systemd.services.searx.serviceConfig = {
-    RuntimeMaxSec = "30m";
-    Restart = "always";
-  };
+  # systemd.services.searx.serviceConfig = {
+  #   RuntimeMaxSec = "30m";
+  #   Restart = "always";
+  # };
 
   systemd.services.freshrss-config = {
     environment.FRESHRSS_THIRDPARTY_EXTENSIONS_PATH = "/srv/freshrss/extensions";
