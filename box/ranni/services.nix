@@ -47,10 +47,10 @@ in
       shares = {
         timemachine = {
           path = "/srv/timemachine";
-          "valid users" = "ian";
+          "valid users" = "timemachine";
           public = "no";
           writeable = "yes";
-          "force user" = "ian";
+          "force user" = "timemachine";
           "fruit:aapl" = "yes";
           "fruit:time machine" = "yes";
           "vfs objects" = "catia fruit streams_xattr";
