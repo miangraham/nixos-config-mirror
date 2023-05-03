@@ -3,6 +3,7 @@
   imports = [
     ./hardware-configuration.nix
     ../../system
+    ./storage.nix
     ./services.nix
   ];
 
@@ -17,16 +18,6 @@
     };
   };
 
-  boot = {
-    kernelPackages = pkgs.lib.mkForce config.boot.zfs.package.latestCompatibleLinuxPackages;
-    supportedFilesystems = [ "zfs" ];
-    zfs = {
-      devNodes = "/dev/disk/by-partlabel";
-      extraPools = [ "srv" ];
-      forceImportRoot = false;
-    };
-  };
-
   users = {
     users.timemachine = {
       description = "Time Machine backups";
@@ -34,6 +25,15 @@
       isSystemUser = true;
     };
     groups.timemachine = {};
+
+    users.borg = {
+      description = "Borg backups";
+      group = "borg";
+      isNormalUser = true;
+      home = "/srv/borg";
+      openssh.authorizedKeys.keys = config.users.users.ian.openssh.authorizedKeys.keys;
+    };
+    groups.borg = {};
   };
 
   # TODO: Make these a mixin component instead of turning off here
