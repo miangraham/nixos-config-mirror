@@ -88,6 +88,12 @@ in
     };
     phpfpm.pools.freshrss.phpEnv.FRESHRSS_THIRDPARTY_EXTENSIONS_PATH = "/srv/freshrss/extensions";
 
+    libreddit = {
+      enable = true;
+      port = 8091;
+      openFirewall = true;
+    };
+
     nextcloud = {
       enable = false;
       package = pkgs.nextcloud25;
