@@ -23,6 +23,20 @@ let
       };
       extraArgs = "--remote-path=borg1";
     };
+
+    home-ian-to-ranni = job {
+      repo = "borg@ranni:nene";
+      user = "ian";
+      startAt = "*-*-* 04:00:00";
+      prune = {
+        keep = {
+          hourly = 0;
+          daily = 7;
+          weekly = 3;
+          monthly = 3;
+        };
+      };
+    };
   };
 in
 pkgs.lib.recursiveUpdate backup.borgbackup { inherit jobs; }
