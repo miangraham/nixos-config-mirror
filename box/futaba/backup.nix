@@ -17,6 +17,20 @@ let
       extraArgs = "--remote-path=borg1";
     };
 
+    home-ian-to-ranni = job {
+      repo = "borg@ranni:futaba";
+      user = "ian";
+      startAt = "*-*-* 04:00:00";
+      prune = {
+        keep = {
+          hourly = 0;
+          daily = 7;
+          weekly = 3;
+          monthly = 3;
+        };
+      };
+    };
+
     rss-to-local = job {
       paths = [ "/srv/freshrss" ];
       startAt = "*-*-* *:07:00";
