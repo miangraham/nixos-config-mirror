@@ -1,11 +1,11 @@
 { config, pkgs, inputs, ... }:
 let
   unstable = import ../../common/unstable.nix { inherit pkgs inputs; };
-  # borgbackup = import ./backup.nix { inherit pkgs; };
+  borgbackup = import ./backup.nix { inherit pkgs; };
 in
 {
   services = {
-    # inherit borgbackup;
+    inherit borgbackup;
 
     zfs = {
       autoScrub.enable = true;
@@ -61,6 +61,15 @@ in
           "fruit:aapl" = "yes";
           "vfs objects" = "catia fruit streams_xattr";
         };
+      };
+    };
+
+    navidrome = {
+      enable = true;
+      settings = {
+        Address = "0.0.0.0";
+        MusicFolder = "/srv/music";
+        ScanSchedule = "@daily";
       };
     };
 

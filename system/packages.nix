@@ -12,6 +12,7 @@ builtins.attrValues {
     hddtemp
     hwinfo
     i2c-tools
+    ipmitool
     lshw
     nix-index
     nvme-cli
