@@ -63,14 +63,14 @@ let
     "share/ytdl"
 
     "**/.cache"
+    "**/*.dump"
+    "**/*.log"
     "**/.terraform"
+    "**/core.*"
     "**/Library"
     "**/node_modules"
     "**/target"
-    "**/*.dump"
-    "**/*.log"
     "moby/moby.scm"
-    "core.*"
   ];
 
   common = {
