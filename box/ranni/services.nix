@@ -17,6 +17,8 @@ in
       };
     };
 
+    netdata.enable = false;
+
     syncthing.guiAddress = "0.0.0.0:8384";
 
     pipewire.enable = pkgs.lib.mkForce false;
