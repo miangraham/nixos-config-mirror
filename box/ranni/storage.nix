@@ -12,6 +12,17 @@ in
     };
   };
 
+  hardware.sensor.hddtemp = {
+    enable = true;
+    drives = [
+      "/dev/disk/by-id/ata-ST16000NT001-3LV101_WR50FMJJ"
+      "/dev/disk/by-id/ata-ST16000NT001-3LV101_WR6039HH"
+    ];
+    dbEntries = [
+      ''"ST16000NT001" 194 C "Seagate Ironwolf Pro 7200 SATA 16TB"''
+    ];
+  };
+
   services = {
     zfs = {
       autoScrub.enable = true;

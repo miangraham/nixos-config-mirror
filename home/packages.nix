@@ -98,6 +98,7 @@ builtins.attrValues {
   inherit (unstable)
     invidious # precaching build for reuse on tiny server
     protonmail-bridge
+    trurl
   ;
 
   # authoring
