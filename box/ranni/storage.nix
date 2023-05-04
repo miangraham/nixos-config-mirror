@@ -30,12 +30,13 @@ in
 
     sanoid = {
       enable = true;
-      interval = "daily";
+      interval = "hourly";
       templates.default = {
+        autoprune = true;
         autosnap = true;
-        hourly = 0;
+        hourly = 12;
         daily = 7;
-        monthly = 1;
+        monthly = 3;
         yearly = 0;
       };
       datasets.srv = {
