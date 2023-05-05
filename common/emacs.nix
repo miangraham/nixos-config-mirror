@@ -51,7 +51,6 @@ pkgs.emacsWithPackagesFromUsePackage {
     magit
     marginalia
     markdown-mode
-    mastodon
     mood-one-theme
     moody
     nix-mode
@@ -75,6 +74,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     smartparens
     sudo-edit
     telega
+    tempel
     templatel
     terraform-mode
     tide
@@ -94,7 +94,6 @@ pkgs.emacsWithPackagesFromUsePackage {
     writeroom-mode
     ws-butler
     yaml-mode
-    yasnippet
     zoom
 
     pkgs.mu
