@@ -50,6 +50,7 @@ builtins.attrValues {
     sonixd
     speedtest-cli
     tap-plugins
+    tigervnc
     tldr
     traceroute
     tree
