@@ -44,6 +44,7 @@ builtins.attrValues {
     qdirstat
     ranger
     reaper
+    samba
     shellcheck
     sioyek
     slurp
