@@ -23,8 +23,14 @@ in
     '';
   };
 
+  networking.firewall.checkReversePath = "loose"; # tailscale
+
   services = {
     inherit borgbackup;
+
+    tailscale = {
+      enable = true;
+    };
 
     flatpak.enable = false;
 
