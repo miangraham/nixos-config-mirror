@@ -23,8 +23,6 @@ in
     '';
   };
 
-  networking.firewall.checkReversePath = "loose"; # tailscale
-
   services = {
     inherit borgbackup;
 

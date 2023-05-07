@@ -12,7 +12,7 @@ in
     hostName = "rin";
     networkmanager.enable = true;
     resolvconf.dnsExtensionMechanism = false;
-    firewall.allowedTCPPorts = [ 22 8443 ];
+    firewall.allowedTCPPorts = [ 22 8443 41641 ];
     interfaces = {
       enp2s0f0.useDHCP = true;
       enp5s0.useDHCP = true;

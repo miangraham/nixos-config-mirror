@@ -1,6 +1,7 @@
 { ... }:
 {
   networking.useDHCP = false;
+  networking.firewall.checkReversePath = "loose"; # for tailscale
   networking.extraHosts = ''
 127.0.0.1     testlocal.ian.tokyo
 192.168.0.108 yuno
