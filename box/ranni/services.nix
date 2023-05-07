@@ -24,6 +24,22 @@ in
     pipewire.enable = pkgs.lib.mkForce false;
   };
 
+  systemd.services.pmbridge = {
+    serviceConfig = {
+      Type = "simple";
+      User = "ian";
+    };
+    wantedBy = [ "multi-user.target" ];
+    environment = {
+      PASSWORD_STORE_DIR = "/home/ian/.local/share/password-store";
+    };
+    path = [
+      unstable.protonmail-bridge
+      pkgs.pass
+    ];
+    script = "protonmail-bridge -n";
+  };
+
   systemd.services.pueue = {
     serviceConfig = {
       Type = "simple";
