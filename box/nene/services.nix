@@ -1,5 +1,6 @@
 { pkgs, inputs, config, ... }:
 let
+  unstable = import ../../common/unstable.nix { inherit pkgs inputs; };
   borgbackup = import ./backup.nix { inherit pkgs; };
   yt-dlp = import ../../home/yt-dlp.nix { inherit pkgs inputs; };
   # moby = import inputs.moby { inherit pkgs; };
@@ -74,6 +75,22 @@ in
   #   defaults.email = import ../../common/email.nix {};
   #   acceptTerms = true;
   # };
+
+  systemd.services.pmbridge = {
+    serviceConfig = {
+      Type = "simple";
+      User = "ian";
+    };
+    wantedBy = [ "multi-user.target" ];
+    environment = {
+      PASSWORD_STORE_DIR = "/home/ian/.local/share/password-store";
+    };
+    path = [
+      unstable.protonmail-bridge
+      pkgs.pass
+    ];
+    script = "protonmail-bridge -n";
+  };
 
   systemd.services.pueue = {
     serviceConfig = {
