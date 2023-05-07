@@ -26,10 +26,6 @@ in
   services = {
     inherit borgbackup;
 
-    tailscale = {
-      enable = true;
-    };
-
     flatpak.enable = false;
 
     # box specific due to ACME, rip
