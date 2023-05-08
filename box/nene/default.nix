@@ -4,6 +4,7 @@
     ./hardware-configuration.nix
     ../../system
     ./services.nix
+    ./php.nix
   ];
 
   networking = {

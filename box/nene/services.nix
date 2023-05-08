@@ -30,26 +30,19 @@ in
     flatpak.enable = false;
 
     # box specific due to ACME, rip
-    nginx = {
-      enable = false;
-      user = "nginx";
-      virtualHosts = {
-        nene = {
-          serverName = "localhost";
-          locations."/" = {
-            root = "/var/www";
-            # return = "404";
-          };
-        };
-
-        "ian.tokyo" = {
-          serverName = "ian.tokyo";
-          root = "/var/www";
-          addSSL = true;
-          enableACME = true;
-        };
-      };
-    };
+    # nginx = {
+    #   enable = false;
+    #   user = "nginx";
+    #   virtualHosts = {
+    #     nene = {
+    #       serverName = "localhost";
+    #       locations."/" = {
+    #         root = "/var/www";
+    #         # return = "404";
+    #       };
+    #     };
+    #   };
+    # };
 
     # dicod = {
     #   enable = false;
@@ -70,11 +63,6 @@ in
       command = "/run/current-system/sw/bin/systemctl restart dicod"; options = [ "NOPASSWD" ];
     }];
   }];
-
-  # security.acme = {
-  #   defaults.email = import ../../common/email.nix {};
-  #   acceptTerms = true;
-  # };
 
   systemd.services.pmbridge = {
     serviceConfig = {

@@ -68,6 +68,7 @@ in
   };
 
   users.groups = {
+    nginx.gid = config.ids.gids.nginx;
     znc.gid = config.ids.gids.znc;
   };
 
