@@ -14,7 +14,7 @@ in {
         realName = "M. Ian Graham";
         address = emailAddr;
         userName = emailAddr;
-        passwordCommand = "cat /home/ian/.ssh/pmbridge_pass";
+        passwordCommand = "pass show pmbridge";
         aliases = [];
         maildir.path = "";
         mbsync = {
