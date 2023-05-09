@@ -1,5 +1,9 @@
 { config, pkgs, inputs, ... }:
 let
+  inherit (builtins) concatStringsSep sort stringLength;
+  obfuscatedAddr = [ "in.net" "an" "@ij" "i" ];
+  unshuffle = sort (a: b: (stringLength a) < (stringLength b));
+  emailAddr = concatStringsSep "" (unshuffle obfuscatedAddr);
 in
 {
   boot = {
@@ -26,6 +30,21 @@ in
   services = {
     zfs = {
       autoScrub.enable = true;
+
+      # not working yet, punt
+      # zed.enableMail = false;
+      # zed.settings = {
+      #   ZED_DEBUG_LOG = "/tmp/zed.debug.log";
+      #   ZED_EMAIL_ADDR = [ "root" ];
+      #   ZED_EMAIL_PROG = "${pkgs.msmtp}/bin/msmtp";
+      #   ZED_EMAIL_OPTS = "--file=/etc/msmtprc @ADDRESS@";
+
+      #   ZED_NOTIFY_INTERVAL_SECS = 60;
+      #   ZED_NOTIFY_VERBOSE = true;
+
+      #   ZED_USE_ENCLOSURE_LEDS = true;
+      #   ZED_SCRUB_AFTER_RESILVER = true;
+      # };
     };
 
     sanoid = {

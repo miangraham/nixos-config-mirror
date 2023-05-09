@@ -52,7 +52,7 @@
     enable = true;
     setSendmail = true;
     defaults = {
-      # aliases = "/etc/aliases";
+      aliases = "/etc/aliases";
       port = 1025;
       tls_trust_file = "/etc/ssl/certs/ca-certificates.crt";
       tls = "on";
