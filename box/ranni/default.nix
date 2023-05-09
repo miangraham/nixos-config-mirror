@@ -34,6 +34,18 @@
       openssh.authorizedKeys.keys = config.users.users.ian.openssh.authorizedKeys.keys;
     };
     groups.borg = {};
+
+    users.dupe = {
+      description = "Duplicati backups";
+      group = "dupe";
+      isNormalUser = true;
+      home = "/srv/duplicati";
+      openssh.authorizedKeys.keys = [
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM/yWOew9ozqQB39DDlTVRbLkZEQyuQTJXV5sAc4SUP9 ian@megumin"
+      ];
+    };
+    groups.dupe = {};
+
   };
 
   # TODO: Make these a mixin component instead of turning off here
