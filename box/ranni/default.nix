@@ -48,6 +48,28 @@
 
   };
 
+  programs.msmtp = {
+    enable = true;
+    setSendmail = true;
+    defaults = {
+      # aliases = "/etc/aliases";
+      port = 1025;
+      tls_trust_file = "/etc/ssl/certs/ca-certificates.crt";
+      tls = "on";
+      auth = "login";
+      tls_starttls = "on";
+      tls_certcheck = "off"; # XXX
+    };
+    accounts = {
+      default = {
+        host = "localhost";
+        passwordeval = "sudo -u ian PASSWORD_STORE_DIR=/home/ian/.local/share/password-store /etc/profiles/per-user/ian/bin/pass show pmbridge";
+        user = "ian@ijin.net";
+        from = "ian@ijin.net";
+      };
+    };
+  };
+
   # TODO: Make these a mixin component instead of turning off here
   security.rtkit.enable = pkgs.lib.mkForce false;
   home-manager.users.ian.services.playerctld.enable = pkgs.lib.mkForce false;
