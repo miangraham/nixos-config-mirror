@@ -65,6 +65,10 @@ in
   systemd = {
     coredump.enable = true; # false
     oomd.enable = false;
+    suppressedSystemUnits = [
+      "systemd-oomd.service"
+      "systemd-oomd.socket"
+    ];
   };
 
   users.groups = {
