@@ -4,6 +4,16 @@ let
   obfuscatedAddr = [ "in.net" "an" "@ij" "i" ];
   unshuffle = sort (a: b: (stringLength a) < (stringLength b));
   emailAddr = concatStringsSep "" (unshuffle obfuscatedAddr);
+  mailWrapper = pkgs.writeShellScriptBin "mail-wrapper" ''
+    set -e
+
+    TO_HEADER="To: ${emailAddr}"
+    INPUT="$(</dev/stdin)"
+    SUB_HEADER="$(echo "''${INPUT}" | head -n 1)"
+    MSG_CLEAN=$(echo "''${INPUT}" | tail -n +2)
+
+    echo -e "''${TO_HEADER}\n''${SUB_HEADER}\n\n''${MSG_CLEAN}\n" | ${pkgs.msmtp}/bin/msmtp -C /etc/msmtprc ${emailAddr} >/tmp/smtp_log.txt 2>&1
+  '';
 in
 {
   boot = {
@@ -31,17 +41,16 @@ in
     zfs = {
       autoScrub.enable = true;
 
-      # not working yet, punt
-      # zed.enableMail = false;
-      # zed.settings = {
-      #   ZED_DEBUG_LOG = "/tmp/zed.debug.log";
-      #   ZED_EMAIL_ADDR = [ emailAddr ];
-      #   ZED_EMAIL_PROG = "/run/current-system/sw/bin/msmtp";
-      #   ZED_EMAIL_OPTS = "--debug -C /etc/msmtprc @ADDRESS@";
+      zed.enableMail = false;
+      zed.settings = {
+        ZED_DEBUG_LOG = "/tmp/zed.debug.log";
+        ZED_EMAIL_ADDR = [ emailAddr ];
+        ZED_EMAIL_PROG = "${mailWrapper}/bin/mail-wrapper";
+        ZED_EMAIL_OPTS = "@ADDRESS@";
 
-      #   ZED_NOTIFY_INTERVAL_SECS = 60;
-      #   ZED_NOTIFY_VERBOSE = true;
-      # };
+        ZED_NOTIFY_INTERVAL_SECS = 60;
+        ZED_NOTIFY_VERBOSE = true;
+      };
     };
 
     sanoid = {
@@ -135,8 +144,9 @@ in
     '';
   in {
     serviceConfig = {
-      Type = "simple";
+      Type = "oneshot";
       User = "root";
+      RemainAfterExit = true;
     };
     wantedBy = [ "multi-user.target" ];
     environment = {};
