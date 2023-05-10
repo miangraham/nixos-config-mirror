@@ -1,4 +1,12 @@
 { config, pkgs, inputs, lib, modulesPath, ... }:
+let
+  inherit (builtins) concatStringsSep sort stringLength;
+  unshuffle = sort (a: b: (stringLength a) < (stringLength b));
+  obfuscatedIanAddr = [ "in.net" "an" "@ij" "i" ];
+  ianAddr = concatStringsSep "" (unshuffle obfuscatedIanAddr);
+  obfuscatedRanniAddr = [ "in.net" "r" "ni@ij" "an" ];
+  ranniAddr = concatStringsSep "" (unshuffle obfuscatedRanniAddr);
+in
 {
   imports = [
     ./hardware-configuration.nix
@@ -65,10 +73,9 @@
     accounts = {
       default = {
         host = "localhost";
-        # passwordeval = "sudo -u ian PASSWORD_STORE_DIR=/home/ian/.local/share/password-store /etc/profiles/per-user/ian/bin/pass show pmbridge";
         passwordeval = "cat /home/ian/.ssh/pmbridge_pass";
-        user = "ian@ijin.net";
-        from = "ian@ijin.net";
+        user = ianAddr;
+        from = ranniAddr;
       };
     };
   };

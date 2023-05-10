@@ -4,9 +4,6 @@ let
   obfuscatedAddr = [ "in.net" "an" "@ij" "i" ];
   unshuffle = sort (a: b: (stringLength a) < (stringLength b));
   emailAddr = concatStringsSep "" (unshuffle obfuscatedAddr);
-#   sendMailDebug = pkgs.writeShellScriptBin "send-mail-debug" ''
-# /run/current-system/sw/bin/msmtp --debug -C /etc/msmtprc $1
-#   '';
 in
 {
   boot = {
@@ -100,6 +97,56 @@ in
         };
       };
     };
+  };
 
+  systemd.services.diskreport = let
+    diskReport = pkgs.writeShellScriptBin "disk-report" ''
+      set -e
+
+      file_mtime () {
+        NAME=$1
+        MTIME=$(date +"%Y-%m-%d_%H:%M:%S" -r $2)
+        printf "%-8s: %s\n" $NAME $MTIME
+      }
+
+      echo "To: ${emailAddr}"
+
+      echo -e "Subject: Ranni Disk Report\n"
+
+      echo -e "Ranni Disk Report for $(date)\n"
+
+      echo "-- OVERVIEW --"
+      zpool list
+
+      echo -e "\n-- HEALTH --"
+      zpool status
+
+      echo -e "\n-- USAGE --"
+      zfs list -o space,quota,reservation
+
+      echo -e "\n-- BACKUPS --"
+      file_mtime futaba /srv/borg/futaba
+      file_mtime maho /srv/timemachine/maho.sparsebundle/com.apple.TimeMachine.SnapshotHistory.plist
+      file_mtime megumin /srv/duplicati/megumin
+      file_mtime nene /srv/borg/nene
+      file_mtime ranni /srv/borg/ranni
+      file_mtime rin /srv/borg/rin
+      file_mtime yuno /srv/timemachine/yuno.backupbundle/com.apple.TimeMachine.SnapshotHistory.plist
+    '';
+  in {
+    serviceConfig = {
+      Type = "simple";
+      User = "root";
+    };
+    wantedBy = [ "multi-user.target" ];
+    environment = {};
+    path = [
+      pkgs.msmtp
+      pkgs.zfs
+    ];
+    script = ''
+      ${diskReport}/bin/disk-report | msmtp -C /etc/msmtprc root
+    '';
+    startAt = "Mon *-*-* 12:00:00";
   };
 }
