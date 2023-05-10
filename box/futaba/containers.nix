@@ -7,6 +7,7 @@ let
   ];
   environment = {
     TZ = "Asia/Tokyo";
+    REDDIT_USER_AGENT = "php:miangraham.reddit.rss:9.9.9";
   };
 in
 {
@@ -32,7 +33,7 @@ in
   virtualisation.oci-containers.containers = {
     reddit-top-rss = {
       inherit environment extraOptions;
-      image = "johnny5w/reddit-top-rss@sha256:cb1ea08ab0be1a583f5d95105d0226f80804180c10843390ac0bf226701537df";
+      image = "ghcr.io/miangraham/reddit-top-rss@sha256:4799a2f921f71bd6609b616b40c951aeded31ae76628a6e12809eb80b88f1fe4";
       dependsOn = [];
       ports = [
         "8089:8080"
