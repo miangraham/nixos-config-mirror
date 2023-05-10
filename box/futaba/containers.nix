@@ -33,7 +33,7 @@ in
   virtualisation.oci-containers.containers = {
     reddit-top-rss = {
       inherit environment extraOptions;
-      image = "ghcr.io/miangraham/reddit-top-rss@sha256:4799a2f921f71bd6609b616b40c951aeded31ae76628a6e12809eb80b88f1fe4";
+      image = "ghcr.io/miangraham/reddit-top-rss@sha256:b231f880d9d3771a34d4b12be8cfb61d976144e8bb49524631099223a0b8f709";
       dependsOn = [];
       ports = [
         "8089:8080"
