@@ -4,6 +4,9 @@ let
   obfuscatedAddr = [ "in.net" "an" "@ij" "i" ];
   unshuffle = sort (a: b: (stringLength a) < (stringLength b));
   emailAddr = concatStringsSep "" (unshuffle obfuscatedAddr);
+#   sendMailDebug = pkgs.writeShellScriptBin "send-mail-debug" ''
+# /run/current-system/sw/bin/msmtp --debug -C /etc/msmtprc $1
+#   '';
 in
 {
   boot = {
@@ -35,15 +38,12 @@ in
       # zed.enableMail = false;
       # zed.settings = {
       #   ZED_DEBUG_LOG = "/tmp/zed.debug.log";
-      #   ZED_EMAIL_ADDR = [ "root" ];
-      #   ZED_EMAIL_PROG = "${pkgs.msmtp}/bin/msmtp";
-      #   ZED_EMAIL_OPTS = "--file=/etc/msmtprc @ADDRESS@";
+      #   ZED_EMAIL_ADDR = [ emailAddr ];
+      #   ZED_EMAIL_PROG = "/run/current-system/sw/bin/msmtp";
+      #   ZED_EMAIL_OPTS = "--debug -C /etc/msmtprc @ADDRESS@";
 
       #   ZED_NOTIFY_INTERVAL_SECS = 60;
       #   ZED_NOTIFY_VERBOSE = true;
-
-      #   ZED_USE_ENCLOSURE_LEDS = true;
-      #   ZED_SCRUB_AFTER_RESILVER = true;
       # };
     };
 

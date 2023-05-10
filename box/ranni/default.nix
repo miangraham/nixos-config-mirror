@@ -54,16 +54,19 @@
     defaults = {
       aliases = "/etc/aliases";
       port = 1025;
-      tls_trust_file = "/etc/ssl/certs/ca-certificates.crt";
+      # tls_trust_file = "/etc/ssl/certs/ca-certificates.crt";
+      tls_trust_file = "/home/ian/.nix/home/pmbridge_cert.pem";
       tls = "on";
       auth = "login";
+      # auth = "on";
       tls_starttls = "on";
       tls_certcheck = "off"; # XXX
     };
     accounts = {
       default = {
         host = "localhost";
-        passwordeval = "sudo -u ian PASSWORD_STORE_DIR=/home/ian/.local/share/password-store /etc/profiles/per-user/ian/bin/pass show pmbridge";
+        # passwordeval = "sudo -u ian PASSWORD_STORE_DIR=/home/ian/.local/share/password-store /etc/profiles/per-user/ian/bin/pass show pmbridge";
+        passwordeval = "cat /home/ian/.ssh/pmbridge_pass";
         user = "ian@ijin.net";
         from = "ian@ijin.net";
       };
