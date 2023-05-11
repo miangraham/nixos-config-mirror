@@ -17,32 +17,6 @@ in
       };
     };
 
-    prometheus = {
-      enable = true;
-      port = 9090;
-      exporters = {
-        node = {
-          enable = true;
-          enabledCollectors = [ "systemd" ];
-        };
-        zfs = {
-          enable = true;
-          pools = [ "srv" ];
-        };
-      };
-      scrapeConfigs = [{
-        job_name = "system";
-        static_configs = [{
-          targets = [ "127.0.0.1:${toString config.services.prometheus.exporters.node.port}" ];
-        }];
-      } {
-        job_name = "zfs";
-        static_configs = [{
-          targets = [ "127.0.0.1:${toString config.services.prometheus.exporters.zfs.port}" ];
-        }];
-      }];
-    };
-
     netdata.enable = false;
 
     syncthing.guiAddress = "0.0.0.0:8384";

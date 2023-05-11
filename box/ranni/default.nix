@@ -11,8 +11,9 @@ in
   imports = [
     ./hardware-configuration.nix
     ../../system
-    ./storage.nix
+    ./monitoring.nix
     ./services.nix
+    ./storage.nix
   ];
 
   networking = {
