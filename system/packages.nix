@@ -22,6 +22,7 @@ builtins.attrValues {
     psmisc
     pulseaudio
     ripgrep
+    smartmontools
     sshfs-fuse
     unrar
     unzip
