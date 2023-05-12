@@ -49,12 +49,24 @@ in
           enable = true;
           enabledCollectors = [ "systemd" ];
         };
+        # smartctl = {
+        #   enable = true;
+        #   devices = [
+        #     "/dev/disk/by-id/ata-ST16000NT001-3LV101_WR50FMJJ"
+        #     "/dev/disk/by-id/ata-ST16000NT001-3LV101_WR6039HH"
+        #   ];
+        # };
         zfs = {
           enable = true;
           pools = [ "srv" ];
         };
       };
       scrapeConfigs = [{
+      #   job_name = "disks";
+      #   static_configs = [{
+      #     targets = [ "127.0.0.1:${toString config.services.prometheus.exporters.smartctl.port}" ];
+      #   }];
+      # } {
         job_name = "system";
         static_configs = [{
           targets = [ "127.0.0.1:${toString config.services.prometheus.exporters.node.port}" ];
