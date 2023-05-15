@@ -10,6 +10,7 @@ let
       repo = "rnet:rin";
       user = "ian";
       doInit = false;
+      persistentTimer = true;
       encryption = {
         mode = "keyfile-blake2";
         passCommand = "cat /home/ian/.ssh/rnet_rin_phrase";
@@ -20,6 +21,7 @@ let
       repo = "borg@ranni:rin";
       user = "ian";
       startAt = "*-*-* 04:00:00";
+      persistentTimer = true;
       prune = {
         keep = {
           hourly = 0;
