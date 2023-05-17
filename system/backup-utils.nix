@@ -25,6 +25,7 @@ let
     ".local/share"
     ".local/unity3d"
     ".m2"
+    ".mail"
     ".mozilla"
     ".npm"
     ".paradoxlauncher"
