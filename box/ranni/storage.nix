@@ -16,11 +16,11 @@
 
     sanoid = {
       enable = true;
-      interval = "hourly";
+      interval = "daily";
       templates.default = {
         autoprune = true;
         autosnap = true;
-        hourly = 12;
+        hourly = 0;
         daily = 7;
         monthly = 3;
         yearly = 0;
