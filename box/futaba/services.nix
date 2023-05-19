@@ -10,7 +10,7 @@ in
     syncthing.guiAddress = "0.0.0.0:8384";
 
     dnsmasq = {
-      enable = true;
+      enable = false;
       servers = [
         "2404:1a8:7f01:b::3"
         "2404:1a8:7f01:a::3"
@@ -98,7 +98,7 @@ in
     phpfpm.pools.freshrss.phpEnv.FRESHRSS_THIRDPARTY_EXTENSIONS_PATH = "/srv/freshrss/extensions";
 
     libreddit = {
-      enable = true;
+      enable = false;
       port = 8091;
       openFirewall = true;
     };
