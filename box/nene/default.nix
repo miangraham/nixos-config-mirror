@@ -3,17 +3,10 @@
   imports = [
     ./hardware-configuration.nix
     ../../system
+    ./network.nix
     ./services.nix
     ./php.nix
   ];
-
-  networking = {
-    hostName = "nene";
-    interfaces.enp5s0.useDHCP = true;
-    interfaces.wlp4s0.useDHCP = true;
-    firewall.allowedTCPPorts = [ 22 80 443 8443 41641 ];
-    # nameservers = [ "192.168.0.128" ];
-  };
 
   boot.kernel.sysctl = {
     "fs.file-max" = 9000000;
