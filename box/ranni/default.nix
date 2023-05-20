@@ -12,20 +12,10 @@ in
     ./hardware-configuration.nix
     ../../system
     ./monitoring.nix
+    ./network.nix
     ./services.nix
     ./storage.nix
   ];
-
-  networking = {
-    hostName = "ranni";
-    hostId = "cd1da50a";
-    interfaces.enp9s0f1np0.useDHCP = true;
-    interfaces.enp9s0f1np1.useDHCP = true;
-    firewall = {
-      allowedTCPPorts = [ 22 53 80 443 4533 8081 8089 8384 8443 8989 9090 19999 41641 ];
-      allowedUDPPorts = [ 53 ];
-    };
-  };
 
   users = {
     users.timemachine = {
