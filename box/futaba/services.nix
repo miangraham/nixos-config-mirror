@@ -80,7 +80,7 @@ in
     };
 
     navidrome = {
-      enable = true;
+      enable = false;
       settings = {
         Address = "0.0.0.0";
         MusicFolder = "/srv/music";
