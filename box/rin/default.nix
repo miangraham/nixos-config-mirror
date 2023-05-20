@@ -19,6 +19,7 @@ in
       wlp3s0.useDHCP = true;
     };
   };
+  systemd.services.NetworkManager-wait-online.enable = false;
 
   # Power
   powerManagement.powertop.enable = true;
