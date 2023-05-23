@@ -95,7 +95,7 @@ builtins.attrValues {
     obs-pipewire-audio-capture
   ]; };
   obs-remote = (pkgs.callPackage ./obs-remote.nix {});
-  twitch-chat-tui = (pkgs.callPackage ./twitch-chat-tui.nix {});
+  # twitch-chat-tui = (pkgs.callPackage ./twitch-chat-tui.nix {});
 
   inherit (unstable)
     invidious # precaching build for reuse on tiny server
