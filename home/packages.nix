@@ -38,6 +38,7 @@ builtins.attrValues {
     nix-direnv
     nix-prefetch-git
     nixpkgs-review
+    okular
     pandoc
     parallel
     playerctl
