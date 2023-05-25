@@ -3,6 +3,7 @@ in
 builtins.attrValues {
   inherit (pkgs)
     awscli2
+    bind
     bitwarden
     cachix
     calf
@@ -22,6 +23,7 @@ builtins.attrValues {
     gthumb # quick image cropping
     iftop
     imagemagick
+    inetutils
     ispell
     jq
     kiwix
@@ -54,7 +56,6 @@ builtins.attrValues {
     tap-plugins
     tigervnc
     tldr
-    traceroute
     tree
     ungoogled-chromium
     usbutils
