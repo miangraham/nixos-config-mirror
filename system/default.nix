@@ -85,6 +85,7 @@ in
       "audio"
       "dialout"
       "dicod"
+      "libvirtd"
       "networkmanager"
       "nginx"
       "video"

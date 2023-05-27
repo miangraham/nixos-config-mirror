@@ -16,6 +16,7 @@ builtins.attrValues {
     lshw
     nix-index
     nvme-cli
+    p7zip
     parted
     pavucontrol
     pciutils

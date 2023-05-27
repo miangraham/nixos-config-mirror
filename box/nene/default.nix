@@ -29,10 +29,13 @@
   virtualisation.docker = {
     # enable = true;
     rootless = {
-      enable = true;
+      enable = false;
       setSocketVariable = true;
     };
   };
+
+  virtualisation.libvirtd.enable = true;
+  programs.dconf.enable = true;
 
   home-manager.users.ian.home.packages = with pkgs; [
     asunder
@@ -40,6 +43,7 @@
     libreoffice
     picocom
     twitch-tui
+    virt-manager
   ];
 
   system.stateVersion = "20.03";
