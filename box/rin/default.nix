@@ -32,6 +32,9 @@ in
 
   programs.steam.enable = true;
 
+  home-manager.users.ian.home.packages = with pkgs; [
+  ];
+
   services = {
     inherit borgbackup;
 
@@ -39,7 +42,7 @@ in
 
     # box specific due to ACME, rip
     nginx = {
-      enable = true;
+      enable = false;
       user = "nginx";
       virtualHosts._ = {
         root = "/var/www";
