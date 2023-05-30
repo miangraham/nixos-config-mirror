@@ -40,6 +40,7 @@
   home-manager.users.ian.home.packages = with pkgs; [
     asunder
     gimp
+    guestfs-tools
     libreoffice
     picocom
     twitch-tui
