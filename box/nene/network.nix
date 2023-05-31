@@ -2,7 +2,7 @@
 {
   networking = {
     hostName = "nene";
-    firewall.allowedTCPPorts = [ 22 80 443 8443 41641 ];
+    firewall.allowedTCPPorts = [ 22 80 443 8443 8080 41641 ];
     useNetworkd = true;
     useDHCP = false;
   };

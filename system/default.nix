@@ -119,6 +119,12 @@ in
     sudo.extraConfig = ''
       Defaults timestamp_timeout=20
     '';
+    pam.loginLimits = [{
+      domain = "*";
+      type = "-";
+      item = "nofile";
+      value = "8192";
+    }];
   };
 
   i18n = {
