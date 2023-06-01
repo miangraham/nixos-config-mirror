@@ -7,6 +7,7 @@ let
 in
 {
   imports = [
+    ./hyprland.nix
     ./network.nix
     ./xdg.nix
   ];

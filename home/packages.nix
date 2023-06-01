@@ -76,6 +76,9 @@ builtins.attrValues {
     wl-clipboard
     wl-mirror
 
+    # hypr
+    hyprpaper
+
     # video
     pueue
     aria2
