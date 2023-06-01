@@ -48,5 +48,5 @@
     virt-manager
   ];
 
-  system.stateVersion = "20.03";
+  system.stateVersion = "23.05";
 }

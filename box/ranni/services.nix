@@ -2,7 +2,6 @@
 let
   unstable = import ../../common/unstable.nix { inherit pkgs inputs; };
   borgbackup = import ./backup.nix { inherit pkgs; };
-  yt-dlp = import ../../home/yt-dlp.nix { inherit pkgs inputs; };
 in
 {
   services = {
@@ -34,7 +33,7 @@ in
       PASSWORD_STORE_DIR = "/home/ian/.local/share/password-store";
     };
     path = [
-      unstable.protonmail-bridge
+      pkgs.protonmail-bridge
       pkgs.pass
     ];
     script = "protonmail-bridge -n";
@@ -47,7 +46,7 @@ in
     };
     wantedBy = [ "multi-user.target" ];
     path = [
-      yt-dlp
+      pkgs.yt-dlp
       pkgs.pueue
       pkgs.aria2
     ];

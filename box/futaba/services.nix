@@ -203,7 +203,7 @@ in
       PASSWORD_STORE_DIR = "/home/ian/.local/share/password-store";
     };
     path = [
-      unstable.protonmail-bridge
+      pkgs.protonmail-bridge
       pkgs.pass
     ];
     script = "protonmail-bridge -n";

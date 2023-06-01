@@ -1,11 +1,11 @@
 {
   description = "";
   inputs = {
-    nixpkgs = { url = "github:NixOS/nixpkgs/nixos-22.11"; };
+    nixpkgs = { url = "github:NixOS/nixpkgs/nixos-23.05"; };
     unstable = { url = "github:NixOS/nixpkgs/nixos-23.05"; };
-    small = { url = "github:NixOS/nixpkgs/nixos-22.11-small"; };
+    small = { url = "github:NixOS/nixpkgs/nixos-23.05-small"; };
 
-    home-manager = { url = "github:nix-community/home-manager/release-22.11"; inputs.nixpkgs.follows = "nixpkgs"; };
+    home-manager = { url = "github:nix-community/home-manager/release-23.05"; inputs.nixpkgs.follows = "nixpkgs"; };
     nixos-hardware = { url = "github:NixOS/nixos-hardware/master"; };
     emacs-overlay = { url = "github:nix-community/emacs-overlay"; inputs.nixpkgs.follows = "nixpkgs"; };
 

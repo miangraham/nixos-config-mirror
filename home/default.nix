@@ -14,7 +14,7 @@ let
   mpv = import ./mpv.nix { inherit pkgs; };
   secrets = import ./secrets.nix { inherit pkgs; };
   ssh = import ./ssh.nix { inherit pkgs; };
-  starship = import ./starship.nix { pkgs = unstable; };
+  starship = import ./starship.nix { inherit pkgs; };
   sworkstyle = pkgs.swayest-workstyle;
   tmux = import ./tmux.nix { inherit pkgs; };
   waybar = import ./waybar.nix { inherit lib pkgs; };
@@ -230,8 +230,8 @@ in
 
   gtk = let
     t = {
-      package = pkgs.dracula-theme;
-      name = "Dracula";
+      package = pkgs.graphite-gtk-theme;
+      name = "Graphite";
     };
     ex = { gtk-application-prefer-dark-theme = true; };
   in {

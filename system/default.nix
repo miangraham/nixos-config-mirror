@@ -130,8 +130,8 @@ in
   i18n = {
     defaultLocale = "en_US.UTF-8";
     inputMethod = {
-      enabled = "fcitx";
-      fcitx.engines = with pkgs.fcitx-engines; [ mozc ];
+      enabled = "fcitx5";
+      fcitx5.addons = [ pkgs.fcitx5-mozc ];
     };
   };
 

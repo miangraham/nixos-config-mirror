@@ -14,7 +14,7 @@
 
   openssh = {
     enable = true;
-    permitRootLogin = "no";
+    settings.PermitRootLogin = "no";
   };
 
   syncthing = {

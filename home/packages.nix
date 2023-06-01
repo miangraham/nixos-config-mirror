@@ -44,6 +44,7 @@ builtins.attrValues {
     pandoc
     parallel
     playerctl
+    protonmail-bridge
     qdirstat
     ranger
     reaper
@@ -57,10 +58,12 @@ builtins.attrValues {
     tigervnc
     tldr
     tree
+    trurl
     ungoogled-chromium
     usbutils
     vlc
     xdg_utils
+    yt-dlp
     zeal
     zotero
 
@@ -89,7 +92,6 @@ builtins.attrValues {
   inherit (pkgs) terraform;
 
   # video
-  yt-dlp = (import ./yt-dlp.nix { inherit pkgs inputs; });
   kodi = (pkgs.kodi.withPackages (p: with p; [ pvr-iptvsimple ]));
 
   # streaming
@@ -101,8 +103,6 @@ builtins.attrValues {
 
   inherit (unstable)
     invidious # precaching build for reuse on tiny server
-    protonmail-bridge
-    trurl
   ;
 
   # authoring

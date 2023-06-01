@@ -2,8 +2,6 @@
 let
   unstable = import ../../common/unstable.nix { inherit pkgs inputs; };
   borgbackup = import ./backup.nix { inherit pkgs; };
-  yt-dlp = import ../../home/yt-dlp.nix { inherit pkgs inputs; };
-  # moby = import inputs.moby { inherit pkgs; };
 in
 {
   nix = {
@@ -74,36 +72,36 @@ in
       PASSWORD_STORE_DIR = "/home/ian/.local/share/password-store";
     };
     path = [
-      unstable.protonmail-bridge
+      pkgs.protonmail-bridge
       pkgs.pass
     ];
     script = "protonmail-bridge -n";
   };
 
-  systemd.services.pueue = {
-    serviceConfig = {
-      Type = "simple";
-      User = "ian";
-    };
-    wantedBy = [ "multi-user.target" ];
-    path = [
-      yt-dlp
-      pkgs.pueue
-      pkgs.aria2
-    ];
-    script = "pueued -v";
-  };
+  # systemd.services.pueue = {
+  #   serviceConfig = {
+  #     Type = "simple";
+  #     User = "ian";
+  #   };
+  #   wantedBy = [ "multi-user.target" ];
+  #   path = [
+  #     yt-dlp
+  #     pkgs.pueue
+  #     pkgs.aria2
+  #   ];
+  #   script = "pueued -v";
+  # };
 
-  systemd.services.monitor-song-changes = {
-    serviceConfig = {
-      Type = "simple";
-      User = "ian";
-    };
-    wantedBy = [ "graphical-session.target" ];
-    path = [
-      pkgs.coreutils
-      pkgs.inotify-tools
-    ];
-    script = "/home/ian/.bin/monitorSongChanges.sh";
-  };
+  # systemd.services.monitor-song-changes = {
+  #   serviceConfig = {
+  #     Type = "simple";
+  #     User = "ian";
+  #   };
+  #   wantedBy = [ "graphical-session.target" ];
+  #   path = [
+  #     pkgs.coreutils
+  #     pkgs.inotify-tools
+  #   ];
+  #   script = "/home/ian/.bin/monitorSongChanges.sh";
+  # };
 }

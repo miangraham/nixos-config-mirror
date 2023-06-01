@@ -20,12 +20,12 @@
 
     window = {
       border = 0;
-      hideEdgeBorders = "none";
+      hideEdgeBorders = "both";
     };
 
     gaps = {
       smartGaps = true;
-      smartBorders = "no_gaps";
+      smartBorders = "off";
       inner = 20;
       outer = 0;
     };
