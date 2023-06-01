@@ -39,6 +39,7 @@
 
   home-manager.users.ian.home.packages = with pkgs; [
     asunder
+    element-desktop
     gimp
     guestfs-tools
     libreoffice
