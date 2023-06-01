@@ -26,15 +26,18 @@
 
   programs.steam.enable = true;
 
-  virtualisation.docker = {
-    # enable = true;
-    rootless = {
+  virtualisation = {
+    libvirtd.enable = true;
+    spiceUSBRedirection.enable = true;
+    docker = {
       enable = false;
-      setSocketVariable = true;
+      rootless = {
+        enable = false;
+        setSocketVariable = true;
+      };
     };
   };
 
-  virtualisation.libvirtd.enable = true;
   programs.dconf.enable = true;
 
   home-manager.users.ian.home.packages = with pkgs; [
