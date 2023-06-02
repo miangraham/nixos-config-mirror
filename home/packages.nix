@@ -101,7 +101,7 @@ builtins.attrValues {
   obs-studio = pkgs.wrapOBS { plugins = with pkgs.obs-studio-plugins; [
     obs-pipewire-audio-capture
   ]; };
-  obs-remote = (pkgs.callPackage ./obs-remote.nix {});
+  # obs-remote = (pkgs.callPackage ./obs-remote.nix {});
   # twitch-chat-tui = (pkgs.callPackage ./twitch-chat-tui.nix {});
 
   inherit (unstable)

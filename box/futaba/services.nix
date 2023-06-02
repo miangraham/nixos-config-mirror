@@ -69,25 +69,6 @@ in
       };
     };
 
-    searx = {
-      enable = false;
-      settings = {
-        server.port = 8989;
-        server.bind_address = "0.0.0.0";
-        server.secret_key = "@SEARX_SECRET_KEY@";
-      };
-      environmentFile = /home/ian/.config/searx/env;
-    };
-
-    navidrome = {
-      enable = false;
-      settings = {
-        Address = "0.0.0.0";
-        MusicFolder = "/srv/music";
-        ScanSchedule = "@daily";
-      };
-    };
-
     freshrss = {
       enable = true;
       baseUrl = "http://freshrss";
@@ -96,12 +77,6 @@ in
       passwordFile = "/srv/freshrss/freshrss_admin_phrase";
     };
     phpfpm.pools.freshrss.phpEnv.FRESHRSS_THIRDPARTY_EXTENSIONS_PATH = "/srv/freshrss/extensions";
-
-    libreddit = {
-      enable = false;
-      port = 8091;
-      openFirewall = true;
-    };
 
     nextcloud = {
       enable = false;

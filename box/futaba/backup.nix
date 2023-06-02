@@ -40,28 +40,6 @@ let
         mkdir -p /borg
       '';
     };
-
-    music-to-rnet = {
-      repo = "rnet:futaba";
-      paths = [ "/srv/music" ];
-      user = "ian";
-      doInit = false;
-      startAt = "weekly";
-      # startAt = "daily";
-      prune = {
-        keep = {
-          daily = 3;
-          weekly = 3;
-          monthly = 3;
-        };
-      };
-      compression = "auto,zstd";
-      extraArgs = "--remote-path=borg1";
-      encryption = {
-        mode = "keyfile-blake2";
-        passCommand = "cat /home/ian/.ssh/rnet_futaba_phrase";
-      };
-    };
   };
 in
 pkgs.lib.recursiveUpdate backup.borgbackup { inherit jobs; }

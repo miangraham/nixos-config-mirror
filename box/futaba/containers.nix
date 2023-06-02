@@ -11,6 +11,9 @@ let
   };
 in
 {
+  virtualisation.docker.enable = true;
+  virtualisation.oci-containers.backend = "docker";
+
   systemd.services."init-docker-network-${network}" = {
     description = "Create docker network bridge: ${network}";
     after = [ "network.target" ];

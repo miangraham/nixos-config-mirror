@@ -142,7 +142,7 @@ in
 
     services.fcitx-daemon = {
       Install.WantedBy = [ "graphical-session.target" ];
-      Service.ExecStart = "/run/current-system/sw/bin/fcitx -D";
+      Service.ExecStart = "/run/current-system/sw/bin/fcitx5 -D";
     };
 
     services.sworkstyle = {
