@@ -9,15 +9,6 @@ in
 
     syncthing.guiAddress = "0.0.0.0:8384";
 
-    dnsmasq = {
-      enable = false;
-      servers = [
-        "2404:1a8:7f01:b::3"
-        "2404:1a8:7f01:a::3"
-        "192.168.0.1"
-      ];
-    };
-
     endlessh = {
       enable = true;
       openFirewall = true;
@@ -111,9 +102,9 @@ in
     };
 
     smokeping = {
-      enable = true;
+      enable = false;
       hostName = "futaba";
-      host = null;
+      host = "192.168.0.128";
       probeConfig = ''
           + FPing
           binary = ${config.security.wrapperDir}/fping
