@@ -20,6 +20,7 @@
 
     window = {
       border = 0;
+      titlebar = false;
       hideEdgeBorders = "both";
     };
 
