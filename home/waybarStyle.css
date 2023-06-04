@@ -41,9 +41,10 @@ window#waybar {
 
 #workspaces {
   /* margin-right: 10px; */
+  min-width: 30px;
 }
 #workspaces button {
-  padding: 10px 5px;
+  padding: 10px 0px;
   color: rgba(253, 246, 227, 0.7);
   /*   color: #6c71c4; */
   border-radius: 0;
