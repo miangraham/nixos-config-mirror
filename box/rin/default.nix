@@ -35,6 +35,16 @@ in
   home-manager.users.ian.home.packages = with pkgs; [
   ];
 
+  home-manager.users.ian.programs.vscode = {
+    enable = true;
+    package = pkgs.vscodium;
+    extensions = with pkgs.vscode-extensions; [
+      mskelton.one-dark-theme
+      rust-lang.rust-analyzer
+      tuttieee.emacs-mcx
+    ];
+  };
+
   services = {
     inherit borgbackup;
     fwupd.enable = true;
