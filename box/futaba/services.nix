@@ -190,10 +190,16 @@ in
     '';
   };
 
-  # systemd.services.searx.serviceConfig = {
-  #   RuntimeMaxSec = "30m";
-  #   Restart = "always";
-  # };
+  systemd.services.thttpd = {
+    requiredBy = pkgs.lib.mkForce [];
+    requires = [ "systemd-networkd-wait-online.service" ];
+    wantedBy = [ "multi-user.target" ];
+  };
+  systemd.services.smokeping = {
+    requiredBy = pkgs.lib.mkForce [];
+    requires = [ "systemd-networkd-wait-online.service" ];
+    wantedBy = [ "multi-user.target" ];
+  };
 
   systemd.services.freshrss-config = {
     environment.FRESHRSS_THIRDPARTY_EXTENSIONS_PATH = "/srv/freshrss/extensions";

@@ -11,7 +11,11 @@
   };
   systemd.network = {
     enable = true;
-    wait-online.anyInterface = true;
+    wait-online = {
+      anyInterface = true;
+      timeout = 20;
+      ignoredInterfaces = [ "tailscale0" ];
+    };
     networks."40-wired" = {
       name = "en*";
       linkConfig.RequiredForOnline = "routable";
