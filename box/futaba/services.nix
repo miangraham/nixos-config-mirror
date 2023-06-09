@@ -102,7 +102,7 @@ in
     };
 
     smokeping = {
-      enable = false;
+      enable = true;
       hostName = "futaba";
       host = "192.168.0.128";
       probeConfig = ''
