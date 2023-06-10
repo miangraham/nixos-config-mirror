@@ -7,14 +7,13 @@ let
 in
 {
   imports = [
-    ./hyprland.nix
     ./network.nix
-    ./xdg.nix
   ];
 
   inherit fonts services;
 
   time.timeZone = "Asia/Tokyo";
+  i18n.defaultLocale = "en_US.UTF-8";
 
   nixpkgs = {
     config = {
@@ -116,7 +115,6 @@ in
   };
 
   security = {
-    rtkit.enable = true;
     sudo.extraConfig = ''
       Defaults timestamp_timeout=20
     '';
@@ -128,15 +126,10 @@ in
     }];
   };
 
-  i18n = {
-    defaultLocale = "en_US.UTF-8";
-    inputMethod = {
-      enabled = "fcitx5";
-      fcitx5.addons = [ pkgs.fcitx5-mozc ];
-    };
-  };
-
   programs = {
+    dconf.enable = true;
+    zsh.enable = true;
+
     git = {
       enable = true;
       config = {
@@ -144,16 +137,6 @@ in
         safe.directory = "/home/ian/.nix";
       };
     };
-
-    adb.enable = true;
-    noisetorch.enable = true;
-    wshowkeys.enable = true;
-    zsh.enable = true;
-
-    # hyprland = {
-    #   enable = true;
-    #   recommendedEnvironment = true;
-    # };
 
     nano = {
       nanorc = ''

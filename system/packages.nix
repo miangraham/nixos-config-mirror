@@ -21,7 +21,6 @@ builtins.attrValues {
     pavucontrol
     pciutils
     psmisc
-    pulseaudio
     ripgrep
     smartmontools
     sshfs-fuse
@@ -29,8 +28,6 @@ builtins.attrValues {
     unzip
     watch
     wget
-    # xdg-desktop-portal-gtk
-    xdg-desktop-portal-wlr
     zip
   ;
 }

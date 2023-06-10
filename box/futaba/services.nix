@@ -69,19 +69,6 @@ in
     };
     phpfpm.pools.freshrss.phpEnv.FRESHRSS_THIRDPARTY_EXTENSIONS_PATH = "/srv/freshrss/extensions";
 
-    nextcloud = {
-      enable = false;
-      package = pkgs.nextcloud25;
-      hostName = "nextcloud";
-      https = false;
-      home = "/srv/nextcloud";
-      appstoreEnable = false;
-      config = {
-        adminuser = "admin";
-        adminpassFile = "/srv/nextcloud/nextcloud-admin-pass";
-      };
-    };
-
     znc = {
       enable = true;
       openFirewall = true;
@@ -99,58 +86,6 @@ in
       rotate = 9000;
       compress = true;
       nocreate = true;
-    };
-
-    smokeping = {
-      enable = true;
-      hostName = "futaba";
-      host = "192.168.0.128";
-      probeConfig = ''
-          + FPing
-          binary = ${config.security.wrapperDir}/fping
-          + FPing6
-          binary = ${config.security.wrapperDir}/fping
-      '';
-      targetConfig = ''
-          probe = FPing
-          menu = Top
-          title = Ping Graphs
-          remark = WAH
-          + Local
-          menu = Local
-          title = Local Network
-          ++ LocalMachine
-          menu = Local Machine
-          title = This host
-          host = localhost
-          ++ Nene
-          menu = Nene
-          title = Nene
-          host = nene
-          + Remote
-          menu = Remote
-          title = Remote
-          ++ SpeedTest
-          menu = SpeedTest
-          title = SpeedTest
-          host = www.speedtest.net
-          ++ CloudflareDNS
-          menu = CloudflareDNS
-          title = CloudflareDNS
-          host = 1.1.1.1
-          ++ Steam
-          menu = Steam
-          title = Steam
-          host = store.steampowered.com
-          ++ Misaka
-          menu = Misaka
-          title = Misaka
-          host = misaka.io
-          ++ AmazonJP
-          menu = AmazonJP
-          title = AmazonJP
-          host = amazon.co.jp
-      '';
     };
   };
 
@@ -188,17 +123,6 @@ in
       mkdir -p /var/www
       chown nginx:nginx /var/www
     '';
-  };
-
-  systemd.services.thttpd = {
-    requiredBy = pkgs.lib.mkForce [];
-    requires = [ "systemd-networkd-wait-online.service" ];
-    wantedBy = [ "multi-user.target" ];
-  };
-  systemd.services.smokeping = {
-    requiredBy = pkgs.lib.mkForce [];
-    requires = [ "systemd-networkd-wait-online.service" ];
-    wantedBy = [ "multi-user.target" ];
   };
 
   systemd.services.freshrss-config = {

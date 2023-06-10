@@ -3,6 +3,7 @@
   imports = [
     ./hardware-configuration.nix
     ../../system
+    ../../common/desktop.nix
     ./network.nix
     ./services.nix
     ./php.nix
@@ -37,8 +38,6 @@
       };
     };
   };
-
-  programs.dconf.enable = true;
 
   home-manager.users.ian.home.packages = with pkgs; [
     asunder
