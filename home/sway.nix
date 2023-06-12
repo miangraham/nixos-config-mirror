@@ -1,6 +1,5 @@
 { pkgs, ... }:
 {
-  enable = true;
   wrapperFeatures.gtk = true;
   systemdIntegration = true;
   config = let

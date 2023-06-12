@@ -39,6 +39,7 @@ in
   home-manager.users.ian.programs.vscode = {
     enable = true;
     package = pkgs.vscodium;
+    mutableExtensionsDir = false;
     extensions = with pkgs.vscode-extensions; [
       mskelton.one-dark-theme
       rust-lang.rust-analyzer

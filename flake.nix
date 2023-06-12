@@ -29,7 +29,6 @@
         system = "x86_64-linux";
         modules = addModules ++ [
           ./system/dicod/default.nix
-          # inputs.hyprland.nixosModules.default
           inputs.home-manager.nixosModules.home-manager
           { inherit home-manager; }
         ];

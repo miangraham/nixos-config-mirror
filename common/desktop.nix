@@ -16,9 +16,11 @@
 
   programs = {
     adb.enable = true;
-    wshowkeys.enable = true;
     sway.enable = true;
+    wshowkeys.enable = true;
   };
 
   xdg.portal.enable = true;
+
+  home-manager.users.ian.wayland.windowManager.sway.enable = true;
 }
