@@ -4,89 +4,50 @@ builtins.attrValues {
   inherit (pkgs)
     awscli2
     bind
-    bitwarden
     cachix
-    calf
-    carla
     diskonaut
     dmidecode
     entr
-    evince
     exa
     fd
     ffmpeg
     flac
-    fuzzel
     gh
     graphviz
-    grim
-    gthumb # quick image cropping
     iftop
     imagemagick
     inetutils
     ispell
     jq
-    kiwix
-    krita
     lftp
     lm_sensors
     logrotate
-    lsp-plugins
     magic-wormhole
-    micro
     mu
     ncdu
     neofetch
     nix-direnv
     nix-prefetch-git
     nixpkgs-review
-    okular
     pandoc
     parallel
-    playerctl
     protonmail-bridge
-    qdirstat
     ranger
-    reaper
     samba
     shellcheck
-    sioyek
-    slurp
-    sonixd
     speedtest-cli
-    tap-plugins
     tigervnc
     tldr
     tree
     trurl
-    ungoogled-chromium
     usbutils
-    vlc
     xdg_utils
-    yt-dlp
-    zeal
-    zotero
-
-    # sway
-    swayidle
-    swaylock
-    libnotify
-    waybar
-    wev
-    wl-clipboard
-    wl-mirror
-
-    # hypr
-    hyprpaper
 
     # video
-    pueue
     aria2
+    pueue
+    yt-dlp
   ;
-
-  # GUI bits
-  inherit (pkgs.gnome3) adwaita-icon-theme;
-  inherit (pkgs.xfce) thunar;
 
   # dev
   inherit (pkgs.gitAndTools) git-subrepo;
@@ -94,13 +55,6 @@ builtins.attrValues {
   inherit (pkgs.guile) info;
   inherit (pkgs) terraform;
 
-  # video
-  kodi = (pkgs.kodi.withPackages (p: with p; [ pvr-iptvsimple ]));
-
-  # streaming
-  obs-studio = pkgs.wrapOBS { plugins = with pkgs.obs-studio-plugins; [
-    obs-pipewire-audio-capture
-  ]; };
   # obs-remote = (pkgs.callPackage ./obs-remote.nix {});
   # twitch-chat-tui = (pkgs.callPackage ./twitch-chat-tui.nix {});
 

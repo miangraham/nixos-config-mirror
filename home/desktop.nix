@@ -1,7 +1,7 @@
 { pkgs, config, ... }:
 let
   lib = pkgs.lib;
-  is-desktop = config.wayland.windowManager.sway.enable;
+  if-desktop = pkgs.lib.mkIf config.wayland.windowManager.sway.enable;
 
   alacritty = import ./alacritty.nix { inherit pkgs; };
   firefox = import ./firefox.nix { inherit pkgs; };
@@ -10,9 +10,9 @@ let
   waybar = import ./waybar.nix { inherit lib pkgs; };
 in
 {
-  wayland.windowManager.sway = pkgs.lib.mkIf is-desktop (import ./sway.nix { inherit pkgs; });
+  wayland.windowManager.sway = if-desktop (import ./sway.nix { inherit pkgs; });
 
-  gtk = pkgs.lib.mkIf is-desktop (let
+  gtk = if-desktop (let
     t = {
       package = pkgs.graphite-gtk-theme;
       name = "Graphite";
@@ -26,17 +26,71 @@ in
     gtk4.extraConfig = ex;
   });
 
-  home.pointerCursor = pkgs.lib.mkIf is-desktop {
+  home.pointerCursor = if-desktop {
     package = pkgs.capitaine-cursors;
     name = "capitaine-cursors";
     size = 24;
     gtk.enable = true;
   };
 
-  programs = pkgs.lib.mkIf is-desktop {
+  home.packages = if-desktop (builtins.attrValues {
+    inherit (pkgs)
+      bitwarden
+      calf
+      carla
+      evince
+      fuzzel
+      grim
+      gthumb # quick image cropping
+      kiwix
+      krita
+      lsp-plugins
+      okular
+      playerctl
+      qdirstat
+      reaper
+      sioyek
+      slurp
+      sonixd
+      tap-plugins
+      ungoogled-chromium
+      vlc
+      zeal
+      zotero
+
+      # sway
+      swayidle
+      swaylock
+      libnotify
+      waybar
+      wev
+      wl-clipboard
+      wl-mirror
+
+      # hypr
+      hyprpaper
+    ;
+
+    # GUI bits
+    inherit (pkgs.gnome3) adwaita-icon-theme;
+    inherit (pkgs.xfce) thunar;
+
+    # video
+    kodi = (pkgs.kodi.withPackages (p: with p; [ pvr-iptvsimple ]));
+
+    # streaming
+    obs-studio = pkgs.wrapOBS { plugins = with pkgs.obs-studio-plugins; [
+      obs-pipewire-audio-capture
+    ]; };
+  });
+
+  programs = if-desktop {
     inherit alacritty firefox kitty mpv waybar;
 
     feh.enable = true;
+
+    bash.shellAliases.win = "sway";
+    zsh.shellAliases.win = "sway";
 
     swaylock.settings = {
       color = "3f3f3f";
@@ -48,7 +102,7 @@ in
     };
   };
 
-  services = pkgs.lib.mkIf is-desktop {
+  services = if-desktop {
     kanshi.enable = true;
     playerctld.enable = true;
 
@@ -100,7 +154,7 @@ in
     };
   };
 
-  systemd.user = pkgs.lib.mkIf is-desktop {
+  systemd.user = if-desktop {
     targets.tray = {
       Unit = {
         Description = "Home Manager System Tray";
@@ -122,17 +176,5 @@ in
       Install.WantedBy = [ "graphical-session.target" ];
       Service.ExecStart = "${pkgs.autotiling}/bin/autotiling";
     };
-
-    # services.twitch-alerts = let
-    #   twitch-alerts = inputs.twitch-alerts.packages.${system}.default;
-    # in {
-    #   Install.WantedBy = [ "graphical-session.target" ];
-    #   Service = {
-    #     ExecStart = "${twitch-alerts}/bin/twitch-alerts";
-    #     EnvironmentFile = "/home/ian/.config/twitch-alerts/env";
-    #     SyslogIdentifier="twitch-alerts";
-    #     Restart = "always";
-    #   };
-    # };
   };
 }

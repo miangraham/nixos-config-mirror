@@ -8,7 +8,6 @@
     source ~/.profile.private
   '';
   shellAliases = {
-    win = "sway";
     ls = "exa --color-scale --group --git";
   };
 }
