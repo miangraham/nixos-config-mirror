@@ -49,7 +49,6 @@ in
 
   services = {
     inherit borgbackup;
-    fwupd.enable = true;
   };
 
   system.stateVersion = "23.05";
