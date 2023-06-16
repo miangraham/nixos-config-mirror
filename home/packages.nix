@@ -8,7 +8,6 @@ builtins.attrValues {
     diskonaut
     dmidecode
     entr
-    exa
     fd
     ffmpeg
     flac

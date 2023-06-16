@@ -7,7 +7,4 @@
   profileExtra = ''
     source ~/.profile.private
   '';
-  shellAliases = {
-    ls = "exa --color-scale --group --git";
-  };
 }

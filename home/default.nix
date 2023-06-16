@@ -38,6 +38,16 @@ in
     mu.enable = true;
     zoxide.enable = true;
 
+    exa = {
+      enable = true;
+      enableAliases = true;
+      extraOptions = [
+        "--color-scale"
+        "--git"
+        "--group"
+      ];
+    };
+
     htop = {
       enable = true;
       settings = {

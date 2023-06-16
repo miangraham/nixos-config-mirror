@@ -8,9 +8,6 @@
     EDITOR = "emacs -nw";
     LISTPROMPT = "";
   };
-  shellAliases = {
-    ls = "exa --color-scale --group --git";
-  };
   initExtraBeforeCompInit = ''
     zmodload zsh/complist
   '';
