@@ -8,7 +8,13 @@
 
   openssh = {
     enable = true;
-    settings.PermitRootLogin = "no";
+    settings = {
+      Macs = [
+        "hmac-sha2-512"
+        "hmac-sha2-256"
+      ];
+      PermitRootLogin = "no";
+    };
   };
 
   syncthing = {
