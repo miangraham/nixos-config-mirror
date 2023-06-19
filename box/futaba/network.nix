@@ -14,13 +14,14 @@
     wait-online = {
       anyInterface = true;
       timeout = 20;
-      ignoredInterfaces = [ "tailscale0" ];
+      ignoredInterfaces = [ "docker0" "tailscale0" ];
     };
     networks."40-wired" = {
       name = "en*";
-      linkConfig.RequiredForOnline = "routable";
+      # linkConfig.RequiredForOnline = "routable";
       networkConfig = {
         DHCP = "yes";
+        DNS = [ "192.168.0.1" ];
       };
     };
   };
