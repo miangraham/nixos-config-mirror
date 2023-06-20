@@ -11,6 +11,7 @@ builtins.attrValues {
     fd
     ffmpeg
     flac
+    fluffychat
     gh
     graphviz
     iftop
