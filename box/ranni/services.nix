@@ -17,14 +17,12 @@ in
     };
 
     photoprism = {
-      enable = true;
+      enable = false;
       address = "0.0.0.0";
       port = 8385;
       originalsPath = "/srv/pictures";
       passwordFile = "/var/lib/photoprism/admin-pass";
     };
-
-    netdata.enable = false;
 
     syncthing.guiAddress = "0.0.0.0:8384";
 
