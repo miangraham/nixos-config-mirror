@@ -24,6 +24,11 @@ in
       passwordFile = "/var/lib/photoprism/admin-pass";
     };
 
+    jellyfin = {
+      enable = true;
+      openFirewall = true;
+    };
+
     syncthing.guiAddress = "0.0.0.0:8384";
 
     pipewire.enable = pkgs.lib.mkForce false;
