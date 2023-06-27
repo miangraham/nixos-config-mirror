@@ -31,7 +31,6 @@ in
       systemd-boot = {
         enable = true;
         configurationLimit = 20;
-        consoleMode = "max";
       };
       efi.canTouchEfiVariables = true;
     };
