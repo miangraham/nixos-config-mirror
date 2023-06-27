@@ -17,6 +17,9 @@ in
     ./storage.nix
   ];
 
+  # TODO: test removal
+  boot.kernelModules = [ "coretemp" "nct6775" ];
+
   users = {
     users.timemachine = {
       description = "Time Machine backups";

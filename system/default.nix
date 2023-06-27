@@ -25,8 +25,6 @@ in
   boot = {
     # 6.1 LTS
     kernelPackages = pkgs.linuxPackages_6_1;
-    # kernelPackages = pkgs.linuxPackages_latest;
-    kernelModules = [ "coretemp" "nct6775" ];
     loader = {
       systemd-boot = {
         enable = true;
