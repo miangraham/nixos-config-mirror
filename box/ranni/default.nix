@@ -74,9 +74,5 @@ in
     };
   };
 
-  # TODO: Make these a mixin component instead of turning off here
-  security.rtkit.enable = pkgs.lib.mkForce false;
-  home-manager.users.ian.services.playerctld.enable = pkgs.lib.mkForce false;
-
   system.stateVersion = "23.05";
 }
