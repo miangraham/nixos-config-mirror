@@ -14,8 +14,10 @@ in
 
   gtk = if-desktop (let
     t = {
-      package = pkgs.graphite-gtk-theme;
-      name = "Graphite";
+      package = pkgs.tokyo-night-gtk;
+      name = "Tokyonight-Dark-BL";
+      # package = pkgs.graphite-gtk-theme;
+      # name = "Graphite-Dark";
     };
     ex = { gtk-application-prefer-dark-theme = true; };
   in {
