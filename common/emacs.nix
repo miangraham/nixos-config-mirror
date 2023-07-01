@@ -36,7 +36,6 @@ pkgs.emacsWithPackagesFromUsePackage {
     flycheck
     flycheck-rust
     fullframe
-    # geiser-guile # hash failure
     git-link
     git-timemachine
     haskell-mode
@@ -80,8 +79,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     tide
     tldr
     toml-mode
-    treemacs
-    treemacs-magit
+    typescript-mode
     vertico
     visual-fill-column
     vterm
@@ -89,7 +87,6 @@ pkgs.emacsWithPackagesFromUsePackage {
     weblorg
     webpaste
     which-key
-    # with-editor
     whitespace-cleanup-mode
     writeroom-mode
     ws-butler
