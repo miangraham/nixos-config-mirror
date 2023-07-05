@@ -17,8 +17,10 @@ with pkgs; {
     ia-writer-duospace
     ibm-plex
     inconsolata
+    # intel-one-mono # unstable
     iosevka
     jetbrains-mono
+    libre-caslon
     mplus-outline-fonts.githubRelease
     overpass
     oxygenfonts
