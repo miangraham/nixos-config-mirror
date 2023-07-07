@@ -11,7 +11,7 @@
 
     tdlib = { url = "github:tdlib/td?rev=c95598e5e1493881d31211c1329bdbe4630f6136"; flake = false; };
     ffmpeg-patch = { url = "github:yt-dlp/FFmpeg-Builds?rev=d1b456152d2618cf9266ec5ca84ed8b110acb423"; flake = false; };
-    invidious = { url = "git+ssh://git@github.com/iv-org/invidious.git"; flake = false; type = "git"; submodules = true; };
+    invidious = { url = "git+ssh://git@github.com/iv-org/invidious.git"; flake = false; type = "git"; submodules = true; rev = "75c4c0b349cfa7bb9904824b268bc930911399da"; };
 
     # moby = { url = "sourcehut:~mian/dico-moby-prototype"; };
     # twitch-alerts = { url = "sourcehut:~mian/twitch-alerts"; inputs.nixpkgs.follows = "nixpkgs"; };

@@ -83,7 +83,6 @@
       "locked": {
         "lastModified": 1687379295,
         "narHash": "sha256-lqhi2cKX0e3A840husEWKWmNiQ7arOFYip6XosSfhec=",
-        "ref": "refs/heads/master",
         "rev": "75c4c0b349cfa7bb9904824b268bc930911399da",
         "revCount": 4604,
         "submodules": true,
@@ -91,6 +90,7 @@
         "url": "git+ssh://git@github.com/iv-org/invidious.git"
       },
       "original": {
+        "rev": "75c4c0b349cfa7bb9904824b268bc930911399da",
         "submodules": true,
         "type": "git",
         "url": "git+ssh://git@github.com/iv-org/invidious.git"
