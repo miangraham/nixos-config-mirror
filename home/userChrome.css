@@ -93,3 +93,8 @@
   min-height: unset !important;
   /* Original: 24px */
 }
+
+/* Kill obnoxious extensions button */
+#unified-extensions-button {
+  display: none !important;
+}

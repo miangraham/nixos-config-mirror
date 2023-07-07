@@ -1,9 +1,9 @@
 { pkgs, ... }:
 let
-  firefox = pkgs.wrapFirefox pkgs.firefox-esr-102-unwrapped {
+  firefox = pkgs.wrapFirefox pkgs.firefox-esr-115-unwrapped {
     extraPolicies = {
       AppAutoUpdate = false;
-      AppUpdatePin = "102.";
+      AppUpdatePin = "115.";
       BackgroundAppUpdate = false;
       DisableAppUpdate = true;
       DisableFirefoxStudies = true;
@@ -154,6 +154,8 @@ in
         "browser.warnOnQuitShortcut" = false;
         "devtools.everOpened" = true;
         "extensions.pocket.enabled" = false;
+        "extensions.quarantinedDomains.enabled" = false;
+        "extensions.unifiedExtensions.enabled" = false;
 
         # Dev
         "devtools.chrome.enabled" = true;
