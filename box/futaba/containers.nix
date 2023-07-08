@@ -51,5 +51,15 @@ in
         "8090:3000"
       ];
     };
+
+    homeassistant = {
+      inherit environment extraOptions;
+      image = "ghcr.io/home-assistant/home-assistant@sha256:a86ff5d05ce46520c53d67c8da55aba310de9b9b4ca8eead1ae0b5ab1c068f97";
+      volumes = [
+        "/srv/home-assistant:/config"
+        "/run/dbus:/run/dbus:ro"
+      ];
+      ports = [ "8091:8123" ];
+    };
   };
 }
