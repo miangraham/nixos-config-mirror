@@ -22,23 +22,6 @@
         "type": "github"
       }
     },
-    "ffmpeg-patch": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1644137548,
-        "narHash": "sha256-ANyq+YmCnsOcoMUvaaYpPIEDr7pjXsjWUuH/s0hbUM0=",
-        "owner": "yt-dlp",
-        "repo": "FFmpeg-Builds",
-        "rev": "d1b456152d2618cf9266ec5ca84ed8b110acb423",
-        "type": "github"
-      },
-      "original": {
-        "owner": "yt-dlp",
-        "repo": "FFmpeg-Builds",
-        "rev": "d1b456152d2618cf9266ec5ca84ed8b110acb423",
-        "type": "github"
-      }
-    },
     "flake-utils": {
       "inputs": {
         "systems": "systems"
@@ -147,7 +130,6 @@
     "root": {
       "inputs": {
         "emacs-overlay": "emacs-overlay",
-        "ffmpeg-patch": "ffmpeg-patch",
         "home-manager": "home-manager",
         "invidious": "invidious",
         "nixos-hardware": "nixos-hardware",
