@@ -58,6 +58,7 @@ in
           default_home = "Subscriptions";
         };
       };
+      extraSettingsFile = "/etc/invidious/config.yml";
     };
 
     freshrss = {
