@@ -133,4 +133,9 @@ in
     environment.FRESHRSS_THIRDPARTY_EXTENSIONS_PATH = "/srv/freshrss/extensions";
     startAt = pkgs.lib.mkForce "hourly";
   };
+
+  systemd.services.invidious.serviceConfig = {
+    Restart = pkgs.lib.mkForce "always";
+    RuntimeMaxSec = pkgs.lib.mkForce "1h";
+  };
 }
