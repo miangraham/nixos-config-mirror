@@ -6,7 +6,7 @@ index 3d19d888..4c0e4740 100644
  [submodule "mocks"]
  	path = mocks
 -	url = ../mocks
-+	url = https://github.com/iv-org/mocks
++	url = https://gitea.invidious.io/iv-org/mocks
 diff --git a/src/invidious/users.cr b/src/invidious/users.cr
 index b763596b..bec9942a 100644
 --- a/src/invidious/users.cr

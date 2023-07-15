@@ -15,25 +15,9 @@ let
       '';
     });
   });
-  # unused for now
-  invidOverlay = (self: super: {
-    invidious = super.callPackage "${inputs.nixpkgs}/pkgs/servers/invidious" {
-      crystal = super.crystal // {
-        buildCrystalPackage = args:
-          super.crystal.buildCrystalPackage (args // {
-            version = "custom-mian-unused";
-            patches = [ ./invidious-customization.patch ];
-            src = null; # inputs.invidious;
-          });
-      };
-      lsquic = super.callPackage "${inputs.nixpkgs}/pkgs/servers/invidious/lsquic.nix" { };
-      videojs = super.callPackage "${inputs.nixpkgs}/pkgs/servers/invidious/videojs.nix" { };
-    };
-  });
 in
 [
   tdOverlay
   inputs.emacs-overlay.overlay
   freshOverlay
-  invidOverlay
 ]
