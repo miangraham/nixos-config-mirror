@@ -11,7 +11,6 @@ builtins.attrValues {
     fd
     ffmpeg
     flac
-    fluffychat
     gh
     graphviz
     iftop
@@ -35,6 +34,7 @@ builtins.attrValues {
     ranger
     samba
     shellcheck
+    signal-desktop
     speedtest-cli
     tigervnc
     tldr
