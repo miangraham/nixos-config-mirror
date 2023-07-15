@@ -70,13 +70,13 @@
         "revCount": 4604,
         "submodules": true,
         "type": "git",
-        "url": "git+ssh://git@github.com/iv-org/invidious.git"
+        "url": "git+ssh://git@gitea.invidious.io/iv-org/invidious.git"
       },
       "original": {
         "rev": "75c4c0b349cfa7bb9904824b268bc930911399da",
         "submodules": true,
         "type": "git",
-        "url": "git+ssh://git@github.com/iv-org/invidious.git"
+        "url": "git+ssh://git@gitea.invidious.io/iv-org/invidious.git"
       }
     },
     "nixos-hardware": {
