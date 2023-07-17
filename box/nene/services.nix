@@ -27,6 +27,11 @@ in
 
     flatpak.enable = false;
 
+    redis.servers.dev = {
+      enable = true;
+      port = 6379;
+    };
+
     # box specific due to ACME, rip
     # nginx = {
     #   enable = false;
