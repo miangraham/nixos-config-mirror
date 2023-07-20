@@ -1,8 +1,10 @@
 {
   description = "";
   inputs = {
-    nixpkgs = { url = "github:NixOS/nixpkgs/nixos-23.05"; };
-    unstable = { url = "github:NixOS/nixpkgs/nixos-23.05"; };
+    # nixpkgs = { url = "github:NixOS/nixpkgs/nixos-23.05"; };
+    # unstable = { url = "github:NixOS/nixpkgs/nixos-23.05"; };
+    nixpkgs = { url = "github:NixOS/nixpkgs?rev=c1bafcfd2009624867045bb2163b851dfcb549cb"; };
+    unstable = { url = "github:NixOS/nixpkgs?rev=c1bafcfd2009624867045bb2163b851dfcb549cb"; };
     small = { url = "github:NixOS/nixpkgs/nixos-23.05-small"; };
 
     home-manager = { url = "github:nix-community/home-manager/release-23.05"; inputs.nixpkgs.follows = "nixpkgs"; };
