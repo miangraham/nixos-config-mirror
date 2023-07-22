@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 let
   network = "futabanet";
   extraOptions = [
@@ -9,9 +9,13 @@ let
     TZ = "Asia/Tokyo";
     REDDIT_USER_AGENT = "php:miangraham.reddit.rss:9.9.9";
   };
+  unstable = import ../../common/unstable.nix { inherit pkgs inputs; };
 in
 {
-  virtualisation.docker.enable = true;
+  virtualisation.docker = {
+    enable = true;
+    package = unstable.docker;
+  };
   virtualisation.oci-containers.backend = "docker";
 
   systemd.services."init-docker-network-${network}" = {
