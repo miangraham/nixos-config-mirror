@@ -88,6 +88,18 @@ in
       compress = true;
       nocreate = true;
     };
+
+    mosquitto = {
+      enable = true;
+      listeners = [{
+        users.ian = {
+          acl = [
+            "readwrite #"
+          ];
+          hashedPasswordFile = "/etc/mosquitto_passwd";
+        };
+      }];
+    };
   };
 
   security.acme = {
