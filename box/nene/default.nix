@@ -6,6 +6,7 @@
     ../../common/desktop.nix
     ./network.nix
     ./services.nix
+    ./containers.nix
     ./php.nix
   ];
 
@@ -30,13 +31,6 @@
   virtualisation = {
     libvirtd.enable = true;
     spiceUSBRedirection.enable = true;
-    docker = {
-      enable = false;
-      rootless = {
-        enable = false;
-        setSocketVariable = true;
-      };
-    };
   };
 
   home-manager.users.ian.home.packages = with pkgs; [
