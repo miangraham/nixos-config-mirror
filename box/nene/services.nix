@@ -67,21 +67,21 @@ in
     }];
   }];
 
-  systemd.services.pmbridge = {
-    serviceConfig = {
-      Type = "simple";
-      User = "ian";
-    };
-    wantedBy = [ "multi-user.target" ];
-    environment = {
-      PASSWORD_STORE_DIR = "/home/ian/.local/share/password-store";
-    };
-    path = [
-      pkgs.protonmail-bridge
-      pkgs.pass
-    ];
-    script = "protonmail-bridge -n";
-  };
+  # systemd.services.pmbridge = {
+  #   serviceConfig = {
+  #     Type = "simple";
+  #     User = "ian";
+  #   };
+  #   wantedBy = [ "multi-user.target" ];
+  #   environment = {
+  #     PASSWORD_STORE_DIR = "/home/ian/.local/share/password-store";
+  #   };
+  #   path = [
+  #     pkgs.protonmail-bridge
+  #     pkgs.pass
+  #   ];
+  #   script = "protonmail-bridge -n";
+  # };
 
   # systemd.services.pueue = {
   #   serviceConfig = {
