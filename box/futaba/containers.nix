@@ -14,7 +14,7 @@ in
 {
   virtualisation.docker = {
     enable = true;
-    package = unstable.docker;
+    package = pkgs.docker;
   };
   virtualisation.oci-containers.backend = "docker";
 
