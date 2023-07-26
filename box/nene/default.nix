@@ -37,11 +37,9 @@
     asunder
     element-desktop
     gimp
-    guestfs-tools
     libreoffice
     picocom
     twitch-tui
-    virt-manager
   ];
 
   system.stateVersion = "23.05";
