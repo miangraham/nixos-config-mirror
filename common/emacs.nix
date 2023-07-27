@@ -47,6 +47,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     json-mode
     keycast
     ledger-mode
+    lua-mode
     magit
     marginalia
     markdown-mode
