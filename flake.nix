@@ -9,7 +9,7 @@
     nixos-hardware = { url = "github:NixOS/nixos-hardware/master"; };
     emacs-overlay = { url = "github:nix-community/emacs-overlay"; inputs.nixpkgs.follows = "nixpkgs"; };
 
-    tdlib = { url = "github:tdlib/td?rev=c95598e5e1493881d31211c1329bdbe4630f6136"; flake = false; };
+    tdlib = { url = "github:tdlib/td?rev=8893dc808fa96399629d8d961ea1cbfbbc776480"; flake = false; };
   };
   outputs = inputs:
     let
