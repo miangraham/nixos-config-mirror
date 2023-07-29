@@ -7,6 +7,7 @@ builtins.attrValues {
     cachix
     diskonaut
     dmidecode
+    duf
     entr
     fd
     ffmpeg
