@@ -27,10 +27,10 @@
 
   programs.steam.enable = true;
 
-  virtualisation = {
-    libvirtd.enable = true;
-    spiceUSBRedirection.enable = true;
-  };
+  # virtualisation = {
+  #   libvirtd.enable = true;
+  #   spiceUSBRedirection.enable = true;
+  # };
 
   home-manager.users.ian.home.packages = with pkgs; [
     asunder
