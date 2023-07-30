@@ -12,7 +12,6 @@
 
   boot.kernel.sysctl = {
     "fs.file-max" = 9000000;
-    "fs.inotify.max_user_instances" = 4096;
     "net.ipv4.tcp_fin_timeout" = 10;
   };
 

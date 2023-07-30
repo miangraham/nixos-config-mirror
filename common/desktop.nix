@@ -8,6 +8,10 @@
   boot = {
     extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
     kernelModules = [ "v4l2loopback" ];
+    kernel.sysctl = {
+      "fs.inotify.max_user_instances" = 524288;
+      "fs.inotify.max_user_watches" = 524288;
+    };
   };
 
   i18n.inputMethod = {
@@ -25,6 +29,7 @@
     wshowkeys.enable = true;
   };
 
+  hardware.opengl.enable = true;
   xdg.portal.enable = true;
 
   home-manager.users.ian.wayland.windowManager.sway.enable = true;
