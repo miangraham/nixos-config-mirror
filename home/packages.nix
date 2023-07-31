@@ -29,6 +29,7 @@ builtins.attrValues {
     nix-direnv
     nix-prefetch-git
     nixpkgs-review
+    nvd
     pandoc
     parallel
     protonmail-bridge
