@@ -20,6 +20,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     corfu
     crystal-mode
     delight
+    denote
     diff-hl
     direnv
     drag-stuff
