@@ -19,9 +19,14 @@
     fcitx5.addons = [ pkgs.fcitx5-mozc ];
   };
 
-  environment.systemPackages = with pkgs; [
-    xdg-desktop-portal-wlr
-  ];
+  environment = {
+    systemPackages = with pkgs; [
+      xdg-desktop-portal-wlr
+    ];
+    variables = {
+      QT_STYLE_OVERRIDE = pkgs.lib.mkForce "adwaita-dark";
+    };
+  };
 
   programs = {
     adb.enable = true;

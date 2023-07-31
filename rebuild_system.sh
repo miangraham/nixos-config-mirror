@@ -10,7 +10,13 @@ if [[ "$OSTYPE" != "linux-gnu"* ]]; then
 fi
 
 if [[ "$HOSTNAME" == "nene" ]]; then
-  nixos-rebuild dry-build --flake '.#'
+  # Preview changes
+  nixos-rebuild build --flake '.#'
+  nvd diff /run/current-system ./result
+  read -p "Press ENTER to apply."
+
+  # Apply
+  rm ./result
   sudo nixos-rebuild switch --flake '.#' --print-build-logs
   sudo nix store sign -k /var/keys/nix-cache-key.priv --all
 elif [[ "$HOSTNAME" == "futaba" ]]; then
