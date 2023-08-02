@@ -13,10 +13,10 @@ if [[ "$HOSTNAME" == "nene" ]]; then
   # Preview changes
   nixos-rebuild build --flake '.#'
   nvd diff /run/current-system ./result
+  rm ./result
   read -p "Press ENTER to apply."
 
   # Apply
-  rm ./result
   sudo nixos-rebuild switch --flake '.#' --print-build-logs
   sudo nix store sign -k /var/keys/nix-cache-key.priv --all
 elif [[ "$HOSTNAME" == "futaba" ]]; then

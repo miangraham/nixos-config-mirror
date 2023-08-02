@@ -12,6 +12,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     aggressive-indent
     anzu
     burly
+    catppuccin-theme
     citar
     citar-org-roam
     cmake-mode
@@ -23,6 +24,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     denote
     diff-hl
     direnv
+    doom-themes
     drag-stuff
     eat
     editorconfig
@@ -101,6 +103,6 @@ pkgs.emacsWithPackagesFromUsePackage {
     # darktooth-theme
     # jazz-theme
     # underwater-theme
-    # catppuccin-theme
+    color-theme-modern
   ];
 }
