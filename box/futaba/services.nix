@@ -14,6 +14,27 @@ in
       openFirewall = true;
     };
 
+    freshrss = {
+      enable = true;
+      baseUrl = "http://freshrss";
+      dataDir = "/srv/freshrss/data";
+      defaultUser = "ian";
+      passwordFile = "/srv/freshrss/freshrss_admin_phrase";
+    };
+    phpfpm.pools.freshrss.phpEnv.FRESHRSS_THIRDPARTY_EXTENSIONS_PATH = "/srv/freshrss/extensions";
+
+    mosquitto = {
+      enable = true;
+      listeners = [{
+        users.ian = {
+          acl = [
+            "readwrite #"
+          ];
+          hashedPasswordFile = "/etc/mosquitto_passwd";
+        };
+      }];
+    };
+
     # box specific due to ACME, rip
     nginx = {
       enable = true;
@@ -61,15 +82,6 @@ in
       extraSettingsFile = "/etc/invidious/config.yml";
     };
 
-    freshrss = {
-      enable = true;
-      baseUrl = "http://freshrss";
-      dataDir = "/srv/freshrss/data";
-      defaultUser = "ian";
-      passwordFile = "/srv/freshrss/freshrss_admin_phrase";
-    };
-    phpfpm.pools.freshrss.phpEnv.FRESHRSS_THIRDPARTY_EXTENSIONS_PATH = "/srv/freshrss/extensions";
-
     znc = {
       enable = true;
       openFirewall = true;
@@ -89,16 +101,29 @@ in
       nocreate = true;
     };
 
-    mosquitto = {
+    blocky = {
       enable = true;
-      listeners = [{
-        users.ian = {
-          acl = [
-            "readwrite #"
+      settings = {
+        port = 53;
+        upstream = {
+          default = [
+            "tcp-tls:dns.quad9.net"
+            "tcp-tls:dns.adguard-dns.com"
           ];
-          hashedPasswordFile = "/etc/mosquitto_passwd";
         };
-      }];
+        blocking.blackLists.default = [
+          "https://big.oisd.nl/domains"
+          "https://adaway.org/hosts.txt"
+          "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
+          "https://perflyst.github.io/PiHoleBlocklist/android-tracking.txt"
+          "https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt"
+          "https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt"
+        ];
+        caching = {
+          minTime = "5m";
+          cacheTimeNegative = "1m";
+        };
+      };
     };
   };
 
@@ -107,47 +132,33 @@ in
     acceptTerms = true;
   };
 
-  # systemd.services.pmbridge = {
-  #   serviceConfig = {
-  #     Type = "simple";
-  #     User = "ian";
-  #   };
-  #   wantedBy = [ "multi-user.target" ];
-  #   environment = {
-  #     PASSWORD_STORE_DIR = "/home/ian/.local/share/password-store";
-  #   };
-  #   path = [
-  #     pkgs.protonmail-bridge
-  #     pkgs.pass
-  #   ];
-  #   script = "protonmail-bridge -n";
-  # };
-
-  systemd.services.pre-nginx = {
-    serviceConfig = {
-      Type = "oneshot";
-      User = "root";
+  systemd.services = {
+    freshrss-config = {
+      environment.FRESHRSS_THIRDPARTY_EXTENSIONS_PATH = "/srv/freshrss/extensions";
     };
-    wantedBy = [ "nginx.service" ];
-    path = [
-      pkgs.coreutils
-    ];
-    script = ''
+    freshrss-updater = {
+      environment.FRESHRSS_THIRDPARTY_EXTENSIONS_PATH = "/srv/freshrss/extensions";
+      startAt = pkgs.lib.mkForce "hourly";
+    };
+
+    invidious.serviceConfig = {
+      Restart = pkgs.lib.mkForce "always";
+      RuntimeMaxSec = pkgs.lib.mkForce "1h";
+    };
+
+    pre-nginx = {
+      serviceConfig = {
+        Type = "oneshot";
+        User = "root";
+      };
+      wantedBy = [ "nginx.service" ];
+      path = [
+        pkgs.coreutils
+      ];
+      script = ''
       mkdir -p /var/www
       chown nginx:nginx /var/www
     '';
-  };
-
-  systemd.services.freshrss-config = {
-    environment.FRESHRSS_THIRDPARTY_EXTENSIONS_PATH = "/srv/freshrss/extensions";
-  };
-  systemd.services.freshrss-updater = {
-    environment.FRESHRSS_THIRDPARTY_EXTENSIONS_PATH = "/srv/freshrss/extensions";
-    startAt = pkgs.lib.mkForce "hourly";
-  };
-
-  systemd.services.invidious.serviceConfig = {
-    Restart = pkgs.lib.mkForce "always";
-    RuntimeMaxSec = pkgs.lib.mkForce "1h";
+    };
   };
 }

@@ -25,4 +25,7 @@
       };
     };
   };
+  services.resolved.extraConfig = ''
+    DNSStubListener=no
+  '';
 }
