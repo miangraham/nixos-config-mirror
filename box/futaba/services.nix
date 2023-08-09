@@ -1,11 +1,12 @@
 { config, pkgs, inputs, ... }:
 let
   unstable = import ../../common/unstable.nix { inherit pkgs inputs; };
+  blocky = import ./blocky.nix { inherit pkgs; };
   borgbackup = import ./backup.nix { inherit pkgs; };
 in
 {
   services = {
-    inherit borgbackup;
+    inherit blocky borgbackup;
 
     syncthing.guiAddress = "0.0.0.0:8384";
 
@@ -99,31 +100,6 @@ in
       rotate = 9000;
       compress = true;
       nocreate = true;
-    };
-
-    blocky = {
-      enable = true;
-      settings = {
-        port = 53;
-        upstream = {
-          default = [
-            "tcp-tls:dns.quad9.net"
-            "tcp-tls:dns.adguard-dns.com"
-          ];
-        };
-        blocking.blackLists.default = [
-          "https://big.oisd.nl/domains"
-          "https://adaway.org/hosts.txt"
-          "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
-          "https://perflyst.github.io/PiHoleBlocklist/android-tracking.txt"
-          "https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt"
-          "https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt"
-        ];
-        caching = {
-          minTime = "5m";
-          cacheTimeNegative = "1m";
-        };
-      };
     };
   };
 
