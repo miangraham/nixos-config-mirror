@@ -12,7 +12,7 @@ let
       crystal = super.crystal // {
         buildCrystalPackage = args:
           super.crystal.buildCrystalPackage (args // {
-            version = "custom-mian-gitea-unstable";
+            version = "custom-mian-gitea-pr";
             patches = [ ./invidious-customization.patch ];
           });
       };

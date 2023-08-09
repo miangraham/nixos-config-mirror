@@ -1,6 +1,5 @@
 { pkgs, inputs, config, ... }:
 let
-  unstable = import ../../common/unstable.nix { inherit pkgs inputs; };
   borgbackup = import ./backup.nix { inherit pkgs; };
 in
 {

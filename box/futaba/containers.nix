@@ -9,7 +9,6 @@ let
     TZ = "Asia/Tokyo";
     REDDIT_USER_AGENT = "php:miangraham.reddit.rss:9.9.9";
   };
-  unstable = import ../../common/unstable.nix { inherit pkgs inputs; };
 in
 {
   virtualisation.docker = {
