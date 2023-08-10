@@ -1,2 +1,4 @@
-analytics.s3.amazonaws.com
+/.*instagram\.com/
 /.*pinterest\.com/
+/.*quora\.com/
+/.*tiktok\.com/

@@ -11,18 +11,19 @@ in {
       "tcp-tls:p2.freedns.controld.com"
     ];
     caching = {
-      minTime = "10m";
-      cacheTimeNegative = "1m";
+      minTime = "30m";
+      cacheTimeNegative = "5m";
     };
     blocking = {
       blackLists.default = [
         (builtins.readFile ./blocky_blacklist.txt)
-        "https://big.oisd.nl/domains"
         "https://adaway.org/hosts.txt"
-        "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
+        "https://big.oisd.nl/domains"
         "https://perflyst.github.io/PiHoleBlocklist/android-tracking.txt"
-        "https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt"
+        "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
         "https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt"
+        "https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt"
+        "https://v.firebog.net/hosts/AdguardDNS.txt"
       ];
       whiteLists.default = [];
       clientGroupsBlock.default = [ "default" ];
@@ -31,7 +32,6 @@ in {
       # applies to all subdomains
       mapping = {
         # code
-        "fastly.net" = "192.168.0.1";
         "github.com" = "192.168.0.1";
         "github.io" = "192.168.0.1";
         "nixos.org" = "192.168.0.1";
