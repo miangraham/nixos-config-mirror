@@ -1,0 +1,2 @@
+analytics.s3.amazonaws.com
+/.*pinterest\.com/

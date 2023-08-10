@@ -27,6 +27,7 @@ builtins.attrValues {
     ncdu
     neofetch
     nix-direnv
+    nix-prefetch
     nix-prefetch-git
     nixpkgs-review
     nvd
