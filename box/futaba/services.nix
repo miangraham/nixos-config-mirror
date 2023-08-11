@@ -5,6 +5,9 @@ let
   borgbackup = import ./backup.nix { inherit pkgs; };
 in
 {
+  disabledModules = [ "services/web-apps/invidious.nix" ];
+  imports = [ "${inputs.unstable}/nixos/modules/services/web-apps/invidious.nix" ];
+
   services = {
     inherit blocky borgbackup;
 
@@ -80,7 +83,7 @@ in
           default_home = "Subscriptions";
         };
       };
-      extraSettingsFile = "/etc/invidious/config.yml";
+      # extraSettingsFile = "/etc/invidious/config.yml";
     };
 
     znc = {

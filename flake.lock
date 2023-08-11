@@ -170,17 +170,17 @@
     },
     "unstable": {
       "locked": {
-        "lastModified": 1691589576,
-        "narHash": "sha256-ja+stqTyWjfvZKFGH91LJPlweLrX5SzC6zWL5tyBykw=",
+        "lastModified": 1691676697,
+        "narHash": "sha256-QtiUvWFtwKVkypuu96Uhgqnew9oTq83fmgL3rKKIDow=",
         "owner": "999eagle",
         "repo": "nixpkgs",
-        "rev": "4c807e2937951ad465abab22a16bed7055951610",
+        "rev": "bdf58a0c98d30723cd57cf681cfb3cdb97566320",
         "type": "github"
       },
       "original": {
         "owner": "999eagle",
         "repo": "nixpkgs",
-        "rev": "4c807e2937951ad465abab22a16bed7055951610",
+        "rev": "bdf58a0c98d30723cd57cf681cfb3cdb97566320",
         "type": "github"
       }
     }
