@@ -1,4 +1,11 @@
+/advertising.*\.amazon\.com/
+/.*doubleclick\.net/
 /.*instagram\.com/
 /.*pinterest\.com/
 /.*quora\.com/
 /.*tiktok\.com/
+advertising.apple.com
+advertising.yahoo.com
+app-measurement.com
+metrika.yandex.ru
+udcm.yahoo.com

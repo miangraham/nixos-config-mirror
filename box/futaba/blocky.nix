@@ -11,7 +11,7 @@ in {
       "tcp-tls:p2.freedns.controld.com"
     ];
     caching = {
-      minTime = "30m";
+      minTime = "60m";
       cacheTimeNegative = "5m";
     };
     blocking = {
