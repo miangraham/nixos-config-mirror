@@ -26,6 +26,7 @@ builtins.attrValues {
     mu
     ncdu
     neofetch
+    nheko
     nix-direnv
     nix-prefetch
     nix-prefetch-git
