@@ -15,6 +15,7 @@ in {
       cacheTimeNegative = "5m";
     };
     blocking = {
+      refreshPeriod = "24h";
       blackLists.default = [
         (builtins.readFile ./blocky_blacklist.txt)
         "https://adaway.org/hosts.txt"
