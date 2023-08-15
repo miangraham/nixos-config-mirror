@@ -7,7 +7,6 @@ let
   ];
   environment = {
     TZ = "Asia/Tokyo";
-    REDDIT_USER_AGENT = "php:miangraham.reddit.rss:9.9.9";
   };
 in
 {
@@ -39,30 +38,27 @@ in
   virtualisation.oci-containers.containers = {
     reddit-top-rss = {
       inherit environment extraOptions;
-      image = "ghcr.io/miangraham/reddit-top-rss@sha256:b231f880d9d3771a34d4b12be8cfb61d976144e8bb49524631099223a0b8f709";
+      image = "johnny5w/reddit-top-rss@sha256:f898b5b2643cdfa9bd741a8255e185a05b9ba66f969448c6672884aa187c9cb0";
+      ports = [ "8089:8080" ];
       dependsOn = [];
-      ports = [
-        "8089:8080"
-      ];
+      environmentFiles = [ /etc/reddit-top-rss/env ];
     };
 
     mercury-parser-api = {
       inherit environment extraOptions;
       image = "wangqiru/mercury-parser-api@sha256:da06e19694c85816b6c2f9870e66beaa03bbd0043d8a759b86e2bb16020ee5c2";
+      ports = [ "8090:3000" ];
       dependsOn = [];
-      ports = [
-        "8090:3000"
-      ];
     };
 
     homeassistant = {
       inherit environment extraOptions;
       image = "ghcr.io/home-assistant/home-assistant@sha256:a86ff5d05ce46520c53d67c8da55aba310de9b9b4ca8eead1ae0b5ab1c068f97";
+      ports = [ "8091:8123" ];
       volumes = [
         "/srv/home-assistant:/config"
         "/run/dbus:/run/dbus:ro"
       ];
-      ports = [ "8091:8123" ];
     };
   };
 }
