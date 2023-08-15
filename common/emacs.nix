@@ -11,6 +11,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     adaptive-wrap
     aggressive-indent
     anzu
+    biome
     burly
     catppuccin-theme
     citar
