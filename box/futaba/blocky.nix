@@ -4,18 +4,33 @@ in {
   enable = true;
   settings = {
     port = 53;
-    upstream.default = [
-      "tcp-tls:dns.quad9.net"
-      "tcp-tls:dns.adguard-dns.com"
-      "tcp-tls:doh.mullvad.net"
-      "tcp-tls:p2.freedns.controld.com"
-    ];
+    log.timestamp = false;
+    queryLog.fields = [ "clientIP" "responseReason" "responseAnswer" "question" "duration" ];
     caching = {
       minTime = "60m";
       cacheTimeNegative = "5m";
     };
+    bootstrapDns = [{
+      upstream = "tcp-tls:dns.quad9.net";
+      ips = [ "9.9.9.9" "149.112.112.112" ];
+    } {
+      upstream = "tcp-tls:dns.adguard-dns.com";
+      ips = [ "94.140.14.14" "94.140.15.15" ];
+    }];
+    upstream.default = [
+      "tcp-tls:dns.quad9.net"
+      "tcp-tls:dns.adguard-dns.com"
+      "tcp-tls:base.dns.mullvad.net"
+      "tcp-tls:p2.freedns.controld.com"
+    ];
+    hostsFile = {
+      filePath = "/etc/hosts";
+      filterLoopback = true;
+    };
     blocking = {
       refreshPeriod = "24h";
+      clientGroupsBlock.default = [ "default" ];
+      whiteLists.default = [];
       blackLists.default = [
         (builtins.readFile ./blocky_blacklist.txt)
         "https://adaway.org/hosts.txt"
@@ -26,8 +41,6 @@ in {
         "https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt"
         "https://v.firebog.net/hosts/AdguardDNS.txt"
       ];
-      whiteLists.default = [];
-      clientGroupsBlock.default = [ "default" ];
     };
     conditional = {
       # applies to all subdomains
