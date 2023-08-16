@@ -5,6 +5,7 @@ let
   borgbackup = import ./backup.nix { inherit pkgs; };
 in
 {
+  # Pull invidious module from unstable for new hmac key settings. Remove after 23.11.
   disabledModules = [ "services/web-apps/invidious.nix" ];
   imports = [ "${inputs.unstable}/nixos/modules/services/web-apps/invidious.nix" ];
 

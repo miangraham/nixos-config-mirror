@@ -2,7 +2,7 @@
   description = "";
   inputs = {
     nixpkgs = { url = "github:NixOS/nixpkgs/nixos-23.05"; };
-    unstable = { url = "github:999eagle/nixpkgs?rev=1a3b7f61b254290c9a7f8faa8a38e255a4c9b53c"; };
+    unstable = { url = "github:NixOS/nixpkgs/nixos-unstable"; };
     small = { url = "github:NixOS/nixpkgs/nixos-23.05-small"; };
 
     home-manager = { url = "github:nix-community/home-manager/release-23.05"; inputs.nixpkgs.follows = "nixpkgs"; };
