@@ -5,9 +5,16 @@
     unstable = { url = "github:NixOS/nixpkgs/nixos-unstable"; };
     small = { url = "github:NixOS/nixpkgs/nixos-23.05-small"; };
 
-    home-manager = { url = "github:nix-community/home-manager/release-23.05"; inputs.nixpkgs.follows = "nixpkgs"; };
     nixos-hardware = { url = "github:NixOS/nixos-hardware/master"; };
-    emacs-overlay = { url = "github:nix-community/emacs-overlay"; inputs.nixpkgs.follows = "nixpkgs"; };
+    home-manager = {
+      url = "github:nix-community/home-manager/release-23.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    emacs-overlay = {
+      url = "github:nix-community/emacs-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs-stable.follows = "nixpkgs";
+    };
 
     tdlib = { url = "github:tdlib/td?rev=8893dc808fa96399629d8d961ea1cbfbbc776480"; flake = false; };
   };
