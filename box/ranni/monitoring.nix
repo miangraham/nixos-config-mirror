@@ -116,6 +116,7 @@ in
       zfs list -o space,quota,reservation
 
       echo -e "\n-- BACKUPS --"
+      file_mtime bocchi /srv/timemachine/bocchi.sparsebundle/com.apple.TimeMachine.SnapshotHistory.plist
       file_mtime futaba /srv/borg/futaba
       file_mtime maho /srv/timemachine/maho.sparsebundle/com.apple.TimeMachine.SnapshotHistory.plist
       file_mtime megumin /srv/duplicati/megumin
