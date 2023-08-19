@@ -12,7 +12,10 @@
   };
 
   services = {
-    zfs.autoScrub.enable = true;
+    zfs.autoScrub = {
+      enable = true;
+      interval = "monthly";
+    };
 
     sanoid = {
       enable = true;
