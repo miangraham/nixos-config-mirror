@@ -16,7 +16,7 @@
       inputs.nixpkgs-stable.follows = "nixpkgs";
     };
 
-    tdlib = { url = "github:tdlib/td?rev=8893dc808fa96399629d8d961ea1cbfbbc776480"; flake = false; };
+    tdlib = { url = "github:tdlib/td?rev=4d1d22d6f477d61f6ff2b8f6e49de1847092c5b4"; flake = false; };
   };
   outputs = inputs:
     let

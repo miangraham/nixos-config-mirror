@@ -140,17 +140,17 @@
     "tdlib": {
       "flake": false,
       "locked": {
-        "lastModified": 1690216929,
-        "narHash": "sha256-qO+H90Shz0iRwX/5cwW+8in7D2DWpLg2/2VGEECcNGg=",
+        "lastModified": 1692416526,
+        "narHash": "sha256-0yVOqAEFVNBOO6urxW0ddOxSb2m/55ESBXiWdGYQaVs=",
         "owner": "tdlib",
         "repo": "td",
-        "rev": "8893dc808fa96399629d8d961ea1cbfbbc776480",
+        "rev": "4d1d22d6f477d61f6ff2b8f6e49de1847092c5b4",
         "type": "github"
       },
       "original": {
         "owner": "tdlib",
         "repo": "td",
-        "rev": "8893dc808fa96399629d8d961ea1cbfbbc776480",
+        "rev": "4d1d22d6f477d61f6ff2b8f6e49de1847092c5b4",
         "type": "github"
       }
     },
