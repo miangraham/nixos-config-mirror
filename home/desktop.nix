@@ -179,4 +179,8 @@ in
       Service.ExecStart = "${pkgs.autotiling}/bin/autotiling";
     };
   };
+
+  xdg.configFile = if-desktop {
+    "sworkstyle/config.toml".source = ./sworkstyle_config.toml;
+  };
 }

@@ -42,6 +42,7 @@ builtins.attrValues {
     speedtest-cli
     tigervnc
     tldr
+    tokei
     tree
     trurl
     usbutils
