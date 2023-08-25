@@ -41,5 +41,11 @@ with pkgs; {
     noto-fonts-cjk
     noto-fonts-emoji
     sarasa-gothic
+
+    (pkgs.nerdfonts.override {
+      fonts = [
+        "Terminus"
+      ];
+    })
   ];
 }
