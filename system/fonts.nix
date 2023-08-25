@@ -44,6 +44,7 @@ with pkgs; {
 
     (pkgs.nerdfonts.override {
       fonts = [
+        "Inconsolata"
         "Terminus"
       ];
     })

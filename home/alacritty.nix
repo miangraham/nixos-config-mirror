@@ -25,7 +25,7 @@
     };
     font = {
       size = 14.0;
-      normal.family = "Inconsolata";
+      normal.family = "Inconsolata Nerd Font";
     };
     window.opacity = 0.75;
     colors = {
