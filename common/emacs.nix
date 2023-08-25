@@ -39,6 +39,7 @@ pkgs.emacsWithPackagesFromUsePackage {
     fancy-compilation
     flycheck
     flycheck-rust
+    forge
     fullframe
     git-link
     git-timemachine

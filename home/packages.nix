@@ -55,7 +55,10 @@ builtins.attrValues {
   ;
 
   # dev
-  inherit (pkgs.gitAndTools) git-subrepo;
+  inherit (pkgs.gitAndTools)
+    git-open
+    git-subrepo
+  ;
   inherit (pkgs.nodePackages) node2nix;
   inherit (pkgs.guile) info;
   inherit (pkgs) terraform;
