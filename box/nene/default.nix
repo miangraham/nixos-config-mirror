@@ -38,6 +38,7 @@
     gimp
     libreoffice
     picocom
+    signal-desktop
     twitch-tui
   ];
 

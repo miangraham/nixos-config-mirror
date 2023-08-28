@@ -38,7 +38,6 @@ builtins.attrValues {
     ranger
     samba
     shellcheck
-    signal-desktop
     speedtest-cli
     tigervnc
     tldr
