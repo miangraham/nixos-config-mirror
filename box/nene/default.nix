@@ -34,11 +34,11 @@
 
   home-manager.users.ian.home.packages = with pkgs; [
     asunder
-    element-desktop
+    # element-desktop # electron
     gimp
     libreoffice
     picocom
-    signal-desktop
+    # signal-desktop # unused
     twitch-tui
   ];
 

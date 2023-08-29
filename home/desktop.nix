@@ -37,7 +37,7 @@ in
 
   home.packages = if-desktop (builtins.attrValues {
     inherit (pkgs)
-      bitwarden
+      # bitwarden # electron
       calf
       carla
       evince
