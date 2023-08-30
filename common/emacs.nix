@@ -10,7 +10,6 @@ pkgs.emacsWithPackagesFromUsePackage {
     ace-window
     adaptive-wrap
     aggressive-indent
-    anzu
     biome
     burly
     catppuccin-theme
@@ -36,9 +35,6 @@ pkgs.emacsWithPackagesFromUsePackage {
     embark
     embark-consult
     eslint-fix
-    fancy-compilation
-    flycheck
-    flycheck-rust
     forge
     fullframe
     git-link
@@ -88,14 +84,12 @@ pkgs.emacsWithPackagesFromUsePackage {
     typescript-mode
     vertico
     visual-fill-column
-    vterm
     web-mode
     weblorg
     webpaste
     which-key
     whitespace-cleanup-mode
     writeroom-mode
-    ws-butler
     yaml-mode
     zoom
 
@@ -105,6 +99,6 @@ pkgs.emacsWithPackagesFromUsePackage {
     # darktooth-theme
     # jazz-theme
     # underwater-theme
-    color-theme-modern
+    # color-theme-modern
   ];
 }
