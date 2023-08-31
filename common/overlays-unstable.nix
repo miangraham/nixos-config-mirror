@@ -1,18 +1,12 @@
 { pkgs, inputs, ... }:
 let
   inherit (pkgs) system;
-  tdOverlay = (self: super: {
-    tdlib = super.tdlib.overrideAttrs(old: {
-      version = "unstable";
-      src = inputs.tdlib;
-    });
-  });
   invidOverlay = (self: super: {
     invidious = super.callPackage "${inputs.unstable}/pkgs/servers/invidious" {
       crystal = super.crystal // {
         buildCrystalPackage = args:
           super.crystal.buildCrystalPackage (args // {
-            version = "custom-mian-gitea-pr";
+            version = "custom-mian";
             patches = [ ./invidious-customization.patch ];
           });
       };
@@ -22,6 +16,5 @@ let
   });
 in
 [
-  tdOverlay
   invidOverlay
 ]

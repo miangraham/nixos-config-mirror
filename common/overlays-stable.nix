@@ -1,11 +1,5 @@
 { pkgs, inputs, ... }:
 let
-  tdOverlay = (self: super: {
-    tdlib = super.tdlib.overrideAttrs(old: {
-      version = "unstable";
-      src = inputs.tdlib;
-    });
-  });
   freshOverlay = (self: super: {
     freshrss = super.freshrss.overrideAttrs(old: {
       overrideConfig = pkgs.writeText "constants.local.php" ''
@@ -17,7 +11,5 @@ let
   });
 in
 [
-  tdOverlay
-  inputs.emacs-overlay.overlay
   freshOverlay
 ]

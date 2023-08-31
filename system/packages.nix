@@ -1,10 +1,5 @@
 { pkgs, ... }:
-let
-  emacs = import ../common/emacs.nix { inherit pkgs; };
-in
 builtins.attrValues {
-  inherit emacs;
-
   inherit (pkgs)
     bashmount
     exfat

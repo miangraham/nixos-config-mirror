@@ -10,29 +10,28 @@
       url = "github:nix-community/home-manager/release-23.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    emacs-overlay = {
-      url = "github:nix-community/emacs-overlay";
+    emacspkg = {
+      url = "git+file:/home/ian/.emacs.d?shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.nixpkgs-stable.follows = "nixpkgs";
     };
-
-    tdlib = { url = "github:tdlib/td?rev=4d1d22d6f477d61f6ff2b8f6e49de1847092c5b4"; flake = false; };
   };
   outputs = inputs:
     let
+      system = "x86_64-linux";
       specialArgs = { inherit inputs; };
+      emacs = inputs.emacspkg.packages.${system}.default;
       home-manager = {
         useGlobalPkgs = true;
         useUserPackages = true;
-        users.ian = import ./home {inherit inputs; system = "x86_64-linux";};
+        users.ian = import ./home {inherit inputs system;};
       };
       boxConfig = addModules: (inputs.nixpkgs.lib.nixosSystem) {
-        inherit specialArgs;
-        system = "x86_64-linux";
+        inherit specialArgs system;
         modules = addModules ++ [
           ./system/dicod/default.nix
           inputs.home-manager.nixosModules.home-manager
           { inherit home-manager; }
+          { home-manager.users.ian.home.packages = [ emacs ]; }
         ];
       };
     in {

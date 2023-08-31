@@ -2,26 +2,55 @@
   "nodes": {
     "emacs-overlay": {
       "inputs": {
-        "flake-utils": "flake-utils",
+        "flake-utils": [
+          "emacspkg",
+          "flake-utils"
+        ],
         "nixpkgs": [
+          "emacspkg",
           "nixpkgs"
         ],
         "nixpkgs-stable": [
+          "emacspkg",
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1693420702,
-        "narHash": "sha256-iKj+ODIDk7lK2po9TYj9HA9QKNJoefwMiLCCan1MuFY=",
+        "lastModified": 1693391373,
+        "narHash": "sha256-3oLjlbJm/FTBL0v3YDPo9pOCRR8yPjJmaL+e89ryWnM=",
         "owner": "nix-community",
         "repo": "emacs-overlay",
-        "rev": "c98175e11975e29300e082bba2f63e12fd804127",
+        "rev": "e39c38830e3e31c1c975710bddf90da2a5a35acb",
         "type": "github"
       },
       "original": {
         "owner": "nix-community",
         "repo": "emacs-overlay",
         "type": "github"
+      }
+    },
+    "emacspkg": {
+      "inputs": {
+        "emacs-overlay": "emacs-overlay",
+        "flake-utils": "flake-utils",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "tdlib": "tdlib"
+      },
+      "locked": {
+        "lastModified": 1693446661,
+        "narHash": "sha256-Xjyy4cwKq2zscMtWl2iyUjSKrneFHc8GQkDhlBI8kMw=",
+        "ref": "refs/heads/master",
+        "rev": "22547640cfa18413a5f842de249956839a4bd504",
+        "shallow": true,
+        "type": "git",
+        "url": "file:/home/ian/.emacs.d"
+      },
+      "original": {
+        "shallow": true,
+        "type": "git",
+        "url": "file:/home/ian/.emacs.d"
       }
     },
     "flake-utils": {
@@ -97,12 +126,11 @@
     },
     "root": {
       "inputs": {
-        "emacs-overlay": "emacs-overlay",
+        "emacspkg": "emacspkg",
         "home-manager": "home-manager",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
         "small": "small",
-        "tdlib": "tdlib",
         "unstable": "unstable"
       }
     },
