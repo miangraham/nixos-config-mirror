@@ -6,8 +6,9 @@
   ];
 
   boot = {
-    extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
-    kernelModules = [ "v4l2loopback" ];
+    # screen streaming modules not currently used
+    # extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
+    # kernelModules = [ "v4l2loopback" ];
     kernel.sysctl = {
       "fs.inotify.max_user_instances" = 524288;
       "fs.inotify.max_user_watches" = 524288;
