@@ -25,7 +25,7 @@
 
   services.udev.packages = [ pkgs.via pkgs.qmk-udev-rules ];
 
-  programs.steam.enable = true;
+  programs.steam.enable = false;
 
   # virtualisation = {
   #   libvirtd.enable = true;
