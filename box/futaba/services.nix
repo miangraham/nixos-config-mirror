@@ -49,12 +49,18 @@ in
           serverName = "192.168.0.128";
           root = "/var/www";
           default = true;
+          extraConfig = ''
+            charset utf-8;
+          '';
         };
         "ian.tokyo" = {
           serverName = "ian.tokyo";
           root = "/var/www";
           addSSL = true;
           enableACME = true;
+          extraConfig = ''
+            charset utf-8;
+          '';
         };
         invid = {
           enableACME = false;
