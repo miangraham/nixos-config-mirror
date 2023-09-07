@@ -33,6 +33,7 @@
   # };
 
   home-manager.users.ian.home.packages = with pkgs; [
+    apksigner
     asunder
     # element-desktop # electron
     gimp
