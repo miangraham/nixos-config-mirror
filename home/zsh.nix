@@ -7,6 +7,10 @@
   sessionVariables = {
     EDITOR = "emacs -nw";
     LISTPROMPT = "";
+    EXA_COLORS = "xx=35";
+  };
+  shellAliases = {
+    ls = "eza --color-scale --group --git";
   };
   initExtraBeforeCompInit = ''
     zmodload zsh/complist

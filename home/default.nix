@@ -39,7 +39,7 @@ in
     zoxide.enable = true;
 
     exa = {
-      enable = true;
+      enable = false;
       enableAliases = true;
       extraOptions = [
         "--color-scale"

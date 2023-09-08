@@ -66,6 +66,7 @@ builtins.attrValues {
   # twitch-chat-tui = (pkgs.callPackage ./twitch-chat-tui.nix {});
 
   inherit (unstable)
+    eza
     invidious # precaching build for reuse on tiny server
   ;
 
