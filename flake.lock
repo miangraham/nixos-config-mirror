@@ -39,10 +39,10 @@
         "tdlib": "tdlib"
       },
       "locked": {
-        "lastModified": 1694554162,
-        "narHash": "sha256-bLqdGlbG3s8/atINJrvkXsi1p1LiXO/3rX8X5xuEpyg=",
+        "lastModified": 1694734562,
+        "narHash": "sha256-hNI5LC5wTjRzqXuaFpqNPX6TyVLOYHVNCiZTQu2ZkvA=",
         "ref": "refs/heads/master",
-        "rev": "f2fb396d8c3e4dcec4472ed26047445434d4b431",
+        "rev": "2f97bfd6f150c917f86d604a7ca65aa7c66fb070",
         "shallow": true,
         "type": "git",
         "url": "file:/home/ian/.emacs.d"
