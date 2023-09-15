@@ -84,6 +84,13 @@ in
     obs-studio = pkgs.wrapOBS { plugins = with pkgs.obs-studio-plugins; [
       obs-pipewire-audio-capture
     ]; };
+
+    retroarch = pkgs.retroarch.override {
+      cores = with pkgs.libretro; [
+        dolphin
+        snes9x
+      ];
+    };
   });
 
   programs = if-desktop {
