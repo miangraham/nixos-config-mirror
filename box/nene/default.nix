@@ -38,6 +38,7 @@
     # element-desktop # electron
     gimp
     libreoffice
+    mame.tools
     picocom
     # signal-desktop # unused
     twitch-tui
