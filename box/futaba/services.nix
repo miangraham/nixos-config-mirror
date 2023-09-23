@@ -12,11 +12,22 @@ in
   services = {
     inherit blocky borgbackup;
 
+    openssh.settings.PasswordAuthentication = false;
+
     syncthing.guiAddress = "0.0.0.0:8384";
 
     endlessh = {
       enable = true;
       openFirewall = true;
+    };
+
+    sshguard = {
+      enable = true;
+      blocktime = 3600;
+      detection_time = 3600;
+      attack_threshold = 5;
+      blacklist_threshold = 20;
+      whitelist = [ "192.168.0.0/16" ];
     };
 
     freshrss = {
