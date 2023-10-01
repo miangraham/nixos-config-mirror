@@ -23,7 +23,10 @@
     '';
   };
 
-  services.udev.packages = [ pkgs.via pkgs.qmk-udev-rules ];
+  services.udev.packages = [
+    # pkgs.via
+    # pkgs.qmk-udev-rules
+  ];
 
   programs.steam.enable = false;
 
