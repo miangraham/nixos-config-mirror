@@ -1,8 +1,6 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 set -ex
-
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 if [[ "$OSTYPE" != "linux-gnu"* ]]; then
   echo "Unexpected OS. Abort."
@@ -14,7 +12,7 @@ if [[ "$HOSTNAME" != "nene" ]]; then
   exit 1
 fi
 
-if [[ `git status --porcelain` ]]; then
+if [[ $(git status --porcelain) ]]; then
   echo "Outstanding git changes. Refusing to build."
   exit 1
 fi

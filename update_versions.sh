@@ -1,10 +1,8 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 set -e
 
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-
-if [[ `git status --porcelain` ]]; then
+if [[ $(git status --porcelain) ]]; then
   echo "Outstanding git changes. Refusing to update."
   exit 1
 fi

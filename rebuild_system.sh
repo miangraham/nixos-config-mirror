@@ -1,8 +1,6 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 set -e
-
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 if [[ "$OSTYPE" != "linux-gnu"* ]]; then
   echo "Unexpected OS. Abort."
@@ -14,7 +12,7 @@ if [[ "$HOSTNAME" == "nene" ]]; then
   nixos-rebuild build --flake '.#'
   nvd diff /run/current-system ./result
   rm ./result
-  read -p "Press ENTER to apply."
+  read -r -p "Press ENTER to apply."
 
   # Apply
   sudo nixos-rebuild switch --flake '.#' --print-build-logs
