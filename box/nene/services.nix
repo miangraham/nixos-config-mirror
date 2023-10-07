@@ -31,6 +31,29 @@ in
       port = 6379;
     };
 
+    nebula.networks.asgard = {
+      enable = true;
+      ca = "/etc/nebula/ca.crt";
+      cert = "/etc/nebula/nene.crt";
+      key = "/etc/nebula/nene.key";
+      lighthouses = [ "192.168.100.128" ];
+      relays = [ "192.168.100.128" ];
+      staticHostMap = {
+        "192.168.100.128" = [
+          "192.168.0.128:4242"
+          "122.249.92.87:4242"
+        ];
+      };
+      firewall = {
+        inbound = [
+          { port = "any"; proto = "icmp"; host = "any"; }
+          { port = 22; proto = "tcp"; host = "any"; }
+        ];
+        outbound =  [ { port = "any"; proto = "any"; host = "any"; } ];
+      };
+      settings.preferred_ranges = [ "192.168.0.0/24" ];
+    };
+
     # box specific due to ACME, rip
     # nginx = {
     #   enable = false;
@@ -65,36 +88,6 @@ in
       command = "/run/current-system/sw/bin/systemctl restart dicod"; options = [ "NOPASSWD" ];
     }];
   }];
-
-  # systemd.services.pmbridge = {
-  #   serviceConfig = {
-  #     Type = "simple";
-  #     User = "ian";
-  #   };
-  #   wantedBy = [ "multi-user.target" ];
-  #   environment = {
-  #     PASSWORD_STORE_DIR = "/home/ian/.local/share/password-store";
-  #   };
-  #   path = [
-  #     pkgs.protonmail-bridge
-  #     pkgs.pass
-  #   ];
-  #   script = "protonmail-bridge -n";
-  # };
-
-  # systemd.services.pueue = {
-  #   serviceConfig = {
-  #     Type = "simple";
-  #     User = "ian";
-  #   };
-  #   wantedBy = [ "multi-user.target" ];
-  #   path = [
-  #     yt-dlp
-  #     pkgs.pueue
-  #     pkgs.aria2
-  #   ];
-  #   script = "pueued -v";
-  # };
 
   # systemd.services.monitor-song-changes = {
   #   serviceConfig = {

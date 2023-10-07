@@ -51,6 +51,24 @@ in
       }];
     };
 
+    nebula.networks.asgard = {
+      enable = true;
+      ca = "/etc/nebula/ca.crt";
+      cert = "/etc/nebula/futaba.crt";
+      key = "/etc/nebula/futaba.key";
+      isLighthouse = true;
+      isRelay = true;
+      firewall = {
+        inbound = [
+          { port = "any"; proto = "icmp"; host = "any"; }
+          { port = 22; proto = "tcp"; host = "any"; }
+          { port = 80; proto = "tcp"; host = "any"; }
+        ];
+        outbound =  [ { port = "any"; proto = "any"; host = "any"; } ];
+      };
+      settings.preferred_ranges = [ "192.168.0.0/24" ];
+    };
+
     # box specific due to ACME, rip
     nginx = {
       enable = true;

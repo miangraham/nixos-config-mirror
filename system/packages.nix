@@ -9,6 +9,7 @@ builtins.attrValues {
     i2c-tools
     ipmitool
     lshw
+    nebula # temp
     nix-index
     nvme-cli
     p7zip
