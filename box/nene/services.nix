@@ -34,8 +34,8 @@ in
     nebula.networks.asgard = {
       enable = true;
       ca = "/etc/nebula/ca.crt";
-      cert = "/etc/nebula/nene.crt";
-      key = "/etc/nebula/nene.key";
+      cert = "/etc/nebula/host.crt";
+      key = "/etc/nebula/host.key";
       lighthouses = [ "192.168.100.128" ];
       relays = [ "192.168.100.128" ];
       staticHostMap = {

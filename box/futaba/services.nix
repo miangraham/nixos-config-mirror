@@ -54,8 +54,8 @@ in
     nebula.networks.asgard = {
       enable = true;
       ca = "/etc/nebula/ca.crt";
-      cert = "/etc/nebula/futaba.crt";
-      key = "/etc/nebula/futaba.key";
+      cert = "/etc/nebula/host.crt";
+      key = "/etc/nebula/host.key";
       isLighthouse = true;
       isRelay = true;
       firewall = {
@@ -66,7 +66,16 @@ in
         ];
         outbound =  [ { port = "any"; proto = "any"; host = "any"; } ];
       };
-      settings.preferred_ranges = [ "192.168.0.0/24" ];
+      settings = {
+        preferred_ranges = [ "192.168.0.0/24" ];
+        lighthouse = {
+          serve_dns = true;
+          dns = {
+            host = "[::]";
+            port = 5354;
+          };
+        };
+      };
     };
 
     # box specific due to ACME, rip
