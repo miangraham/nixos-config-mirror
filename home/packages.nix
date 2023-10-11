@@ -59,11 +59,7 @@ builtins.attrValues {
     git-subrepo
   ;
   inherit (pkgs.nodePackages) node2nix;
-  inherit (pkgs.guile) info;
   inherit (pkgs) terraform;
-
-  # obs-remote = (pkgs.callPackage ./obs-remote.nix {});
-  # twitch-chat-tui = (pkgs.callPackage ./twitch-chat-tui.nix {});
 
   inherit (unstable)
     eza
