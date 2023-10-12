@@ -11,6 +11,7 @@ in
   imports = [
     ./hardware-configuration.nix
     ../../system
+    ../../system/nebula-node.nix
     ./monitoring.nix
     ./network.nix
     ./services.nix

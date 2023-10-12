@@ -68,13 +68,6 @@ in
       };
       settings = {
         preferred_ranges = [ "192.168.0.0/24" ];
-        lighthouse = {
-          serve_dns = true;
-          dns = {
-            host = "[::]";
-            port = 5354;
-          };
-        };
       };
     };
 
