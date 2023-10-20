@@ -22,7 +22,7 @@ elif [[ "$HOSTNAME" == "futaba" ]]; then
 elif [[ "$HOSTNAME" == "ranni" ]]; then
   sudo nixos-rebuild switch --flake '.#' --show-trace --option extra-substituters ssh-ng://nix-ssh@nene --option extra-trusted-public-keys 'nene-1:tETUAQxI2/WCqFqS0J+32RgAqFrZXAkLtIHByUT7AjQ='
 elif [[ "$HOSTNAME" == "rin" ]]; then
-  sudo nixos-rebuild switch --flake '.#' --show-trace --option extra-substituters ssh-ng://nix-ssh@nene --option extra-trusted-public-keys 'nene-1:tETUAQxI2/WCqFqS0J+32RgAqFrZXAkLtIHByUT7AjQ='
+  sudo nixos-rebuild switch --flake '.#' --show-trace
 else
   sudo nixos-rebuild switch --flake '.#' --show-trace
 fi
