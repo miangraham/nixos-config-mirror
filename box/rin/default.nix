@@ -23,6 +23,11 @@ in
   };
   systemd.services.NetworkManager-wait-online.enable = false;
 
+  # Boot
+  boot.kernelParams = [
+    "usbcore.autosuspend=120"
+  ];
+
   # Power
   powerManagement.powertop.enable = true;
   programs.light.enable = true;
@@ -36,17 +41,6 @@ in
 
   home-manager.users.ian.home.packages = with pkgs; [
   ];
-
-  home-manager.users.ian.programs.vscode = {
-    enable = true;
-    package = pkgs.vscodium;
-    mutableExtensionsDir = false;
-    extensions = with pkgs.vscode-extensions; [
-      mskelton.one-dark-theme
-      rust-lang.rust-analyzer
-      tuttieee.emacs-mcx
-    ];
-  };
 
   services = {
     inherit borgbackup;
