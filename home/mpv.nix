@@ -3,11 +3,15 @@
   enable = true;
   scripts = [ pkgs.mpvScripts.thumbnail ];
   config = {
+    hw-dec = "auto-safe";
+
     # thumbnail script replaces default osc
     osc = "no";
 
     # close after playback
     idle = "no";
+
+    save-position-on-quit = "yes";
 
     volume = 90;
     volume-max = 100;
