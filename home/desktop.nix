@@ -58,7 +58,7 @@ in
       ungoogled-chromium
       vlc
       zeal
-      zotero
+      # zotero # security bleh
 
       # sway
       swayidle
