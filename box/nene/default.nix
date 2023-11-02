@@ -8,7 +8,6 @@
     ./network.nix
     ./services.nix
     ./containers.nix
-    ./php.nix
   ];
 
   boot.kernel.sysctl = {
