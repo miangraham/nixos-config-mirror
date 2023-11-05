@@ -63,6 +63,5 @@ builtins.attrValues {
 
   inherit (unstable)
     eza
-    invidious # precaching build for reuse on tiny server
   ;
 }
