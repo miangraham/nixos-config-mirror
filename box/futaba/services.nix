@@ -63,6 +63,8 @@ in
           { port = "any"; proto = "icmp"; host = "any"; }
           { port = 22; proto = "tcp"; host = "any"; }
           { port = 80; proto = "tcp"; host = "any"; }
+          { port = 8091; proto = "tcp"; host = "any"; } # HA
+          { port = 8384; proto = "tcp"; host = "any"; } # syncthing
         ];
         outbound =  [ { port = "any"; proto = "any"; host = "any"; } ];
       };
