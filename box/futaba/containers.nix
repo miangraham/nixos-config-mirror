@@ -38,6 +38,7 @@ in
   virtualisation.oci-containers.containers = {
     reddit-top-rss = {
       inherit environment extraOptions;
+      # 2023.05.11
       image = "johnny5w/reddit-top-rss@sha256:f898b5b2643cdfa9bd741a8255e185a05b9ba66f969448c6672884aa187c9cb0";
       ports = [ "8089:8080" ];
       dependsOn = [];
@@ -46,6 +47,7 @@ in
 
     mercury-parser-api = {
       inherit environment extraOptions;
+      # 2023.02.22
       image = "wangqiru/mercury-parser-api@sha256:da06e19694c85816b6c2f9870e66beaa03bbd0043d8a759b86e2bb16020ee5c2";
       ports = [ "8090:3000" ];
       dependsOn = [];
@@ -53,8 +55,8 @@ in
 
     homeassistant = {
       inherit environment extraOptions;
-      # 2023.8.1
-      image = "ghcr.io/home-assistant/home-assistant@sha256:5802094954ff92730dfefa2f321dcc910debe290c9f8660b039d5a5883cede8a";
+      # 2023.11.1
+      image = "ghcr.io/home-assistant/home-assistant@sha256:de25f0ad773b54d1c0e5a63147e23417055f3056b0ef24cf4a5ac8019bb33df3";
       ports = [ "8091:8123" ];
       volumes = [
         "/srv/home-assistant:/config"
