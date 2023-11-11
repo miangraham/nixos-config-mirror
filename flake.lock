@@ -16,11 +16,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1696561446,
-        "narHash": "sha256-NLemrT9Cu5ve3Fd5raE2VuZATMMveRPWBHI06Cl5SbA=",
+        "lastModified": 1699641089,
+        "narHash": "sha256-GFCZUagiE11YLA9FV6CXlrVtNe/LbxrX35Sp2wdZ1LE=",
         "owner": "nix-community",
         "repo": "emacs-overlay",
-        "rev": "bff45ef9a6e5bb1e8c5cb08ecf4bc9f8823be7c7",
+        "rev": "2dc0beb6d0f3d19c577faab69b6338fb5a1ce17e",
         "type": "github"
       },
       "original": {
@@ -39,10 +39,10 @@
         "tdlib": "tdlib"
       },
       "locked": {
-        "lastModified": 1698376299,
-        "narHash": "sha256-EH7sTx0/lut7aGg0EyKKcGwJcPEVktdRouYDGc9L/Bw=",
+        "lastModified": 1699668097,
+        "narHash": "sha256-PpFrPkBQArrkhdbs8a8fk8SQWzWRLkArYZe7w0DPnGA=",
         "ref": "refs/heads/master",
-        "rev": "a011eb21f275df4b96cc02f1b53bc0cfc0cf60de",
+        "rev": "46a9b132846e88a4912b77968afbe2d97950a74e",
         "shallow": true,
         "type": "git",
         "url": "file:/home/ian/.emacs.d"
