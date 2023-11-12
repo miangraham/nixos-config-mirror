@@ -6,6 +6,7 @@ let
       AppUpdatePin = "115.";
       BackgroundAppUpdate = false;
       DisableAppUpdate = true;
+      DisableFirefoxScreenshots = true;
       DisableFirefoxStudies = true;
       DisableMasterPasswordCreation = true;
       DisablePasswordReveal = true;
@@ -20,6 +21,24 @@ let
       OverrideFirstRunPage = "";
       OverridePostUpdatePage = "";
       PasswordManagerEnabled = false;
+      PrimaryPassword = false;
+      SearchSuggestEnabled = false;
+      FirefoxHome = {
+        Highlights = false;
+        Locked = true;
+        Pocket = false;
+        Search = false;
+        Snippets = false;
+        SponsoredPocket = false;
+        SponsoredTopSites = false;
+        TopSites = false;
+      };
+      FirefoxSuggest = {
+        ImproveSuggest = false;
+        Locked = true;
+        SponsoredSuggestions = false;
+        WebSuggestions = false;
+      };
       Permissions = {
         Notifications = {
           BlockNewRequests = true;
@@ -36,6 +55,12 @@ let
         Enabled = false;
         Locked = true;
       };
+      SearchEngines = {
+        Remove = [
+          "Bing"
+          "eBay"
+        ];
+      };
       UserMessaging = {
         WhatsNew = false;
         ExtensionRecommendations = false;
@@ -43,12 +68,6 @@ let
         UrlbarInterventions = false;
         SkipOnboarding = true;
         MoreFromMozilla = false;
-      };
-      SearchEngines = {
-        Remove = [
-          "Bing"
-          "eBay"
-        ];
       };
     };
   };
@@ -147,12 +166,19 @@ in
         "browser.contentblocking.report.vpn.enabled" = false;
         "browser.discovery.enabled" = false;
         "browser.messaging-system.whatsNewPanel.enabled" = false;
+        "browser.preferences.experimental" = false;
         "browser.preferences.moreFromMozilla" = false;
+        "browser.promo.cookiebanners.enabled" = false;
+        "browser.promo.focus.enabled" = false;
+        "browser.promo.pin.enabled" = false;
         "browser.shell.checkDefaultBrowser" = false;
         "browser.topsites.contile.enabled" = false;
         "browser.uitour.enabled" = false;
+        "browser.vpn_promo.enabled" = false;
         "browser.warnOnQuit" = false;
         "browser.warnOnQuitShortcut" = false;
+        "cookiebanners.service.mode" = 1;
+        "cookiebanners.service.mode.privateBrowsing" = 1;
         "devtools.everOpened" = true;
         "extensions.pocket.enabled" = false;
         "extensions.quarantinedDomains.enabled" = false;
@@ -166,6 +192,8 @@ in
         "media.gmp-widevinecdm.enabled" = true;
 
         # Misc safety
+        "extensions.formautofill.available" = false;
+        "extensions.formautofill.addresses.enabled" = false;
         "extensions.formautofill.creditCards.available" = false;
         "extensions.formautofill.creditCards.enabled" = false;
       };
