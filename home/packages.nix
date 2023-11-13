@@ -46,6 +46,7 @@ builtins.attrValues {
     trurl
     usbutils
     xdg_utils
+    zotero
 
     # video
     aria2
