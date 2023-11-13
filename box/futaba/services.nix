@@ -3,6 +3,21 @@ let
   unstable = import ../../common/unstable.nix { inherit pkgs inputs; };
   blocky = import ./blocky.nix { inherit pkgs; };
   borgbackup = import ./backup.nix { inherit pkgs; };
+
+  admin_email = import ../../common/email.nix {};
+  well_known_server = pkgs.writeText "well-known-matrix-server" ''
+    {
+      "m.server": "graham.tokyo"
+    }
+  '';
+
+  well_known_client = pkgs.writeText "well-known-matrix-client" ''
+    {
+      "m.homeserver": {
+        "base_url": "https://graham.tokyo"
+      }
+    }
+  '';
 in
 {
   # Pull invidious module from unstable for new hmac key settings. Remove after 23.11.
@@ -38,6 +53,16 @@ in
       passwordFile = "/srv/freshrss/freshrss_admin_phrase";
     };
     phpfpm.pools.freshrss.phpEnv.FRESHRSS_THIRDPARTY_EXTENSIONS_PATH = "/srv/freshrss/extensions";
+
+    matrix-conduit = {
+      enable = false;
+      settings.global = {
+        server_name = "graham.tokyo";
+        database_backend = "rocksdb";
+        allow_federation = false;
+        allow_registration = false;
+      };
+    };
 
     mosquitto = {
       enable = true;
@@ -77,6 +102,13 @@ in
     nginx = {
       enable = true;
       user = "nginx";
+      # upstreams = {
+      #   "backend_conduit" = {
+      #     servers = {
+      #       "[::1]:${toString config.services.matrix-conduit.settings.global.port}" = {};
+      #     };
+      #   };
+      # };
       virtualHosts = {
         futaba = {
           serverName = "192.168.0.128";
@@ -85,6 +117,10 @@ in
           extraConfig = ''
             charset utf-8;
           '';
+        };
+        invid = {
+          enableACME = false;
+          forceSSL = false;
         };
         "ian.tokyo" = {
           serverName = "ian.tokyo";
@@ -95,10 +131,65 @@ in
             charset utf-8;
           '';
         };
-        invid = {
-          enableACME = false;
-          forceSSL = false;
-        };
+        # "graham.tokyo" = {
+        #   serverName = "graham.tokyo";
+        #   forceSSL = true;
+        #   enableACME = true;
+          # listen = [
+          #   {
+          #     addr = "0.0.0.0";
+          #     port = 443;
+          #     ssl = true;
+          #   }
+          #   {
+          #     addr = "[::]";
+          #     port = 443;
+          #     ssl = true;
+          #   }
+          #   {
+          #     addr = "0.0.0.0";
+          #     port = 8448;
+          #     ssl = true;
+          #   }
+          #   {
+          #     addr = "[::]";
+          #     port = 8448;
+          #     ssl = true;
+          #   }
+          # ];
+          # extraConfig = ''
+          #   merge_slashes off;
+          # '';
+          # locations."/_matrix/" = {
+          #   proxyPass = "http://backend_conduit$request_uri";
+          #   proxyWebsockets = true;
+          #   extraConfig = ''
+          #     proxy_set_header Host $host;
+          #     proxy_buffering off;
+          #   '';
+          # };
+          # locations."=/.well-known/matrix/server" = {
+          #   # Use the contents of the derivation built previously
+          #   alias = "${well_known_server}";
+
+          #   extraConfig = ''
+          #     # Set the header since by default NGINX thinks it's just bytes
+          #     default_type application/json;
+          #   '';
+          # };
+          # locations."=/.well-known/matrix/client" = {
+          #   # Use the contents of the derivation built previously
+          #   alias = "${well_known_client}";
+
+          #   extraConfig = ''
+          #     # Set the header since by default NGINX thinks it's just bytes
+          #     default_type application/json;
+
+          #     # https://matrix.org/docs/spec/client_server/r0.4.0#web-browser-clients
+          #     add_header Access-Control-Allow-Origin "*";
+          #   '';
+          # };
+        # };
       };
     };
 

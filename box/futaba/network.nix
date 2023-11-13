@@ -3,8 +3,8 @@
   networking = {
     hostName = "futaba";
     firewall = {
-      allowedTCPPorts = [ 22 53 80 443 1883 4533 8081 8089 8384 8443 8989 9090 41641 ];
-      allowedUDPPorts = [ 53 5354 ];
+      allowedTCPPorts = [ 22 53 80 443 1883 4533 8081 8089 8384 8443 8448 8989 9090 41641 ];
+      allowedUDPPorts = [ 53 5354 8448 ];
     };
     useNetworkd = true;
     useDHCP = false;
