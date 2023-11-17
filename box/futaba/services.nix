@@ -8,7 +8,10 @@ in
 {
   # Pull invidious module from unstable for new hmac key settings. Remove after 23.11.
   disabledModules = [ "services/web-apps/invidious.nix" ];
-  imports = [ "${inputs.unstable}/nixos/modules/services/web-apps/invidious.nix" ];
+  imports = [
+    "${inputs.unstable}/nixos/modules/services/web-apps/invidious.nix"
+    "${inputs.unstable}/nixos/modules/services/web-apps/microbin.nix"
+  ];
 
   services = {
     inherit blocky borgbackup nginx;
@@ -51,6 +54,26 @@ in
       };
     };
 
+    microbin = {
+      enable = true;
+      package = unstable.microbin;
+      passwordFile = "/etc/microbin/env";
+      settings = {
+        MICROBIN_DISABLE_UPDATE_CHECKING = true;
+        MICROBIN_EDITABLE = false;
+        MICROBIN_ENABLE_READONLY = false;
+        MICROBIN_HIDE_FOOTER = true;
+        MICROBIN_HIDE_LOGO = true;
+        MICROBIN_NO_LISTING = true;
+        MICROBIN_PORT = 8092;
+        MICROBIN_PUBLIC_PATH = "http://futaba:8092/";
+        MICROBIN_QR = true;
+        MICROBIN_READONLY = true;
+        MICROBIN_TITLE = "paste.ian.tokyo";
+        MICROBIN_WIDE = true;
+      };
+    };
+
     mosquitto = {
       enable = true;
       listeners = [{
@@ -76,6 +99,7 @@ in
           { port = 22; proto = "tcp"; host = "any"; }
           { port = 80; proto = "tcp"; host = "any"; }
           { port = 8091; proto = "tcp"; host = "any"; } # HA
+          { port = 8092; proto = "tcp"; host = "any"; } # microbin
           { port = 8384; proto = "tcp"; host = "any"; } # syncthing
         ];
         outbound =  [ { port = "any"; proto = "any"; host = "any"; } ];
