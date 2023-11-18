@@ -20,6 +20,14 @@ in
 
     syncthing.guiAddress = "0.0.0.0:8384";
 
+    bepasty = {
+      enable = false;
+      servers.futaba = {
+        bind = "0.0.0.0:8092";
+        secretKeyFile = "/etc/bepasty/secret_key";
+      };
+    };
+
     endlessh = {
       enable = true;
       openFirewall = true;
@@ -55,7 +63,7 @@ in
     };
 
     microbin = {
-      enable = true;
+      enable = false;
       package = unstable.microbin;
       passwordFile = "/etc/microbin/env";
       settings = {
