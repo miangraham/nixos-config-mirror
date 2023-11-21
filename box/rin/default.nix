@@ -40,6 +40,7 @@ in
   programs.steam.enable = true;
 
   home-manager.users.ian.home.packages = with pkgs; [
+    tpacpi-bat
   ];
 
   services = {
