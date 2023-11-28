@@ -20,6 +20,9 @@ in
 
   # TODO: test removal
   boot.kernelModules = [ "coretemp" "nct6775" ];
+  boot.extraModprobeConfig = ''
+    options zfs zfs_dmu_offset_next_sync=0
+  '';
 
   users = {
     users.timemachine = {
