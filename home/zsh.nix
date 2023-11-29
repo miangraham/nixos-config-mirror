@@ -2,7 +2,7 @@
 {
   enable = true;
   enableAutosuggestions = true;
-  enableSyntaxHighlighting = true;
+  syntaxHighlighting.enable = true;
   defaultKeymap = "emacs";
   sessionVariables = {
     EDITOR = "emacs -nw";
@@ -10,7 +10,7 @@
     EXA_COLORS = "xx=35";
   };
   shellAliases = {
-    ls = "eza --color-scale size --group --git";
+    # ls = "eza --color-scale size --group --git";
   };
   initExtraBeforeCompInit = ''
     zmodload zsh/complist

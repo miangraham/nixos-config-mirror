@@ -38,11 +38,11 @@ in
     mu.enable = true;
     zoxide.enable = true;
 
-    exa = {
-      enable = false;
+    eza = {
+      enable = true;
       enableAliases = true;
       extraOptions = [
-        "--color-scale"
+        # "--color-scale size"
         "--git"
         "--group"
       ];

@@ -1,9 +1,9 @@
 { pkgs, ... }:
 with pkgs; {
   fontDir.enable = true;
-  enableDefaultFonts = true;
+  enableDefaultPackages = true;
   # fontconfig.enable = true;
-  fonts = [
+  packages = [
     # general use
     alegreya
     anonymousPro

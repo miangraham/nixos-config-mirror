@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   wrapperFeatures.gtk = true;
-  systemdIntegration = true;
+  systemd.enable = true;
   config = let
     modifier = "Mod4";
     terminal = "alacritty";

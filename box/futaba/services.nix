@@ -6,12 +6,9 @@ let
   nginx = import ./nginx.nix { inherit config pkgs; };
 in
 {
-  # Pull invidious module from unstable for new hmac key settings. Remove after 23.11.
-  disabledModules = [ "services/web-apps/invidious.nix" ];
-  imports = [
-    "${inputs.unstable}/nixos/modules/services/web-apps/invidious.nix"
-    "${inputs.unstable}/nixos/modules/services/web-apps/microbin.nix"
-  ];
+  # Example pulling nixos module from unstable
+  # disabledModules = [ "services/web-apps/invidious.nix" ];
+  # imports = [ "${inputs.unstable}/nixos/modules/services/web-apps/invidious.nix" ];
 
   services = {
     inherit blocky borgbackup nginx;
@@ -53,7 +50,7 @@ in
 
     matrix-conduit = {
       enable = true;
-      package = unstable.matrix-conduit;
+      # package = unstable.matrix-conduit;
       settings.global = {
         server_name = "graham.tokyo";
         database_backend = "rocksdb";
@@ -64,7 +61,7 @@ in
 
     microbin = {
       enable = false;
-      package = unstable.microbin;
+      # package = unstable.microbin;
       passwordFile = "/etc/microbin/env";
       settings = {
         MICROBIN_DISABLE_UPDATE_CHECKING = true;

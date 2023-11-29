@@ -63,6 +63,5 @@ builtins.attrValues {
   inherit (pkgs) terraform;
 
   inherit (unstable)
-    eza
   ;
 }
