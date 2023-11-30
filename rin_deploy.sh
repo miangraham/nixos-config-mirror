@@ -29,5 +29,5 @@ nix copy "${OUTPUT}" --to ssh://ian@rin
 
 # Switch profiles
 
-SWITCH_CMD="/run/current-system/sw/bin/nix-env -p /nix/var/nix/profiles/system --set ${OUTPUT} && /nix/var/nix/profiles/system/bin/switch-to-configuration switch"
+SWITCH_CMD="/run/current-system/sw/bin/nix-env -p /nix/var/nix/profiles/system --set ${OUTPUT} && /nix/var/nix/profiles/system/bin/switch-to-configuration boot"
 ssh -t rin "sudo sh -c \"${SWITCH_CMD}\""
