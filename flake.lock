@@ -39,10 +39,10 @@
         "tdlib": "tdlib"
       },
       "locked": {
-        "lastModified": 1701350260,
-        "narHash": "sha256-clsYy9YLkbhtw0TA0Lr1qSYt60EbYkegZnOiUwuwAfQ=",
+        "lastModified": 1701395011,
+        "narHash": "sha256-KuvBS9K1aD0mb3kMAqkUXvY4skH04pTxueAHINy4occ=",
         "ref": "refs/heads/master",
-        "rev": "092f7bd1d83b471c40a952ea62c65cb2a1e387ea",
+        "rev": "f38cc47032353b9a289fd4c9ada1d645667bedbd",
         "shallow": true,
         "type": "git",
         "url": "file:/home/ian/.emacs.d"
@@ -136,11 +136,11 @@
     },
     "small": {
       "locked": {
-        "lastModified": 1701248596,
-        "narHash": "sha256-1kuh7EL3TbjZBHuHAnqMO1Zdo/8+3FsLH4kPMfZfXbg=",
+        "lastModified": 1701374686,
+        "narHash": "sha256-xaJPtgvTuUGSPba8p3+ezCJjKnVij77ai8OE2bnTC0E=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "4cc4c0455a1158631382dd9f74b7cf5021e946d0",
+        "rev": "1bce6a1791a513af2727e5b668b3cd9ba76cb0bf",
         "type": "github"
       },
       "original": {
@@ -168,32 +168,32 @@
     "tdlib": {
       "flake": false,
       "locked": {
-        "lastModified": 1692416526,
-        "narHash": "sha256-0yVOqAEFVNBOO6urxW0ddOxSb2m/55ESBXiWdGYQaVs=",
+        "lastModified": 1699543416,
+        "narHash": "sha256-Hfv0izBk4T4/WEFV6PT7Fku0EjxgHDUe4X5FMq62PFg=",
         "owner": "tdlib",
         "repo": "td",
-        "rev": "4d1d22d6f477d61f6ff2b8f6e49de1847092c5b4",
+        "rev": "6ee64289f3666774fb694c9d33f83ed8bd52b60c",
         "type": "github"
       },
       "original": {
         "owner": "tdlib",
         "repo": "td",
-        "rev": "4d1d22d6f477d61f6ff2b8f6e49de1847092c5b4",
+        "rev": "6ee64289f3666774fb694c9d33f83ed8bd52b60c",
         "type": "github"
       }
     },
     "unstable": {
       "locked": {
-        "lastModified": 1701068326,
-        "narHash": "sha256-vmMceA+q6hG1yrjb+MP8T0YFDQIrW3bl45e7z24IEts=",
+        "lastModified": 1701263465,
+        "narHash": "sha256-lNXUIlkfyDyp9Ox21hr+wsEf/IBklLvb6bYcyeXbdRc=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "8cfef6986adfb599ba379ae53c9f5631ecd2fd9c",
+        "rev": "50aa30a13c4ab5e7ba282da460a3e3d44e9d0eb3",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "nixos-unstable",
+        "ref": "nixos-23.11",
         "repo": "nixpkgs",
         "type": "github"
       }
