@@ -32,7 +32,7 @@ in
     ];
     modules-center = [];
     modules-right = [
-      "custom/failed-units"
+      # "custom/failed-units"
       "cpu"
       "memory"
       "disk"

@@ -45,6 +45,11 @@ in
 
   services = {
     inherit borgbackup;
+    rabbitmq.enable = true;
+    redis.servers.dev = {
+      enable = true;
+      port = 6379;
+    };
   };
 
   system.stateVersion = "23.05";

@@ -26,6 +26,8 @@ in
 
     flatpak.enable = false;
 
+    rabbitmq.enable = true;
+
     redis.servers.dev = {
       enable = true;
       port = 6379;
