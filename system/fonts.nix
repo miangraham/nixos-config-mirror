@@ -17,7 +17,7 @@ with pkgs; {
     ia-writer-duospace
     ibm-plex
     inconsolata
-    # intel-one-mono # unstable
+    intel-one-mono
     iosevka
     jetbrains-mono
     libre-caslon
