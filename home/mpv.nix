@@ -3,7 +3,7 @@
   enable = true;
   scripts = [ pkgs.mpvScripts.thumbnail ];
   config = {
-    hw-dec = "auto-safe";
+    hwdec = "auto-safe";
 
     # thumbnail script replaces default osc
     osc = "no";
