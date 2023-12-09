@@ -18,6 +18,7 @@ in
     syncthing.guiAddress = "0.0.0.0:8384";
 
     bepasty = {
+      # no secure way to set user secrets outside of nix store?
       enable = false;
       servers.futaba = {
         bind = "0.0.0.0:8092";
@@ -60,13 +61,13 @@ in
     };
 
     microbin = {
+      # permission system super busted, sad
       enable = false;
-      # package = unstable.microbin;
       passwordFile = "/etc/microbin/env";
       settings = {
         MICROBIN_DISABLE_UPDATE_CHECKING = true;
         MICROBIN_EDITABLE = false;
-        MICROBIN_ENABLE_READONLY = false;
+        MICROBIN_ENABLE_READONLY = true;
         MICROBIN_HIDE_FOOTER = true;
         MICROBIN_HIDE_LOGO = true;
         MICROBIN_NO_LISTING = true;
