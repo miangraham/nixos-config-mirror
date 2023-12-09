@@ -1,6 +1,5 @@
 { pkgs, ... }:
 {
-  earlyoom.enable = true;
   fwupd.enable = true;
   gnome.gnome-keyring.enable = true;
   # tailscale.enable = true;
