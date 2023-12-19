@@ -26,7 +26,13 @@ in
 
     flatpak.enable = false;
 
-    rabbitmq.enable = true;
+    rabbitmq = {
+      enable = true;
+      listenAddress = "0.0.0.0";
+      configItems = {
+        "loopback_users.guest" = "false";
+      };
+    };
 
     redis.servers.dev = {
       enable = true;
