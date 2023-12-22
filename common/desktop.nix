@@ -22,7 +22,7 @@
 
   environment = {
     systemPackages = with pkgs; [
-      xdg-desktop-portal-wlr
+      # xdg-desktop-portal-wlr
     ];
     variables = {
       QT_STYLE_OVERRIDE = pkgs.lib.mkForce "adwaita-dark";
@@ -36,7 +36,14 @@
   };
 
   hardware.opengl.enable = true;
-  xdg.portal.enable = true;
+  xdg.portal = {
+    enable = true;
+    xdgOpenUsePortal = true;
+    wlr.enable = true;
+    # extraPortals = [
+    #   xdg-desktop-portal-gtk
+    # ];
+  };
 
   home-manager.users.ian.wayland.windowManager.sway.enable = true;
 }
