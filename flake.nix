@@ -11,7 +11,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     emacspkg = {
-      url = "git+file:/home/ian/.emacs.d?shallow=1";
+      url = "https://codeberg.org/mian/emacs-config/archive/master.tar.gz";
+      # url = "git+file:/home/ian/.emacs.d?shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

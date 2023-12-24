@@ -16,11 +16,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1701334333,
-        "narHash": "sha256-rsJ11xznoc2JSmM57bstxyas8xq8ZaEqNhQuQWyoQ/A=",
+        "lastModified": 1703405679,
+        "narHash": "sha256-5deEIknMX0Zl0MdKjlUn6Yvg2J20uHWAp035OSIRlxU=",
         "owner": "nix-community",
         "repo": "emacs-overlay",
-        "rev": "913e44a13636fd111139ee683a6741ccb4c28672",
+        "rev": "bfe818bd2936828a3669df3afb21707b09d99cd9",
         "type": "github"
       },
       "original": {
@@ -39,18 +39,14 @@
         "tdlib": "tdlib"
       },
       "locked": {
-        "lastModified": 1701871567,
-        "narHash": "sha256-uqWt+UhS78Ak4vu/6KaIjBcdUqy/h65SdRNIxeE0sFg=",
-        "ref": "refs/heads/master",
-        "rev": "004e6b8390517df80a902391133c76fbe538da0f",
-        "shallow": true,
-        "type": "git",
-        "url": "file:/home/ian/.emacs.d"
+        "lastModified": 1703424187,
+        "narHash": "sha256-vsNaVxvcmIYl5+RTN8wzfg27QPlZRX3kCuc+TnLqRFg=",
+        "type": "tarball",
+        "url": "https://codeberg.org/mian/emacs-config/archive/master.tar.gz"
       },
       "original": {
-        "shallow": true,
-        "type": "git",
-        "url": "file:/home/ian/.emacs.d"
+        "type": "tarball",
+        "url": "https://codeberg.org/mian/emacs-config/archive/master.tar.gz"
       }
     },
     "flake-utils": {
@@ -58,11 +54,11 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1694529238,
-        "narHash": "sha256-zsNZZGTGnMOf9YpHKJqMSsa0dXbfmxeoJ7xHlrt+xmY=",
+        "lastModified": 1701680307,
+        "narHash": "sha256-kAuep2h5ajznlPMD9rnQyffWG8EM/C73lejGofXvdM8=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "ff7b65b44d01cf9ba6a71320833626af21126384",
+        "rev": "4022d587cbbfd70fe950c1e2083a02621806a725",
         "type": "github"
       },
       "original": {
