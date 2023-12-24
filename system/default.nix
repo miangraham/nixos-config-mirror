@@ -23,8 +23,8 @@ in
   };
 
   boot = {
-    # 6.1 LTS
-    kernelPackages = pkgs.linuxPackages_6_1;
+    # 6.6 LTS
+    kernelPackages = pkgs.linuxPackages_6_6;
     loader = {
       systemd-boot = {
         enable = true;

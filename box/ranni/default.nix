@@ -18,11 +18,14 @@ in
     ./storage.nix
   ];
 
-  # TODO: test removal
-  boot.kernelModules = [ "coretemp" "nct6775" ];
-  boot.extraModprobeConfig = ''
-    options zfs zfs_dmu_offset_next_sync=0
-  '';
+  boot = {
+    kernelPackages = lib.mkForce pkgs.linuxPackages_6_1;
+    # TODO: test removal
+    kernelModules = [ "coretemp" "nct6775" ];
+    extraModprobeConfig = ''
+      options zfs zfs_dmu_offset_next_sync=0
+    '';
+  };
 
   users = {
     users.timemachine = {

@@ -11,7 +11,6 @@
   ];
 
   # 6.6 LTS
-  boot.kernelPackages = lib.mkForce pkgs.linuxPackages_6_6;
   boot.kernel.sysctl = {
     "fs.file-max" = 9000000;
     "net.ipv4.tcp_fin_timeout" = 10;
