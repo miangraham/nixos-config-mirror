@@ -5,7 +5,7 @@
     # kernelPackages = pkgs.lib.mkForce config.boot.zfs.package.latestCompatibleLinuxPackages;
     supportedFilesystems = [ "zfs" ];
     zfs = {
-      package = pkgs.zfs_2_1;
+      package = pkgs.zfsStable;
       devNodes = "/dev/disk/by-partlabel";
       extraPools = [ "srv" ];
       forceImportRoot = false;
