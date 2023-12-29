@@ -54,6 +54,9 @@ in {
         "googlevideo.com" = "192.168.0.1";
         "youtube.com" = "192.168.0.1";
         "ytimg.com" = "192.168.0.1";
+
+        # social
+        "discord.com" = "192.168.0.1";
       };
     };
   };
