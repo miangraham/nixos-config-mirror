@@ -50,7 +50,7 @@ in
     phpfpm.pools.freshrss.phpEnv.FRESHRSS_THIRDPARTY_EXTENSIONS_PATH = "/srv/freshrss/extensions";
 
     matrix-conduit = {
-      enable = true;
+      enable = false;
       # package = unstable.matrix-conduit;
       settings.global = {
         server_name = "graham.tokyo";
@@ -93,7 +93,7 @@ in
     };
 
     nebula.networks.asgard = {
-      enable = true;
+      enable = false;
       ca = "/etc/nebula/ca.crt";
       cert = "/etc/nebula/host.crt";
       key = "/etc/nebula/host.key";

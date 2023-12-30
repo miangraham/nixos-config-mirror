@@ -3,7 +3,7 @@ let
 in
 {
   services.nebula.networks.asgard = {
-    enable = true;
+    enable = false;
     ca = "/etc/nebula/ca.crt";
     cert = "/etc/nebula/host.crt";
     key = "/etc/nebula/host.key";

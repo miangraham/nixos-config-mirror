@@ -1,10 +1,11 @@
 { config, pkgs, inputs, ... }:
 let
+  blocky = import ../futaba/blocky.nix { inherit pkgs; };
   borgbackup = import ./backup.nix { inherit pkgs; };
 in
 {
   services = {
-    inherit borgbackup;
+    inherit blocky borgbackup;
 
     pipewire.enable = pkgs.lib.mkForce false;
 
@@ -26,7 +27,7 @@ in
     };
 
     jellyfin = {
-      enable = true;
+      enable = false;
       openFirewall = true;
     };
 

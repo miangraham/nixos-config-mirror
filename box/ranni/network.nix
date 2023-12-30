@@ -18,6 +18,7 @@
       linkConfig.RequiredForOnline = "routable";
       networkConfig = {
         DHCP = "yes";
+        DNS = [ "192.168.0.1" ];
         # DNSSEC = "yes";
         # DNSOverTLS = "yes";
         # DNS = [ "1.1.1.1" "1.0.0.1" ];
@@ -28,4 +29,7 @@
     { port = 4533; proto = "tcp"; host = "any"; } # navidrome
     { port = 8096; proto = "tcp"; host = "any"; } # jellyfin
   ];
+  services.resolved.extraConfig = ''
+    DNSStubListener=no
+  '';
 }
