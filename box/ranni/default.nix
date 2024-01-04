@@ -19,12 +19,12 @@ in
   ];
 
   boot = {
-    kernelPackages = lib.mkForce pkgs.linuxPackages_6_1;
+    kernelPackages = lib.mkForce pkgs.linuxPackages_6_6;
     # TODO: test removal
     kernelModules = [ "coretemp" "nct6775" ];
-    extraModprobeConfig = ''
-      options zfs zfs_dmu_offset_next_sync=0
-    '';
+    # extraModprobeConfig = ''
+    #   options zfs zfs_dmu_offset_next_sync=0
+    # '';
   };
 
   users = {
