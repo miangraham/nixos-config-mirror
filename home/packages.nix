@@ -39,6 +39,7 @@ builtins.attrValues {
     samba
     shellcheck
     speedtest-cli
+    sysbench
     tigervnc
     tldr
     tokei
