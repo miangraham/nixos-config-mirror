@@ -55,8 +55,8 @@ in
 
     homeassistant = {
       inherit environment extraOptions;
-      # 2023.11.1
-      image = "ghcr.io/home-assistant/home-assistant@sha256:de25f0ad773b54d1c0e5a63147e23417055f3056b0ef24cf4a5ac8019bb33df3";
+      # 2024.1.3
+      image = "ghcr.io/home-assistant/home-assistant@sha256:96b802e5148e99ebea3c94ae7831063bede571782d4cc8368d8a9569938df51a";
       ports = [ "8091:8123" ];
       volumes = [
         "/srv/home-assistant:/config"
