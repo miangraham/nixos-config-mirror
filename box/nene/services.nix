@@ -37,6 +37,10 @@ in
     redis.servers.dev = {
       enable = true;
       port = 6379;
+      bind = null;
+      settings = {
+        protected-mode = "no";
+      };
     };
 
     # box specific due to ACME, rip
