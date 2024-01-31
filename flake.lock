@@ -16,11 +16,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1704850390,
-        "narHash": "sha256-BUPWo1wD3WQ9xzbR+tZeibF3h1F0IyOqK3uINvCA2nw=",
+        "lastModified": 1706691967,
+        "narHash": "sha256-ADKh/Vss8ITblcLDl/LUM6GqJOahBktu4EXzhv7Uxbs=",
         "owner": "nix-community",
         "repo": "emacs-overlay",
-        "rev": "58305b28029922b981f333229500e9ff34896c72",
+        "rev": "2d69eefbcadbac97bda477477cd53c0ef815f436",
         "type": "github"
       },
       "original": {
@@ -39,8 +39,8 @@
         "tdlib": "tdlib"
       },
       "locked": {
-        "lastModified": 1704866557,
-        "narHash": "sha256-84bA7zinUWT+vQVx6HY9Lzx7T/s0c4yTTAHQakTbRnY=",
+        "lastModified": 1706702298,
+        "narHash": "sha256-B1yEa0I20DYi43e2Y+j0W5SmonTZ/LfWAe7Up20BN7A=",
         "type": "tarball",
         "url": "https://codeberg.org/mian/emacs-config/archive/master.tar.gz"
       },
@@ -54,11 +54,11 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1701680307,
-        "narHash": "sha256-kAuep2h5ajznlPMD9rnQyffWG8EM/C73lejGofXvdM8=",
+        "lastModified": 1705309234,
+        "narHash": "sha256-uNRRNRKmJyCRC/8y1RqBkqWBLM034y4qN7EprSdmgyA=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "4022d587cbbfd70fe950c1e2083a02621806a725",
+        "rev": "1ef2e671c3b0c19053962c07dbda38332dcebf26",
         "type": "github"
       },
       "original": {
@@ -164,17 +164,17 @@
     "tdlib": {
       "flake": false,
       "locked": {
-        "lastModified": 1704067641,
-        "narHash": "sha256-EtVMlm1WPgxprspETKwxZIyQOwxr1il3/fJnWADyx3E=",
+        "lastModified": 1706532537,
+        "narHash": "sha256-/le9T/YAsda83HsPx8e2uBeEWaA2gPda8SczL84T++g=",
         "owner": "tdlib",
         "repo": "td",
-        "rev": "d963044eb9b8bb075e3f63b8bfd8da735c4c37d9",
+        "rev": "437c2d0c6e0ad104022d5ad86ddc8aedc41cb7a8",
         "type": "github"
       },
       "original": {
         "owner": "tdlib",
         "repo": "td",
-        "rev": "d963044eb9b8bb075e3f63b8bfd8da735c4c37d9",
+        "rev": "437c2d0c6e0ad104022d5ad86ddc8aedc41cb7a8",
         "type": "github"
       }
     },
