@@ -12,6 +12,7 @@ builtins.attrValues {
     fd
     ffmpeg
     flac
+    geekbench
     gh
     graphviz
     iftop
@@ -39,7 +40,6 @@ builtins.attrValues {
     samba
     shellcheck
     speedtest-cli
-    sysbench
     tigervnc
     tldr
     tokei
