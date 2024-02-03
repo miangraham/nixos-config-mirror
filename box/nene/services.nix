@@ -43,6 +43,11 @@ in
       };
     };
 
+    mysql = {
+      enable = true;
+      package = pkgs.mariadb;
+    };
+
     # box specific due to ACME, rip
     # nginx = {
     #   enable = false;
