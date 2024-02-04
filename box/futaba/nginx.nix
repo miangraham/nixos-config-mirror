@@ -47,10 +47,12 @@ in
         charset utf-8;
       '';
     };
-    # "graham.tokyo" = {
-    #   serverName = "graham.tokyo";
-    #   forceSSL = true;
-    #   enableACME = true;
+    "graham.tokyo" = {
+      serverName = "graham.tokyo";
+      root = "/var/www";
+      forceSSL = true;
+      enableACME = true;
+    };
     #   listen = [
     #     {
     #       addr = "0.0.0.0";
