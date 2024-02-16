@@ -28,6 +28,7 @@ let
     ".mail"
     ".mozilla"
     ".npm"
+    ".ollama"
     ".paradoxlauncher"
     ".pki"
     ".rustup"

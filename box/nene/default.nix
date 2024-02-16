@@ -40,9 +40,10 @@
     apksigner
     asunder
     # element-desktop # electron
-    gimp
+    # gimp
     libreoffice
     mame.tools
+    ollama
     picocom
     # signal-desktop # unused
     twitch-tui
