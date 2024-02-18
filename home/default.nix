@@ -34,6 +34,7 @@ in
 
     bat.enable = true;
     fzf.enable = true;
+    home-manager.enable = true;
     mbsync.enable = true;
     mu.enable = true;
     zoxide.enable = true;
