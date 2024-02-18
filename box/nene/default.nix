@@ -41,12 +41,12 @@
     asunder
     # element-desktop # electron
     # gimp
-    libreoffice
+    # libreoffice
     mame.tools
     ollama
-    picocom
+    # picocom
     # signal-desktop # unused
-    twitch-tui
+    # twitch-tui
   ];
 
   system.stateVersion = "23.11";
