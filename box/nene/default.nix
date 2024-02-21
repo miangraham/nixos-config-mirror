@@ -46,6 +46,7 @@
     ollama
     # picocom
     # signal-desktop # unused
+    soundconverter
     # twitch-tui
   ];
 
