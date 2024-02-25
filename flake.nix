@@ -3,7 +3,6 @@
   inputs = {
     nixpkgs = { url = "github:NixOS/nixpkgs/nixos-23.11"; };
     unstable = { url = "github:NixOS/nixpkgs/nixos-23.11"; };
-    small = { url = "github:NixOS/nixpkgs/nixos-23.11-small"; };
 
     nixos-hardware = { url = "github:NixOS/nixos-hardware/master"; };
     home-manager = {
@@ -50,7 +49,7 @@
           ./box/rin
           inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t14-amd-gen1
         ];
-        pika = inputs.small.lib.nixosSystem {
+        pika = inputs.nixpkgs.lib.nixosSystem {
           inherit specialArgs;
           system = "aarch64-linux";
           modules = [

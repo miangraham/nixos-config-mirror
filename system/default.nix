@@ -1,16 +1,18 @@
 { pkgs, inputs, config, ... }:
 let
   fonts = import ./fonts.nix { inherit pkgs; };
+  nix = import ../common/nix-settings.nix { inherit pkgs; };
   packages = import ./packages.nix { inherit pkgs inputs; };
   overlays = import ../common/overlays-stable.nix { inherit inputs pkgs; };
   services = import ./services.nix { inherit pkgs; };
+  sshAuthKeys = import ../common/ssh-auth-keys.nix {};
 in
 {
   imports = [
     ./network.nix
   ];
 
-  inherit fonts services;
+  inherit fonts nix services;
 
   time.timeZone = "Asia/Tokyo";
   i18n.defaultLocale = "en_US.UTF-8";
@@ -33,32 +35,6 @@ in
       };
       efi.canTouchEfiVariables = true;
     };
-  };
-
-  nix = {
-    package = pkgs.nixVersions.stable;
-    settings = {
-      allowed-users = ["@wheel" "nix-ssh"];
-      trusted-users = ["@wheel"];
-      auto-optimise-store = true;
-      substituters = [
-        "https://nix-community.cachix.org"
-      ];
-      trusted-public-keys = [
-        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-        "nene-1:tETUAQxI2/WCqFqS0J+32RgAqFrZXAkLtIHByUT7AjQ="
-      ];
-    };
-    gc = {
-      automatic = true;
-      dates = "Sat *-*-* 00:00:00";
-      options = "--delete-older-than 7d";
-    };
-    extraOptions = ''
-      keep-outputs = true
-      keep-derivations = true
-      experimental-features = nix-command flakes
-    '';
   };
 
   systemd = {
@@ -85,15 +61,7 @@ in
       "znc"
     ];
     shell = pkgs.zsh;
-    openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMy89YUyKYTX6DvMNDqmUT7irXMXgp5/tZ3Z7uQAiZ6V ian@bocchi"
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBcbC9h0gXGiyRCKE4Pj8jJ4loQ89QyeG7m3H2hLm6Fc ian@futaba"
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICD/gQKLw/+A7JQLLvX+pz7MS0g17hf3GHrzCmOaPUH1 ian@maho"
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKDJuEytWrkjLvzsiqisYAfdgDzk6SKf4e0u0OEqWJ9Y ian@nene"
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJVoASwk1Nn4Tf6DZIqS93E3k03wcoXWl4+dPGwvMMbm ian@ranni"
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJtZ9GKY548o3w65T0HAQjULyuKthQzenZ36LO18brZo ian@rin"
-      "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCoz19hQxf246vOlfY8eIj9JqOqrxkUuAsP1jxVWQoBV/x2/gusKxLakifXTkz+Pl3cB2AtE5XBnUlixtN9xpE9mn+/6i5zBbdwJvvW2/r6eq6o+/mmGsvKcpwfTwdNQ5RWLBpDsHWNeA+r6k8Yi6X/ca6WzOGfvIh3YehdJpdpLDnd2+8cDWwGgGgPTYtXO+2yTg24htjfrsX7zn3TToVJQi+rThF1telelnhxKEZauNIrc7jLYZcUs5RTyEMyo8+onT/VMvItr2PiDdquEDWJZH9ZM+5NnDXZhrnqOUIqbbwcb66AXbELtTpql8dv/tl0K5bWMtM6aYcInln9sk2h ian@yuno"
-    ];
+    openssh.authorizedKeys.keys = sshAuthKeys;
   };
 
   environment = {

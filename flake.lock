@@ -126,24 +126,7 @@
         "home-manager": "home-manager",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
-        "small": "small",
         "unstable": "unstable"
-      }
-    },
-    "small": {
-      "locked": {
-        "lastModified": 1708760845,
-        "narHash": "sha256-xkSxjVuYLQGvteX4CCuC4c5daBwMKIDAvp0Mvvg2spE=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "79032939bc8d409bcc16121c4ad694ca862895e4",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-23.11-small",
-        "repo": "nixpkgs",
-        "type": "github"
       }
     },
     "systems": {
