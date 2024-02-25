@@ -16,11 +16,18 @@ in
   nixpkgs.config.allowUnfree = true;
 
   powerManagement.cpuFreqGovernor = "ondemand";
-  hardware.raspberry-pi."4".i2c1.enable = true;
+  hardware.raspberry-pi."4" = {
+    apply-overlays-dtmerge.enable = true;
+    i2c1.enable = true;
+  };
 
   environment.systemPackages = import ./packages.nix { inherit pkgs; };
 
   boot = {
+    loader = {
+      generic-extlinux-compatible.enable = true;
+      grub.enable = false;
+    };
     kernelParams = [
       "8250.nr_uarts=1"
     ];
@@ -137,5 +144,5 @@ polkit.addRule(function(action, subject) {
     };
   };
 
-  system.stateVersion = "21.11";
+  system.stateVersion = "23.11";
 }
