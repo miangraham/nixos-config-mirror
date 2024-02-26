@@ -8,6 +8,10 @@ let
   sshAuthKeys = import ../../common/ssh-auth-keys.nix {};
 in
 {
+  imports = [
+    ./containers.nix
+  ];
+
   inherit nix;
 
   networking = {
