@@ -10,7 +10,10 @@ in
 {
   inherit nix;
 
-  networking.hostName = "pika";
+  networking = {
+    hostName = "pika";
+    useDHCP = true;
+  };
   time.timeZone = "Asia/Tokyo";
   i18n.defaultLocale = "en_US.UTF-8";
   nixpkgs.config.allowUnfree = true;
@@ -28,9 +31,11 @@ in
       generic-extlinux-compatible.enable = true;
       grub.enable = false;
     };
+    kernelPackages = pkgs.lib.mkForce pkgs.linuxPackages_6_6;
     kernelParams = [
       "8250.nr_uarts=1"
     ];
+    initrd.availableKernelModules = [ "xhci_pci" "usbhid" ];
   };
 
   users.users.ian = {
@@ -61,6 +66,10 @@ in
       device = "/dev/disk/by-label/NIXOS_SD";
       fsType = "ext4";
       options = [ "noatime" ];
+    };
+    "/firmware" = {
+      device = "/dev/disk/by-label/FIRMWARE";
+      fsType = "vfat";
     };
   };
 

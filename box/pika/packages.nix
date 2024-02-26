@@ -1,6 +1,7 @@
 { pkgs, ... }:
 builtins.attrValues {
   inherit (pkgs)
+    bashmount
     diskonaut
     emacs29-nox
     gh
@@ -11,6 +12,7 @@ builtins.attrValues {
     nano
     neofetch
     nixpkgs-review
+    parted
     raspberrypi-eeprom
     ripgrep
     rsync
