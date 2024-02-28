@@ -39,6 +39,17 @@ in
     mu.enable = true;
     zoxide.enable = true;
 
+    atuin = {
+      enable = true;
+      flags = [ "--disable-up-arrow" ];
+      settings = {
+        auto_sync = false;
+        show_help = false;
+        style = "compact";
+        update_check = false;
+      };
+    };
+
     eza = {
       enable = true;
       enableAliases = true;
