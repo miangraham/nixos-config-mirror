@@ -2,7 +2,6 @@
 {
   imports = [
     ./audio.nix
-    ./hyprland.nix
   ];
 
   boot = {
@@ -40,9 +39,7 @@
     enable = true;
     xdgOpenUsePortal = true;
     wlr.enable = true;
-    # extraPortals = [
-    #   xdg-desktop-portal-gtk
-    # ];
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
   home-manager.users.ian.wayland.windowManager.sway.enable = true;
