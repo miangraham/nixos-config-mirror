@@ -17,12 +17,21 @@ in
   networking = {
     hostName = "pika";
     useDHCP = true;
+    firewall.allowedTCPPorts = [ 3001 ];
+    extraHosts = ''
+192.168.0.117 ranni
+192.168.0.128 futaba
+192.168.0.128 invid
+192.168.0.128 freshrss
+192.168.0.128 graham.tokyo
+192.168.0.128 nextcloud
+    '';
   };
   time.timeZone = "Asia/Tokyo";
   i18n.defaultLocale = "en_US.UTF-8";
   nixpkgs.config.allowUnfree = true;
 
-  powerManagement.cpuFreqGovernor = "ondemand";
+  powerManagement.cpuFreqGovernor = "conservative";
   hardware.raspberry-pi."4" = {
     apply-overlays-dtmerge.enable = true;
     i2c1.enable = true;
@@ -94,6 +103,10 @@ in
       user = "ian";
       doInit = false;
       removableDevice = true;
+    };
+    endlessh = {
+      enable = true;
+      openFirewall = true;
     };
   };
 
