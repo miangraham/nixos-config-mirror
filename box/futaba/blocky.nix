@@ -30,7 +30,9 @@ in {
     blocking = {
       refreshPeriod = "24h";
       clientGroupsBlock.default = [ "default" ];
-      whiteLists.default = [];
+      whiteLists.default = [
+        (builtins.readFile ./blocky_whitelist.txt)
+      ];
       blackLists.default = [
         (builtins.readFile ./blocky_blacklist.txt)
         "https://adaway.org/hosts.txt"
@@ -57,6 +59,7 @@ in {
 
         # social
         "discord.com" = "192.168.0.1";
+        "click.discord.com" = "192.168.0.1";
       };
     };
   };
