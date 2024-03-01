@@ -1,28 +1,19 @@
 { pkgs, inputs, config, ... }:
 let
   fonts = import ./fonts.nix { inherit pkgs; };
-  nix = import ../common/nix-settings.nix { inherit pkgs; };
   packages = import ./packages.nix { inherit pkgs inputs; };
   overlays = import ../common/overlays-stable.nix { inherit inputs pkgs; };
   services = import ./services.nix { inherit pkgs; };
-  sshAuthKeys = import ../common/ssh-auth-keys.nix {};
 in
 {
   imports = [
+    ./base.nix
     ./network.nix
   ];
 
-  inherit fonts nix services;
+  inherit fonts services;
 
-  time.timeZone = "Asia/Tokyo";
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  nixpkgs = {
-    config = {
-      allowUnfree = true;
-    };
-    inherit overlays;
-  };
+  nixpkgs = { inherit overlays; };
 
   boot = {
     # 6.6 LTS
@@ -37,31 +28,15 @@ in
     };
   };
 
-  systemd = {
-    coredump.enable = true; # false
+  systemd.coredump.enable = true; # false
+
+  users.users.ian = {
+    shell = pkgs.zsh;
   };
 
   users.groups = {
     nginx.gid = config.ids.gids.nginx;
     znc.gid = config.ids.gids.znc;
-  };
-
-  users.users.ian = {
-    isNormalUser = true;
-    extraGroups = [
-      "adbusers"
-      "audio"
-      "dialout"
-      "dicod"
-      "libvirtd"
-      "networkmanager"
-      "nginx"
-      "video"
-      "wheel"
-      "znc"
-    ];
-    shell = pkgs.zsh;
-    openssh.authorizedKeys.keys = sshAuthKeys;
   };
 
   environment = {
@@ -88,23 +63,6 @@ in
   };
 
   programs = {
-    dconf.enable = true;
     zsh.enable = true;
-
-    git = {
-      enable = true;
-      config = {
-        init.defaultBranch = "master";
-        safe.directory = "/home/ian/.nix";
-      };
-    };
-
-    nano = {
-      nanorc = ''
-        set nowrap
-        set tabstospaces
-        set tabsize 2
-      '';
-    };
   };
 }
