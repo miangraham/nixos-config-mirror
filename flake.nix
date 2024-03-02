@@ -39,6 +39,9 @@
         nene = boxConfig [
           ./box/nene
         ];
+        fuuka = boxConfig [
+          ./box/fuuka
+        ];
         futaba = boxConfig [
           ./box/futaba
         ];
