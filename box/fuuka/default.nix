@@ -4,9 +4,16 @@
     ./hardware-configuration.nix
     ../../system
     ./network.nix
-    ./services.nix
     ./containers.nix
+    ./nextcloud.nix
   ];
+
+  boot.blacklistedKernelModules = [ "iwlwifi" ];
+
+  powerManagement = {
+    cpuFreqGovernor = "conservative";
+    powertop.enable = true;
+  };
 
   system.stateVersion = "23.11";
 }

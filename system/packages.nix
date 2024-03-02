@@ -15,6 +15,7 @@ builtins.attrValues {
     parted
     pavucontrol
     pciutils
+    powertop
     psmisc
     ripgrep
     smartmontools
