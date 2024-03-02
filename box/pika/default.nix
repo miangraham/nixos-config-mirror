@@ -31,6 +31,8 @@
       "8250.nr_uarts=1"
     ];
     initrd.availableKernelModules = [ "xhci_pci" "usbhid" ];
+    # Disable wifi
+    blacklistedKernelModules = [ "brcmfmac" ];
   };
 
   users.groups = {
