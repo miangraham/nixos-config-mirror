@@ -4,6 +4,7 @@
     ./hardware-configuration.nix
     ../../system
     ./network.nix
+    ./services.nix
     ./containers.nix
     ./nextcloud.nix
   ];

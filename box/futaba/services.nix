@@ -1,7 +1,6 @@
 { config, pkgs, inputs, ... }:
 let
   unstable = import ../../common/unstable.nix { inherit pkgs inputs; };
-  blocky = import ./blocky.nix { inherit pkgs; };
   borgbackup = import ./backup.nix { inherit pkgs; };
   nginx = import ./nginx.nix { inherit config pkgs; };
 in
@@ -11,7 +10,7 @@ in
   # imports = [ "${inputs.unstable}/nixos/modules/services/web-apps/invidious.nix" ];
 
   services = {
-    inherit blocky borgbackup nginx;
+    inherit borgbackup nginx;
 
     openssh.settings.PasswordAuthentication = false;
 
