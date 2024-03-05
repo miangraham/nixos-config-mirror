@@ -3,7 +3,7 @@
   networking = {
     hostName = "fuuka";
     firewall = {
-      allowedTCPPorts = [ 22 53 80 443 8384 ];
+      allowedTCPPorts = [ 22 53 80 443 7575 8384 ];
       allowedUDPPorts = [ 53 ];
     };
     useNetworkd = true;
