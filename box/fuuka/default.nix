@@ -9,7 +9,7 @@
     ./nextcloud.nix
   ];
 
-  boot.blacklistedKernelModules = [ "iwlwifi" ];
+  boot.blacklistedKernelModules = [ "ite_cir" "iwlwifi" ];
 
   powerManagement = {
     cpuFreqGovernor = "conservative";
