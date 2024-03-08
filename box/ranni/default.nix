@@ -40,7 +40,10 @@ in
       group = "borg";
       isNormalUser = true;
       home = "/srv/borg";
-      openssh.authorizedKeys.keys = config.users.users.ian.openssh.authorizedKeys.keys;
+      openssh.authorizedKeys.keys = config.users.users.ian.openssh.authorizedKeys.keys ++ [
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIK3BTKXqv/dMXbzhG+twUtXIIAgIN89JsJng/MGKB78S ian@fuuka"
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFVtjj+KAdt85pX3jLej8yno1xm58vrMVhLg1N5zV1L4 ian@pika"
+      ];
     };
     groups.borg = {};
 
