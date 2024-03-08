@@ -1,11 +1,12 @@
 { config, pkgs, inputs, ... }:
 let
   blocky = import ../futaba/blocky.nix { inherit pkgs; };
+  borgbackup = import ./backup.nix { inherit pkgs; };
   nginx = import ./nginx.nix { inherit pkgs; };
 in
 {
   services = {
-    inherit blocky nginx;
+    inherit blocky borgbackup nginx;
   };
 
   systemd.services = {

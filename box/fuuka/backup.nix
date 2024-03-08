@@ -1,26 +1,15 @@
 { pkgs, ... }:
 let
-  backupTime = "*-*-* *:04:00";
+  backupTime = "*-*-* *:08:00";
   backup = import ../../system/backup.nix {
     inherit pkgs backupTime;
   };
   inherit (import ../../system/backup-utils.nix {inherit pkgs backupTime;}) job;
   jobs = {
-    home-ian-to-rnet = job {
-      repo = "rnet:futaba";
-      user = "ian";
-      doInit = false;
-      encryption = {
-        mode = "keyfile-blake2";
-        passCommand = "cat /home/ian/.ssh/rnet_futaba_phrase";
-      };
-      extraArgs = "--remote-path=borg1";
-    };
-
     home-ian-to-ranni = job {
-      repo = "borg@ranni:futaba";
+      repo = "borg@ranni:fuuka";
       user = "ian";
-      startAt = "*-*-* 04:00:00";
+      startAt = "*-*-* 06:00:00";
       prune = {
         keep = {
           hourly = 0;
@@ -33,13 +22,10 @@ let
 
     srv-to-local = job {
       paths = [
-        "/srv/freshrss"
-        "/srv/home-assistant"
-        "/srv/znc"
+        "/srv"
         "/var/backup"
-        "/var/lib/invidious"
+        "/var/lib/nextcloud"
       ];
-      startAt = "*-*-* *:07:00";
       repo = "/borg";
       user = "root";
       preHook = ''

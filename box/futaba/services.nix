@@ -155,6 +155,11 @@ in
       compress = true;
       nocreate = true;
     };
+
+    postgresqlBackup = {
+      enable = true;
+      startAt = "*-*-* 05:00:00";
+    };
   };
 
   security.acme = {
