@@ -4,7 +4,7 @@ builtins.attrValues {
   inherit (pkgs)
     awscli2
     bind
-    cachix
+    # cachix
     diskonaut
     dmidecode
     duf
