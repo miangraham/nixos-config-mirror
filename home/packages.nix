@@ -55,6 +55,9 @@ builtins.attrValues {
     yt-dlp
   ;
 
+  # for manual generations cleanup, why auto no work
+  inherit (inputs.home-manager.packages.${system}) home-manager;
+
   # dev
   inherit (pkgs.gitAndTools)
     git-open
