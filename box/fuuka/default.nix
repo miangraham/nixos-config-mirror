@@ -3,6 +3,7 @@
   imports = [
     ./hardware-configuration.nix
     ../../system
+    ../../system/nebula-node.nix
     ./network.nix
     ./services.nix
     ./containers.nix

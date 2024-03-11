@@ -9,6 +9,8 @@ in
   # disabledModules = [ "services/web-apps/invidious.nix" ];
   # imports = [ "${inputs.unstable}/nixos/modules/services/web-apps/invidious.nix" ];
 
+  environment.systemPackages = [ pkgs.nebula ]; # for nebula-cert cmd
+
   services = {
     inherit borgbackup nginx;
 

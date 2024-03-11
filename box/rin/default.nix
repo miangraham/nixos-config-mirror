@@ -6,7 +6,6 @@ in
   imports = [
     ./hardware-configuration.nix
     ../../system
-    ../../system/nebula-node.nix
     ../../common/desktop.nix
   ];
 
