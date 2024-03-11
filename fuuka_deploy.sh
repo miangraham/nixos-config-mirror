@@ -19,8 +19,9 @@ fi
 
 # Build
 
-nix build .#nixosConfigurations.fuuka.config.system.build.toplevel --out-link /tmp/result
-OUTPUT=$(readlink /tmp/result)
+mkdir -p ./builds
+nix build .#nixosConfigurations.fuuka.config.system.build.toplevel --out-link ./builds/fuuka
+OUTPUT=$(readlink ./builds/fuuka)
 echo "Built: ${OUTPUT}"
 
 # Copy

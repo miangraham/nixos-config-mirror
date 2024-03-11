@@ -19,8 +19,9 @@ fi
 
 # Build
 
-nix build .#nixosConfigurations.rin.config.system.build.toplevel --out-link /tmp/result
-OUTPUT=$(readlink /tmp/result)
+mkdir -p ./builds
+nix build .#nixosConfigurations.rin.config.system.build.toplevel --out-link ./builds/rin
+OUTPUT=$(readlink ./builds/rin)
 echo "Built: ${OUTPUT}"
 
 # Copy

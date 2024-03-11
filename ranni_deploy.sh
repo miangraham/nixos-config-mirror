@@ -19,8 +19,9 @@ fi
 
 # Build
 
-nix build .#nixosConfigurations.ranni.config.system.build.toplevel --out-link /tmp/result
-OUTPUT=$(readlink /tmp/result)
+mkdir -p ./builds
+nix build .#nixosConfigurations.ranni.config.system.build.toplevel --out-link ./builds/ranni
+OUTPUT=$(readlink ./builds/ranni)
 echo "Built: ${OUTPUT}"
 
 # Copy

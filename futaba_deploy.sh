@@ -19,8 +19,9 @@ fi
 
 # Build
 
-nix build .#nixosConfigurations.futaba.config.system.build.toplevel --out-link /tmp/result
-OUTPUT=$(readlink /tmp/result)
+mkdir -p ./builds
+nix build .#nixosConfigurations.futaba.config.system.build.toplevel --out-link ./builds/futaba
+OUTPUT=$(readlink ./builds/futaba)
 echo "Built: ${OUTPUT}"
 
 # Copy
