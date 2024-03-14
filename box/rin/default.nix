@@ -9,6 +9,8 @@ in
     ../../common/desktop.nix
   ];
 
+  time.timeZone = pkgs.lib.mkForce null;
+
   networking = {
     hostName = "rin";
     networkmanager.enable = true;
@@ -44,9 +46,10 @@ in
 
   services = {
     inherit borgbackup;
-    rabbitmq.enable = true;
+    automatic-timezoned.enable = true;
+    rabbitmq.enable = false;
     redis.servers.dev = {
-      enable = true;
+      enable = false;
       port = 6379;
     };
   };
