@@ -10,6 +10,7 @@ builtins.attrValues {
     ipmitool
     lshw
     nix-index
+    nix-output-monitor
     nvme-cli
     p7zip
     parted
