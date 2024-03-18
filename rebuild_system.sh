@@ -18,7 +18,7 @@ if [[ "$HOSTNAME" == "nene" ]]; then
   sudo nixos-rebuild switch --flake '.#' --print-build-logs
   sudo nix store sign -k /var/keys/nix-cache-key.priv --all
 elif [[ "$HOSTNAME" == "rin" ]]; then
-  sudo nixos-rebuild switch --flake '.#' --show-trace |& nom
+  sudo nixos-rebuild switch --flake '.#' --show-trace
 else
   sudo nixos-rebuild switch --flake '.#' --show-trace
 fi
