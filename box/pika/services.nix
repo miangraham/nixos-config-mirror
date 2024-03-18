@@ -7,6 +7,9 @@ let
 in
 {
   services = {
+    nebula.networks.asgard.firewall.inbound = [
+      { port = 3001; proto = "tcp"; host = "any"; } # uptime-kuma
+    ];
     udisks2.enable = true;
     openssh = {
       enable = true;

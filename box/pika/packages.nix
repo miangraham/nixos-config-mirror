@@ -12,6 +12,7 @@ builtins.attrValues {
     nano
     neofetch
     nixpkgs-review
+    nix-output-monitor
     parted
     raspberrypi-eeprom
     ripgrep
