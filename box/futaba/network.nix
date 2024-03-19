@@ -14,7 +14,7 @@
     wait-online = {
       anyInterface = true;
       timeout = 20;
-      ignoredInterfaces = [ "docker0" "tailscale0" ];
+      ignoredInterfaces = [ "docker0" ];
     };
     networks."40-wired" = {
       name = "en*";

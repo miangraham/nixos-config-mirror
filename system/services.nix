@@ -2,7 +2,6 @@
 {
   fwupd.enable = true;
   gnome.gnome-keyring.enable = true;
-  # tailscale.enable = true;
   udisks2.enable = true;
 
   openssh = {
