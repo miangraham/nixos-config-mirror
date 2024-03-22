@@ -41,6 +41,14 @@ in
       package = pkgs.mariadb;
     };
 
+    # vikunja = {
+    #   enable = true;
+    #   database.type = "sqlite";
+    #   frontendScheme = "http";
+    #   frontendHostname = "localhost";
+    # };
+    # nginx.enable = true;
+
     # box specific due to ACME, rip
     # nginx = {
     #   enable = false;

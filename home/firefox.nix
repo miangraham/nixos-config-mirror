@@ -82,6 +82,8 @@ in
       settings = {
         # Important
         "app.update.auto" = false;
+        "app.update.silent" = true;
+        "app.update.suppressPrompts" = true;
         "browser.contentblocking.category" = "standard";
         "browser.sessionstore.resume_from_crash" = false;
         "browser.sessionstore.resuming_after_os_restart" = false;
@@ -180,6 +182,7 @@ in
         "cookiebanners.service.mode" = 1;
         "cookiebanners.service.mode.privateBrowsing" = 1;
         "devtools.everOpened" = true;
+        "extensions.experiments.enabled" = false;
         "extensions.pocket.enabled" = false;
         "extensions.quarantinedDomains.enabled" = false;
         "extensions.unifiedExtensions.enabled" = false;
