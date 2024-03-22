@@ -19,11 +19,11 @@ in
   enable = true;
   user = "nginx";
   upstreams = {
-    # "backend_conduit" = {
-    #   servers = {
-    #     "[::1]:${toString config.services.matrix-conduit.settings.global.port}" = {};
-    #   };
-    # };
+    "backend_matrix" = {
+      servers = {
+        "fuuka:8008" = {};
+      };
+    };
   };
   virtualHosts = {
     futaba = {
@@ -51,67 +51,56 @@ in
       serverName = "graham.tokyo";
       forceSSL = true;
       enableACME = true;
-      # root = "/var/www";
-      locations."/" = {
-        proxyPass = "http://fuuka";
+      listen = [
+        {
+          addr = "0.0.0.0";
+          port = 443;
+          ssl = true;
+        }
+        {
+          addr = "[::]";
+          port = 443;
+          ssl = true;
+        }
+        {
+          addr = "0.0.0.0";
+          port = 8448;
+          ssl = true;
+        }
+        {
+          addr = "[::]";
+          port = 8448;
+          ssl = true;
+        }
+      ];
+      extraConfig = ''
+        merge_slashes off;
+      '';
+      locations."/_matrix/" = {
+        proxyPass = "http://backend_matrix$request_uri";
+        proxyWebsockets = true;
         extraConfig = ''
           proxy_set_header Host $host;
-          proxy_set_header X-Real-IP $remote_addr;
-          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-          proxy_set_header X-Forwarded-Proto https;
+          proxy_buffering off;
+        '';
+      };
+      locations."=/.well-known/matrix/server" = {
+        alias = "${well_known_server}";
+        extraConfig = ''
+          # Set the header since by default NGINX thinks it's just bytes
+          default_type application/json;
+        '';
+      };
+      locations."=/.well-known/matrix/client" = {
+        alias = "${well_known_client}";
+        extraConfig = ''
+          # Set the header since by default NGINX thinks it's just bytes
+          default_type application/json;
+
+          # https://matrix.org/docs/spec/client_server/r0.4.0#web-browser-clients
+          add_header Access-Control-Allow-Origin "*";
         '';
       };
     };
-    #   listen = [
-    #     {
-    #       addr = "0.0.0.0";
-    #       port = 443;
-    #       ssl = true;
-    #     }
-    #     {
-    #       addr = "[::]";
-    #       port = 443;
-    #       ssl = true;
-    #     }
-    #     {
-    #       addr = "0.0.0.0";
-    #       port = 8448;
-    #       ssl = true;
-    #     }
-    #     {
-    #       addr = "[::]";
-    #       port = 8448;
-    #       ssl = true;
-    #     }
-    #   ];
-    #   extraConfig = ''
-    #     merge_slashes off;
-    #   '';
-      # locations."/_matrix/" = {
-      #   proxyPass = "http://backend_conduit$request_uri";
-      #   proxyWebsockets = true;
-      #   extraConfig = ''
-      #     proxy_set_header Host $host;
-      #     proxy_buffering off;
-      #   '';
-      # };
-      # locations."=/.well-known/matrix/server" = {
-      #   alias = "${well_known_server}";
-      #   extraConfig = ''
-      #     # Set the header since by default NGINX thinks it's just bytes
-      #     default_type application/json;
-      #   '';
-      # };
-      # locations."=/.well-known/matrix/client" = {
-      #   alias = "${well_known_client}";
-      #   extraConfig = ''
-      #     # Set the header since by default NGINX thinks it's just bytes
-      #     default_type application/json;
-
-      #     # https://matrix.org/docs/spec/client_server/r0.4.0#web-browser-clients
-      #     add_header Access-Control-Allow-Origin "*";
-      #   '';
-      # };
-    # };
   };
 }

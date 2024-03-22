@@ -39,7 +39,7 @@
   home-manager.users.ian.home.packages = with pkgs; [
     apksigner
     asunder
-    # element-desktop # electron
+    element-desktop # electron
     # gimp
     # libreoffice
     mame.tools

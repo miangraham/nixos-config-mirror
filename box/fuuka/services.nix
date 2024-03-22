@@ -7,6 +7,20 @@ in
 {
   services = {
     inherit blocky borgbackup nginx;
+
+    dendrite = {
+      enable = true;
+      loadCredential = [
+        "private_key:/etc/dendrite/dendrite.key"
+        "shared_secret:/etc/dendrite/shared_secret"
+      ];
+      settings = {
+        global.server_name = "graham.tokyo";
+        global.private_key = "$CREDENTIALS_DIRECTORY/private_key";
+        client_api.registration_shared_secret = "$CREDENTIALS_DIRECTORY/shared_secret";
+        app_service_api.database.connection_string = "file:appserviceapi.db";
+      };
+    };
   };
 
   systemd.services = {
