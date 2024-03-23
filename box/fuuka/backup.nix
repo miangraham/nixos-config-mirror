@@ -22,8 +22,10 @@ let
 
     srv-to-local = job {
       paths = [
+        "/etc/dendrite"
         "/srv"
         "/var/backup"
+        "/var/lib/dendrite"
         "/var/lib/nextcloud"
       ];
       repo = "/borg";
