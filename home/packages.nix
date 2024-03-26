@@ -20,6 +20,7 @@ builtins.attrValues {
     inetutils
     ispell
     jq
+    kondo
     lftp
     lm_sensors
     logrotate
