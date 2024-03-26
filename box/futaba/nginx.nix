@@ -3,7 +3,7 @@ let
   admin_email = import ../../common/email.nix {};
   well_known_server = pkgs.writeText "well-known-matrix-server" ''
     {
-      "m.server": "graham.tokyo"
+      "m.server": "graham.tokyo:443"
     }
   '';
 
@@ -81,7 +81,8 @@ in
         proxyWebsockets = true;
         extraConfig = ''
           proxy_set_header Host $host;
-          proxy_buffering off;
+          proxy_set_header X-Real-IP $remote_addr;
+          proxy_read_timeout 600;
         '';
       };
       locations."=/.well-known/matrix/server" = {
