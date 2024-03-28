@@ -21,11 +21,12 @@ let
     };
 
     srv-to-local = job {
+      startAt = "*-*-* *:16:00";
       paths = [
         "/etc/dendrite"
         "/srv"
         "/var/backup"
-        "/var/lib/dendrite"
+        "/var/lib/private/dendrite"
         "/var/lib/nextcloud"
       ];
       repo = "/borg";
