@@ -10,7 +10,6 @@ let
             patches = [ ./invidious-customization.patch ];
           });
       };
-      lsquic = super.callPackage "${inputs.unstable}/pkgs/servers/invidious/lsquic.nix" { };
       videojs = super.callPackage "${inputs.unstable}/pkgs/servers/invidious/videojs.nix" { };
     };
   });

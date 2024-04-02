@@ -2,7 +2,7 @@
   description = "";
   inputs = {
     nixpkgs = { url = "github:NixOS/nixpkgs/nixos-23.11"; };
-    unstable = { url = "github:NixOS/nixpkgs/nixos-23.11"; };
+    unstable = { url = "github:NixOS/nixpkgs/nixos-unstable-small"; };
 
     nixos-hardware = { url = "github:NixOS/nixos-hardware/master"; };
     home-manager = {
