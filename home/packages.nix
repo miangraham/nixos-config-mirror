@@ -38,6 +38,7 @@ builtins.attrValues {
     parallel
     protonmail-bridge
     ranger
+    remmina
     samba
     shellcheck
     speedtest-cli
