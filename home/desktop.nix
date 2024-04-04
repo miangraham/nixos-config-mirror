@@ -88,7 +88,9 @@ in
     retroarch = pkgs.retroarch.override {
       cores = with pkgs.libretro; [
         dolphin
+        pcsx-rearmed
         snes9x
+        swanstation
       ];
     };
 
