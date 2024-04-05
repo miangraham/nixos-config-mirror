@@ -1,12 +1,10 @@
 { pkgs, inputs, config, ... }:
 let
-  inherit (import ../../system/backup-utils.nix {
-    inherit pkgs;
-    backupTime = "*-*-* *:10:00";
-  }) job;
+  borgbackup = import ./backup.nix { inherit pkgs; };
 in
 {
   services = {
+    inherit borgbackup;
     nebula.networks.asgard.firewall.inbound = [
       { port = 3001; proto = "tcp"; host = "any"; } # uptime-kuma
     ];
@@ -20,12 +18,6 @@ in
         ];
         PermitRootLogin = "no";
       };
-    };
-    borgbackup.jobs.home-ian-to-usb = job {
-      repo = "/run/media/ian/70F8-1012/borg";
-      user = "ian";
-      doInit = false;
-      removableDevice = true;
     };
     endlessh = {
       enable = true;
