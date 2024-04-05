@@ -27,11 +27,6 @@ in
       };
     };
 
-    endlessh = {
-      enable = true;
-      openFirewall = true;
-    };
-
     sshguard = {
       enable = true;
       blocktime = 3600;
@@ -49,17 +44,6 @@ in
       passwordFile = "/srv/freshrss/freshrss_admin_phrase";
     };
     phpfpm.pools.freshrss.phpEnv.FRESHRSS_THIRDPARTY_EXTENSIONS_PATH = "/srv/freshrss/extensions";
-
-    matrix-conduit = {
-      enable = false;
-      # package = unstable.matrix-conduit;
-      settings.global = {
-        server_name = "graham.tokyo";
-        database_backend = "rocksdb";
-        allow_federation = true;
-        allow_registration = false;
-      };
-    };
 
     microbin = {
       # permission system super busted, sad
