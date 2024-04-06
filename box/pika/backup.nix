@@ -11,6 +11,7 @@ in
       doInit = false;
       removableDevice = true;
     };
+
     srv-to-ranni = job {
       repo = "borg@ranni:pika";
       paths = [
@@ -25,9 +26,7 @@ in
           monthly = 3;
         };
       };
-      environment = {
-        BORG_RSH = "ssh -i /home/ian/.ssh/id_ed25519";
-      };
+      environment.BORG_RSH = "ssh -i /home/ian/.ssh/id_ed25519";
     };
   };
 }

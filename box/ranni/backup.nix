@@ -1,11 +1,15 @@
 { pkgs, ... }:
 let
   backupTime = "*-*-* *:17:00";
-  backup = import ../../system/backup.nix {
-    inherit pkgs backupTime;
-  };
+  hostname = "ranni";
   inherit (import ../../system/backup-utils.nix {inherit pkgs backupTime;}) job;
+  home-ian-to-local = import ../../system/backup-home-to-local.nix { inherit pkgs; };
+  home-ian-to-rnet = import ../../system/backup-home-to-rnet.nix { inherit pkgs hostname; };
+in
+{
   jobs = {
+    inherit home-ian-to-local home-ian-to-rnet;
+
     home-ian-to-ranni = job {
       repo = "/srv/borg/ranni";
       user = "root";
@@ -19,17 +23,5 @@ let
         };
       };
     };
-
-    home-ian-to-rnet = job {
-      repo = "rnet:ranni";
-      user = "ian";
-      doInit = false;
-      encryption = {
-        mode = "keyfile-blake2";
-        passCommand = "cat /home/ian/.ssh/rnet_ranni_phrase";
-      };
-      extraArgs = "--remote-path=borg1";
-    };
   };
-in
-pkgs.lib.recursiveUpdate backup.borgbackup { inherit jobs; }
+}

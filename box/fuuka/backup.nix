@@ -1,24 +1,13 @@
 { pkgs, ... }:
 let
   backupTime = "*-*-* *:08:00";
-  backup = import ../../system/backup.nix {
-    inherit pkgs backupTime;
-  };
   inherit (import ../../system/backup-utils.nix {inherit pkgs backupTime;}) job;
+  home-ian-to-local = import ../../system/backup-home-to-local.nix { inherit pkgs; };
+  home-ian-to-ranni = import ../../system/backup-home-to-ranni.nix { inherit pkgs; hostname = "fuuka"; };
+in
+{
   jobs = {
-    home-ian-to-ranni = job {
-      repo = "borg@ranni:fuuka";
-      user = "ian";
-      startAt = "*-*-* 06:00:00";
-      prune = {
-        keep = {
-          hourly = 0;
-          daily = 7;
-          weekly = 3;
-          monthly = 3;
-        };
-      };
-    };
+    inherit home-ian-to-local home-ian-to-ranni;
 
     srv-to-local = job {
       startAt = "*-*-* *:16:00";
@@ -36,5 +25,4 @@ let
       '';
     };
   };
-in
-pkgs.lib.recursiveUpdate backup.borgbackup { inherit jobs; }
+}

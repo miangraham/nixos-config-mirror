@@ -1,35 +1,15 @@
 { pkgs, ... }:
 let
   backupTime = "*-*-* *:04:00";
-  backup = import ../../system/backup.nix {
-    inherit pkgs backupTime;
-  };
+  hostname = "futaba";
   inherit (import ../../system/backup-utils.nix {inherit pkgs backupTime;}) job;
+  home-ian-to-local = import ../../system/backup-home-to-local.nix { inherit pkgs; };
+  home-ian-to-ranni = import ../../system/backup-home-to-ranni.nix { inherit pkgs hostname; };
+  home-ian-to-rnet = import ../../system/backup-home-to-rnet.nix { inherit pkgs hostname; };
+in
+{
   jobs = {
-    home-ian-to-rnet = job {
-      repo = "rnet:futaba";
-      user = "ian";
-      doInit = false;
-      encryption = {
-        mode = "keyfile-blake2";
-        passCommand = "cat /home/ian/.ssh/rnet_futaba_phrase";
-      };
-      extraArgs = "--remote-path=borg1";
-    };
-
-    home-ian-to-ranni = job {
-      repo = "borg@ranni:futaba";
-      user = "ian";
-      startAt = "*-*-* 04:00:00";
-      prune = {
-        keep = {
-          hourly = 0;
-          daily = 7;
-          weekly = 3;
-          monthly = 3;
-        };
-      };
-    };
+    inherit home-ian-to-local home-ian-to-ranni home-ian-to-rnet;
 
     srv-to-local = job {
       paths = [
@@ -39,7 +19,7 @@ let
         "/var/backup"
         "/var/lib/invidious"
       ];
-      startAt = "*-*-* *:07:00";
+      startAt = "*-*-* *:17:00";
       repo = "/borg";
       user = "root";
       preHook = ''
@@ -47,5 +27,4 @@ let
       '';
     };
   };
-in
-pkgs.lib.recursiveUpdate backup.borgbackup { inherit jobs; }
+}
