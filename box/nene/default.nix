@@ -16,6 +16,8 @@
     "net.ipv4.tcp_fin_timeout" = 10;
   };
 
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+
   sound = {
     enable = true;
     extraConfig = ''
