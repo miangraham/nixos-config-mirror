@@ -61,6 +61,7 @@ let
     ".config/VSCodium"
 
     "share/p4acamera"
+    "share/rp2s"
     "share/videos"
     "share/ytdl"
 
