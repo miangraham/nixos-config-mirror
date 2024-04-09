@@ -28,6 +28,7 @@
   services.nebula.networks.asgard.firewall.inbound = [
     { port = 4533; proto = "tcp"; host = "any"; } # navidrome
     { port = 8096; proto = "tcp"; host = "any"; } # jellyfin
+    { port = 8989; proto = "tcp"; host = "any"; } # grafana
   ];
   services.resolved.extraConfig = ''
     DNSStubListener=no
