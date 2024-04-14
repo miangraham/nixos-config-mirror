@@ -63,5 +63,19 @@ in
         "/run/dbus:/run/dbus:ro"
       ];
     };
+
+    # esphome = {
+    #   inherit environment extraOptions;
+    #   # stable at 2024/04/08
+    #   image = "esphome/esphome@sha256:bfd8a2e3a51476c9fc6e87ede9f7137138054a84f12768e16b5c65a0c57c8346";
+    #   ports = [
+    #     "6052:6052"
+    #     "6053:6053"
+    #   ];
+    #   volumes = [
+    #     "/srv/esphome/config:/config"
+    #     "/etc/localtime:/etc/localtime:ro"
+    #   ];
+    # };
   };
 }

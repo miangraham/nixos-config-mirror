@@ -42,6 +42,7 @@
     apksigner
     asunder
     element-desktop # electron
+    esphome
     # gimp
     # libreoffice
     mame.tools
