@@ -9,6 +9,26 @@ in
 
     pipewire.enable = pkgs.lib.mkForce false;
 
+    calibre-server = {
+      enable = true;
+      libraries = [ "/srv/ebooks" ];
+      port = 8087;
+    };
+    calibre-web = {
+      enable = true;
+      listen = {
+        ip = "0.0.0.0";
+        port = 8088;
+      };
+      options = {
+        calibreLibrary = "/srv/ebooks";
+        enableBookConversion = true;
+        enableBookUploading = true;
+      };
+      user = "calibre-server";
+      group = "calibre-server";
+    };
+
     navidrome = {
       enable = true;
       settings = {
