@@ -21,6 +21,7 @@ builtins.attrValues {
     tldr
     tree
     udiskie
+    unixbench
     unzip
     usbutils
     wget
