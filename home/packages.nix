@@ -47,6 +47,7 @@ builtins.attrValues {
     tokei
     tree
     trurl
+    unixbench
     usbutils
     xdg_utils
     zotero
