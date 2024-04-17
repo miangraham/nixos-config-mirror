@@ -19,11 +19,15 @@ in
       # package = pkgs.graphite-gtk-theme;
       # name = "Graphite-Dark";
     };
+    i = {
+      package = pkgs.candy-icons;
+      name = "candy-icons";
+    };
     ex = { gtk-application-prefer-dark-theme = true; };
   in {
     enable = true;
     theme = t;
-    iconTheme = t;
+    iconTheme = i;
     gtk3.extraConfig = ex;
     gtk4.extraConfig = ex;
   });
