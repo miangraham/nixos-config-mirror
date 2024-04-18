@@ -1,80 +1,81 @@
 { pkgs, ... }:
-let
-  firefox = pkgs.wrapFirefox pkgs.firefox-esr-115-unwrapped {
-    extraPolicies = {
-      AppAutoUpdate = false;
-      AppUpdatePin = "115.";
-      BackgroundAppUpdate = false;
-      DisableAppUpdate = true;
-      DisableFirefoxScreenshots = true;
-      DisableFirefoxStudies = true;
-      DisableMasterPasswordCreation = true;
-      DisablePasswordReveal = true;
-      DisablePocket = true;
-      DisableSetDesktopBackground = true;
-      DisableTelemetry = true;
-      DisplayBookmarksToolbar = true;
-      DontCheckDefaultBrowser = true;
-      DownloadDirectory = "\$\{home\}/downloads";
-      NoDefaultBookmarks = true;
-      OfferToSaveLogins = false;
-      OverrideFirstRunPage = "";
-      OverridePostUpdatePage = "";
-      PasswordManagerEnabled = false;
-      PrimaryPassword = false;
-      SearchSuggestEnabled = false;
-      FirefoxHome = {
-        Highlights = false;
-        Locked = true;
-        Pocket = false;
-        Search = false;
-        Snippets = false;
-        SponsoredPocket = false;
-        SponsoredTopSites = false;
-        TopSites = false;
-      };
-      FirefoxSuggest = {
-        ImproveSuggest = false;
-        Locked = true;
-        SponsoredSuggestions = false;
-        WebSuggestions = false;
-      };
-      Permissions = {
-        Notifications = {
-          BlockNewRequests = true;
-          Locked = true;
-        };
-        Autoplay = {
-          Default = "block-audio-video";
-          Block = [
-            "https://youtube.com"
-          ];
-        };
-      };
-      PictureInPicture = {
-        Enabled = false;
-        Locked = true;
-      };
-      SearchEngines = {
-        Remove = [
-          "Bing"
-          "eBay"
-        ];
-      };
-      UserMessaging = {
-        WhatsNew = false;
-        ExtensionRecommendations = false;
-        FeatureRecommendations = false;
-        UrlbarInterventions = false;
-        SkipOnboarding = true;
-        MoreFromMozilla = false;
-      };
-    };
-  };
-in
 {
   enable = true;
-  package = firefox;
+  package = pkgs.firefox-esr-115;
+  policies = {
+    AppAutoUpdate = false;
+    AppUpdatePin = "115.";
+    AutofillAddressEnabled = false;
+    AutofillCreditCardEnabled = false;
+    DisableAppUpdate = true;
+    DisableFirefoxScreenshots = true;
+    DisableFirefoxStudies = true;
+    DisableMasterPasswordCreation = true;
+    DisablePasswordReveal = true;
+    DisablePocket = true;
+    DisableSetDesktopBackground = true;
+    DisableTelemetry = true;
+    DisplayBookmarksToolbar = true;
+    DontCheckDefaultBrowser = true;
+    DownloadDirectory = "\$\{home\}/downloads";
+    ManualAppUpdateOnly = true;
+    NewTabPage = false;
+    NoDefaultBookmarks = true;
+    OfferToSaveLogins = false;
+    OverrideFirstRunPage = "";
+    OverridePostUpdatePage = "";
+    PasswordManagerEnabled = false;
+    PrimaryPassword = false;
+    SearchSuggestEnabled = false;
+    StartDownloadsInTempDirectory = true;
+    FirefoxHome = {
+      Highlights = false;
+      Locked = true;
+      Pocket = false;
+      Search = false;
+      Snippets = false;
+      SponsoredPocket = false;
+      SponsoredTopSites = false;
+      TopSites = false;
+    };
+    FirefoxSuggest = {
+      ImproveSuggest = false;
+      Locked = true;
+      SponsoredSuggestions = false;
+      WebSuggestions = false;
+    };
+    Permissions = {
+      Notifications = {
+        BlockNewRequests = true;
+        Locked = true;
+      };
+      Autoplay = {
+        Default = "block-audio-video";
+        Block = [
+          "https://youtube.com"
+        ];
+      };
+    };
+    PictureInPicture = {
+      Enabled = false;
+      Locked = true;
+    };
+    SearchEngines = {
+      Remove = [
+        "Bing"
+        "eBay"
+      ];
+    };
+    UserMessaging = {
+      WhatsNew = false;
+      ExtensionRecommendations = false;
+      FeatureRecommendations = false;
+      UrlbarInterventions = false;
+      SkipOnboarding = true;
+      MoreFromMozilla = false;
+      Locked = true;
+    };
+  };
   profiles = {
     ian = {
       id = 0;
@@ -196,9 +197,6 @@ in
 
         # Misc safety
         "extensions.formautofill.available" = false;
-        "extensions.formautofill.addresses.enabled" = false;
-        "extensions.formautofill.creditCards.available" = false;
-        "extensions.formautofill.creditCards.enabled" = false;
       };
     };
   };
