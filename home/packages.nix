@@ -33,6 +33,7 @@ builtins.attrValues {
     nix-prefetch
     nix-prefetch-git
     nixpkgs-review
+    nomacs
     nvd
     pandoc
     parallel
