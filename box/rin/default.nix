@@ -10,7 +10,7 @@ in
     ../../common/desktop.nix
   ];
 
-  time.timeZone = pkgs.lib.mkForce null;
+  # time.timeZone = pkgs.lib.mkForce null;
 
   networking = {
     hostName = "rin";
@@ -62,7 +62,8 @@ in
 
   services = {
     inherit borgbackup;
-    automatic-timezoned.enable = true;
+    # Okinawa is not China
+    # automatic-timezoned.enable = true;
     rabbitmq.enable = false;
     redis.servers.dev = {
       enable = false;
