@@ -4,7 +4,6 @@ builtins.attrValues {
   inherit (pkgs)
     awscli2
     bind
-    # cachix
     diskonaut
     dmidecode
     duf
@@ -28,22 +27,18 @@ builtins.attrValues {
     mu
     ncdu
     neofetch
-    nheko
     nix-direnv
     nix-prefetch
     nix-prefetch-git
     nixpkgs-review
-    nomacs
     nvd
     pandoc
     parallel
     protonmail-bridge
     ranger
-    remmina
     samba
     shellcheck
     speedtest-cli
-    tigervnc
     tldr
     tokei
     tree
@@ -52,7 +47,6 @@ builtins.attrValues {
     usbutils
     wayvnc
     xdg_utils
-    zotero
 
     # video
     aria2

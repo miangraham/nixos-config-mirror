@@ -51,18 +51,22 @@ in
       kiwix
       krita
       lsp-plugins
+      nheko
+      nomacs
       okular
       playerctl
       qdirstat
       reaper
+      remmina
       sioyek
       slurp
       sonixd
       tap-plugins
+      tigervnc
       ungoogled-chromium
       vlc
       zeal
-      # zotero # security bleh
+      zotero
 
       # sway
       swayidle
@@ -72,9 +76,6 @@ in
       wev
       wl-clipboard
       wl-mirror
-
-      # hypr
-      hyprpaper
     ;
 
     # GUI bits
