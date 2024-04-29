@@ -50,6 +50,7 @@ builtins.attrValues {
     trurl
     unixbench
     usbutils
+    wayvnc
     xdg_utils
     zotero
 
