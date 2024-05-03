@@ -1,4 +1,24 @@
 { config, lib, modulesPath, inputs, pkgs, ... }:
+let
+  obs-customized = pkgs.wrapOBS { plugins = with pkgs.obs-studio-plugins; [ obs-pipewire-audio-capture ]; };
+  texlive-customized = pkgs.texlive.combine {
+    inherit (pkgs.texlive)
+      beamer
+      collection-latexextra
+      koma-script
+      scheme-small
+
+      noto
+      mweights
+      cm-super
+      cmbright
+      fontaxes
+      beamertheme-metropolis
+      collection-langjapanese
+      collection-langchinese
+    ;
+  };
+in
 {
   imports = [
     ./hardware-configuration.nix
@@ -41,15 +61,23 @@
   home-manager.users.ian.home.packages = with pkgs; [
     apksigner
     asunder
+    carla
     element-desktop # electron
     esphome
     # gimp
     # libreoffice
+    lsp-plugins
     mame.tools
+    obs-customized
     ollama
     # picocom
     # signal-desktop # unused
+    playerctl
+    reaper
+    sonixd
     soundconverter
+    tap-plugins
+    texlive-customized
     # twitch-tui
   ];
 

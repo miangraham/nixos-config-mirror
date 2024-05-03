@@ -117,6 +117,24 @@
       };
     };
 
+    modes = {
+      passthrough = {
+        "${modifier}+Shift+p" = "mode default";
+      };
+      resize = {
+        Down = "resize grow height 10 px";
+        Escape = "mode default";
+        Left = "resize shrink width 10 px";
+        Return = "mode default";
+        Right = "resize grow width 10 px";
+        Up = "resize shrink height 10 px";
+        h = "resize shrink width 10 px";
+        j = "resize grow height 10 px";
+        k = "resize shrink height 10 px";
+        l = "resize grow width 10 px";
+      };
+    };
+
     keybindings = let
       mod = modifier;
       menu = "fuzzel --font=Inconsolata:size=20,Terminus,monospace --border-radius=3 --inner-pad=10 --background=1f1f1fef --text-color=dcdcccff --match-color=ce3eceff --selection-color=3f5f3fff --selection-text-color=ffffefff --border-color=acac9cff"
@@ -144,6 +162,8 @@
 
       # Side panel
       "${mod}+p" = "resize set width 20 ppt";
+
+      "${mod}+Shift+p" = "mode passthrough";
     };
   };
 

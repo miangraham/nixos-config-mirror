@@ -17,15 +17,15 @@
   };
   outputs = inputs:
     let
-      system = "x86_64-linux";
-      specialArgs = { inherit inputs; };
-      emacs = inputs.emacspkg.packages.${system}.default;
-      home-manager = {
-        useGlobalPkgs = true;
-        useUserPackages = true;
-        users.ian = import ./home {inherit inputs system;};
-      };
-      boxConfig = addModules: (inputs.nixpkgs.lib.nixosSystem) {
+      boxConfig = system: addModules: let
+        specialArgs = { inherit inputs; };
+        emacs = inputs.emacspkg.packages.${system}.default;
+        home-manager = {
+          useGlobalPkgs = true;
+          useUserPackages = true;
+          users.ian = import ./home {inherit inputs system;};
+        };
+      in (inputs.nixpkgs.lib.nixosSystem) {
         inherit specialArgs system;
         modules = addModules ++ [
           ./system/dicod/default.nix
@@ -36,25 +36,20 @@
       };
     in {
       nixosConfigurations = {
-        nene = boxConfig [
-          ./box/nene
-        ];
-        fuuka = boxConfig [
-          ./box/fuuka
-        ];
-        futaba = boxConfig [
-          ./box/futaba
-        ];
-        ranni = boxConfig [
-          ./box/ranni
-        ];
-        rin = boxConfig [
+        nene = boxConfig "x86_64-linux" [ ./box/nene ];
+        futaba = boxConfig "x86_64-linux" [ ./box/futaba ];
+        fuuka = boxConfig "x86_64-linux" [ ./box/fuuka ];
+        ranni = boxConfig "x86_64-linux" [ ./box/ranni ];
+        rin = boxConfig "x86_64-linux" [
           ./box/rin
           inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t14-amd-gen1
         ];
+
+        nano = boxConfig "aarch64-linux" [ ./box/nano ];
+
         pika = inputs.nixpkgs.lib.nixosSystem {
-          inherit specialArgs;
           system = "aarch64-linux";
+          specialArgs = { inherit inputs; };
           modules = [
             inputs.nixos-hardware.nixosModules.raspberry-pi-4
             ./box/pika

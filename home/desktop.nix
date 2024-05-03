@@ -43,25 +43,20 @@ in
     inherit (pkgs)
       # bitwarden # electron
       calf
-      carla
       evince
       fuzzel
       grim
       gthumb # quick image cropping
       kiwix
       krita
-      lsp-plugins
+      librewolf
       nheko
       nomacs
       okular
-      playerctl
       qdirstat
-      reaper
       remmina
       sioyek
       slurp
-      sonixd
-      tap-plugins
       tigervnc
       ungoogled-chromium
       vlc
@@ -82,14 +77,6 @@ in
     inherit (pkgs.gnome3) adwaita-icon-theme;
     inherit (pkgs.xfce) thunar;
 
-    # video
-    kodi = (pkgs.kodi.withPackages (p: with p; [ pvr-iptvsimple ]));
-
-    # streaming
-    obs-studio = pkgs.wrapOBS { plugins = with pkgs.obs-studio-plugins; [
-      obs-pipewire-audio-capture
-    ]; };
-
     retroarch = pkgs.retroarch.override {
       cores = with pkgs.libretro; [
         dolphin
@@ -98,25 +85,6 @@ in
         swanstation
       ];
     };
-
-    # authoring
-    texliveCombined = (pkgs.texlive.combine {
-      inherit (pkgs.texlive)
-        beamer
-        collection-latexextra
-        koma-script
-        scheme-small
-
-        noto
-        mweights
-        cm-super
-        cmbright
-        fontaxes
-        beamertheme-metropolis
-        collection-langjapanese
-        collection-langchinese
-      ;
-    });
   });
 
   programs = if-desktop {

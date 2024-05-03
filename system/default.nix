@@ -25,6 +25,7 @@ in
         consoleMode = "auto";
       };
       efi.canTouchEfiVariables = true;
+      grub.enable = false;
     };
   };
 
