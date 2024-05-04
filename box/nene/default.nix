@@ -81,5 +81,14 @@ in
     # twitch-tui
   ];
 
+  # home-manager.users.ian.programs.ssh.matchBlocks.nano = {
+  #   hostname = "nano";
+  #   localForwards = [{
+  #     bind.port = 5900;
+  #     host.address = "127.0.0.1";
+  #     host.port = 5900;
+  #   }];
+  # };
+
   system.stateVersion = "23.11";
 }

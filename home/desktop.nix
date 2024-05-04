@@ -166,17 +166,29 @@ in
     };
 
     services.fcitx-daemon = {
-      Install.WantedBy = [ "graphical-session.target" ];
+      Unit = {
+        Requires = [ "sway-session.target" ];
+        After = [ "sway-session.target" ];
+      };
+      Install.WantedBy = [ "sway-session.target" ];
       Service.ExecStart = "/run/current-system/sw/bin/fcitx5 -D";
     };
 
     services.sworkstyle = {
-      Install.WantedBy = [ "graphical-session.target" ];
+      Unit = {
+        Requires = [ "sway-session.target" ];
+        After = [ "sway-session.target" ];
+      };
+      Install.WantedBy = [ "sway-session.target" ];
       Service.ExecStart = "${pkgs.swayest-workstyle}/bin/sworkstyle -d";
     };
 
     services.autotiling = {
-      Install.WantedBy = [ "graphical-session.target" ];
+      Unit = {
+        Requires = [ "sway-session.target" ];
+        After = [ "sway-session.target" ];
+      };
+      Install.WantedBy = [ "sway-session.target" ];
       Service.ExecStart = "${pkgs.autotiling}/bin/autotiling";
     };
   };
