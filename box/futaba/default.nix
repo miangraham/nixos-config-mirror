@@ -10,5 +10,7 @@
 
   hardware.bluetooth.enable = true;
 
+  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
+
   system.stateVersion = "23.11";
 }

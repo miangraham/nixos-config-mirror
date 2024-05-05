@@ -6,8 +6,8 @@
 {
   imports = [ "${modulesPath}/installer/scan/not-detected.nix" ];
 
-  boot.initrd.availableKernelModules = [ "nvme" "ehci_pci" "xhci_pci" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
-  boot.initrd.kernelModules = [ "amdgpu" ];
+  boot.initrd.availableKernelModules = [ "nvme" "ehci_pci" "xhci_pci" "rtsx_pci_sdmmc" ];
+  boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
@@ -26,4 +26,5 @@
     ];
 
   nix.settings.max-jobs = lib.mkDefault 16;
+  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 }

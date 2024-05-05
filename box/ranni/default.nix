@@ -84,5 +84,6 @@ in
     };
   };
 
+  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   system.stateVersion = "23.05";
 }

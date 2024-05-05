@@ -32,6 +32,6 @@
     [ { device = "/dev/disk/by-uuid/c5f3bdda-8098-4dea-b53c-7f4d693a8bcc"; }
     ];
 
-  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
+  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
