@@ -8,6 +8,7 @@ in
     ../../system
     ../../system/nebula-node.nix
     ../../common/desktop.nix
+    ../../common/audio.nix
   ];
 
   # time.timeZone = pkgs.lib.mkForce null;

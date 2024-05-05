@@ -21,32 +21,32 @@
     };
   };
 
+  users.users.ian.linger = true;
   services.dbus.enable = true;
+  security.polkit.enable = true;
 
-  systemd.services = {
-    sway = {
-      serviceConfig = {
-        Type = "simple";
-        User = "ian";
-      };
-      wantedBy = [ "multi-user.target" ];
-      bindsTo = [ "user@1000.service" ];
-      after = [ "user@1000.service" ];
-      environment = {
-        DBUS_SESSION_BUS_ADDRESS = "unix:path=/run/user/1000/bus";
-        XDG_RUNTIME_DIR = "/run/user/1000";
-      };
-      path = [
-        pkgs.dbus
+  home-manager.users.ian.home.packages = [
+    pkgs.dbus
+  ];
+
+  home-manager.users.ian.systemd.user.services.sway = let
+    startScript = pkgs.writeShellScript "start-sway.sh" ''
+      set -ex
+      dbus-update-activation-environment --systemd --all
+      dbus-run-session /etc/profiles/per-user/ian/bin/sway
+    '';
+  in {
+    Install.WantedBy = [ "default.target" ];
+    Service = {
+      PassEnvironment = "PATH";
+      Environment = [
+        "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus"
+        "XDG_RUNTIME_DIR=/run/user/1000"
+        "WLR_BACKENDS=headless"
+        "WLR_LIBINPUT_NO_DEVICES=1"
+        "WAYLAND_DISPLAY=wayland-1"
       ];
-      script = ''
-        set -ex
-        source /etc/profile
-        source /home/ian/.profile
-        env
-        dbus-update-activation-environment --systemd --all
-        dbus-run-session /etc/profiles/per-user/ian/bin/sway
-      '';
+      ExecStart = "${startScript}";
     };
   };
 

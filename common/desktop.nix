@@ -1,9 +1,5 @@
 { pkgs, config, ... }:
 {
-  imports = [
-    ./audio.nix
-  ];
-
   boot = {
     # screen streaming modules not currently used
     # extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
@@ -35,6 +31,7 @@
   };
 
   hardware.opengl.enable = true;
+  security.rtkit.enable = true;
   xdg.portal = {
     enable = true;
     xdgOpenUsePortal = true;

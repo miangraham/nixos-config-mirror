@@ -25,6 +25,7 @@ in
     ../../system
     ../../system/nebula-node.nix
     ../../common/desktop.nix
+    ../../common/audio.nix
     ./network.nix
     ./services.nix
     ./containers.nix
