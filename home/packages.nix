@@ -36,6 +36,7 @@ builtins.attrValues {
     parallel
     protonmail-bridge
     ranger
+    rclone
     samba
     shellcheck
     speedtest-cli

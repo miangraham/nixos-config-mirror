@@ -6,12 +6,8 @@
     ./network.nix
     ../../common/desktop.nix
     ./headless-sway-vnc.nix
+    ./euremote-sync.nix
   ];
-
-  services.mullvad-vpn = {
-    enable = true;
-    package = pkgs.mullvad;
-  };
 
   powerManagement.cpuFreqGovernor = "schedutil";
   system.stateVersion = "23.11";
