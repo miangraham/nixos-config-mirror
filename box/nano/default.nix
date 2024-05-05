@@ -8,7 +8,7 @@
     ./headless-sway-vnc.nix
   ];
 
-  boot.blacklistedKernelModules = [ ];
+  users.users.ian.uid = 1000;
 
   services.mullvad-vpn = {
     enable = true;
