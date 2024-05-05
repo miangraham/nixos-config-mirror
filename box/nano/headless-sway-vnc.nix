@@ -16,11 +16,11 @@
     systemd.user.services = {
       sway = let
         inherit (builtins) concatStringsSep;
-        uid = toString config.users.users.ian.uid;
+        package = config.programs.sway.package;
         startScript = pkgs.writeShellScript "start-sway.sh" ''
           set -ex
           dbus-update-activation-environment --systemd --all
-          dbus-run-session /etc/profiles/per-user/ian/bin/sway
+          dbus-run-session ${package}/bin/sway
         '';
       in {
         Service = {

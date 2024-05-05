@@ -8,8 +8,6 @@
     ./headless-sway-vnc.nix
   ];
 
-  users.users.ian.uid = 1000;
-
   services.mullvad-vpn = {
     enable = true;
     package = pkgs.mullvad;
