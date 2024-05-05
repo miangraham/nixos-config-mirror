@@ -5,63 +5,16 @@
     ../../system
     ./network.nix
     ../../common/desktop.nix
+    ./headless-sway-vnc.nix
   ];
 
   boot.blacklistedKernelModules = [ ];
 
-  environment = {
-    systemPackages = [
-      pkgs.dbus
-    ];
-
-    variables = {
-      WLR_BACKENDS = "headless";
-      WLR_LIBINPUT_NO_DEVICES = "1";
-      WAYLAND_DISPLAY = "wayland-1";
-    };
+  services.mullvad-vpn = {
+    enable = true;
+    package = pkgs.mullvad;
   };
-
-  users.users.ian.linger = true;
-  services.dbus.enable = true;
-  security.polkit.enable = true;
-
-  home-manager.users.ian.home.packages = [
-    pkgs.dbus
-  ];
-
-  home-manager.users.ian.systemd.user.services.sway = let
-    startScript = pkgs.writeShellScript "start-sway.sh" ''
-      set -ex
-      dbus-update-activation-environment --systemd --all
-      dbus-run-session /etc/profiles/per-user/ian/bin/sway
-    '';
-  in {
-    Install.WantedBy = [ "default.target" ];
-    Service = {
-      PassEnvironment = "PATH";
-      Environment = [
-        "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus"
-        "XDG_RUNTIME_DIR=/run/user/1000"
-        "WLR_BACKENDS=headless"
-        "WLR_LIBINPUT_NO_DEVICES=1"
-        "WAYLAND_DISPLAY=wayland-1"
-      ];
-      ExecStart = "${startScript}";
-    };
-  };
-
-  home-manager.users.ian.systemd.user.services.wayvnc = {
-    Unit = {
-      Requires = [ "sway-session.target" ];
-      After = [ "sway-session.target" ];
-    };
-    Install.WantedBy = [ "sway-session.target" ];
-    Service.ExecStart = "${pkgs.wayvnc}/bin/wayvnc 127.0.0.1";
-  };
-
-  home-manager.users.ian.services.kanshi.enable = pkgs.lib.mkForce false;
 
   powerManagement.cpuFreqGovernor = "schedutil";
-
   system.stateVersion = "23.11";
 }
