@@ -10,7 +10,6 @@ let
             patches = [ ./invidious-customization.patch ];
           });
       };
-      videojs = super.callPackage "${inputs.unstable}/pkgs/servers/invidious/videojs.nix" { };
     };
   });
 in
