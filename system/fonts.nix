@@ -33,7 +33,8 @@ with pkgs; {
 
     # icons
     font-awesome
-    emojione
+    # forever build on arm, am I actually using this?
+    # emojione
     twemoji-color-font
 
     # jp
