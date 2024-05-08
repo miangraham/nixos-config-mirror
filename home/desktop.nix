@@ -58,7 +58,7 @@ in
       sioyek
       slurp
       tigervnc
-      ungoogled-chromium
+      # ungoogled-chromium
       vlc
       zeal
       zotero
@@ -102,6 +102,18 @@ in
       indicator-radius = 100;
       line-color = "ffffff";
       show-failed-attempts = true;
+    };
+
+    chromium = {
+      enable = true;
+      package = pkgs.vivaldi;
+      extensions = [
+        { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; } # UBO
+        { id = "jeoacafpbcihiomhlakheieifhpjdfeo"; } # Disconnect
+        { id = "ldpochfccmkkmhdbclfhpagapcfdljkj"; } # Decentralize
+        { id = "neebplgakaahbhdphmkckjjcegoiijjo"; } # Keepa
+        { id = "mnjggcdmjocbbbhaepdhchncahnbgone"; } # Sponsorblock
+      ];
     };
   };
 
