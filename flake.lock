@@ -39,14 +39,17 @@
         "tdlib": "tdlib"
       },
       "locked": {
-        "lastModified": 1715089775,
-        "narHash": "sha256-KUseMqTva/g64aMnUNkaSO8eshmt0xMG32r24F63aTo=",
-        "type": "tarball",
-        "url": "https://codeberg.org/mian/emacs-config/archive/master.tar.gz"
+        "lastModified": 1715097311,
+        "narHash": "sha256-MS4v8Q8/jEIrvIvMZdz9F0aMEd4DGApMxExSH/kDxtk=",
+        "ref": "refs/heads/master",
+        "rev": "1ea067eeb5f3f1c79a45b01f552ea1625529309a",
+        "revCount": 351,
+        "type": "git",
+        "url": "https://codeberg.org/mian/emacs-config"
       },
       "original": {
-        "type": "tarball",
-        "url": "https://codeberg.org/mian/emacs-config/archive/master.tar.gz"
+        "type": "git",
+        "url": "https://codeberg.org/mian/emacs-config"
       }
     },
     "flake-utils": {
