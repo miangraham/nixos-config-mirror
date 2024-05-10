@@ -47,6 +47,10 @@
 
         nano = boxConfig "aarch64-linux" [ ./box/nano ];
 
+        mika = boxConfig "aarch64-linux" [
+          inputs.nixos-hardware.nixosModules.raspberry-pi-4
+          ./box/mika
+        ];
         pika = inputs.nixpkgs.lib.nixosSystem {
           system = "aarch64-linux";
           specialArgs = { inherit inputs; };
