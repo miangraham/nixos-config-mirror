@@ -19,11 +19,11 @@
     let
       boxConfig = system: addModules: let
         specialArgs = { inherit inputs; };
-        emacs = inputs.emacspkg.packages.${system}.default;
         home-manager = {
           useGlobalPkgs = true;
           useUserPackages = true;
-          users.ian = import ./home {inherit inputs system;};
+          extraSpecialArgs = { inherit inputs system; };
+          users.ian = import ./home {};
         };
       in (inputs.nixpkgs.lib.nixosSystem) {
         inherit specialArgs system;
@@ -31,7 +31,6 @@
           ./system/dicod/default.nix
           inputs.home-manager.nixosModules.home-manager
           { inherit home-manager; }
-          { home-manager.users.ian.home.packages = [ emacs ]; }
         ];
       };
     in {
@@ -51,14 +50,10 @@
           inputs.nixos-hardware.nixosModules.raspberry-pi-4
           ./box/mika
         ];
-        pika = inputs.nixpkgs.lib.nixosSystem {
-          system = "aarch64-linux";
-          specialArgs = { inherit inputs; };
-          modules = [
-            inputs.nixos-hardware.nixosModules.raspberry-pi-4
-            ./box/pika
-          ];
-        };
+        pika = boxConfig "aarch64-linux" [
+          inputs.nixos-hardware.nixosModules.raspberry-pi-4
+          ./box/pika
+        ];
       };
     };
 }

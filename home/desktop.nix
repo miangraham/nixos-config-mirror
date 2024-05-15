@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, config, inputs, system, ... }:
 let
   lib = pkgs.lib;
   if-desktop = pkgs.lib.mkIf config.wayland.windowManager.sway.enable;
@@ -40,6 +40,8 @@ in
   };
 
   home.packages = if-desktop (builtins.attrValues {
+    emacs = inputs.emacspkg.packages.${system}.default;
+
     inherit (pkgs)
       # bitwarden # electron
       calf

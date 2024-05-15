@@ -1,4 +1,4 @@
-{ inputs, system, ... }: { pkgs, config, ... }:
+{ ... }: { pkgs, config, inputs, system, ... }:
 let
   lib = pkgs.lib;
   unstable = import ../common/unstable.nix { inherit pkgs inputs; };

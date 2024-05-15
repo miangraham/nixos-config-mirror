@@ -1,6 +1,5 @@
 { pkgs, inputs, config, ... }:
 let
-  fonts = import ./fonts.nix { inherit pkgs; };
   packages = import ./packages.nix { inherit pkgs inputs; };
   overlays = import ../common/overlays-stable.nix { inherit inputs pkgs; };
   services = import ./services.nix { inherit pkgs; };
@@ -11,7 +10,7 @@ in
     ./network.nix
   ];
 
-  inherit fonts services;
+  inherit services;
 
   nixpkgs = { inherit overlays; };
 
@@ -65,5 +64,20 @@ in
 
   programs = {
     zsh.enable = true;
+  };
+
+  systemd.services.pre-syncthing = {
+    serviceConfig = {
+      Type = "oneshot";
+      User = "root";
+    };
+    wantedBy = [ "syncthing.service" ];
+    path = [
+      pkgs.coreutils
+    ];
+    script = ''
+      mkdir -p /home/ian/share
+      chown ian:syncthing /home/ian/share
+    '';
   };
 }

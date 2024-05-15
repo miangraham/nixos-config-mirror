@@ -1,5 +1,10 @@
 { pkgs, config, ... }:
+let
+  fonts = import ../system/fonts.nix { inherit pkgs; };
+in
 {
+  inherit fonts;
+
   boot = {
     # screen streaming modules not currently used
     # extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];

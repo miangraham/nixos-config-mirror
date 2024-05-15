@@ -21,6 +21,7 @@
     user = "ian";
     dataDir = "/home/ian/share";
     configDir = "/home/ian/.config/syncthing";
+    extraFlags = [ "--no-default-folder" ];
   };
 
   clamav = {

@@ -1,58 +1,22 @@
 { pkgs, inputs, ... }:
 {
   imports = [
+    ./hardware-configuration.nix
     ./containers.nix
     ./services.nix
+    ../../system
     ../../system/base.nix
     ../../system/nebula-node.nix
     ../../system/network.nix
+    ../../system/pi4.nix
   ];
 
   networking = {
     hostName = "pika";
-    useDHCP = pkgs.lib.mkForce true;
     firewall.allowedTCPPorts = [ 3001 ];
   };
 
-  powerManagement.cpuFreqGovernor = "conservative";
-  hardware.raspberry-pi."4" = {
-    apply-overlays-dtmerge.enable = true;
-    i2c1.enable = true;
-  };
-
-  environment.systemPackages = import ./packages.nix { inherit pkgs; };
-
-  boot = {
-    loader = {
-      generic-extlinux-compatible.enable = true;
-      grub.enable = false;
-    };
-    kernelPackages = pkgs.lib.mkForce pkgs.linuxPackages_6_6;
-    kernelParams = [
-      "8250.nr_uarts=1"
-    ];
-    initrd.availableKernelModules = [ "xhci_pci" "usbhid" ];
-    # Disable wifi
-    blacklistedKernelModules = [ "brcmfmac" ];
-  };
-
-  users.groups = {
-    gpio = {};
-    spi = {};
-    storage = {};
-  };
-
-  fileSystems = {
-    "/" = {
-      device = "/dev/disk/by-label/NIXOS_SD";
-      fsType = "ext4";
-      options = [ "noatime" ];
-    };
-    "/firmware" = {
-      device = "/dev/disk/by-label/FIRMWARE";
-      fsType = "vfat";
-    };
-  };
+  hardware.raspberry-pi."4".i2c1.enable = true;
 
   system.stateVersion = "23.11";
 }
