@@ -66,6 +66,7 @@ in
     element-desktop # electron
     esphome
     # gimp
+    kdenlive
     # libreoffice
     lsp-plugins
     mame.tools

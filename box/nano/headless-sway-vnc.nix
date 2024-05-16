@@ -1,8 +1,7 @@
-{ config, pkgs, inputs, lib, modulesPath, ... }:
+{ config, pkgs, ... }:
 {
-  users.users.ian.linger = true;
-
   services.dbus.enable = true;
+  users.users.ian.linger = true;
 
   home-manager.users.ian = {
     home.packages = [ pkgs.dbus ];
