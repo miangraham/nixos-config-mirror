@@ -8,17 +8,6 @@ in
     nebula.networks.asgard.firewall.inbound = [
       { port = 3001; proto = "tcp"; host = "any"; } # uptime-kuma
     ];
-    udisks2.enable = true;
-    openssh = {
-      enable = true;
-      settings = {
-        Macs = [
-          "hmac-sha2-512"
-          "hmac-sha2-256"
-        ];
-        PermitRootLogin = "no";
-      };
-    };
     endlessh = {
       enable = true;
       openFirewall = true;

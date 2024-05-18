@@ -3,8 +3,6 @@
   imports = [
     ./hardware-configuration.nix
     ../../system
-    ../../system/base.nix
-    ../../system/network.nix
     ../../system/pi4.nix
   ];
 

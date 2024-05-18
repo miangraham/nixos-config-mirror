@@ -5,9 +5,7 @@
     ./containers.nix
     ./services.nix
     ../../system
-    ../../system/base.nix
     ../../system/nebula-node.nix
-    ../../system/network.nix
     ../../system/pi4.nix
   ];
 

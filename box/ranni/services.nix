@@ -1,6 +1,6 @@
 { config, pkgs, inputs, ... }:
 let
-  blocky = import ../futaba/blocky.nix { inherit pkgs; };
+  blocky = import ../../common/blocky.nix { inherit pkgs; };
   borgbackup = import ./backup.nix { inherit pkgs; };
 in
 {
