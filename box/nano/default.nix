@@ -9,6 +9,7 @@
     ./euremote-sync.nix
   ];
 
+  boot.kernelPackages = pkgs.lib.mkForce pkgs.linuxPackages_6_9;
   powerManagement.cpuFreqGovernor = "schedutil";
   system.stateVersion = "23.11";
 }
