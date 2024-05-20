@@ -1,7 +1,7 @@
 { config, pkgs, inputs, ... }:
 let
   extraOptions = [
-    "--pull=always"
+    "--pull=missing"
   ];
   environment = {
     TZ = "Asia/Tokyo";

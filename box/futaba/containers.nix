@@ -2,7 +2,7 @@
 let
   network = "futabanet";
   extraOptions = [
-    "--pull=always"
+    "--pull=missing"
     "--network=${network}"
   ];
   environment = {

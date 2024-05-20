@@ -1,7 +1,7 @@
 { config, pkgs, inputs, ... }:
 let
   extraOptions = [
-    "--pull=always"
+    "--pull=missing"
   ];
   environment = {
     TZ = "Asia/Tokyo";
@@ -11,6 +11,7 @@ in
   virtualisation = {
     podman = {
       enable = true;
+      autoPrune.enable = true;
       dockerCompat = true;
     };
     oci-containers = {
@@ -28,4 +29,6 @@ in
       };
     };
   };
+  # Network slow start hack
+  systemd.services.podman.serviceConfig.ExecStartPre = [ "/bin/sh -c 'until ${pkgs.bind.host}/bin/host ian.tokyo; do sleep 10; done'" ];
 }
