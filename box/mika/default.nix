@@ -6,6 +6,8 @@
     ../../system/pi4.nix
   ];
 
+  hardware.raspberry-pi."4".pwm0.enable = true;
+
   networking = {
     hostName = "mika";
     firewall.allowedTCPPorts = [ ];
