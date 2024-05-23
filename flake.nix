@@ -54,6 +54,10 @@
           inputs.nixos-hardware.nixosModules.raspberry-pi-4
           ./box/pika
         ];
+        rika = boxConfig "aarch64-linux" [
+          inputs.nixos-hardware.nixosModules.raspberry-pi-4
+          ./box/rika
+        ];
       };
     };
 }
