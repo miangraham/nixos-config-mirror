@@ -52,7 +52,6 @@ in
 
     eza = {
       enable = true;
-      enableAliases = true;
       extraOptions = [
         # "--color-scale size"
         "--git"

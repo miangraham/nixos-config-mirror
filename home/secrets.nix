@@ -13,6 +13,7 @@
     enable = true;
     defaultCacheTtl = 86400;
     maxCacheTtl = 86400;
+    pinentryPackage = pkgs.pinentry-gtk2;
     extraConfig = ''
       no-allow-external-cache
     '';

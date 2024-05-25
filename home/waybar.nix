@@ -78,8 +78,8 @@ in
       # hides if name, how to get back?
       "tooltip-format" = "{desc} | {volume}%";
       "scroll-step" = 5;
-      "on-click" = "pactl set-sink-mute 0 toggle";
-      "on-click-right" = "pavucontrol";
+      "on-click" = "${pkgs.pulseaudio}/bin/pactl set-sink-mute 0 toggle";
+      "on-click-right" = "${pkgs.pavucontrol}/bin/pavucontrol";
     };
 
     "network" = {

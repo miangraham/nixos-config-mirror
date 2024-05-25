@@ -23,10 +23,21 @@
     kernelParams = [
       "8250.nr_uarts=1"
       "cgroup_enable=memory"
+      "psi=1" # now needed in 24.05 for some reason
     ];
     initrd.availableKernelModules = [ "usbhid" ];
-    # Disable wifi
-    blacklistedKernelModules = [ "brcmfmac" ];
+    blacklistedKernelModules = [
+      # Disable wifi
+      "brcmfmac"
+      "brcmutil"
+      # Disable bluetooth
+      "bluetooth"
+      "btbcm"
+      "btintel"
+      "btqca"
+      "btsdio"
+      "hci_uart"
+    ];
   };
 
   users.groups = {

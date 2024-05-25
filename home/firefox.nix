@@ -1,7 +1,8 @@
 { pkgs, ... }:
 {
   enable = true;
-  package = pkgs.firefox-esr-115;
+  # default ESR wrapping now renames stuff, super annoying
+  package = pkgs.wrapFirefox pkgs.firefox-esr-115-unwrapped {};
   policies = {
     AppAutoUpdate = false;
     AppUpdatePin = "115.";
