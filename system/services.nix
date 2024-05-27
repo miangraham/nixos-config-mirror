@@ -24,11 +24,11 @@
     extraFlags = [ "--no-default-folder" ];
   };
 
-  clamav = {
-    daemon.enable = true;
-    updater = {
-      enable = true;
-      interval = "daily";
-    };
-  };
+  # clamav = {
+  #   daemon.enable = true;
+  #   updater = {
+  #     enable = true;
+  #     interval = "daily";
+  #   };
+  # };
 }

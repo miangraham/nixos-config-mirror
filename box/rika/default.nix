@@ -10,7 +10,16 @@
 
   networking = {
     hostName = "rika";
-    firewall.allowedTCPPorts = [ ];
+    firewall.allowedTCPPorts = [ 6443 8472 10250 ];
+  };
+
+  environment.systemPackages = [ pkgs.k3s ];
+
+  services.k3s = {
+    enable = true;
+    role = "agent";
+    tokenFile = "/srv/k3s/token";
+    serverAddr = "https://mika:6443";
   };
 
   system.stateVersion = "23.11";

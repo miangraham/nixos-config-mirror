@@ -30,5 +30,5 @@ nix copy "${OUTPUT}" --to ssh://ian@mika
 
 # Switch profiles
 
-SWITCH_CMD="/run/current-system/sw/bin/nix-env -p /nix/var/nix/profiles/system --set ${OUTPUT} && /nix/var/nix/profiles/system/bin/switch-to-configuration boot"
+SWITCH_CMD="/run/current-system/sw/bin/nix-env -p /nix/var/nix/profiles/system --set ${OUTPUT} && /nix/var/nix/profiles/system/bin/switch-to-configuration switch"
 ssh -t mika "sudo sh -c \"${SWITCH_CMD}\""
