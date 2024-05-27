@@ -2,9 +2,6 @@
 
 set -ex
 
-# 24.05
-exit 1
-
 if [[ "$OSTYPE" != "linux-gnu"* ]]; then
   echo "Unexpected OS. Abort."
   exit 1
@@ -15,10 +12,10 @@ if [[ "$HOSTNAME" != "nene" ]]; then
   exit 1
 fi
 
-if [[ $(git status --porcelain) ]]; then
-  echo "Outstanding git changes. Refusing to build."
-  exit 1
-fi
+# if [[ $(git status --porcelain) ]]; then
+#   echo "Outstanding git changes. Refusing to build."
+#   exit 1
+# fi
 
 # Build
 
@@ -33,5 +30,5 @@ nix copy "${OUTPUT}" --to ssh://ian@rin
 
 # Switch profiles
 
-SWITCH_CMD="/run/current-system/sw/bin/nix-env -p /nix/var/nix/profiles/system --set ${OUTPUT} && /nix/var/nix/profiles/system/bin/switch-to-configuration switch"
+SWITCH_CMD="/run/current-system/sw/bin/nix-env -p /nix/var/nix/profiles/system --set ${OUTPUT} && /nix/var/nix/profiles/system/bin/switch-to-configuration boot"
 ssh -t rin "sudo sh -c \"${SWITCH_CMD}\""
