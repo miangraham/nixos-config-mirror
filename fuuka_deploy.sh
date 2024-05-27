@@ -2,9 +2,6 @@
 
 set -ex
 
-# 24.05
-exit 1
-
 if [[ "$OSTYPE" != "linux-gnu"* ]]; then
   echo "Unexpected OS. Abort."
   exit 1

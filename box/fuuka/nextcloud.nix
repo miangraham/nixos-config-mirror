@@ -13,7 +13,7 @@
     nextcloud = {
       enable = true;
       hostName = "nextcloud";
-      package = pkgs.nextcloud28;
+      package = pkgs.nextcloud29;
       database.createLocally = true;
       configureRedis = true;
       maxUploadSize = "512M";
@@ -23,17 +23,17 @@
       extraAppsEnable = true;
       extraApps = with config.services.nextcloud.package.packages.apps; {
         # https://github.com/NixOS/nixpkgs/blob/master/pkgs/servers/nextcloud/packages/nextcloud-apps.json
-        inherit calendar contacts deck maps notes onlyoffice tasks qownnotesapi;
+        inherit calendar contacts deck maps notes;
       };
       config = {
-        overwriteProtocol = "http";
-        defaultPhoneRegion = "JP";
         dbtype = "pgsql";
         adminuser = "admin";
         adminpassFile = "/srv/nextcloud/adminpass";
       };
-      extraOptions = {
+      settings = {
+        default_phone_region = "JP";
         maintenance_window_start = 4;
+        overwriteprotocol = "http";
         updatechecker = false;
       };
     };
