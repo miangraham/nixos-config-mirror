@@ -41,6 +41,22 @@ in
         }];
       };
     };
+
+    minecraft-server = {
+      enable = true;
+      declarative = true;
+      eula = true;
+      openFirewall = true;
+      serverProperties = {
+        difficulty = "normal";
+        level-name = "fuuka";
+        level-seed = "fuuka";
+
+        max-players = 4;
+        motd = "Hello from NixOS";
+        snooper-enabled = false;
+      };
+    };
   };
 
   systemd.services = {
