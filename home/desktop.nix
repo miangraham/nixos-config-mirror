@@ -63,7 +63,6 @@ in
       # ungoogled-chromium
       vlc
       zeal
-      zotero
 
       # sway
       swayidle

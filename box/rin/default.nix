@@ -59,6 +59,7 @@ in
   home-manager.users.ian.home.packages = with pkgs; [
     element-desktop
     tpacpi-bat
+    zotero
   ];
 
   services = {

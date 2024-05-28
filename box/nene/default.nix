@@ -81,6 +81,7 @@ in
     tap-plugins
     texlive-customized
     # twitch-tui
+    zotero
   ];
 
   # home-manager.users.ian.programs.ssh.matchBlocks.nano = {

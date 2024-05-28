@@ -13,7 +13,7 @@ in
   enable = true;
   systemd.enable = true;
   style = builtins.readFile ./waybarStyle.css;
-  settings = [{
+  settings = { main = {
     output = [
       "eDP-1"
       # "HDMI-A-1"
@@ -154,5 +154,5 @@ in
       "interval" = 60;
       "exec" = "${failed-units-bin}/bin/failed-units";
     };
-  }];
+  };};
 }
