@@ -10,6 +10,7 @@ let
       "/srv"
       "/var/backup"
       "/var/lib/private/dendrite"
+      "/var/lib/minecraft"
       "/var/lib/nextcloud"
     ];
   };

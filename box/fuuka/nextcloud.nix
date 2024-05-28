@@ -11,7 +11,7 @@
     };
 
     nextcloud = {
-      enable = true;
+      enable = false;
       hostName = "nextcloud";
       package = pkgs.nextcloud29;
       database.createLocally = true;
@@ -43,4 +43,6 @@
       startAt = "*-*-* 05:00:00";
     };
   };
+
+  systemd.timers.nextcloud-cron.timerConfig.OnUnitActiveSec = pkgs.lib.mkForce "55m";
 }
