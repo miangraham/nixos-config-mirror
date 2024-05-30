@@ -113,6 +113,7 @@ in
         captcha_enabled = false;
         popular_enabled = false;
         enable_user_notifications = false;
+        db.user = "invidious";
         default_user_preferences = {
           region = "JP";
           related_videos = false;
