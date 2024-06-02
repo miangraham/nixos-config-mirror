@@ -15,7 +15,7 @@ let
       print("Mullvad offline. Abort.")
       sys.exit(1)
 
-    subprocess.call([rclone_bin, "copy", "--size-only", "--verbose", src_loc, dest_loc])
+    subprocess.call([rclone_bin, "copy", src_loc, dest_loc, "--size-only", "--verbose", "--transfers", "2", "--multi-thread-streams", "0"])
 
     print("Done.")
   '';
@@ -29,6 +29,7 @@ in {
     serviceConfig = {
       Type = "oneshot";
       User = "ian";
+      TimeoutStartSec = "12h";
     };
     script = "${syncScript}";
   };
