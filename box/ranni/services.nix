@@ -37,6 +37,13 @@ in
       passwordFile = "/var/lib/photoprism/admin-pass";
     };
 
+    scrutiny = {
+      enable = true;
+      openFirewall = true;
+      collector.enable = true;
+      settings.web.listen.port = 8099;
+    };
+
     jellyfin = {
       enable = false;
       openFirewall = true;
