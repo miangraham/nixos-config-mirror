@@ -20,5 +20,5 @@
 
   boot.kernelPackages = pkgs.lib.mkForce pkgs.linuxPackages_6_9;
   powerManagement.cpuFreqGovernor = "schedutil";
-  system.stateVersion = "23.11";
+  system.stateVersion = "24.05";
 }

@@ -20,7 +20,7 @@ in
   inherit accounts;
   home = {
     packages = home-packages;
-    stateVersion = "23.11";
+    stateVersion = "24.05";
     username = "ian";
     homeDirectory = "/home/ian";
     sessionPath = [

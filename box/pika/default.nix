@@ -16,5 +16,5 @@
 
   hardware.raspberry-pi."4".i2c1.enable = true;
 
-  system.stateVersion = "23.11";
+  system.stateVersion = "24.05";
 }
