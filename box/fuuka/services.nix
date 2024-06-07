@@ -64,6 +64,11 @@ in
       collector.enable = true;
       settings.web.listen.port = 8099;
     };
+
+    wastebin = {
+      enable = true;
+      secretFile = "/etc/wastebin/env";
+    };
   };
 
   systemd.services = {

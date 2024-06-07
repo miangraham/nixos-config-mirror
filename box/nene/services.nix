@@ -48,14 +48,6 @@ in
       settings.web.listen.port = 8099;
     };
 
-    # vikunja = {
-    #   enable = true;
-    #   database.type = "sqlite";
-    #   frontendScheme = "http";
-    #   frontendHostname = "localhost";
-    # };
-    # nginx.enable = true;
-
     # box specific due to ACME, rip
     # nginx = {
     #   enable = false;
@@ -69,18 +61,6 @@ in
     #       };
     #     };
     #   };
-    # };
-
-    # dicod = {
-    #   enable = false;
-    #   dictdDBs = with pkgs.dictdDBs; [
-    #     eng2jpn
-    #     jpn2eng
-    #   ];
-
-    #   guileDBs = [
-    #     moby
-    #   ];
     # };
   };
 

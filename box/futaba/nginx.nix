@@ -47,6 +47,14 @@ in
         charset utf-8;
       '';
     };
+    "bin.ian.tokyo" = {
+      serverName = "bin.ian.tokyo";
+      addSSL = true;
+      enableACME = true;
+      locations."/" = {
+        proxyPass = "http://fuuka:8088";
+      };
+    };
     "graham.tokyo" = {
       serverName = "graham.tokyo";
       forceSSL = true;
