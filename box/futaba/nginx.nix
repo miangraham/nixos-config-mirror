@@ -41,7 +41,7 @@ in
     "ian.tokyo" = {
       serverName = "ian.tokyo";
       root = "/var/www";
-      addSSL = true;
+      forceSSL = true;
       enableACME = true;
       extraConfig = ''
         charset utf-8;
@@ -49,10 +49,16 @@ in
     };
     "bin.ian.tokyo" = {
       serverName = "bin.ian.tokyo";
-      addSSL = true;
+      forceSSL = true;
       enableACME = true;
       locations."/" = {
         proxyPass = "http://fuuka:8088";
+        extraConfig = ''
+          limit_except GET HEAD {
+            auth_basic secured;
+            auth_basic_user_file /etc/nginx/wastebin.htpasswd;
+          }
+        '';
       };
     };
     "graham.tokyo" = {

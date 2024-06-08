@@ -68,6 +68,10 @@ in
     wastebin = {
       enable = true;
       secretFile = "/etc/wastebin/env";
+      settings = {
+        WASTEBIN_BASE_URL = "https://bin.ian.tokyo";
+        WASTEBIN_TITLE = "bin.ian.tokyo";
+      };
     };
   };
 
