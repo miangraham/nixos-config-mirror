@@ -36,6 +36,17 @@ in
   };
 
   virtualisation.oci-containers.containers = {
+    homeassistant = {
+      inherit environment extraOptions;
+      # 2024.4.0
+      image = "ghcr.io/home-assistant/home-assistant@sha256:c0045a0eb9970cdca9afb6e1389551bc15875de9c99fb73a8b89dfa56b54628a";
+      ports = [ "8091:8123" ];
+      volumes = [
+        "/srv/home-assistant:/config"
+        "/run/dbus:/run/dbus:ro"
+      ];
+    };
+
     reddit-top-rss = {
       inherit environment extraOptions;
       # 2023.05.11
@@ -44,38 +55,5 @@ in
       dependsOn = [];
       environmentFiles = [ /etc/reddit-top-rss/env ];
     };
-
-    mercury-parser-api = {
-      inherit environment extraOptions;
-      # 2023.02.22
-      image = "wangqiru/mercury-parser-api@sha256:da06e19694c85816b6c2f9870e66beaa03bbd0043d8a759b86e2bb16020ee5c2";
-      ports = [ "8090:3000" ];
-      dependsOn = [];
-    };
-
-    homeassistant = {
-      inherit environment extraOptions;
-      # 2024.4.0
-      image = "ghcr.io/home-assistant/home-assistant@sha256:2060bcda3ea90f601acf538d17e2e3139da50a5bd5cd9c56ec0a2cddba8b042d";
-      ports = [ "8091:8123" ];
-      volumes = [
-        "/srv/home-assistant:/config"
-        "/run/dbus:/run/dbus:ro"
-      ];
-    };
-
-    # esphome = {
-    #   inherit environment extraOptions;
-    #   # stable at 2024/04/08
-    #   image = "esphome/esphome@sha256:bfd8a2e3a51476c9fc6e87ede9f7137138054a84f12768e16b5c65a0c57c8346";
-    #   ports = [
-    #     "6052:6052"
-    #     "6053:6053"
-    #   ];
-    #   volumes = [
-    #     "/srv/esphome/config:/config"
-    #     "/etc/localtime:/etc/localtime:ro"
-    #   ];
-    # };
   };
 }
