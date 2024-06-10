@@ -124,7 +124,6 @@ in
       file_mtime nene /srv/borg/nene
       file_mtime ranni /srv/borg/ranni
       file_mtime rin /srv/borg/rin
-      file_mtime yuno /srv/timemachine/yuno.backupbundle/com.apple.TimeMachine.SnapshotHistory.plist
     '';
   in {
     serviceConfig = {
