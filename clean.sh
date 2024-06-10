@@ -7,8 +7,8 @@ if [[ "$OSTYPE" != "linux-gnu"* ]]; then
   exit 1
 fi
 
-home-manager expire-generations '-30 days'
-sudo nix-collect-garbage --delete-older-than 30d
+home-manager expire-generations '-14 days'
+sudo nix-collect-garbage --delete-older-than 14d
 
 home-manager generations
 sudo nix-env --list-generations --profile /nix/var/nix/profiles/system

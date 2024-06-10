@@ -15,7 +15,7 @@
   gc = {
     automatic = true;
     dates = "Sat *-*-* 00:00:00";
-    options = "--delete-older-than 30d";
+    options = "--delete-older-than 14d";
   };
   extraOptions = ''
     keep-outputs = true
