@@ -15,15 +15,6 @@ in
 {
   enable = true;
   matchBlocks = {
-    homura = {
-      hostname = "homura";
-      identityFile = "~/.ssh/id_rsa_fallback";
-      extraOptions = {
-        PubkeyAcceptedKeyTypes = "+ssh-rsa";
-        HostkeyAlgorithms = "+ssh-rsa";
-      };
-    };
-
     rnet = {
       user = rid;
       hostname = rid + rhost;
@@ -31,11 +22,5 @@ in
         AddressFamily = "inet";
       };
     };
-
-    # "*" = {
-    #   extraOptions = {
-    #     AddressFamily = "inet";
-    #   };
-    # };
   };
 }
