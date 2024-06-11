@@ -31,7 +31,6 @@ in
     ./containers.nix
   ];
 
-  # 6.6 LTS
   boot.kernel.sysctl = {
     "fs.file-max" = 9000000;
     "net.ipv4.tcp_fin_timeout" = 10;
@@ -47,51 +46,24 @@ in
     '';
   };
 
-  services.udev.packages = [
-    # pkgs.via
-    # pkgs.qmk-udev-rules
-  ];
-
   programs.steam.enable = false;
-
-  # virtualisation = {
-  #   libvirtd.enable = true;
-  #   spiceUSBRedirection.enable = true;
-  # };
 
   home-manager.users.ian.home.packages = with pkgs; [
     apksigner
     asunder
     carla
-    element-desktop # electron
-    esphome
-    # gimp
-    kdenlive
-    # libreoffice
+    element-desktop
     lsp-plugins
     mame.tools
     obs-customized
-    ollama
-    # picocom
-    # signal-desktop # unused
     playerctl
     reaper
     sonixd
     soundconverter
     tap-plugins
     texlive-customized
-    # twitch-tui
     zotero
   ];
-
-  # home-manager.users.ian.programs.ssh.matchBlocks.nano = {
-  #   hostname = "nano";
-  #   localForwards = [{
-  #     bind.port = 5900;
-  #     host.address = "127.0.0.1";
-  #     host.port = 5900;
-  #   }];
-  # };
 
   system.stateVersion = "24.05";
 }

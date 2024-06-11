@@ -47,21 +47,6 @@ in
       collector.enable = true;
       settings.web.listen.port = 8099;
     };
-
-    # box specific due to ACME, rip
-    # nginx = {
-    #   enable = false;
-    #   user = "nginx";
-    #   virtualHosts = {
-    #     nene = {
-    #       serverName = "localhost";
-    #       locations."/" = {
-    #         root = "/var/www";
-    #         # return = "404";
-    #       };
-    #     };
-    #   };
-    # };
   };
 
   security.sudo.extraRules = [{
