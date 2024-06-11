@@ -46,6 +46,7 @@ in
       # bitwarden # electron
       calf
       evince
+      flameshot # custom screenshots
       fuzzel
       grim
       gthumb # quick image cropping
