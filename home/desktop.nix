@@ -51,18 +51,18 @@ in
       grim
       gthumb # quick image cropping
       kiwix
-      krita
-      librewolf
+      # krita
+      # librewolf
       nheko
       nomacs
       okular
       qdirstat
       remmina
-      sioyek
+      # sioyek
       slurp
-      tigervnc
+      # tigervnc
       # ungoogled-chromium
-      vlc
+      # vlc
       zeal
 
       # sway
