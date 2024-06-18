@@ -18,15 +18,6 @@ in
 
     syncthing.guiAddress = "0.0.0.0:8384";
 
-    bepasty = {
-      # no secure way to set user secrets outside of nix store?
-      enable = false;
-      servers.futaba = {
-        bind = "0.0.0.0:8092";
-        secretKeyFile = "/etc/bepasty/secret_key";
-      };
-    };
-
     sshguard = {
       enable = true;
       blocktime = 3600;
@@ -51,26 +42,6 @@ in
       passwordFile = "/srv/freshrss/freshrss_admin_phrase";
     };
     phpfpm.pools.freshrss.phpEnv.FRESHRSS_THIRDPARTY_EXTENSIONS_PATH = "/srv/freshrss/extensions";
-
-    microbin = {
-      # permission system super busted, sad
-      enable = false;
-      passwordFile = "/etc/microbin/env";
-      settings = {
-        MICROBIN_DISABLE_UPDATE_CHECKING = true;
-        MICROBIN_EDITABLE = false;
-        MICROBIN_ENABLE_READONLY = true;
-        MICROBIN_HIDE_FOOTER = true;
-        MICROBIN_HIDE_LOGO = true;
-        MICROBIN_NO_LISTING = true;
-        MICROBIN_PORT = 8092;
-        MICROBIN_PUBLIC_PATH = "http://futaba:8092/";
-        MICROBIN_QR = true;
-        MICROBIN_READONLY = true;
-        MICROBIN_TITLE = "paste.ian.tokyo";
-        MICROBIN_WIDE = true;
-      };
-    };
 
     mosquitto = {
       enable = true;

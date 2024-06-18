@@ -1,6 +1,5 @@
 { pkgs, ... }:
 {
-  fwupd.enable = true;
   gnome.gnome-keyring.enable = true;
   udisks2.enable = true;
 
@@ -23,12 +22,4 @@
     configDir = "/home/ian/.config/syncthing";
     extraFlags = [ "--no-default-folder" ];
   };
-
-  # clamav = {
-  #   daemon.enable = true;
-  #   updater = {
-  #     enable = true;
-  #     interval = "daily";
-  #   };
-  # };
 }

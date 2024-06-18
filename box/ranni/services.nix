@@ -29,24 +29,11 @@ in
       };
     };
 
-    photoprism = {
-      enable = false;
-      address = "0.0.0.0";
-      port = 8385;
-      originalsPath = "/srv/pictures";
-      passwordFile = "/var/lib/photoprism/admin-pass";
-    };
-
     scrutiny = {
       enable = true;
       openFirewall = true;
       collector.enable = true;
       settings.web.listen.port = 8099;
-    };
-
-    jellyfin = {
-      enable = false;
-      openFirewall = true;
     };
 
     syncthing.guiAddress = "0.0.0.0:8384";

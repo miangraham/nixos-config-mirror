@@ -36,11 +36,6 @@ in
       };
     };
 
-    mysql = {
-      enable = true;
-      package = pkgs.mariadb;
-    };
-
     scrutiny = {
       enable = true;
       openFirewall = true;
