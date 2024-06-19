@@ -36,6 +36,7 @@
     in {
       nixosConfigurations = {
         nene = boxConfig "x86_64-linux" [ ./box/nene ];
+        anzu = boxConfig "x86_64-linux" [ ./box/anzu ];
         futaba = boxConfig "x86_64-linux" [ ./box/futaba ];
         fuuka = boxConfig "x86_64-linux" [ ./box/fuuka ];
         ranni = boxConfig "x86_64-linux" [ ./box/ranni ];

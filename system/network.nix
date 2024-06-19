@@ -4,6 +4,7 @@
   networking.firewall.checkReversePath = "loose"; # for tailscale, test without
   networking.extraHosts = ''
 127.0.0.1     testlocal.ian.tokyo
+192.168.0.102 anzu
 192.168.0.117 ranni
 192.168.0.119 pika
 192.168.0.120 boxypi
