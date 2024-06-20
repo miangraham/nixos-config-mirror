@@ -13,5 +13,12 @@ in
       collector.enable = true;
       settings.web.listen.port = 8099;
     };
+
+    vikunja = {
+      enable = true;
+      database.type = "sqlite";
+      frontendScheme = "http";
+      frontendHostname = "anzu";
+    };
   };
 }

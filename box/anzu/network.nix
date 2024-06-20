@@ -3,7 +3,7 @@
   networking = {
     hostName = "anzu";
     firewall = {
-      allowedTCPPorts = [ 22 8384 8099 ];
+      allowedTCPPorts = [ 22 3456 8384 8099 ];
       allowedUDPPorts = [ ];
     };
     useNetworkd = true;
