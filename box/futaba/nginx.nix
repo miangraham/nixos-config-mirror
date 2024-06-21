@@ -1,18 +1,20 @@
 { config, pkgs, ... }:
 let
-  admin_email = import ../../common/email.nix {};
-  well_known_server = pkgs.writeText "well-known-matrix-server" ''
+  wellKnownServer = pkgs.writeText "well-known-matrix-server" ''
     {
       "m.server": "graham.tokyo:443"
     }
   '';
-
-  well_known_client = pkgs.writeText "well-known-matrix-client" ''
+  wellKnownClient = pkgs.writeText "well-known-matrix-client" ''
     {
       "m.homeserver": {
         "base_url": "https://graham.tokyo"
       }
     }
+  '';
+  robotsConf = ''
+    add_header Content-Type text/plain;
+    return 200 "User-agent: *\nDisallow: /\n";
   '';
 in
 {
@@ -46,6 +48,7 @@ in
       extraConfig = ''
         charset utf-8;
       '';
+      locations."=/robots.txt".extraConfig = robotsConf;
     };
     "bin.ian.tokyo" = {
       serverName = "bin.ian.tokyo";
@@ -60,6 +63,14 @@ in
           }
         '';
       };
+      locations."=/robots.txt".extraConfig = robotsConf;
+    };
+    "todo.ian.tokyo" = {
+      serverName = "todo.ian.tokyo";
+      forceSSL = true;
+      enableACME = true;
+      locations."/".proxyPass = "http://anzu:3456";
+      locations."=/robots.txt".extraConfig = robotsConf;
     };
     "graham.tokyo" = {
       serverName = "graham.tokyo";
@@ -107,15 +118,16 @@ in
           proxy_read_timeout 600;
         '';
       };
+      locations."=/robots.txt".extraConfig = robotsConf;
       locations."=/.well-known/matrix/server" = {
-        alias = "${well_known_server}";
+        alias = "${wellKnownServer}";
         extraConfig = ''
           # Set the header since by default NGINX thinks it's just bytes
           default_type application/json;
         '';
       };
       locations."=/.well-known/matrix/client" = {
-        alias = "${well_known_client}";
+        alias = "${wellKnownClient}";
         extraConfig = ''
           # Set the header since by default NGINX thinks it's just bytes
           default_type application/json;

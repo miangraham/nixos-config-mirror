@@ -17,8 +17,16 @@ in
     vikunja = {
       enable = true;
       database.type = "sqlite";
-      frontendScheme = "http";
-      frontendHostname = "anzu";
+      frontendScheme = "https";
+      frontendHostname = "todo.ian.tokyo";
+      settings = {
+        service = {
+          enableemailreminders = false;
+          enableregistration = false;
+          enableuserdeletion = false;
+          timezone = "Asia/Tokyo";
+        };
+      };
     };
   };
 }

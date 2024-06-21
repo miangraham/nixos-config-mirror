@@ -82,13 +82,11 @@ in
         User = "root";
       };
       wantedBy = [ "nginx.service" ];
-      path = [
-        pkgs.coreutils
-      ];
+      path = [ pkgs.coreutils ];
       script = ''
-      mkdir -p /var/www
-      chown nginx:nginx /var/www
-    '';
+        mkdir -p /var/www
+        chown nginx:nginx /var/www
+      '';
     };
   };
 }
