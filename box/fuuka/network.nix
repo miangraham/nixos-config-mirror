@@ -21,7 +21,7 @@
       # linkConfig.RequiredForOnline = "routable";
       networkConfig = {
         DHCP = "yes";
-        DNS = [ "192.168.0.1" ];
+        DNS = [ "127.0.0.1" ];
       };
     };
   };
