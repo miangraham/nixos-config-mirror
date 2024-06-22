@@ -23,13 +23,18 @@ in
   imports = [
     ./hardware-configuration.nix
     ../../system
+    ../../system/home-network-only.nix
     ../../system/nebula-node.nix
     ../../common/desktop.nix
     ../../common/audio.nix
-    ./network.nix
     ./services.nix
     ./containers.nix
   ];
+
+  networking = {
+    hostName = "nene";
+    firewall.allowedTCPPorts = [ 80 443 5672 6379 8443 8080 41641 ];
+  };
 
   boot.kernel.sysctl = {
     "fs.file-max" = 9000000;

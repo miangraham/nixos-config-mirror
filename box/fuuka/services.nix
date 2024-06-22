@@ -1,12 +1,13 @@
 { config, pkgs, inputs, ... }:
 let
-  blocky = import ../../common/blocky.nix { inherit pkgs; };
   borgbackup = import ./backup.nix { inherit pkgs; };
   nginx = import ./nginx.nix { inherit pkgs; };
 in
 {
   services = {
-    inherit blocky borgbackup nginx;
+    inherit borgbackup nginx;
+
+    syncthing.guiAddress = "0.0.0.0:8384";
 
     dendrite = {
       enable = true;
