@@ -5,7 +5,11 @@ in {
   settings = {
     port = 53;
     log.timestamp = false;
-    queryLog.fields = [ "clientIP" "responseReason" "responseAnswer" "question" "duration" ];
+    queryLog = {
+      # change type to "console" to print queries to service log
+      type = "none";
+      fields = [ "clientIP" "responseReason" "responseAnswer" "question" "duration" ];
+    };
     caching = {
       minTime = "60m";
       cacheTimeNegative = "5m";
