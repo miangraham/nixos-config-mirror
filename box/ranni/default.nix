@@ -11,20 +11,28 @@ in
   imports = [
     ./hardware-configuration.nix
     ../../system
+    ../../system/home-network-only.nix
     ../../system/nebula-node.nix
     ./monitoring.nix
-    ./network.nix
     ./services.nix
     ./storage.nix
   ];
+
+  networking = {
+    hostName = "ranni";
+    hostId = "cd1da50a";
+    firewall = {
+      allowedTCPPorts = [ 80 443 4533 8081 8088 8089 8384 8385 8443 8989 9090 19999 41641 ];
+      allowedUDPPorts = [ ];
+    };
+  };
+
+  systemd.network.networks."40-wired".linkConfig.RequiredForOnline = "routable";
 
   boot = {
     kernelPackages = lib.mkForce pkgs.linuxPackages_6_6;
     # TODO: test removal
     kernelModules = [ "coretemp" "nct6775" ];
-    # extraModprobeConfig = ''
-    #   options zfs zfs_dmu_offset_next_sync=0
-    # '';
   };
 
   users = {
@@ -57,7 +65,6 @@ in
       ];
     };
     groups.dupe = {};
-
   };
 
   programs.msmtp = {
