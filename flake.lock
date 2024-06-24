@@ -16,11 +16,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1718183320,
-        "narHash": "sha256-L0b6hyf9EWeWKhmUwTQvbLtBtLBblyYJ3llOTsLIr0s=",
+        "lastModified": 1719193216,
+        "narHash": "sha256-4jggHHDsLt+i4/6lMNlZkHd3bzgV50feNpZGe4X3eMQ=",
         "owner": "nix-community",
         "repo": "emacs-overlay",
-        "rev": "7aa1c14402a09fc043110d6477aa5cc90e60e409",
+        "rev": "e3e9ef4c9904fddbd8c00f3288e6a3be26a6bf0b",
         "type": "github"
       },
       "original": {
@@ -39,11 +39,11 @@
         "tdlib": "tdlib"
       },
       "locked": {
-        "lastModified": 1718294272,
-        "narHash": "sha256-KvNUeBw64EzLnlW260XBeGJK7uHHv2+FeZpS7iOGQSA=",
+        "lastModified": 1719209932,
+        "narHash": "sha256-ebO6I+8RhrOH0Ek57ryMrh8ve2GkQp6OiRcKk4GBvKY=",
         "ref": "refs/heads/master",
-        "rev": "c9a21978a9f643a606c85a0626c048c7a25a0565",
-        "revCount": 358,
+        "rev": "5f4c57dd35aa7fbd3a4f128606cd28ce6e8f6d34",
+        "revCount": 359,
         "type": "git",
         "url": "https://codeberg.org/mian/emacs-config"
       },
@@ -150,11 +150,11 @@
     "tdlib": {
       "flake": false,
       "locked": {
-        "lastModified": 1718193304,
-        "narHash": "sha256-jyp6sMeSnIPzK73N0tgUuEfHhkT3wP5xUNW9pdC28ZA=",
+        "lastModified": 1718802424,
+        "narHash": "sha256-KRGAxHU6joTQp1+xC3/1a5h+LN/6nfzt/kCsUMcZUOk=",
         "owner": "tdlib",
         "repo": "td",
-        "rev": "4257a341bd08c1fa4d5329b7ecc75cf15563aa23",
+        "rev": "63c7d0301825b78c30dc7307f1f1466be049eb79",
         "type": "github"
       },
       "original": {
