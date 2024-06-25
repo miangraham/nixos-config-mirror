@@ -7,6 +7,7 @@ job {
   repo = "borg@ranni:${hostname}";
   user = "ian";
   persistentTimer = true;
+  environment.BORG_UNKNOWN_UNENCRYPTED_REPO_ACCESS_IS_OK = "yes";
   prune = {
     keep = {
       hourly = 0;

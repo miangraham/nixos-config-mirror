@@ -1,10 +1,12 @@
 { config, pkgs, inputs, ... }:
 let
   unstable = import ../../common/unstable.nix { inherit pkgs inputs; };
-  # borgbackup = import ./backup.nix { inherit pkgs; };
+  borgbackup = import ./backup.nix { inherit pkgs; };
 in
 {
   services = {
+    inherit borgbackup;
+
     syncthing.guiAddress = "0.0.0.0:8384";
 
     scrutiny = {
