@@ -7,7 +7,6 @@
     ../../system/nebula-node.nix
     ./services.nix
     ./containers.nix
-    ./nextcloud.nix
   ];
 
   networking = {
