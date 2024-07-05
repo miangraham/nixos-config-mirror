@@ -17,7 +17,7 @@ in
     };
 
     vikunja = {
-      enable = true;
+      enable = false;
       database.type = "sqlite";
       frontendScheme = "https";
       frontendHostname = "todo.ian.tokyo";
