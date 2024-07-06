@@ -3,7 +3,7 @@ let
 in {
   enable = true;
   settings = {
-    port = 53;
+    ports.dns = 53;
     log.timestamp = false;
     queryLog = {
       # change type to "console" to print queries to service log
@@ -21,18 +21,21 @@ in {
       upstream = "tcp-tls:dns.adguard-dns.com";
       ips = [ "94.140.14.14" "94.140.15.15" ];
     }];
-    upstream.default = [
-      "tcp-tls:dns.quad9.net"
-      "tcp-tls:dns.adguard-dns.com"
-      "tcp-tls:base.dns.mullvad.net"
-      "tcp-tls:p2.freedns.controld.com"
-    ];
+    upstreams = {
+      groups.default = [
+        "tcp-tls:dns.quad9.net"
+        "tcp-tls:dns.adguard-dns.com"
+        "tcp-tls:base.dns.mullvad.net"
+        "tcp-tls:p2.freedns.controld.com"
+      ];
+      init.strategy = "fast";
+    };
     hostsFile = {
-      filePath = "/etc/hosts";
       filterLoopback = true;
+      sources = [ "/etc/hosts" ];
     };
     blocking = {
-      refreshPeriod = "24h";
+      loading.refreshPeriod = "24h";
       clientGroupsBlock.default = [ "default" ];
       whiteLists.default = [
         (builtins.readFile ./blocky_whitelist.txt)
@@ -40,7 +43,7 @@ in {
       blackLists.default = [
         (builtins.readFile ./blocky_blacklist.txt)
         "https://adaway.org/hosts.txt"
-        "https://big.oisd.nl/domains"
+        "https://big.oisd.nl/domainswild"
         "https://perflyst.github.io/PiHoleBlocklist/android-tracking.txt"
         "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
         "https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt"
