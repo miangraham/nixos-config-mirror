@@ -28,8 +28,6 @@
   };
 
   programs = {
-    dconf.enable = true;
-
     git = {
       enable = true;
       config = {
