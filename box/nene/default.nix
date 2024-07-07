@@ -1,5 +1,6 @@
 { config, lib, modulesPath, inputs, pkgs, ... }:
 let
+  nix-search = inputs.nixsearch.packages.${pkgs.system}.default;
   obs-customized = pkgs.wrapOBS { plugins = with pkgs.obs-studio-plugins; [ obs-pipewire-audio-capture ]; };
   texlive-customized = pkgs.texlive.combine {
     inherit (pkgs.texlive)
@@ -60,6 +61,7 @@ in
     element-desktop
     lsp-plugins
     mame.tools
+    nix-search
     obs-customized
     playerctl
     reaper

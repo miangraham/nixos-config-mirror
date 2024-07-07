@@ -14,6 +14,10 @@
       # url = "git+file:/home/ian/.emacs.d?shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixsearch = {
+      url = "github:diamondburned/nix-search";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = inputs:
     let
