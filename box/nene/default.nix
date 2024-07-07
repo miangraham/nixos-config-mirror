@@ -59,6 +59,7 @@ in
     asunder
     carla
     element-desktop
+    losslesscut-bin
     lsp-plugins
     mame.tools
     nix-search
