@@ -2,10 +2,10 @@
 {
   enable = true;
   # default ESR wrapping now renames stuff, super annoying
-  package = pkgs.wrapFirefox pkgs.firefox-esr-115-unwrapped {};
+  package = pkgs.wrapFirefox pkgs.firefox-esr-128-unwrapped {};
   policies = {
     AppAutoUpdate = false;
-    AppUpdatePin = "115.";
+    AppUpdatePin = "128.";
     AutofillAddressEnabled = false;
     AutofillCreditCardEnabled = false;
     DisableAppUpdate = true;
@@ -29,6 +29,7 @@
     PrimaryPassword = false;
     SearchSuggestEnabled = false;
     StartDownloadsInTempDirectory = true;
+    TranslateEnabled = false;
     FirefoxHome = {
       Highlights = false;
       Locked = true;
@@ -181,9 +182,6 @@
         "browser.vpn_promo.enabled" = false;
         "browser.warnOnQuit" = false;
         "browser.warnOnQuitShortcut" = false;
-        "cookiebanners.service.mode" = 1;
-        "cookiebanners.service.mode.privateBrowsing" = 1;
-        "devtools.everOpened" = true;
         "extensions.experiments.enabled" = false;
         "extensions.pocket.enabled" = false;
         "extensions.quarantinedDomains.enabled" = false;
