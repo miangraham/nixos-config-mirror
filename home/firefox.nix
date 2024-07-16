@@ -91,6 +91,7 @@
         "browser.sessionstore.resume_from_crash" = false;
         "browser.sessionstore.resuming_after_os_restart" = false;
         "browser.startup.homepage" = "about:blank";
+        "dom.private-attribution.submission.enabled" = false;
         "general.autoScroll" = false;
         "signon.rememberSignons" = false;
 
