@@ -26,8 +26,12 @@
     "clock"
   ];
 
-  boot.kernelPackages = pkgs.lib.mkForce pkgs.linuxPackages_6_9;
+  boot.kernelPackages = pkgs.lib.mkForce pkgs.linuxPackages_6_10;
   powerManagement.cpuFreqGovernor = "schedutil";
+
+  # xdg-desktop-portal-gtk failing startup on kernel 6.10
+  xdg.portal.enable = pkgs.lib.mkForce false;
+  xdg.portal.extraPortals = pkgs.lib.mkForce [ ];
 
   services.syncthing.guiAddress = "0.0.0.0:8384";
 
