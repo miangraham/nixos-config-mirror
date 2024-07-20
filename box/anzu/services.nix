@@ -10,9 +10,9 @@ in
     syncthing.guiAddress = "0.0.0.0:8384";
 
     scrutiny = {
-      enable = true;
+      enable = false;
       openFirewall = true;
-      collector.enable = true;
+      collector.enable = false;
       settings.web.listen.port = 8099;
     };
 

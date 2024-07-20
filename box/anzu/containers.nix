@@ -10,7 +10,7 @@ in
 {
   virtualisation = {
     podman = {
-      enable = true;
+      enable = false;
       dockerCompat = true;
     };
     oci-containers = {
