@@ -19,7 +19,10 @@
 
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
 
-  systemd.oomd.enableSystemSlice = true;
+  systemd.oomd = {
+    enableSystemSlice = true;
+    enableUserSlices = true;
+  };
 
   system.stateVersion = "24.05";
 }
