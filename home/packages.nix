@@ -30,6 +30,7 @@ builtins.attrValues {
     nix-direnv
     nix-prefetch
     nix-prefetch-git
+    nixd
     nixpkgs-review
     nvd
     pandoc
