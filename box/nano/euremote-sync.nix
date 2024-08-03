@@ -3,6 +3,7 @@ let
   syncScript = pkgs.writeScript "euremote-sync.py" ''
     #!${pkgs.python3}/bin/python
     import subprocess
+    import sys
 
     src_loc = "euremote:/done/"
     dest_loc = "/home/ian/share/euremote/"
