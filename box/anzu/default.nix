@@ -17,6 +17,8 @@
     };
   };
 
+  boot.kernelParams = [ "i915.enable_dc=0" ];
+
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
 
   systemd.oomd = {

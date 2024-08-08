@@ -9,6 +9,8 @@ in
 
     syncthing.guiAddress = "0.0.0.0:8384";
 
+    fwupd.enable = true;
+
     scrutiny = {
       enable = false;
       openFirewall = true;
