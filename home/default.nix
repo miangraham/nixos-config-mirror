@@ -65,6 +65,7 @@ in
         sort_key = config.lib.htop.fields.PERCENT_CPU;
         hide_kernel_threads = 1;
         hide_userland_threads = 1;
+        show_program_path = 0;
       };
     };
   };
