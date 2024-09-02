@@ -6,12 +6,12 @@ in
   imports = [
     ./hardware-configuration.nix
     ../../system
-    # ../../system/nebula-node.nix
+    ../../system/nebula-node.nix
     ../../common/desktop.nix
     ../../common/audio.nix
   ];
 
-  # time.timeZone = pkgs.lib.mkForce null;
+  time.timeZone = pkgs.lib.mkForce "Europe/London";
 
   networking = {
     hostName = "rin";
@@ -23,20 +23,17 @@ in
       enp5s0.useDHCP = true;
       wlp3s0.useDHCP = true;
     };
-#     extraHosts = pkgs.lib.mkForce ''
-# 192.168.100.117 ranni
-# 192.168.100.119 pika
-# 192.168.100.120 boxypi
-# 192.168.100.127 fuuka
-# 192.168.100.127 nextcloud
-# 192.168.100.128 futaba
-# 192.168.100.128 invid
-# 192.168.100.128 freshrss
-# 192.168.100.128 graham.tokyo
-# 192.168.100.132 nene
-# 192.168.100.155 tinypi
-# 192.168.100.167 bocchi
-# '';
+     extraHosts = pkgs.lib.mkForce ''
+192.168.100.117 ranni
+192.168.100.119 pika
+192.168.100.120 boxypi
+192.168.100.127 fuuka
+192.168.100.128 futaba
+192.168.100.128 invid
+192.168.100.128 freshrss
+192.168.100.132 nene
+192.168.100.167 bocchi
+'';
   };
   systemd.services.NetworkManager-wait-online.enable = false;
 
@@ -65,7 +62,7 @@ in
   services = {
     inherit borgbackup;
     # Okinawa is not China
-    # automatic-timezoned.enable = true;
+    automatic-timezoned.enable = true;
     rabbitmq.enable = false;
     redis.servers.dev = {
       enable = false;
