@@ -9,6 +9,11 @@
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    plasma-manager = {
+      url = "github:nix-community/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
     emacspkg = {
       url = "git+https://codeberg.org/mian/emacs-config";
       # url = "git+file:/home/ian/.emacs.d?shallow=1";
@@ -27,6 +32,7 @@
           useGlobalPkgs = true;
           useUserPackages = true;
           extraSpecialArgs = { inherit inputs system; };
+          sharedModules = [ inputs.plasma-manager.homeManagerModules.plasma-manager ];
           users.ian = import ./home {};
         };
       in (inputs.nixpkgs.lib.nixosSystem) {
@@ -41,6 +47,7 @@
       nixosConfigurations = {
         nene = boxConfig "x86_64-linux" [ ./box/nene ];
         anzu = boxConfig "x86_64-linux" [ ./box/anzu ];
+	ema = boxConfig "x86_64-linux" [ ./box/ema ];
         futaba = boxConfig "x86_64-linux" [ ./box/futaba ];
         fuuka = boxConfig "x86_64-linux" [ ./box/fuuka ];
         ranni = boxConfig "x86_64-linux" [ ./box/ranni ];

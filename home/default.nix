@@ -15,7 +15,7 @@ let
   zsh = import ./zsh.nix { inherit pkgs; };
 in
 {
-  imports = [ ./desktop.nix ];
+  imports = [ ./desktop.nix ./tablet.nix ];
 
   inherit accounts;
   home = {
