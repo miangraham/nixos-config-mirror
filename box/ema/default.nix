@@ -34,21 +34,9 @@ in
   };
   systemd.services.NetworkManager-wait-online.enable = false;
 
-  # Power
-  powerManagement.powertop.enable = true;
-  programs.light.enable = true;
-  services.upower.enable = true;
-
   # BT
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
-
-  # Tablet
-  hardware.sensor.iio.enable = true;
-  services.udev.extraHwdb = ''
-    sensor:modalias:acpi:KIOX000A*:dmi:*:*
-      ACCEL_MOUNT_MATRIX=1, 0, 0; 0, -1, 0; 0, 0, 1
-  '';
 
   home-manager.users.ian.home.packages = with pkgs; [
     krita

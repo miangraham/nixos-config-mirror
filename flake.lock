@@ -125,16 +125,16 @@
     },
     "nixos-hardware": {
       "locked": {
-        "lastModified": 1724878143,
-        "narHash": "sha256-UjpKo92iZ25M05kgSOw/Ti6VZwpgdlOa73zHj8OcaDk=",
-        "owner": "NixOS",
+        "lastModified": 1725463680,
+        "narHash": "sha256-z5FHUBQdwk0zguW96BTiqZAUt55LBeYGNoGvp6xGxTE=",
+        "owner": "miangraham",
         "repo": "nixos-hardware",
-        "rev": "95c3dfe6ef2e96ddc1ccdd7194e3cda02ca9a8ef",
+        "rev": "347516617db6e2a174b96cd9b5bef6abb3909fe3",
         "type": "github"
       },
       "original": {
-        "owner": "NixOS",
-        "ref": "master",
+        "owner": "miangraham",
+        "ref": "init_starlabs_add_starlite",
         "repo": "nixos-hardware",
         "type": "github"
       }

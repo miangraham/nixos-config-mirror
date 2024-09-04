@@ -4,7 +4,8 @@
     nixpkgs = { url = "github:NixOS/nixpkgs/nixos-24.05"; };
     unstable = { url = "github:NixOS/nixpkgs/nixos-unstable-small"; };
 
-    nixos-hardware = { url = "github:NixOS/nixos-hardware/master"; };
+    # nixos-hardware = { url = "github:NixOS/nixos-hardware/master"; };
+    nixos-hardware = { url = "github:miangraham/nixos-hardware/init_starlabs_add_starlite"; };
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -47,7 +48,10 @@
       nixosConfigurations = {
         nene = boxConfig "x86_64-linux" [ ./box/nene ];
         anzu = boxConfig "x86_64-linux" [ ./box/anzu ];
-	ema = boxConfig "x86_64-linux" [ ./box/ema ];
+        ema = boxConfig "x86_64-linux" [
+          ./box/ema
+          inputs.nixos-hardware.nixosModules.starlabs-starlite-i5
+        ];
         futaba = boxConfig "x86_64-linux" [ ./box/futaba ];
         fuuka = boxConfig "x86_64-linux" [ ./box/fuuka ];
         ranni = boxConfig "x86_64-linux" [ ./box/ranni ];
