@@ -53,7 +53,7 @@ in
       kiwix
       # krita
       # librewolf
-      nheko
+      # nheko # libolm insecure
       nomacs
       okular
       qdirstat
