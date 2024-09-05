@@ -1,0 +1,47 @@
+/* Hide close button */
+.tab-close {
+  display: none;
+}
+/* Fix title gradient */
+#tablist .tab:hover > .tab-title-wrapper {
+  mask-image: linear-gradient(to left, transparent 0, black 2em);
+}
+
+.tab.muted .tab-icon-overlay-muted {
+  display: none;
+}
+
+#topmenu {
+  order: 2;
+}
+
+#newtab {
+  display: none;
+}
+
+#main-window[inFullscreen="true"] #sidebar-box[sidebarcommand="tabcenter-reborn_ariasuni-sidebar-action"],
+#main-window[inFullscreen="true"] #sidebar-box[sidebarcommand="tabcenter-reborn_ariasuni-sidebar-action"] + splitter {
+  visibility: collapse;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #1c1b22;
+    --icons: rgb(251,251,254);
+    --tab-separator: transparent;
+    --tab-active-background: rgb(66,65,77);
+    --tab-active-text: rgb(251,251,254);
+    --tab-text: #fbfbfe;
+    --toolbar-background: rgb(43,42,51);
+    --toolbar-text: rgb(251, 251, 254);
+    --input-background: rgb(28,27,34);
+    --input-border: transparent;
+    --input-background-focus: rgb(66,65,77);
+    --input-selected-text: rgb(251,251,254);
+    --input-text: rgb(251,251,254);
+    --input-text-focus: rgb(251,251,254);
+    --identity-color-toolbar: rgb(251,251,254);
+    --tablist-separator: #333333;
+    --overflow-indicator-border: #cccccc;
+  }
+}
