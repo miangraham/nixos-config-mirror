@@ -45,6 +45,9 @@ in
 
     plasma = {
       workspace.lookAndFeel = "org.kde.breezedark.desktop";
+      panels = [{
+        location = "left";
+      }];
       configFile = {
         "plasma-localerc"."Formats"."LANG" = "en_US.UTF-8";
         "plasma-localerc"."Formats"."LC_MEASUREMENT" = "en_SE.UTF-8";
