@@ -9,6 +9,7 @@ builtins.attrValues {
     duf
     entr
     fd
+    fend
     ffmpeg
     flac
     geekbench
