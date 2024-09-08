@@ -17,6 +17,10 @@
     };
   };
 
+  services.nebula.networks.asgard.firewall.inbound = [
+    { port = 7575; proto = "tcp"; host = "any"; } # homepage
+  ];
+
   boot.blacklistedKernelModules = [ "ite_cir" "iwlwifi" ];
 
   powerManagement = {

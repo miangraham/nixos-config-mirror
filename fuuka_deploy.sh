@@ -7,10 +7,10 @@ if [[ "$OSTYPE" != "linux-gnu"* ]]; then
   exit 1
 fi
 
-if [[ "$HOSTNAME" != "nene" ]]; then
-  echo "Not running from known deployer. Abort."
-  exit 1
-fi
+# if [[ "$HOSTNAME" != "nene" ]]; then
+#   echo "Not running from known deployer. Abort."
+#   exit 1
+# fi
 
 if [[ $(git status --porcelain) ]]; then
   echo "Outstanding git changes. Refusing to build."
