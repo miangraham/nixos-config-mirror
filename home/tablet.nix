@@ -28,9 +28,6 @@ in
 
     feh.enable = true;
 
-    bash.shellAliases.win = "sway";
-    zsh.shellAliases.win = "sway";
-
     chromium = {
       enable = true;
       package = pkgs.vivaldi;

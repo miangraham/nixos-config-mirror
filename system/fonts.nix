@@ -18,6 +18,8 @@ with pkgs; {
     ibm-plex
     inconsolata
     intel-one-mono
+    inter
+    # inter-nerdfont # unstable
     iosevka
     jetbrains-mono
     libre-caslon
