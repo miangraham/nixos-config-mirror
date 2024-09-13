@@ -12,14 +12,14 @@ in
     fwupd.enable = true;
 
     scrutiny = {
-      enable = false;
+      enable = true;
       openFirewall = true;
       collector.enable = false;
       settings.web.listen.port = 8099;
     };
 
     vikunja = {
-      enable = false;
+      enable = true;
       database.type = "sqlite";
       frontendScheme = "https";
       frontendHostname = "todo.ian.tokyo";

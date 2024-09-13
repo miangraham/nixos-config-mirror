@@ -65,13 +65,13 @@ in
       };
       locations."=/robots.txt".extraConfig = robotsConf;
     };
-    # "todo.ian.tokyo" = {
-    #   serverName = "todo.ian.tokyo";
-    #   forceSSL = true;
-    #   enableACME = true;
-    #   locations."/".proxyPass = "http://anzu:3456";
-    #   locations."=/robots.txt".extraConfig = robotsConf;
-    # };
+    "todo.ian.tokyo" = {
+      serverName = "todo.ian.tokyo";
+      forceSSL = true;
+      enableACME = true;
+      locations."/".proxyPass = "http://anzu:3456";
+      locations."=/robots.txt".extraConfig = robotsConf;
+    };
     "graham.tokyo" = {
       serverName = "graham.tokyo";
       forceSSL = true;
