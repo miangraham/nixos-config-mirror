@@ -19,9 +19,15 @@ in
         global = {
           server_name = "graham.tokyo";
           private_key = "$CREDENTIALS_DIRECTORY/private_key";
+          report_stats.enabled = false;
           cache = {
             max_size_estimated = "1gb";
             max_age = "1h";
+          };
+          dns_cache = {
+            enabled = true;
+            cache_size = 1024;
+            cache_lifetime = "10m";
           };
         };
         logging = [{
@@ -29,7 +35,11 @@ in
           level = "warn";
         }];
         app_service_api.database.connection_string = "file:appserviceapi.db";
-        client_api.registration_shared_secret = "$CREDENTIALS_DIRECTORY/shared_secret";
+        client_api = {
+          guests_disabled = true;
+          registration_disabled = true;
+          # registration_shared_secret = "$CREDENTIALS_DIRECTORY/shared_secret";
+        };
         federation_api.key_perspectives = [{
           server_name = "matrix.org";
           keys = [{
