@@ -38,8 +38,8 @@ in
   virtualisation.oci-containers.containers = {
     homeassistant = {
       inherit environment extraOptions;
-      # 2024.4.0
-      image = "ghcr.io/home-assistant/home-assistant@sha256:c0045a0eb9970cdca9afb6e1389551bc15875de9c99fb73a8b89dfa56b54628a";
+      # 2024.9.1
+      image = "ghcr.io/home-assistant/home-assistant@sha256:f1a96b632ea6f2b96f882ea17e2ed3660a741d5e45a5278ef0f38abe8e1df6c8";
       ports = [ "8091:8123" ];
       volumes = [
         "/srv/home-assistant:/config"
