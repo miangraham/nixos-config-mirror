@@ -26,8 +26,11 @@
     "clock"
   ];
 
-  boot.kernelPackages = pkgs.lib.mkForce pkgs.linuxPackages_6_10;
-  powerManagement.cpuFreqGovernor = "schedutil";
+  boot.kernelPackages = pkgs.lib.mkForce pkgs.linuxPackages_6_11;
+  # powerManagement.cpuFreqGovernor = "schedutil";
+  hardware.deviceTree.enable = true;
+  # hardware.deviceTree.filter = "*nanopi-r6c*.dtb";
+  hardware.deviceTree.name = "rockchip/rk3588s-nanopi-r6c.dtb";
 
   # xdg-desktop-portal-gtk failing startup on kernel 6.10
   xdg.portal.enable = pkgs.lib.mkForce false;
