@@ -1,8 +1,11 @@
 { pkgs, inputs, config, ... }:
 let
   borgbackup = import ./backup.nix { inherit pkgs; };
+  unstable = import ../../common/unstable.nix { inherit pkgs inputs; };
 in
 {
+  imports = [ "${inputs.unstable}/nixos/modules/services/web-apps/immich.nix" ];
+
   nix = {
     sshServe = {
       enable = false;
@@ -18,6 +21,10 @@ in
     inherit borgbackup;
 
     flatpak.enable = false;
+    immich = {
+      enable = true;
+      package = unstable.immich;
+    };
 
     rabbitmq = {
       enable = true;
