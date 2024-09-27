@@ -4,12 +4,24 @@ let
   borgbackup = import ./backup.nix { inherit pkgs; };
 in
 {
+  imports = [ "${inputs.unstable}/nixos/modules/services/web-apps/immich.nix" ];
+
   services = {
     inherit borgbackup;
 
     syncthing.guiAddress = "0.0.0.0:8384";
 
-    fwupd.enable = true;
+    immich = {
+      enable = true;
+      package = unstable.immich;
+      host = "0.0.0.0";
+      openFirewall = true;
+    };
+
+    postgresqlBackup = {
+      enable = true;
+      startAt = "*-*-* 05:00:00";
+    };
 
     scrutiny = {
       enable = true;

@@ -17,6 +17,10 @@
     };
   };
 
+  services.nebula.networks.asgard.firewall.inbound = [
+    { port = 3001; proto = "tcp"; host = "any"; } # immich
+  ];
+
   boot.kernelParams = [ "i915.enable_dc=0" ];
 
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";

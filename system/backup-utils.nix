@@ -63,6 +63,7 @@ let
     "share/p4acamera"
     "share/p7acamera"
     "share/p7atravelcam"
+    "share/pictures"
     "share/rp2s"
     "share/videos"
     "share/ytdl"
