@@ -2,6 +2,7 @@
 let
   unstable = import ../../common/unstable.nix { inherit pkgs inputs; };
   borgbackup = import ./backup.nix { inherit pkgs; };
+  forgesrv = config.services.forgejo.settings.server;
 in
 {
   imports = [ "${inputs.unstable}/nixos/modules/services/web-apps/immich.nix" ];
@@ -10,6 +11,20 @@ in
     inherit borgbackup;
 
     syncthing.guiAddress = "0.0.0.0:8384";
+
+    forgejo = {
+      enable = true;
+      database.type = "postgres";
+      dump.enable = true;
+      settings = {
+        service.DISABLE_REGISTRATION = true;
+        server = {
+          DOMAIN = "git.ian.tokyo";
+          ROOT_URL = "https://${forgesrv.DOMAIN}/";
+          HTTP_PORT = 3000;
+        };
+      };
+    };
 
     immich = {
       enable = true;

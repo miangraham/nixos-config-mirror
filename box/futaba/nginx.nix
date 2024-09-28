@@ -65,6 +65,13 @@ in
       };
       locations."=/robots.txt".extraConfig = robotsConf;
     };
+    "git.ian.tokyo" = {
+      serverName = "git.ian.tokyo";
+      forceSSL = true;
+      enableACME = true;
+      locations."/".proxyPass = "http://anzu:3000";
+      locations."=/robots.txt".extraConfig = robotsConf;
+    };
     "todo.ian.tokyo" = {
       serverName = "todo.ian.tokyo";
       forceSSL = true;
