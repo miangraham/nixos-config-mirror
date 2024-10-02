@@ -36,6 +36,9 @@
   xdg.portal.enable = pkgs.lib.mkForce false;
   xdg.portal.extraPortals = pkgs.lib.mkForce [ ];
 
+  home-manager.users.ian.systemd.user.services.autotiling.Service.ExecStartPre = "/run/current-system/sw/bin/sleep 5";
+  home-manager.users.ian.systemd.user.services.sworkstyle.Service.ExecStartPre = "/run/current-system/sw/bin/sleep 5";
+
   services.syncthing.guiAddress = "0.0.0.0:8384";
 
   system.stateVersion = "24.05";
