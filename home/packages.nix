@@ -34,6 +34,7 @@ builtins.attrValues {
     nixd
     nixpkgs-review
     nvd
+    onefetch
     pandoc
     parallel
     protonmail-bridge
