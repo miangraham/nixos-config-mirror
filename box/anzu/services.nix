@@ -33,6 +33,18 @@ in
       openFirewall = true;
     };
 
+    searx = {
+      enable = true;
+      environmentFile = /home/ian/.config/searx/env;
+      package = pkgs.searxng;
+      redisCreateLocally = true;
+      settings = {
+        server.port = 8989;
+        server.bind_address = "0.0.0.0";
+        server.secret_key = "@SEARX_SECRET_KEY@";
+      };
+    };
+
     postgresqlBackup = {
       enable = true;
       startAt = "*-*-* 05:00:00";
