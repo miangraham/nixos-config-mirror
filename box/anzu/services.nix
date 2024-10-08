@@ -42,6 +42,16 @@ in
         server.port = 8989;
         server.bind_address = "0.0.0.0";
         server.secret_key = "@SEARX_SECRET_KEY@";
+        general = {
+          debug = false;
+          donation_url = false;
+          contact_url = false;
+          privacypolicy_url = false;
+          enable_metrics = false;
+        };
+        ui = {
+          infinite_scroll = false;
+        };
       };
     };
 
