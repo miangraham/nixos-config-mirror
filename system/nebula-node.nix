@@ -7,10 +7,10 @@ in
     ca = "/etc/nebula/ca.crt";
     cert = "/etc/nebula/host.crt";
     key = "/etc/nebula/host.key";
-    lighthouses = [ "192.168.100.128" ];
-    relays = [ "192.168.100.128" ];
+    lighthouses = [ "10.10.10.128" ];
+    relays = [ "10.10.10.128" ];
     staticHostMap = {
-      "192.168.100.128" = [
+      "10.10.10.128" = [
         "192.168.0.128:4242"
         "122.249.92.87:4242"
       ];
