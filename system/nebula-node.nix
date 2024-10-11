@@ -4,7 +4,7 @@ in
 {
   services.nebula.networks.asgard = {
     enable = true;
-    ca = "/etc/nebula/ca.crt";
+    ca = ./nebula-ca.crt;
     cert = "/etc/nebula/host.crt";
     key = "/etc/nebula/host.key";
     lighthouses = [ "10.10.10.128" ];
