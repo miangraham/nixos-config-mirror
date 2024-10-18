@@ -9,4 +9,13 @@ fi
 
 nix flake update
 git add flake.lock
+
+if [[ "$HOSTNAME" == "nene" ]]; then
+  # Preview changes
+  nixos-rebuild build --flake '.#'
+  nvd diff /run/current-system ./result
+  rm ./result
+  read -r -p "Press ENTER to commit."
+fi
+
 git commit -m "version bump"
