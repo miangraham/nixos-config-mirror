@@ -20,8 +20,24 @@ in
 
     flatpak.enable = false;
 
-    rabbitmq = {
+    gotosocial = {
       enable = true;
+      openFirewall = true;
+      setupPostgresqlDB = true;
+      settings = {
+        application-name = "rainingmessages test";
+        host = "soctest.rainingmessages.dev";
+        protocol = "https";
+        bind-address = "0.0.0.0";
+        port = 8080;
+        trusted-proxies = [ "192.168.0.128" ];
+        instance-languages = [ "en" "ja" ];
+        instance-federation-mode = "allowlist";
+      };
+    };
+
+    rabbitmq = {
+      enable = false;
       listenAddress = "0.0.0.0";
       configItems = {
         "loopback_users.guest" = "false";
@@ -29,7 +45,7 @@ in
     };
 
     redis.servers.dev = {
-      enable = true;
+      enable = false;
       port = 6379;
       bind = null;
       settings = {

@@ -20,6 +20,7 @@ in
 {
   enable = true;
   user = "nginx";
+  clientMaxBodySize = "40M";
   upstreams = {
     "backend_matrix" = {
       servers = {
@@ -77,6 +78,17 @@ in
       forceSSL = true;
       enableACME = true;
       locations."/".proxyPass = "http://anzu:3456";
+      locations."=/robots.txt".extraConfig = robotsConf;
+    };
+    "soctest.rainingmessages.dev" = {
+      serverName = "soctest.rainingmessages.dev";
+      forceSSL = true;
+      enableACME = true;
+      locations."/" = {
+        recommendedProxySettings = true;
+        proxyWebsockets = true;
+        proxyPass = "http://nene:8080";
+      };
       locations."=/robots.txt".extraConfig = robotsConf;
     };
     "graham.tokyo" = {
