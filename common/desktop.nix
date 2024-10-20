@@ -44,5 +44,16 @@ in
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
+  services.kanata = {
+    enable = true;
+    keyboards.default = {
+      devices = [];
+      config = ''
+        (defsrc caps)
+        (deflayer base lctl)
+      '';
+    };
+  };
+
   home-manager.users.ian.wayland.windowManager.sway.enable = true;
 }
