@@ -59,6 +59,7 @@ in
     asunder
     carla
     element-desktop
+    krita
     losslesscut-bin
     lsp-plugins
     mame.tools
