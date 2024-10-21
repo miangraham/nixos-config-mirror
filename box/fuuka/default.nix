@@ -12,7 +12,7 @@
   networking = {
     hostName = "fuuka";
     firewall = {
-      allowedTCPPorts = [ 80 443 7575 8008 8088 8384 ];
+      allowedTCPPorts = [ 80 443 7575 8008 8088 8384 9000 ];
       allowedUDPPorts = [ 8008 ];
     };
   };

@@ -76,6 +76,25 @@ in
       settings.web.listen.port = 8099;
     };
 
+    thelounge = {
+      enable = true;
+      extraConfig = {
+        reverseProxy = false;
+        defaults = {
+          name = "Libera.Chat";
+          host = "irc.libera.chat";
+          port = 6697;
+          tls = true;
+          rejectUnauthorized = true;
+        };
+      };
+      plugins = with pkgs.theLoungePlugins.themes; [
+        dracula
+        solarized
+        zenburn
+      ];
+    };
+
     wastebin = {
       enable = true;
       secretFile = "/etc/wastebin/env";
