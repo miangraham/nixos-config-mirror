@@ -80,14 +80,14 @@ in
       locations."/".proxyPass = "http://anzu:3456";
       locations."=/robots.txt".extraConfig = robotsConf;
     };
-    "soctest.rainingmessages.dev" = {
-      serverName = "soctest.rainingmessages.dev";
+    "rainingmessages.social" = {
+      serverName = "rainingmessages.social";
       forceSSL = true;
       enableACME = true;
       locations."/" = {
         recommendedProxySettings = true;
         proxyWebsockets = true;
-        proxyPass = "http://nene:8080";
+        proxyPass = "http://fuuka:8080";
       };
       locations."=/robots.txt".extraConfig = robotsConf;
     };
