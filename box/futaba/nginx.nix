@@ -80,8 +80,28 @@ in
       locations."/".proxyPass = "http://anzu:3456";
       locations."=/robots.txt".extraConfig = robotsConf;
     };
-    "rainingmessages.social" = {
-      serverName = "rainingmessages.social";
+    "rainingmessages.dev" = {
+      serverName = "rainingmessages.dev";
+      root = "/var/www";
+      forceSSL = true;
+      enableACME = true;
+      locations."=/robots.txt".extraConfig = robotsConf;
+      extraConfig = ''
+        location /.well-known/webfinger {
+          rewrite ^.*$ https://social.rainingmessages.dev/.well-known/webfinger permanent;
+        }
+
+        location /.well-known/host-meta {
+            rewrite ^.*$ https://social.rainingmessages.dev/.well-known/host-meta permanent;
+        }
+
+        location /.well-known/nodeinfo {
+            rewrite ^.*$ https://social.rainingmessages.dev/.well-known/nodeinfo permanent;
+        }
+      '';
+    };
+    "social.rainingmessages.dev" = {
+      serverName = "social.rainingmessages.dev";
       forceSSL = true;
       enableACME = true;
       locations."/" = {
@@ -91,6 +111,17 @@ in
       };
       locations."=/robots.txt".extraConfig = robotsConf;
     };
+    # "rainingmessages.social" = {
+    #   serverName = "rainingmessages.social";
+    #   forceSSL = true;
+    #   enableACME = true;
+    #   locations."/" = {
+    #     recommendedProxySettings = true;
+    #     proxyWebsockets = true;
+    #     proxyPass = "http://fuuka:8080";
+    #   };
+    #   locations."=/robots.txt".extraConfig = robotsConf;
+    # };
     "graham.tokyo" = {
       serverName = "graham.tokyo";
       forceSSL = true;

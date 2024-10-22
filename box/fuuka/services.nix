@@ -59,7 +59,8 @@ in
       setupPostgresqlDB = true;
       settings = {
         application-name = "rainingmessages";
-        host = "rainingmessages.social";
+        host = "social.rainingmessages.dev";
+        account-domain = "rainingmessages.dev";
         protocol = "https";
         bind-address = "0.0.0.0";
         port = 8080;
@@ -83,6 +84,11 @@ in
         motd = "Hello from NixOS";
         snooper-enabled = false;
       };
+    };
+
+    postgresqlBackup = {
+      enable = true;
+      startAt = "*-*-* 05:00:00";
     };
 
     scrutiny = {
