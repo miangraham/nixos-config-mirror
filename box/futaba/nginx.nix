@@ -1,11 +1,11 @@
 { config, pkgs, ... }:
 let
-  wellKnownServer = pkgs.writeText "well-known-matrix-server" ''
+  wellKnownMatrixServer = pkgs.writeText "well-known-matrix-server" ''
     {
       "m.server": "graham.tokyo:443"
     }
   '';
-  wellKnownClient = pkgs.writeText "well-known-matrix-client" ''
+  wellKnownMatrixClient = pkgs.writeText "well-known-matrix-client" ''
     {
       "m.homeserver": {
         "base_url": "https://graham.tokyo"
@@ -139,14 +139,14 @@ in
       };
       locations."=/robots.txt".extraConfig = robotsConf;
       locations."=/.well-known/matrix/server" = {
-        alias = "${wellKnownServer}";
+        alias = "${wellKnownMatrixServer}";
         extraConfig = ''
           # Set the header since by default NGINX thinks it's just bytes
           default_type application/json;
         '';
       };
       locations."=/.well-known/matrix/client" = {
-        alias = "${wellKnownClient}";
+        alias = "${wellKnownMatrixClient}";
         extraConfig = ''
           # Set the header since by default NGINX thinks it's just bytes
           default_type application/json;

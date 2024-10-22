@@ -29,7 +29,7 @@ in
     };
 
     redis.servers.dev = {
-      enable = false;
+      enable = true;
       port = 6379;
       bind = null;
       settings = {

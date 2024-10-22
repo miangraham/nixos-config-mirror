@@ -71,6 +71,7 @@ in
     soundconverter
     tap-plugins
     texlive-customized
+    yubikey-manager
     zotero
   ];
 
