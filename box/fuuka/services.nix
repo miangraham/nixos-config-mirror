@@ -1,5 +1,6 @@
 { config, pkgs, inputs, ... }:
 let
+  unstable = import ../../common/unstable.nix { inherit pkgs inputs; };
   borgbackup = import ./backup.nix { inherit pkgs; };
   nginx = import ./nginx.nix { inherit pkgs; };
 in
@@ -55,6 +56,7 @@ in
 
     gotosocial = {
       enable = true;
+      package = unstable.gotosocial;
       openFirewall = true;
       setupPostgresqlDB = true;
       settings = {
