@@ -8,7 +8,7 @@ in
     scrutiny = {
       enable = true;
       openFirewall = true;
-      collector.enable = false;
+      collector.enable = true;
       settings.web.listen.port = 8099;
     };
   };

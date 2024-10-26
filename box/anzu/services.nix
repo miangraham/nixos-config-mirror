@@ -5,7 +5,7 @@ let
   forgesrv = config.services.forgejo.settings.server;
 in
 {
-  imports = [ "${inputs.unstable}/nixos/modules/services/web-apps/immich.nix" ];
+  # imports = [ "${inputs.unstable}/nixos/modules/services/web-apps/immich.nix" ];
 
   services = {
     inherit borgbackup;
@@ -26,12 +26,13 @@ in
       };
     };
 
-    immich = {
-      enable = true;
-      package = unstable.immich;
-      host = "0.0.0.0";
-      openFirewall = true;
-    };
+    # unstable mixin broken by https://github.com/NixOS/nixpkgs/pull/345327, not actively using so wait for 24.11
+    # immich = {
+    #   enable = true;
+    #   package = unstable.immich;
+    #   host = "0.0.0.0";
+    #   openFirewall = true;
+    # };
 
     searx = {
       enable = true;
@@ -63,7 +64,7 @@ in
     scrutiny = {
       enable = true;
       openFirewall = true;
-      collector.enable = false;
+      collector.enable = true;
       settings.web.listen.port = 8099;
     };
 
