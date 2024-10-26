@@ -53,6 +53,7 @@
         ];
         futaba = boxConfig "x86_64-linux" [ ./box/futaba ];
         fuuka = boxConfig "x86_64-linux" [ ./box/fuuka ];
+        makoto = boxConfig "x86_64-linux" [ ./box/makoto ];
         ranni = boxConfig "x86_64-linux" [ ./box/ranni ];
         rin = boxConfig "x86_64-linux" [
           ./box/rin
