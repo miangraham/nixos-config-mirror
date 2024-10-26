@@ -2,6 +2,13 @@
 {
   programs.gpg = {
     enable = true;
+    settings = {
+      s2k-count = "65011712";
+    };
+    scdaemonSettings = {
+      disable-ccid = true;
+      pcsc-shared = true;
+    };
   };
 
   programs.password-store = {

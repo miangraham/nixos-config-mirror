@@ -55,5 +55,8 @@ in
     };
   };
 
+  services.pcscd.enable = true;
+  services.udev.packages = [ pkgs.yubikey-personalization ];
+
   home-manager.users.ian.wayland.windowManager.sway.enable = true;
 }
