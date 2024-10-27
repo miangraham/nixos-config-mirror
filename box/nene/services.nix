@@ -18,7 +18,7 @@ in
   services = {
     inherit borgbackup;
 
-    flatpak.enable = false;
+    flatpak.enable = true;
 
     rabbitmq = {
       enable = false;
