@@ -41,6 +41,7 @@ in
 
   home.packages = if-desktop (builtins.attrValues {
     emacs = inputs.emacspkg.packages.${system}.default;
+    nix-search = inputs.nixsearch.packages.${pkgs.system}.default;
 
     inherit (pkgs)
       # bitwarden # electron
@@ -51,18 +52,17 @@ in
       grim
       gthumb # quick image cropping
       kiwix
-      # krita
+      krita
       # librewolf
       # nheko # libolm insecure
       nomacs
       okular
       qdirstat
       remmina
-      # sioyek
       slurp
-      # tigervnc
       # ungoogled-chromium
       # vlc
+      yubikey-manager
       zeal
 
       # sway
