@@ -17,6 +17,7 @@
     DisableSetDesktopBackground = true;
     DisableTelemetry = true;
     DisplayBookmarksToolbar = true;
+    DisplayMenuBar = "default-off";
     DontCheckDefaultBrowser = true;
     DownloadDirectory = "\$\{home\}/downloads";
     ManualAppUpdateOnly = true;
@@ -56,6 +57,7 @@
         Block = [
           "https://youtube.com"
         ];
+        Locked = true;
       };
     };
     PictureInPicture = {
@@ -75,6 +77,7 @@
       UrlbarInterventions = false;
       SkipOnboarding = true;
       MoreFromMozilla = false;
+      FirefoxLabs = false;
       Locked = true;
     };
   };
