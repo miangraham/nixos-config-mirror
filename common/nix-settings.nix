@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   package = pkgs.nixVersions.stable;
+  channel.enable = false;
   settings = {
     allowed-users = ["@wheel" "nix-ssh"];
     trusted-users = ["@wheel"];
