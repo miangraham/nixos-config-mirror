@@ -30,6 +30,7 @@ in
   systemd.network.networks."40-wired".linkConfig.RequiredForOnline = "routable";
 
   boot = {
+    # LTS, ZFS compatible. Verify ZFS before bumping.
     kernelPackages = lib.mkForce pkgs.linuxPackages_6_6;
     # TODO: test removal
     kernelModules = [ "coretemp" "nct6775" ];

@@ -15,9 +15,6 @@
     cmd_duration = {
       min_time = 5000;
     };
-    # hostname.ssh_only = false;
-    # username.show_always = true;
-    # nix_shell.heuristic = true;
 
     # from https://starship.rs/presets/nerd-font.html
     aws.symbol = "  ";
@@ -51,6 +48,5 @@
     ruby.symbol = " ";
     rust.symbol = " ";
     scala.symbol = " ";
-
   };
 }

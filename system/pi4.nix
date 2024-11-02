@@ -19,7 +19,6 @@
     };
 
     kernelPackages = pkgs.lib.mkForce pkgs.linuxKernel.packages.linux_rpi4;
-    # kernelPackages = pkgs.lib.mkForce pkgs.linuxPackages_6_6;
     kernelParams = [
       "8250.nr_uarts=1"
       "cgroup_enable=memory"

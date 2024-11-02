@@ -53,7 +53,6 @@ in
     eza = {
       enable = true;
       extraOptions = [
-        # "--color-scale size"
         "--git"
         "--group"
       ];

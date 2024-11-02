@@ -2,7 +2,6 @@
 with pkgs; {
   fontDir.enable = true;
   enableDefaultPackages = true;
-  # fontconfig.enable = true;
   packages = [
     # general use
     alegreya

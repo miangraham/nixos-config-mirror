@@ -44,9 +44,5 @@
         white =   "#f5f5ff";
       };
     };
-    # ???
-    # key_bindings = [
-    #   # { key = "Space";     mods = "Control";       chars = "\\x00";     }
-    # ];
   };
 }

@@ -1,8 +1,6 @@
 { config, pkgs, inputs, ... }:
 {
   boot = {
-    # defer to system default, currently using LTS
-    # kernelPackages = pkgs.lib.mkForce config.boot.zfs.package.latestCompatibleLinuxPackages;
     supportedFilesystems = [ "zfs" ];
     zfs = {
       package = pkgs.zfsStable;

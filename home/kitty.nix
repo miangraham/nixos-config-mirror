@@ -17,24 +17,12 @@
     window_padding_width = 10;
   };
 
-  # theme = "Hurtado";
-  # theme = "Ir Black";
-  # theme = "Kaolin Galaxy";
-  # theme = "Tango Dark";
   theme = "Tokyo Night";
-  # theme = "Tomorrow Night Bright";
 
   font = {
     package = pkgs.sarasa-gothic;
     name = "Sarasa Mono J";
     size = 14;
   };
-  environment = {
-    # LANG = "en_US.UTF-8";
-    # LC_ALL = "en_US.UTF-8";
-    # TERM = "xterm-256color";
-  };
-  # extraConfig = ''
-  #   modify_font cell_width 100%
-  # '';
+  environment = {};
 }

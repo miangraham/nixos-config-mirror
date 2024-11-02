@@ -9,9 +9,7 @@
     LISTPROMPT = "";
     EXA_COLORS = "xx=35";
   };
-  shellAliases = {
-    # ls = "eza --color-scale size --group --git";
-  };
+  shellAliases = {};
   initExtraBeforeCompInit = ''
     zmodload zsh/complist
   '';

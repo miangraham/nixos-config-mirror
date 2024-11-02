@@ -16,7 +16,6 @@ in
   settings = { main = {
     output = [
       "eDP-1"
-      # "HDMI-A-1"
       "HDMI-A-2"
       "HEADLESS-1"
       "Ancor Communications Inc ROG PG279Q G1LMQS019376"
@@ -25,9 +24,6 @@ in
     layer = "top";
     position = "left";
     mode = "dock";
-    # super broken, with gtk-layer-shell off docking works but resizes on tooltip
-    # width = 50;
-    # gtk-layer-shell = false;
     modules-left = [
       "sway/workspaces"
     ];
@@ -84,8 +80,6 @@ in
 
     "network" = {
       "format" = "{icon}";
-      # "format-alt" = "{icon} {ipaddr}/{cidr}";
-      # "format-alt-click" = "click-right";
       "format-icons" = {
         "wifi" = [""];
         "ethernet" = [""];
@@ -126,7 +120,6 @@ in
       "format" = "{icon}";
       "format-alt-charging" = "{icon}  {capacity}% ({time})";
       "format-alt-discharging" = "{icon}  {capacity}% ({time})";
-      # "format-full" = "{icon}";
       "format-icons" = [
         ""
         ""
