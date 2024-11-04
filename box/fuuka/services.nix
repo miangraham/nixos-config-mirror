@@ -8,8 +8,6 @@ in
   services = {
     inherit borgbackup nginx;
 
-    syncthing.guiAddress = "0.0.0.0:8384";
-
     dendrite = {
       enable = true;
       loadCredential = [
@@ -67,6 +65,7 @@ in
         bind-address = "0.0.0.0";
         port = 8080;
         trusted-proxies = [ "192.168.0.128" ];
+        instance-inject-mastodon-version = true;
         instance-languages = [ "en" "ja" ];
         instance-federation-mode = "blocklist";
       };

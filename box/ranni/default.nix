@@ -52,6 +52,7 @@ in
       openssh.authorizedKeys.keys = config.users.users.ian.openssh.authorizedKeys.keys ++ [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILpNhkzSLWVDcEQXLHuGoBKuq2bzHVbjJ6QZFmwRd5La ian@anzu"
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIK3BTKXqv/dMXbzhG+twUtXIIAgIN89JsJng/MGKB78S ian@fuuka"
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPDoMfTSaoMOxxK8f9RIH+z44zreUu/2/MqASXGZ1ot0 ian@makoto"
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFVtjj+KAdt85pX3jLej8yno1xm58vrMVhLg1N5zV1L4 ian@pika"
       ];
     };

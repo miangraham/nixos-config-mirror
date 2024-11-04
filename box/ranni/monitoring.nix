@@ -122,6 +122,7 @@ in
       file_mtime bocchi /srv/timemachine/bocchi.sparsebundle/com.apple.TimeMachine.SnapshotHistory.plist
       file_mtime futaba /srv/borg/futaba
       file_mtime fuuka /srv/borg/fuuka
+      file_mtime makoto /srv/borg/makoto
       file_mtime megumin /srv/duplicati/megumin
       file_mtime nene /srv/borg/nene
       file_mtime pika /srv/borg/pika

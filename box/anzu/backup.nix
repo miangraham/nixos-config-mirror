@@ -7,6 +7,8 @@ let
     inherit pkgs hostname;
     paths = [
       "/srv"
+      "/var/backup"
+      "/var/lib/forgejo"
       "/var/lib/private/vikunja"
     ];
   };

@@ -10,8 +10,6 @@ in
   services = {
     inherit borgbackup;
 
-    syncthing.guiAddress = "0.0.0.0:8384";
-
     forgejo = {
       enable = true;
       database.type = "postgres";

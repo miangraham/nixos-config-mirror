@@ -39,7 +39,7 @@
   home-manager.users.ian.systemd.user.services.autotiling.Service.ExecStartPre = "/run/current-system/sw/bin/sleep 5";
   home-manager.users.ian.systemd.user.services.sworkstyle.Service.ExecStartPre = "/run/current-system/sw/bin/sleep 5";
 
-  services.syncthing.guiAddress = "0.0.0.0:8384";
+  services.kanata.enable = pkgs.lib.mkForce false;
 
   system.stateVersion = "24.05";
 }

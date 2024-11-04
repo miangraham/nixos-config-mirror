@@ -1,21 +1,13 @@
 { pkgs, ... }:
 let
-  hostname = "fuuka";
+  hostname = "makoto";
   home-ian-to-local = import ../../system/backup-home-to-local.nix { inherit pkgs; };
   home-ian-to-ranni = import ../../system/backup-home-to-ranni.nix { inherit pkgs hostname; };
   srv-to-ranni = import ../../system/backup-srv-to-ranni.nix {
     inherit pkgs hostname;
     paths = [
-      "/etc/dendrite"
       "/srv"
       "/var/backup"
-      "/var/lib/gotosocial"
-      "/var/lib/minecraft"
-      "/var/lib/nextcloud"
-      "/var/lib/private/dendrite"
-      "/var/lib/private/wastebin"
-      "/var/lib/thelounge"
-      "/var/lib/wastebin"
     ];
   };
 in
