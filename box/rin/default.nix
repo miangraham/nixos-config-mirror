@@ -11,7 +11,7 @@ in
     ../../common/audio.nix
   ];
 
-  time.timeZone = pkgs.lib.mkForce "Europe/London";
+  # time.timeZone = pkgs.lib.mkForce "Asia/Tokyo";
 
   networking = {
     hostName = "rin";
@@ -62,7 +62,7 @@ in
   services = {
     inherit borgbackup;
     # Okinawa is not China
-    automatic-timezoned.enable = true;
+    automatic-timezoned.enable = false;
     rabbitmq.enable = false;
     redis.servers.dev = {
       enable = false;
