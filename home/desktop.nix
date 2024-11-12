@@ -118,6 +118,7 @@ in
   };
 
   services = if-desktop {
+    gnome-keyring.enable = true;
     kanshi.enable = true;
     playerctld.enable = true;
 
