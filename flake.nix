@@ -33,6 +33,6 @@
       };
     in {
       nixosConfigurations = with builtins; mapAttrs (n: _: boxConfig ./box/${n}) (readDir ./box);
-      # devShells.x86_64-linux.default = pkgs.mkShell {};
+      devShells.x86_64-linux.default = import ./util/builder-shell.nix { inherit inputs; };
     };
 }
