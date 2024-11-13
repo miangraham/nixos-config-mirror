@@ -13,13 +13,4 @@
       PermitRootLogin = "no";
     };
   };
-
-  syncthing = {
-    enable = true;
-    openDefaultPorts = true;
-    user = "ian";
-    dataDir = "/home/ian/share";
-    configDir = "/home/ian/.config/syncthing";
-    extraFlags = [ "--no-default-folder" ];
-  };
 }

@@ -10,13 +10,13 @@ in
 {
   imports = [
     ./hardware-configuration.nix
-    ../../system
-    ../../system/home-network-only.nix
-    ../../system/nebula-node.nix
     ./monitoring.nix
     ./services.nix
     ./storage.nix
   ];
+
+  my.home-network-only.enable = true;
+  my.nebula-node.enable = true;
 
   networking = {
     hostName = "ranni";

@@ -21,10 +21,11 @@ $ ./rebuild_system.sh
 
 | Location | Description |
 | --- | --- |
-| /box | Machine-specific config items and top-level entrypoints for linking to `flake.nix.` NixOS `hardware-configuration.nix` lives here. |
+| /box | Host-specific config items and top-level entrypoints for linking to `flake.nix.` NixOS `hardware-configuration.nix` lives here. |
 | /common | Shared configs used by all boxes. |
 | /home | User packages. |
-| /system | Shared system-level configs. |
+| /modules | Custom nixos modules to mix in config sets. Exposed as `my.<option>.enable`, etc. |
+| /system | Old system-level configs still in the process of being cleaned up and moved to /modules. |
 
 ## License: [Unlicense](./UNLICENSE)
 

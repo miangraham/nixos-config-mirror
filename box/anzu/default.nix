@@ -2,12 +2,12 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../system
-    ../../system/home-network-only.nix
-    ../../system/nebula-node.nix
     ./services.nix
     ./containers.nix
   ];
+
+  my.home-network-only.enable = true;
+  my.nebula-node.enable = true;
 
   networking = {
     hostName = "anzu";

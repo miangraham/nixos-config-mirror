@@ -1,14 +1,15 @@
 { pkgs, inputs, ... }:
 {
   imports = [
+    inputs.nixos-hardware.nixosModules.raspberry-pi-4
     ./hardware-configuration.nix
     ./containers.nix
     ./services.nix
-    ../../system
-    ../../system/home-network-only.nix
-    ../../system/nebula-node.nix
     ../../system/pi4.nix
   ];
+
+  my.home-network-only.enable = true;
+  my.nebula-node.enable = true;
 
   networking = {
     hostName = "pika";

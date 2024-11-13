@@ -1,5 +1,6 @@
 { pkgs, ... }:
 {
+  enable = true;
   wrapperFeatures.gtk = true;
   systemd.enable = true;
   checkConfig = false; # https://github.com/nix-community/home-manager/issues/5311

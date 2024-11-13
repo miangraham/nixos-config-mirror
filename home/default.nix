@@ -1,8 +1,7 @@
-{ ... }: { pkgs, config, inputs, system, ... }:
+{ ... }: { pkgs, config, inputs, ... }:
 let
-  lib = pkgs.lib;
   unstable = import ../common/unstable.nix { inherit pkgs inputs; };
-  home-packages = import ./packages.nix { inherit pkgs inputs unstable system; };
+  home-packages = import ./packages.nix { inherit pkgs inputs unstable; };
   accounts = import ./accounts.nix { inherit pkgs; };
 
   bash = import ./bash.nix {};
@@ -15,9 +14,8 @@ let
   zsh = import ./zsh.nix { inherit pkgs; };
 in
 {
-  imports = [ ./desktop.nix ./tablet.nix ];
-
   inherit accounts;
+
   home = {
     packages = home-packages;
     stateVersion = "24.05";
@@ -99,45 +97,5 @@ in
     publicShare = "$HOME/.config/dummyxdgpublicshare";
     templates = "$HOME/.config/dummyxdgtemplates";
     videos = "$HOME/videos";
-  };
-
-  xdg.mimeApps = {
-    enable = true;
-    associations.added = {
-      "x-scheme-handler/http" = "firefox.desktop";
-      "x-scheme-handler/https" = "firefox.desktop";
-      "x-scheme-handler/about" = "firefox.desktop";
-      "x-scheme-handler/unknown" = "firefox.desktop";
-      "x-scheme-handler/chrome" = "firefox.desktop";
-      "text/html" = "firefox.desktop";
-      "application/x-extension-htm" = "firefox.desktop";
-      "application/x-extension-html" = "firefox.desktop";
-      "application/x-extension-shtml" = "firefox.desktop";
-      "application/xhtml+xml" = "firefox.desktop";
-      "application/x-extension-xhtml" = "firefox.desktop";
-      "application/x-extension-xht" = "firefox.desktop";
-      "application/x-www-browser" = "firefox.desktop";
-      "x-www-browser" = "firefox.desktop";
-      "x-scheme-handler/webcal" = "firefox.desktop";
-      "application/pdf" = "org.gnome.Evince.desktop";
-    };
-    defaultApplications = {
-      "x-scheme-handler/http" = "firefox.desktop";
-      "x-scheme-handler/https" = "firefox.desktop";
-      "x-scheme-handler/about" = "firefox.desktop";
-      "x-scheme-handler/unknown" = "firefox.desktop";
-      "x-scheme-handler/chrome" = "firefox.desktop";
-      "text/html" = "firefox.desktop";
-      "application/x-extension-htm" = "firefox.desktop";
-      "application/x-extension-html" = "firefox.desktop";
-      "application/x-extension-shtml" = "firefox.desktop";
-      "application/xhtml+xml" = "firefox.desktop";
-      "application/x-extension-xhtml" = "firefox.desktop";
-      "application/x-extension-xht" = "firefox.desktop";
-      "application/x-www-browser" = "firefox.desktop";
-      "x-www-browser" = "firefox.desktop";
-      "x-scheme-handler/webcal" = "firefox.desktop";
-      "application/pdf" = "org.gnome.Evince.desktop";
-    };
   };
 }

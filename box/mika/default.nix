@@ -1,8 +1,8 @@
 { pkgs, inputs, ... }:
 {
   imports = [
+    inputs.nixos-hardware.nixosModules.raspberry-pi-4
     ./hardware-configuration.nix
-    ../../system
     ../../system/pi4.nix
   ];
 

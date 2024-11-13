@@ -57,7 +57,7 @@ in
 
     nebula.networks.asgard = {
       enable = true;
-      ca = ../../system/nebula-ca.crt;
+      ca = ../../modules/nebula-node/nebula-ca.crt;
       cert = "/etc/nebula/host.crt";
       key = "/etc/nebula/host.key";
       isLighthouse = true;

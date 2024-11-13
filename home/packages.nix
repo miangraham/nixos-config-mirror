@@ -1,4 +1,5 @@
-{ pkgs, inputs, unstable, system, ... }: let
+{ pkgs, inputs, unstable, ... }: let
+  inherit (pkgs) system;
 in
 builtins.attrValues {
   inherit (pkgs)

@@ -1,5 +1,5 @@
 {
-  description = "";
+  description = "NixOS configuration for my personal machines.";
   inputs = {
     nixpkgs = { url = "github:NixOS/nixpkgs/nixos-24.05"; };
     unstable = { url = "github:NixOS/nixpkgs/nixos-unstable"; };
@@ -26,54 +26,13 @@
   };
   outputs = inputs:
     let
-      boxConfig = system: addModules: let
+      baseModules = with builtins; map (n: ./modules/${n}) (attrNames (readDir ./modules));
+      boxConfig = boxModule: inputs.nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
-        home-manager = {
-          useGlobalPkgs = true;
-          useUserPackages = true;
-          extraSpecialArgs = { inherit inputs system; };
-          sharedModules = [ inputs.plasma-manager.homeManagerModules.plasma-manager ];
-          users.ian = import ./home {};
-        };
-      in (inputs.nixpkgs.lib.nixosSystem) {
-        inherit specialArgs system;
-        modules = addModules ++ [
-          ./system/dicod/default.nix
-          inputs.home-manager.nixosModules.home-manager
-          { inherit home-manager; }
-        ];
+        modules = baseModules ++ [ boxModule ];
       };
     in {
-      nixosConfigurations = {
-        nene = boxConfig "x86_64-linux" [ ./box/nene ];
-        anzu = boxConfig "x86_64-linux" [ ./box/anzu ];
-        ema = boxConfig "x86_64-linux" [
-          ./box/ema
-          inputs.nixos-hardware.nixosModules.starlabs-starlite-i5
-        ];
-        futaba = boxConfig "x86_64-linux" [ ./box/futaba ];
-        fuuka = boxConfig "x86_64-linux" [ ./box/fuuka ];
-        makoto = boxConfig "x86_64-linux" [ ./box/makoto ];
-        ranni = boxConfig "x86_64-linux" [ ./box/ranni ];
-        rin = boxConfig "x86_64-linux" [
-          ./box/rin
-          inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t14-amd-gen1
-        ];
-
-        nano = boxConfig "aarch64-linux" [ ./box/nano ];
-
-        mika = boxConfig "aarch64-linux" [
-          inputs.nixos-hardware.nixosModules.raspberry-pi-4
-          ./box/mika
-        ];
-        pika = boxConfig "aarch64-linux" [
-          inputs.nixos-hardware.nixosModules.raspberry-pi-4
-          ./box/pika
-        ];
-        rika = boxConfig "aarch64-linux" [
-          inputs.nixos-hardware.nixosModules.raspberry-pi-4
-          ./box/rika
-        ];
-      };
+      nixosConfigurations = with builtins; mapAttrs (n: _: boxConfig ./box/${n}) (readDir ./box);
+      # devShells.x86_64-linux.default = pkgs.mkShell {};
     };
 }

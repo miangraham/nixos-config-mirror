@@ -1,17 +1,18 @@
-{ pkgs, config, modulesPath, ... }:
+{ pkgs, config, inputs, modulesPath, ... }:
 let
   # borgbackup = import ./backup.nix { inherit pkgs; };
 in
 {
   imports = [
+    inputs.nixos-hardware.nixosModules.starlabs-starlite-i5
     ./hardware-configuration.nix
-    ../../system
-    ../../system/nebula-node.nix
-    ../../common/tablet.nix
-    ../../common/audio.nix
   ];
 
-  time.timeZone = pkgs.lib.mkForce "Europe/London";
+  my.audio.enable = true;
+  my.nebula-node.enable = true;
+  my.tablet.enable = true;
+
+  # time.timeZone = pkgs.lib.mkForce "Asia/Tokyo";
 
   networking = {
     hostName = "ema";

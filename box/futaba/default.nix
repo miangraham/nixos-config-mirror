@@ -2,11 +2,11 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../system
-    ../../system/home-network-only.nix
     ./services.nix
     ./containers.nix
   ];
+
+  my.home-network-only.enable = true;
 
   networking = {
     hostName = "futaba";

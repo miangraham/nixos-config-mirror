@@ -2,12 +2,12 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../system
-    ../../system/home-network-only.nix
-    ../../common/desktop.nix
     ./headless-sway-vnc.nix
     ./euremote-sync.nix
   ];
+
+  my.desktop.enable = true;
+  my.home-network-only.enable = true;
 
   networking = {
     hostName = "nano";

@@ -1,8 +1,8 @@
 { ... }:
 {
-  networking.useDHCP = false;
-  networking.firewall.checkReversePath = "loose"; # for tailscale, test without
-  networking.extraHosts = ''
+  useDHCP = false;
+  firewall.checkReversePath = "loose"; # for tailscale, test without
+  extraHosts = ''
 127.0.0.1     testlocal.ian.tokyo
 192.168.0.102 anzu
 192.168.0.117 ranni

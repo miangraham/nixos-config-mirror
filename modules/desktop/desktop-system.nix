@@ -1,9 +1,6 @@
-{ pkgs, config, ... }:
-let
-  fonts = import ../system/fonts.nix { inherit pkgs; };
-in
+{ pkgs, config, inputs, ... }:
 {
-  inherit fonts;
+  my.fonts.enable = true;
 
   boot = {
     # screen streaming modules not currently used
@@ -37,26 +34,27 @@ in
 
   hardware.opengl.enable = true;
   security.rtkit.enable = true;
+
+  services = {
+    kanata = {
+      enable = true;
+      keyboards.default = {
+        devices = [];
+        config = ''
+          (defsrc caps)
+          (deflayer base lctl)
+        '';
+      };
+    };
+
+    pcscd.enable = true;
+    udev.packages = [ pkgs.yubikey-personalization ];
+  };
+
   xdg.portal = {
     enable = true;
     xdgOpenUsePortal = true;
     wlr.enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
-
-  services.kanata = {
-    enable = true;
-    keyboards.default = {
-      devices = [];
-      config = ''
-        (defsrc caps)
-        (deflayer base lctl)
-      '';
-    };
-  };
-
-  services.pcscd.enable = true;
-  services.udev.packages = [ pkgs.yubikey-personalization ];
-
-  home-manager.users.ian.wayland.windowManager.sway.enable = true;
 }

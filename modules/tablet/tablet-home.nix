@@ -1,17 +1,14 @@
-{ pkgs, config, inputs, system, ... }:
+{ pkgs, config, inputs, ... }:
 let
-  lib = pkgs.lib;
-  if-tablet = pkgs.lib.mkIf config.programs.plasma.enable;
-
-  alacritty = import ./alacritty.nix { inherit pkgs; };
-  firefox = import ./firefox.nix { inherit pkgs; };
-  kitty = import ./kitty.nix { inherit pkgs; };
-  mpv = import ./mpv.nix { inherit pkgs; };
+  alacritty = import ../../home/alacritty.nix { inherit pkgs; };
+  firefox = import ../../home/firefox.nix { inherit pkgs; };
+  kitty = import ../../home/kitty.nix { inherit pkgs; };
+  mpv = import ../../home/mpv.nix { inherit pkgs; };
 in
 {
-  home.packages = if-tablet (builtins.attrValues {
+  home.packages = builtins.attrValues {
     inherit (pkgs) maliit-keyboard;
-    emacs = inputs.emacspkg.packages.${system}.default;
+    emacs = inputs.emacspkg.packages.${pkgs.system}.default;
 
     retroarch = pkgs.retroarch.override {
       cores = with pkgs.libretro; [
@@ -21,9 +18,9 @@ in
         swanstation
       ];
     };
-  });
+  };
 
-  programs = if-tablet {
+  programs = {
     inherit alacritty firefox kitty mpv;
 
     feh.enable = true;
@@ -41,6 +38,7 @@ in
     };
 
     plasma = {
+      enable = true;
       workspace.lookAndFeel = "org.kde.breezedark.desktop";
       panels = [{
         location = "left";
@@ -57,5 +55,4 @@ in
       };
     };
   };
-
 }

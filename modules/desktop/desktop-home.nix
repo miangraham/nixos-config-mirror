@@ -1,18 +1,17 @@
-{ pkgs, config, inputs, system, ... }:
+{ pkgs, config, inputs, ... }:
 let
-  lib = pkgs.lib;
-  if-desktop = pkgs.lib.mkIf config.wayland.windowManager.sway.enable;
+  inherit (pkgs) lib;
 
-  alacritty = import ./alacritty.nix { inherit pkgs; };
-  firefox = import ./firefox.nix { inherit pkgs; };
-  kitty = import ./kitty.nix { inherit pkgs; };
-  mpv = import ./mpv.nix { inherit pkgs; };
+  alacritty = import ../../home/alacritty.nix { inherit pkgs; };
+  firefox = import ../../home/firefox.nix { inherit pkgs; };
+  kitty = import ../../home/kitty.nix { inherit pkgs; };
+  mpv = import ../../home/mpv.nix { inherit pkgs; };
   waybar = import ./waybar.nix { inherit lib pkgs; };
 in
 {
-  wayland.windowManager.sway = if-desktop (import ./sway.nix { inherit pkgs; });
+  wayland.windowManager.sway = import ./sway.nix { inherit pkgs; };
 
-  gtk = if-desktop (let
+  gtk = let
     t = {
       package = pkgs.tokyo-night-gtk;
       name = "Tokyonight-Dark-BL";
@@ -28,17 +27,17 @@ in
     iconTheme = i;
     gtk3.extraConfig = ex;
     gtk4.extraConfig = ex;
-  });
+  };
 
-  home.pointerCursor = if-desktop {
+  home.pointerCursor = {
     package = pkgs.capitaine-cursors;
     name = "capitaine-cursors";
     size = 24;
     gtk.enable = true;
   };
 
-  home.packages = if-desktop (builtins.attrValues {
-    emacs = inputs.emacspkg.packages.${system}.default;
+  home.packages = builtins.attrValues {
+    emacs = inputs.emacspkg.packages.${pkgs.system}.default;
     nix-search = inputs.nixsearch.packages.${pkgs.system}.default;
 
     inherit (pkgs)
@@ -85,9 +84,9 @@ in
         swanstation
       ];
     };
-  });
+  };
 
-  programs = if-desktop {
+  programs = {
     inherit alacritty firefox kitty mpv waybar;
 
     feh.enable = true;
@@ -117,7 +116,7 @@ in
     };
   };
 
-  services = if-desktop {
+  services = {
     gnome-keyring.enable = true;
     kanshi.enable = true;
     playerctld.enable = true;
@@ -170,7 +169,7 @@ in
     };
   };
 
-  systemd.user = if-desktop {
+  systemd.user = {
     targets.tray = {
       Unit = {
         Description = "Home Manager System Tray";
@@ -206,7 +205,48 @@ in
     };
   };
 
-  xdg.configFile = if-desktop {
-    "sworkstyle/config.toml".source = ./sworkstyle_config.toml;
+  xdg = {
+    configFile = {
+      "sworkstyle/config.toml".source = ./sworkstyle_config.toml;
+    };
+    mimeApps = {
+      enable = true;
+      associations.added = {
+        "x-scheme-handler/http" = "firefox.desktop";
+        "x-scheme-handler/https" = "firefox.desktop";
+        "x-scheme-handler/about" = "firefox.desktop";
+        "x-scheme-handler/unknown" = "firefox.desktop";
+        "x-scheme-handler/chrome" = "firefox.desktop";
+        "text/html" = "firefox.desktop";
+        "application/x-extension-htm" = "firefox.desktop";
+        "application/x-extension-html" = "firefox.desktop";
+        "application/x-extension-shtml" = "firefox.desktop";
+        "application/xhtml+xml" = "firefox.desktop";
+        "application/x-extension-xhtml" = "firefox.desktop";
+        "application/x-extension-xht" = "firefox.desktop";
+        "application/x-www-browser" = "firefox.desktop";
+        "x-www-browser" = "firefox.desktop";
+        "x-scheme-handler/webcal" = "firefox.desktop";
+        "application/pdf" = "org.gnome.Evince.desktop";
+      };
+      defaultApplications = {
+        "x-scheme-handler/http" = "firefox.desktop";
+        "x-scheme-handler/https" = "firefox.desktop";
+        "x-scheme-handler/about" = "firefox.desktop";
+        "x-scheme-handler/unknown" = "firefox.desktop";
+        "x-scheme-handler/chrome" = "firefox.desktop";
+        "text/html" = "firefox.desktop";
+        "application/x-extension-htm" = "firefox.desktop";
+        "application/x-extension-html" = "firefox.desktop";
+        "application/x-extension-shtml" = "firefox.desktop";
+        "application/xhtml+xml" = "firefox.desktop";
+        "application/x-extension-xhtml" = "firefox.desktop";
+        "application/x-extension-xht" = "firefox.desktop";
+        "application/x-www-browser" = "firefox.desktop";
+        "x-www-browser" = "firefox.desktop";
+        "x-scheme-handler/webcal" = "firefox.desktop";
+        "application/pdf" = "org.gnome.Evince.desktop";
+      };
+    };
   };
 }

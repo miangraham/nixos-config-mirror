@@ -1,15 +1,16 @@
-{ pkgs, config, modulesPath, ... }:
+{ pkgs, config, inputs, modulesPath, ... }:
 let
   borgbackup = import ./backup.nix { inherit pkgs; };
 in
 {
   imports = [
+    inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t14-amd-gen1
     ./hardware-configuration.nix
-    ../../system
-    ../../system/nebula-node.nix
-    ../../common/desktop.nix
-    ../../common/audio.nix
   ];
+
+  my.audio.enable = true;
+  my.desktop.enable = true;
+  my.nebula-node.enable = true;
 
   # time.timeZone = pkgs.lib.mkForce "Asia/Tokyo";
 

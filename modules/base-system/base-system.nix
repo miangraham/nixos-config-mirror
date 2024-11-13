@@ -1,18 +1,21 @@
 { pkgs, inputs, config, ... }:
 let
   packages = import ./packages.nix { inherit pkgs inputs; };
-  overlays = import ../common/overlays-stable.nix { inherit inputs pkgs; };
+  overlays = import ../../common/overlays-stable.nix { inherit inputs pkgs; };
   services = import ./services.nix { inherit pkgs; };
+  networking = import ./networking.nix { inherit pkgs; };
 in
 {
-  imports = [
-    ./base.nix
-    ./network.nix
-  ];
+  inherit networking services;
 
-  inherit services;
+  time.timeZone = "Asia/Tokyo";
+  i18n.defaultLocale = "en_US.UTF-8";
 
-  nixpkgs = { inherit overlays; };
+  nix = import ./nix-settings.nix { inherit pkgs; };
+  nixpkgs = {
+    inherit overlays;
+    config.allowUnfree = true;
+  };
 
   boot = {
     # 6.6 LTS
@@ -29,10 +32,6 @@ in
   };
 
   systemd.coredump.enable = true; # false
-
-  users.users.ian = {
-    shell = pkgs.zsh;
-  };
 
   users.groups = {
     nginx.gid = config.ids.gids.nginx;
@@ -64,20 +63,19 @@ in
 
   programs = {
     zsh.enable = true;
-  };
 
-  systemd.services.pre-syncthing = {
-    serviceConfig = {
-      Type = "oneshot";
-      User = "root";
+    git = {
+      enable = true;
+      config = {
+        init.defaultBranch = "master";
+        safe.directory = "/home/ian/.nix";
+      };
     };
-    wantedBy = [ "syncthing.service" ];
-    path = [
-      pkgs.coreutils
-    ];
-    script = ''
-      mkdir -p /home/ian/share
-      chown ian:syncthing /home/ian/share
+
+    nano.nanorc = ''
+      set nowrap
+      set tabstospaces
+      set tabsize 2
     '';
   };
 }
