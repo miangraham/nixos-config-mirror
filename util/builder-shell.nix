@@ -15,7 +15,7 @@ pkgs.mkShell {
   ];
 
   buildInputs = builtins.attrValues (deployCmds // {
-    update_versions = pkgs.writeShellScriptBin "update_versions" ''
+    nupdate_versions = pkgs.writeShellScriptBin "nupdate_versions" ''
       if [[ $(git status --porcelain) ]]; then
         echo "Outstanding git changes. Refusing to update."
         exit 1
