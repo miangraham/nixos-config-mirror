@@ -43,14 +43,6 @@ in
 
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
-  sound = {
-    enable = true;
-    extraConfig = ''
-      defaults.pcm.!card "USB";
-      defaults.ctl.!card "USB";
-    '';
-  };
-
   programs.steam.enable = true;
 
   home-manager.users.ian.home.packages = with pkgs; [
