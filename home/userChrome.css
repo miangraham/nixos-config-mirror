@@ -47,3 +47,10 @@
 #unified-extensions-button {
   /* display: none !important; */
 }
+
+/* Hide obnoxious green dot on extensions button */
+#unified-extensions-button[attention] > .toolbarbutton-icon,
+.unified-extensions-item[attention] > .unified-extensions-item-action-button.toolbarbutton-1 > .toolbarbutton-badge-stack,
+.unified-extensions-item[attention] > .unified-extensions-item-action-button.subviewbutton {
+  background-image: none !important;
+}
