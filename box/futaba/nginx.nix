@@ -31,11 +31,11 @@ in
   virtualHosts = {
     futaba = {
       serverName = "192.168.0.128";
-      root = "/var/www";
+      # root = "/var/www";
       default = true;
-      extraConfig = ''
-        charset utf-8;
-      '';
+      locations."/" = {
+        return = "444";
+      };
     };
     invid = {
       enableACME = false;
