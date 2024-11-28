@@ -6,6 +6,19 @@
     ./containers.nix
   ];
 
+  my.backup.home-to-local.enable = true;
+  my.backup.home-to-ranni.enable = true;
+  my.backup.home-to-rnet.enable = true;
+  my.backup.srv-to-ranni = {
+    enable = true;
+    paths = [
+      "/srv/freshrss"
+      "/srv/home-assistant"
+      "/srv/znc"
+      "/var/backup"
+      "/var/lib/private/invidious"
+    ];
+  };
   my.home-network-only.enable = true;
 
   networking = {

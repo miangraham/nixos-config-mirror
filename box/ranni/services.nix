@@ -1,7 +1,7 @@
 { config, pkgs, inputs, ... }:
 let
   blocky = import ../../modules/home-network-only/blocky.nix { inherit pkgs; };
-  borgbackup = import ./backup.nix { inherit pkgs; };
+  borgbackup = import ./backup.nix { inherit pkgs config; };
 in
 {
   services = {

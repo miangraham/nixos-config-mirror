@@ -27,6 +27,13 @@ in
   ];
 
   my.audio.enable = true;
+  my.backup.home-to-local.enable = true;
+  my.backup.home-to-ranni.enable = true;
+  my.backup.home-to-rnet.enable = true;
+  my.backup.home-to-usb = {
+    enable = true;
+    repo = "/run/media/ian/70F3-5B2F/borg";
+  };
   my.desktop.enable = true;
   my.home-network-only.enable = true;
   my.nebula-node.enable = true;

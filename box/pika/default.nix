@@ -8,6 +8,14 @@
     ../../system/pi4.nix
   ];
 
+  my.backup.home-to-usb = {
+    enable = true;
+    repo = "/run/media/ian/70F8-1012/borg";
+  };
+  my.backup.srv-to-ranni = {
+    enable = true;
+    paths = [ "/srv" ];
+  };
   my.home-network-only.enable = true;
   my.nebula-node.enable = true;
 

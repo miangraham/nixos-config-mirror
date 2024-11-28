@@ -1,12 +1,15 @@
-{ pkgs, hostname, ... }:
+{ pkgs, config, paths, ... }:
 let
-  backupTime = "*-*-* 04:00:00";
+  backupTime = "*-*-* 04:15:00";
+  hostname = config.networking.hostName;
   inherit (import ./backup-utils.nix {inherit pkgs backupTime;}) job;
 in
 job {
+  inherit paths;
   repo = "borg@ranni:${hostname}";
-  user = "ian";
+  user = "root";
   persistentTimer = true;
+  environment.BORG_RSH = "ssh -i /home/ian/.ssh/id_ed25519";
   environment.BORG_UNKNOWN_UNENCRYPTED_REPO_ACCESS_IS_OK = "yes";
   prune = {
     keep = {

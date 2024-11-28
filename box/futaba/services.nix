@@ -1,7 +1,6 @@
 { config, pkgs, inputs, ... }:
 let
   # unstable = import ../../common/unstable.nix { inherit pkgs inputs; };
-  borgbackup = import ./backup.nix { inherit pkgs; };
   nginx = import ./nginx.nix { inherit config pkgs; };
 in
 {
@@ -12,7 +11,7 @@ in
   environment.systemPackages = [ pkgs.nebula ]; # for nebula-cert cmd
 
   services = {
-    inherit borgbackup nginx;
+    inherit nginx;
 
     openssh.settings.PasswordAuthentication = false;
 

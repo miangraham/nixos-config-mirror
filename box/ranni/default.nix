@@ -15,6 +15,8 @@ in
     ./storage.nix
   ];
 
+  my.backup.home-to-local.enable = true;
+  my.backup.home-to-rnet.enable = true;
   my.home-network-only.enable = true;
   my.nebula-node.enable = true;
 

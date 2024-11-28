@@ -1,6 +1,5 @@
 { pkgs, inputs, config, ... }:
 let
-  borgbackup = import ./backup.nix { inherit pkgs; };
   unstable = import ../../common/unstable.nix { inherit pkgs inputs; };
 in
 {
@@ -16,8 +15,6 @@ in
   };
 
   services = {
-    inherit borgbackup;
-
     flatpak.enable = true;
 
     rabbitmq = {

@@ -1,10 +1,6 @@
 { pkgs, inputs, config, ... }:
-let
-  borgbackup = import ./backup.nix { inherit pkgs; };
-in
 {
   services = {
-    inherit borgbackup;
     nebula.networks.asgard.firewall.inbound = [
       { port = 3001; proto = "tcp"; host = "any"; } # uptime-kuma
     ];

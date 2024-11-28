@@ -1,7 +1,4 @@
 { pkgs, config, inputs, modulesPath, ... }:
-let
-  # borgbackup = import ./backup.nix { inherit pkgs; };
-in
 {
   imports = [
     inputs.nixos-hardware.nixosModules.starlabs-starlite-i5

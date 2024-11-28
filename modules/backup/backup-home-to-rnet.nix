@@ -1,6 +1,7 @@
-{ pkgs, hostname, ... }:
+{ pkgs, config, ... }:
 let
   backupTime = "*-*-* *:02:00";
+  hostname = config.networking.hostName;
   inherit (import ./backup-utils.nix {inherit pkgs backupTime;}) job;
 in
 job {

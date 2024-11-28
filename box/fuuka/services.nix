@@ -1,12 +1,11 @@
 { config, pkgs, inputs, ... }:
 let
   unstable = import ../../common/unstable.nix { inherit pkgs inputs; };
-  borgbackup = import ./backup.nix { inherit pkgs; };
   nginx = import ./nginx.nix { inherit pkgs; };
 in
 {
   services = {
-    inherit borgbackup nginx;
+    inherit nginx;
 
     dendrite = {
       enable = true;

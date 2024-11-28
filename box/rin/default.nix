@@ -1,7 +1,4 @@
 { pkgs, config, inputs, modulesPath, ... }:
-let
-  borgbackup = import ./backup.nix { inherit pkgs; };
-in
 {
   imports = [
     inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t14-amd-gen1
@@ -9,6 +6,9 @@ in
   ];
 
   my.audio.enable = true;
+  my.backup.home-to-local.enable = true;
+  my.backup.home-to-ranni.enable = true;
+  my.backup.home-to-rnet.enable = true;
   my.desktop.enable = true;
   my.nebula-node.enable = true;
 
@@ -61,7 +61,6 @@ in
   ];
 
   services = {
-    inherit borgbackup;
     # Okinawa is not China
     automatic-timezoned.enable = false;
     rabbitmq.enable = false;

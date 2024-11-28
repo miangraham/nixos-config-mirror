@@ -16,6 +16,7 @@ pkgs.mkShell {
 
   buildInputs = builtins.attrValues (deployCmds // {
     nupdate_versions = pkgs.writeShellScriptBin "nupdate_versions" ''
+      set -e
       if [[ $(git status --porcelain) ]]; then
         echo "Outstanding git changes. Refusing to update."
         exit 1
@@ -34,21 +35,25 @@ pkgs.mkShell {
     '';
 
     dryrun_system = pkgs.writeShellScriptBin "dryrun_system" ''
+      set -e
       nixos-rebuild dry-build --flake '.#' --show-trace
     '';
 
     diffbuild = pkgs.writeShellScriptBin "diffbuild" ''
+      set -e
       nixos-rebuild build --flake '.#' --show-trace
       nvd diff /run/current-system ./result
       rm ./result
     '';
 
     rebuild_system = pkgs.writeShellScriptBin "rebuild_system" ''
+      set -e
       sudo nixos-rebuild switch --flake '.#' --print-build-logs
       sudo nix store sign -k /var/keys/nix-cache-key.priv --all
     '';
 
     clean = pkgs.writeShellScriptBin "clean" ''
+      set -e
       home-manager expire-generations '-14 days'
       sudo nix-collect-garbage --delete-older-than 14d
 

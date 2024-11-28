@@ -1,15 +1,12 @@
 { config, pkgs, inputs, ... }:
 let
   unstable = import ../../common/unstable.nix { inherit pkgs inputs; };
-  borgbackup = import ./backup.nix { inherit pkgs; };
   forgesrv = config.services.forgejo.settings.server;
 in
 {
   # imports = [ "${inputs.unstable}/nixos/modules/services/web-apps/immich.nix" ];
 
   services = {
-    inherit borgbackup;
-
     forgejo = {
       enable = true;
       database.type = "postgres";

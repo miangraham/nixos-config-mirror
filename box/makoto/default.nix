@@ -6,6 +6,15 @@
     # ./containers.nix
   ];
 
+  my.backup.home-to-local.enable = true;
+  my.backup.home-to-ranni.enable = true;
+  my.backup.srv-to-ranni = {
+    enable = true;
+    paths = [
+      "/srv"
+      "/var/backup"
+    ];
+  };
   my.home-network-only.enable = true;
   my.nebula-node.enable = true;
 
