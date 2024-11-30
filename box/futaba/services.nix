@@ -23,7 +23,10 @@ in
       detection_time = 3600;
       attack_threshold = 5;
       blacklist_threshold = 20;
-      whitelist = [ "192.168.0.0/16" ];
+      whitelist = [
+        "10.10.10.0/24"
+        "192.168.0.0/16"
+      ];
     };
 
     scrutiny = {
@@ -39,8 +42,8 @@ in
       dataDir = "/srv/freshrss/data";
       defaultUser = "ian";
       passwordFile = "/srv/freshrss/freshrss_admin_phrase";
+      extensions = [ pkgs.freshrss-extensions.reading-time ];
     };
-    phpfpm.pools.freshrss.phpEnv.FRESHRSS_THIRDPARTY_EXTENSIONS_PATH = "/srv/freshrss/extensions";
 
     mosquitto = {
       enable = true;
@@ -132,13 +135,7 @@ in
   };
 
   systemd.services = {
-    freshrss-config = {
-      environment.FRESHRSS_THIRDPARTY_EXTENSIONS_PATH = "/srv/freshrss/extensions";
-    };
-    freshrss-updater = {
-      environment.FRESHRSS_THIRDPARTY_EXTENSIONS_PATH = "/srv/freshrss/extensions";
-      startAt = pkgs.lib.mkForce "hourly";
-    };
+    freshrss-updater.startAt = pkgs.lib.mkForce "hourly";
 
     invidious.serviceConfig = {
       Restart = pkgs.lib.mkForce "always";

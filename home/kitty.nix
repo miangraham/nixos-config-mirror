@@ -17,7 +17,7 @@
     window_padding_width = 10;
   };
 
-  theme = "Tokyo Night";
+  themeFile = "tokyo_night_night";
 
   font = {
     package = pkgs.sarasa-gothic;

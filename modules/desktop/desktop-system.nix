@@ -13,7 +13,8 @@
   };
 
   i18n.inputMethod = {
-    enabled = "fcitx5";
+    enable = true;
+    type = "fcitx5";
     fcitx5.addons = [ pkgs.fcitx5-mozc ];
   };
 
@@ -32,7 +33,7 @@
     wshowkeys.enable = true;
   };
 
-  hardware.opengl.enable = true;
+  hardware.graphics.enable = true;
   security.rtkit.enable = true;
 
   services = {

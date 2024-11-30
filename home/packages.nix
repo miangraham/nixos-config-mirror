@@ -1,4 +1,5 @@
-{ pkgs, inputs, unstable, ... }: let
+{ pkgs, inputs, unstable, ... }:
+let
   inherit (pkgs) system;
 in
 builtins.attrValues {
@@ -51,7 +52,7 @@ builtins.attrValues {
     unixbench
     usbutils
     wayvnc
-    xdg_utils
+    xdg-utils
 
     # video
     aria2
@@ -70,6 +71,5 @@ builtins.attrValues {
   inherit (pkgs.nodePackages) node2nix;
   inherit (pkgs) terraform;
 
-  inherit (unstable)
-  ;
+  inherit (unstable) ;
 }

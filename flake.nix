@@ -1,12 +1,12 @@
 {
   description = "NixOS configuration for my personal machines.";
   inputs = {
-    nixpkgs = { url = "github:NixOS/nixpkgs/nixos-24.05"; };
-    unstable = { url = "github:NixOS/nixpkgs/nixos-unstable"; };
+    nixpkgs = { url = "github:NixOS/nixpkgs/nixos-24.11"; };
+    unstable = { url = "github:NixOS/nixpkgs/nixos-24.11"; };
 
     nixos-hardware = { url = "github:NixOS/nixos-hardware/master"; };
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.05";
+      url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     plasma-manager = {
@@ -20,7 +20,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixsearch = {
-      url = "github:diamondburned/nix-search?rev=e616ac1c82a616fa6e6d8c94839c5052eb8c808d";
+      url = "github:diamondburned/nix-search";
+      # url = "github:diamondburned/nix-search?rev=e616ac1c82a616fa6e6d8c94839c5052eb8c808d";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

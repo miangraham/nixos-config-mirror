@@ -1,6 +1,6 @@
 { config, pkgs, inputs, ... }:
 let
-  unstable = import ../../common/unstable.nix { inherit pkgs inputs; };
+  # unstable = import ../../common/unstable.nix { inherit pkgs inputs; };
   forgesrv = config.services.forgejo.settings.server;
 in
 {

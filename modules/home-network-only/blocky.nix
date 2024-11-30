@@ -37,10 +37,10 @@ in {
     blocking = {
       loading.refreshPeriod = "24h";
       clientGroupsBlock.default = [ "default" ];
-      whiteLists.default = [
+      allowlists.default = [
         (builtins.readFile ./blocky_whitelist.txt)
       ];
-      blackLists.default = [
+      denylists.default = [
         (builtins.readFile ./blocky_blacklist.txt)
         "https://adaway.org/hosts.txt"
         "https://big.oisd.nl/domainswild"

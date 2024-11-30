@@ -1,6 +1,6 @@
 { pkgs, inputs, config, ... }:
 let
-  unstable = import ../../common/unstable.nix { inherit pkgs inputs; };
+  # unstable = import ../../common/unstable.nix { inherit pkgs inputs; };
 in
 {
   nix = {

@@ -1,16 +1,7 @@
 { pkgs, inputs, ... }:
 let
-  freshOverlay = (self: super: {
-    freshrss = super.freshrss.overrideAttrs(old: {
-      overrideConfig = pkgs.writeText "constants.local.php" ''
-        <?php
-          define('DATA_PATH', getenv('FRESHRSS_DATA_PATH'));
-          define('THIRDPARTY_EXTENSIONS_PATH', getenv('FRESHRSS_THIRDPARTY_EXTENSIONS_PATH'));
-      '';
-    });
-  });
   invidOverlay = (self: super: {
-    invidious = super.callPackage "${inputs.nixpkgs}/pkgs/servers/invidious" {
+    invidious = super.callPackage "${inputs.nixpkgs}/pkgs/by-name/in/invidious/package.nix" {
       crystal = super.crystal // {
         buildCrystalPackage = args:
           super.crystal.buildCrystalPackage (args // {
@@ -22,6 +13,5 @@ let
   });
 in
 [
-  freshOverlay
   invidOverlay
 ]

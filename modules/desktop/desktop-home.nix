@@ -41,6 +41,7 @@ in
     nix-search = inputs.nixsearch.packages.${pkgs.system}.default;
 
     inherit (pkgs)
+      adwaita-icon-theme
       # bitwarden # electron
       calf
       evince
@@ -73,7 +74,6 @@ in
     ;
 
     # GUI bits
-    inherit (pkgs.gnome3) adwaita-icon-theme;
     inherit (pkgs.xfce) thunar;
 
     retroarch = pkgs.retroarch.override {

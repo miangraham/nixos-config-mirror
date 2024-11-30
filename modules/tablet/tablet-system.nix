@@ -4,7 +4,7 @@
 
   home-manager.sharedModules = [ inputs.plasma-manager.homeManagerModules.plasma-manager ];
 
-  hardware.opengl.enable = true;
+  hardware.graphics.enable = true;
   security.rtkit.enable = true;
 
   services.xserver.enable = true;

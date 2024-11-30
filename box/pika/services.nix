@@ -18,7 +18,7 @@
     wantedBy = [ "multi-user.target" ];
     path = [
       pkgs.udiskie
-      pkgs.xdg_utils
+      pkgs.xdg-utils
     ];
     script = "udiskie -aNT";
   };
