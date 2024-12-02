@@ -65,6 +65,16 @@ in
         show_program_path = 0;
       };
     };
+
+    nushell = {
+      enable = true;
+      environmentVariables = {
+        EDITOR = "emacs -nw";
+        LISTPROMPT = "";
+        EXA_COLORS = "xx=35";
+      };
+      shellAliases = {};
+    };
   };
 
   services = {

@@ -92,6 +92,7 @@ in
     feh.enable = true;
 
     bash.shellAliases.win = "sway";
+    nushell.shellAliases.win = "sway";
     zsh.shellAliases.win = "sway";
 
     swaylock.settings = {
