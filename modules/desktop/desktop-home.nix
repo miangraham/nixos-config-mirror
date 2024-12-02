@@ -75,15 +75,6 @@ in
 
     # GUI bits
     inherit (pkgs.xfce) thunar;
-
-    retroarch = pkgs.retroarch.override {
-      cores = with pkgs.libretro; [
-        dolphin
-        pcsx-rearmed
-        snes9x
-        swanstation
-      ];
-    };
   };
 
   programs = {

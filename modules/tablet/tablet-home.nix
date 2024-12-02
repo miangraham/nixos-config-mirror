@@ -9,15 +9,6 @@ in
   home.packages = builtins.attrValues {
     inherit (pkgs) maliit-keyboard;
     emacs = inputs.emacspkg.packages.${pkgs.system}.default;
-
-    retroarch = pkgs.retroarch.override {
-      cores = with pkgs.libretro; [
-        dolphin
-        pcsx-rearmed
-        snes9x
-        swanstation
-      ];
-    };
   };
 
   programs = {

@@ -34,6 +34,7 @@ in
     repo = "/run/media/ian/70F3-5B2F/borg";
   };
   my.desktop.enable = true;
+  my.gaming.enable = true;
   my.home-network-only.enable = true;
   my.nebula-node.enable = true;
   my.streaming.enable = true;
@@ -50,14 +51,11 @@ in
 
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
-  programs.steam.enable = true;
-
   home-manager.users.ian.home.packages = with pkgs; [
     apksigner
     asunder
     element-desktop
     losslesscut-bin
-    mame.tools
     playerctl
     sonixd
     soundconverter

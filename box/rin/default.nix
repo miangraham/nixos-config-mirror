@@ -10,6 +10,7 @@
   my.backup.home-to-ranni.enable = true;
   my.backup.home-to-rnet.enable = true;
   my.desktop.enable = true;
+  my.gaming.enable = true;
   my.nebula-node.enable = true;
 
   # time.timeZone = pkgs.lib.mkForce "Asia/Tokyo";
@@ -51,8 +52,6 @@
   # BT
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
-
-  programs.steam.enable = true;
 
   home-manager.users.ian.home.packages = with pkgs; [
     element-desktop
