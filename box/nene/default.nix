@@ -1,6 +1,5 @@
 { config, lib, modulesPath, inputs, pkgs, ... }:
 let
-  obs-customized = pkgs.wrapOBS { plugins = with pkgs.obs-studio-plugins; [ obs-pipewire-audio-capture ]; };
   texlive-customized = pkgs.texlive.combine {
     inherit (pkgs.texlive)
       beamer
@@ -37,6 +36,7 @@ in
   my.desktop.enable = true;
   my.home-network-only.enable = true;
   my.nebula-node.enable = true;
+  my.streaming.enable = true;
 
   networking = {
     hostName = "nene";
@@ -55,17 +55,12 @@ in
   home-manager.users.ian.home.packages = with pkgs; [
     apksigner
     asunder
-    carla
     element-desktop
     losslesscut-bin
-    lsp-plugins
     mame.tools
-    obs-customized
     playerctl
-    reaper
     sonixd
     soundconverter
-    tap-plugins
     texlive-customized
     zotero
   ];
