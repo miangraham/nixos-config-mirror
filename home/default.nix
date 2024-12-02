@@ -6,6 +6,7 @@ let
 
   bash = import ./bash.nix {};
   direnv = import ./direnv.nix {};
+  foot = import ./foot.nix {};
   git = import ./git.nix { inherit pkgs; };
   secrets = import ./secrets.nix { inherit pkgs; };
   ssh = import ./ssh.nix { inherit pkgs; };
@@ -27,7 +28,7 @@ in
   };
 
   programs = {
-    inherit bash direnv git ssh starship tmux zsh;
+    inherit bash direnv foot git ssh starship tmux zsh;
     inherit (secrets.programs) gpg password-store;
 
     bat.enable = true;
