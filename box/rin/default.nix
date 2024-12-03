@@ -40,9 +40,7 @@
   systemd.services.NetworkManager-wait-online.enable = false;
 
   # Boot
-  boot.kernelParams = [
-    "usbcore.autosuspend=120"
-  ];
+  boot.kernelParams = [ "usbcore.autosuspend=120" ];
 
   # Power
   powerManagement.powertop.enable = true;
@@ -53,11 +51,7 @@
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 
-  home-manager.users.ian.home.packages = with pkgs; [
-    element-desktop
-    tpacpi-bat
-    zotero
-  ];
+  home-manager.users.ian.home.packages = with pkgs; [];
 
   services = {
     # Okinawa is not China
