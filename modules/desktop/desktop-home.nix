@@ -11,10 +11,16 @@ in
 {
   wayland.windowManager.sway = import ./sway.nix { inherit pkgs; };
 
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
+  };
+
   gtk = let
     t = {
       package = pkgs.tokyo-night-gtk;
-      name = "Tokyonight-Dark-BL";
+      name = "Tokyonight-Dark";
     };
     i = {
       package = pkgs.candy-icons;
