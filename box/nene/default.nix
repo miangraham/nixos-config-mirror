@@ -1,23 +1,4 @@
 { config, lib, modulesPath, inputs, pkgs, ... }:
-let
-  texlive-customized = pkgs.texlive.combine {
-    inherit (pkgs.texlive)
-      beamer
-      collection-latexextra
-      koma-script
-      scheme-small
-
-      noto
-      mweights
-      cm-super
-      cmbright
-      fontaxes
-      beamertheme-metropolis
-      collection-langjapanese
-      collection-langchinese
-    ;
-  };
-in
 {
   imports = [
     ./hardware-configuration.nix
@@ -51,17 +32,7 @@ in
 
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
-  home-manager.users.ian.home.packages = with pkgs; [
-    apksigner
-    asunder
-    element-desktop
-    losslesscut-bin
-    playerctl
-    sonixd
-    soundconverter
-    texlive-customized
-    zotero
-  ];
+  home-manager.users.ian.home.packages = with pkgs; [];
 
   system.stateVersion = "24.05";
 }

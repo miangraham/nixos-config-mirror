@@ -42,8 +42,11 @@ in
 
     inherit (pkgs)
       adwaita-icon-theme
+      apksigner
+      asunder
       # bitwarden # electron
       calf
+      element-desktop
       evince
       flameshot # custom screenshots
       fuzzel
@@ -52,16 +55,21 @@ in
       kiwix
       krita
       # librewolf
+      losslesscut-bin
       # nheko # libolm insecure
       nomacs
       okular
+      playerctl
       qdirstat
       remmina
       slurp
+      sonixd
+      soundconverter
       # ungoogled-chromium
       # vlc
       yubikey-manager
       zeal
+      zotero
 
       # sway
       swayidle
@@ -75,6 +83,24 @@ in
 
     # GUI bits
     inherit (pkgs.xfce) thunar;
+
+    texlive-customized = pkgs.texlive.combine {
+      inherit (pkgs.texlive)
+        beamer
+        collection-latexextra
+        koma-script
+        scheme-small
+
+        noto
+        mweights
+        cm-super
+        cmbright
+        fontaxes
+        beamertheme-metropolis
+        collection-langjapanese
+        collection-langchinese
+      ;
+    };
   };
 
   programs = {
