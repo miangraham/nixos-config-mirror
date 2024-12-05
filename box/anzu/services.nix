@@ -51,6 +51,8 @@ in
       };
     };
 
+    postgresql.package = pkgs.postgresql_16;
+
     postgresqlBackup = {
       enable = true;
       startAt = "*-*-* 05:00:00";

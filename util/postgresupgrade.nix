@@ -3,7 +3,7 @@
 {
   environment.systemPackages = [
     (let
-      newPostgres = pkgs.postgresql_15.withPackages (pp: []);
+      newPostgres = pkgs.postgresql_16.withPackages (pp: []);
     in pkgs.writeScriptBin "upgrade-pg-cluster" ''
       set -eux
       systemctl stop invidious
