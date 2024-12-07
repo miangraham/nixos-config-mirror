@@ -141,5 +141,18 @@ in
         chown nginx:nginx /var/www
       '';
     };
+
+    pre-thelounge = {
+      serviceConfig = {
+        Type = "oneshot";
+        User = "root";
+      };
+      before = [ "thelounge.service" ];
+      wantedBy = [ "thelounge.service" ];
+      path = [ pkgs.coreutils ];
+      script = ''
+        until ${pkgs.bind.host}/bin/host irc.libera.chat; do sleep 10; done
+      '';
+    };
   };
 }
