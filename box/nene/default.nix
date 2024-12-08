@@ -25,6 +25,8 @@
     firewall.allowedTCPPorts = [ 80 443 5672 6379 8443 41641 ];
   };
 
+  # temp pin, system locked on 2024-12-08. kernel or bios?
+  boot.kernelPackages = lib.mkForce pkgs.linuxPackages_6_6;
   boot.kernel.sysctl = {
     "fs.file-max" = 9000000;
     "net.ipv4.tcp_fin_timeout" = 10;
