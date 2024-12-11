@@ -40,5 +40,13 @@
 
   home-manager.users.ian.home.packages = with pkgs; [];
 
+  home-manager.users.ian.services.swayidle = {
+    enable = true;
+    timeouts = [{
+      timeout = 1800;
+      command = "${pkgs.systemd}/bin/systemctl suspend";
+    }];
+  };
+
   system.stateVersion = "24.05";
 }

@@ -145,14 +145,16 @@ in
     kanshi.enable = true;
     playerctld.enable = true;
 
-    swayidle = {
-      enable = false;
-      timeouts = [{
-        timeout = 600;
-        command = "swaymsg \"output * dpms off\"";
-        resumeCommand = "swaymsg \"output * dpms on\"";
-      }];
-    };
+    # swayidle = {
+    #   enable = false;
+    #   timeouts = [{
+    #     # timeout = 600;
+    #     # command = "swaymsg \"output * dpms off\"";
+    #     # resumeCommand = "swaymsg \"output * dpms on\"";
+    #     timeout = 3600;
+    #     command = "systemctl suspend";
+    #   }];
+    # };
 
     dunst = {
       enable = true;
