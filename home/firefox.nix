@@ -96,6 +96,7 @@
         "browser.startup.homepage" = "about:blank";
         "dom.private-attribution.submission.enabled" = false;
         "general.autoScroll" = false;
+        "privacy.globalprivacycontrol.enabled" = true;
         "signon.rememberSignons" = false;
 
         # Allow userChrome
