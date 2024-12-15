@@ -38,7 +38,28 @@
     enableUserSlices = true;
   };
 
-  home-manager.users.ian.home.packages = with pkgs; [];
+  home-manager.users.ian.home.packages = with pkgs; [
+    losslesscut-bin # x86 only
+    sonixd # x86 only
+    zotero # x86 only
+    (pkgs.texlive.combine {
+      inherit (pkgs.texlive)
+        beamer
+        collection-latexextra
+        koma-script
+        scheme-small
+
+        noto
+        mweights
+        cm-super
+        cmbright
+        fontaxes
+        beamertheme-metropolis
+        collection-langjapanese
+        collection-langchinese
+      ;
+    })
+  ];
 
   home-manager.users.ian.services.swayidle = {
     enable = true;
