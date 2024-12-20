@@ -24,6 +24,10 @@
       # url = "github:diamondburned/nix-search?rev=e616ac1c82a616fa6e6d8c94839c5052eb8c808d";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    raspberry-pi-nix = {
+      url = "github:nix-community/raspberry-pi-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = inputs:
     let

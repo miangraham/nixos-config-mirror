@@ -52,6 +52,11 @@ pkgs.mkShell {
       sudo nix store sign -k /var/keys/nix-cache-key.priv --all
     '';
 
+    sdbuild = pkgs.writeShellScriptBin "sdbuild" ''
+      set -e
+      nix build .#nixosConfigurations.chika.config.system.build.sdImage --out-link ./builds/chikasdimage
+    '';
+
     clean = pkgs.writeShellScriptBin "clean" ''
       set -e
       home-manager expire-generations '-14 days'

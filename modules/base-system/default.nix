@@ -9,5 +9,16 @@ with lib;
     };
   };
 
-  config = mkIf config.my.base-system.enable (import ./base-system.nix { inherit pkgs inputs config; });
+  options.my.base-boot = with lib.types; {
+    enable = mkOption {
+      type = bool;
+      default = true;
+      description = mdDoc "Whether to enable the base boot config.";
+    };
+  };
+
+  config = mkMerge [
+    (mkIf config.my.base-system.enable (import ./base-system.nix { inherit pkgs inputs config; }))
+    (mkIf config.my.base-boot.enable (import ./base-boot.nix { inherit pkgs; }))
+  ];
 }
