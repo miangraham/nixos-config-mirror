@@ -54,7 +54,7 @@ pkgs.mkShell {
 
     sdbuild = pkgs.writeShellScriptBin "sdbuild" ''
       set -e
-      nix build .#nixosConfigurations.chika.config.system.build.sdImage --out-link ./builds/chikasdimage
+      nix build .#nixosConfigurations.chaika.config.system.build.sdImage --out-link ./builds/chaikasdimage
     '';
 
     clean = pkgs.writeShellScriptBin "clean" ''

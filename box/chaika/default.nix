@@ -8,12 +8,9 @@
   my.nebula-node.enable = false;
 
   networking = {
-    hostName = "chika";
+    hostName = "chaika";
     firewall.allowedTCPPorts = [];
   };
-
-  users.users.root.initialPassword = "root";
-  users.users.ian.initialPassword = "ian";
 
   system.stateVersion = "24.11";
 }
