@@ -64,7 +64,7 @@
   home-manager.users.ian.services.swayidle = {
     enable = true;
     timeouts = [{
-      timeout = 1800;
+      timeout = 7200;
       command = "${pkgs.systemd}/bin/systemctl suspend";
     }];
   };
