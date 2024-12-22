@@ -21,7 +21,7 @@
   networking = {
     hostName = "makoto";
     firewall = {
-      allowedTCPPorts = [ 3000 3456 8099 8384 8989 ];
+      allowedTCPPorts = [ 3000 3456 6167 8099 8384 8989 ];
       allowedUDPPorts = [ ];
     };
   };

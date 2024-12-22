@@ -1,5 +1,35 @@
 { config, pkgs, ... }:
 let
+  listenToWebAndMatrix = [
+    {
+      addr = "0.0.0.0";
+      port = 80;
+    }
+    {
+      addr = "[::]";
+      port = 80;
+    }
+    {
+      addr = "0.0.0.0";
+      port = 443;
+      ssl = true;
+    }
+    {
+      addr = "[::]";
+      port = 443;
+      ssl = true;
+    }
+    {
+      addr = "0.0.0.0";
+      port = 8448;
+      ssl = true;
+    }
+    {
+      addr = "[::]";
+      port = 8448;
+      ssl = true;
+    }
+  ];
   wellKnownMatrixServer = pkgs.writeText "well-known-matrix-server" ''
     {
       "m.server": "graham.tokyo:443"
@@ -22,9 +52,14 @@ in
   user = "nginx";
   clientMaxBodySize = "40M";
   upstreams = {
-    "backend_matrix" = {
+    "backend_dendrite" = {
       servers = {
         "fuuka:8008" = {};
+      };
+    };
+    "backend_conduwuit" = {
+      servers = {
+        "makoto:6167" = {};
       };
     };
   };
@@ -80,13 +115,54 @@ in
       locations."/".proxyPass = "http://anzu:3456";
       locations."=/robots.txt".extraConfig = robotsConf;
     };
-    "rainingmessages.dev" = {
+    "rainingmessages.dev" = let
+      wkmServer = pkgs.writeText "well-known-matrix-server" ''
+        {
+          "m.server": "rainingmessages.dev:443"
+        }
+      '';
+      wkmClient = pkgs.writeText "well-known-matrix-client" ''
+        {
+          "m.homeserver": {
+            "base_url": "https://rainingmessages.dev"
+          }
+        }
+      '';
+    in {
       serverName = "rainingmessages.dev";
       root = "/var/www";
       forceSSL = true;
       enableACME = true;
+      listen = listenToWebAndMatrix;
       locations."=/robots.txt".extraConfig = robotsConf;
+      locations."/_matrix/" = {
+        proxyPass = "http://backend_conduwuit$request_uri";
+        proxyWebsockets = true;
+        extraConfig = ''
+          proxy_set_header Host $host;
+          proxy_set_header X-Real-IP $remote_addr;
+          proxy_read_timeout 600;
+        '';
+      };
+      locations."=/.well-known/matrix/server" = {
+        alias = "${wkmServer}";
+        extraConfig = ''
+          # Set the header since by default NGINX thinks it's just bytes
+          default_type application/json;
+        '';
+      };
+      locations."=/.well-known/matrix/client" = {
+        alias = "${wkmClient}";
+        extraConfig = ''
+          # Set the header since by default NGINX thinks it's just bytes
+          default_type application/json;
+
+          # https://matrix.org/docs/spec/client_server/r0.4.0#web-browser-clients
+          add_header Access-Control-Allow-Origin "*";
+        '';
+      };
       extraConfig = ''
+        merge_slashes off;
         location /.well-known/webfinger {
           rewrite ^.*$ https://social.rainingmessages.dev/.well-known/webfinger permanent;
         }
@@ -111,56 +187,16 @@ in
       };
       locations."=/robots.txt".extraConfig = robotsConf;
     };
-    # "rainingmessages.social" = {
-    #   serverName = "rainingmessages.social";
-    #   forceSSL = true;
-    #   enableACME = true;
-    #   locations."/" = {
-    #     recommendedProxySettings = true;
-    #     proxyWebsockets = true;
-    #     proxyPass = "http://fuuka:8080";
-    #   };
-    #   locations."=/robots.txt".extraConfig = robotsConf;
-    # };
     "graham.tokyo" = {
       serverName = "graham.tokyo";
       forceSSL = true;
       enableACME = true;
-      listen = [
-        {
-          addr = "0.0.0.0";
-          port = 80;
-        }
-        {
-          addr = "[::]";
-          port = 80;
-        }
-        {
-          addr = "0.0.0.0";
-          port = 443;
-          ssl = true;
-        }
-        {
-          addr = "[::]";
-          port = 443;
-          ssl = true;
-        }
-        {
-          addr = "0.0.0.0";
-          port = 8448;
-          ssl = true;
-        }
-        {
-          addr = "[::]";
-          port = 8448;
-          ssl = true;
-        }
-      ];
+      listen = listenToWebAndMatrix;
       extraConfig = ''
         merge_slashes off;
       '';
       locations."/_matrix/" = {
-        proxyPass = "http://backend_matrix$request_uri";
+        proxyPass = "http://backend_dendrite$request_uri";
         proxyWebsockets = true;
         extraConfig = ''
           proxy_set_header Host $host;

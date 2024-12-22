@@ -2,7 +2,7 @@
   description = "NixOS configuration for my personal machines.";
   inputs = {
     nixpkgs = { url = "github:NixOS/nixpkgs/nixos-24.11"; };
-    unstable = { url = "github:NixOS/nixpkgs/nixos-24.11"; };
+    unstable = { url = "github:NixOS/nixpkgs/nixos-unstable"; };
 
     nixos-hardware = { url = "github:NixOS/nixos-hardware/master"; };
     home-manager = {
