@@ -69,5 +69,13 @@
     }];
   };
 
+  # TODO: move tweaks into shared module somehow
+  systemd.services.borgbackup-job-home-ian-to-ranni.serviceConfig = {
+    Restart = "on-failure";
+    RestartSec = 10;
+    StartLimitInterval = 120;
+    StartLimitBurst = 3;
+  };
+
   system.stateVersion = "24.05";
 }
