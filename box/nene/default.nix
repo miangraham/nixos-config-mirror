@@ -70,11 +70,21 @@
   };
 
   # TODO: move tweaks into shared module somehow
-  systemd.services.borgbackup-job-home-ian-to-ranni.serviceConfig = {
-    Restart = "on-failure";
-    RestartSec = 10;
-    StartLimitInterval = 120;
-    StartLimitBurst = 3;
+  systemd.services.borgbackup-job-home-ian-to-ranni = {
+    startLimitBurst = 3;
+    startLimitIntervalSec = 120;
+    serviceConfig = {
+      Restart = "on-failure";
+      RestartSec = 10;
+    };
+  };
+  systemd.services.borgbackup-job-home-ian-to-rnet = {
+    startLimitBurst = 3;
+    startLimitIntervalSec = 120;
+    serviceConfig = {
+      Restart = "on-failure";
+      RestartSec = 10;
+    };
   };
 
   system.stateVersion = "24.05";
