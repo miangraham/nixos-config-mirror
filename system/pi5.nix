@@ -9,4 +9,6 @@
 
   raspberry-pi-nix.board = "bcm2712";
   nixpkgs.hostPlatform = "aarch64-linux";
+
+  raspberry-pi-nix.libcamera-overlay.enable = false; # causes rebuilds of webkitgtk, qtwebengine, mozc, etc
 }

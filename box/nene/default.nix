@@ -39,9 +39,19 @@
   };
 
   home-manager.users.ian.home.packages = with pkgs; [
+    element-desktop # webkit
+    gthumb # quick image cropping # qtwebengine
+    kiwix # qtwebengine
+    krita # opencv      # element-desktop # webkit
+    nomacs # opencv build
+    remmina # freerdp
+    yubikey-manager
+    zeal # qtwebengine build
+
     losslesscut-bin # x86 only
     sonixd # x86 only
     zotero # x86 only
+
     (pkgs.texlive.combine {
       inherit (pkgs.texlive)
         beamer

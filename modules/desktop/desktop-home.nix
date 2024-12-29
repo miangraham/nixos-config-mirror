@@ -52,27 +52,19 @@ in
       asunder
       # bitwarden # electron
       calf
-      element-desktop
       evince
       flameshot # custom screenshots
       fuzzel
       grim
-      gthumb # quick image cropping
-      kiwix
-      krita
       # librewolf
       # nheko # libolm insecure
-      nomacs
       okular
       playerctl
       qdirstat
-      remmina
       slurp
       soundconverter
       # ungoogled-chromium
       # vlc
-      yubikey-manager
-      zeal
 
       # sway
       swayidle
