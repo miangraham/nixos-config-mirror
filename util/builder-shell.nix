@@ -1,6 +1,5 @@
-{ inputs, ... }:
+{ inputs, system, ... }:
 let
-  system = "x86_64-linux";
   pkgs = inputs.nixpkgs.legacyPackages.${system};
   deployCmd = import ./deploy-cmd.nix { inherit pkgs; };
   inherit (pkgs.lib.attrsets) mapAttrs' nameValuePair;

@@ -38,6 +38,8 @@
       };
     in {
       nixosConfigurations = with builtins; mapAttrs (n: _: boxConfig ./box/${n}) (readDir ./box);
-      devShells.x86_64-linux.default = import ./util/builder-shell.nix { inherit inputs; };
+      devShells = inputs.nixpkgs.lib.genAttrs [ "aarch64-linux" "x86_64-linux" ] (system: {
+        default = import ./util/builder-shell.nix { inherit inputs system; };
+      });
     };
 }
