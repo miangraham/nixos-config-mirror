@@ -11,4 +11,7 @@
   nixpkgs.hostPlatform = "aarch64-linux";
 
   raspberry-pi-nix.libcamera-overlay.enable = false; # causes rebuilds of webkitgtk, qtwebengine, mozc, etc
+
+  users.users.root.initialPassword = "root";
+  users.users.ian.initialPassword = "ian";
 }
