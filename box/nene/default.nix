@@ -79,6 +79,8 @@
     }];
   };
 
+  programs.virt-manager.enable = true;
+
   # TODO: move tweaks into shared module somehow
   systemd.services.borgbackup-job-home-ian-to-ranni = {
     startLimitBurst = 3;
