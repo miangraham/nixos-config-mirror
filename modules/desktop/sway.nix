@@ -167,6 +167,24 @@
 
       "${mod}+Shift+p" = "mode passthrough";
     };
+
+    assigns = {
+      "1" = [{ app_id = "alacritty"; }];
+      "2" = [{ class="Firefox"; }];
+      "3" = [{ class="Emacs"; }];
+      "4" = [{ class="Godot"; }];
+      "5" = [{ app_id="mpv"; }];
+      "9" = [{ class="Sonixd"; }];
+      "10" = [{ app_id="com.obsproject.Studio"; }];
+    };
+
+    startup = pkgs.lib.mkDefault [{
+      command = "systemctl --user import-environment";
+    }{
+      command = "swaymsg workspace number 1";
+    }{
+      command = "alacritty";
+    }];
   };
 
   extraConfig = builtins.readFile ./sway.conf;

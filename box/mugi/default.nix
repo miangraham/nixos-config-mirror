@@ -53,13 +53,11 @@ in
     seat."*".hide_cursor = "100";
   };
 
-  # home-manager.users.ian.wayland.windowManager.sway.config.startup = [{
-  #   command = "systemctl --user import-environment";
-  # }{
-  #   command = "swaymsg workspace number 2; swaymsg exec -- firefox -kiosk";
-  # }{
-  #   command = "sleep 3; swaymsg fullscreen toggle; sleep 1; swaymsg fullscreen toggle";
-  # }];
+  home-manager.users.ian.wayland.windowManager.sway.config.startup = [{
+    command = "systemctl --user import-environment";
+  }{
+    command = "/home/ian/.bin/run-firefox-kiosk.sh";
+  }];
 
   home-manager.users.ian.programs.waybar.enable = pkgs.lib.mkForce false;
   services.displayManager = {
@@ -83,6 +81,15 @@ in
       "signon.rememberSignons" = mkForce true;
       "browser.toolbars.bookmarks.visibility" = mkForce "never";
     };
+  };
+
+  home-manager.users.ian.services.swayidle = {
+    enable = true;
+    timeouts = [{
+      timeout = 3600;
+      command = "${pkgs.light}/bin/light -S 5";
+      resumeCommand = "${pkgs.light}/bin/light -S 100";
+    }];
   };
 
   security.sudo.extraRules = [{
