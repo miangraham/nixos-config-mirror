@@ -1,6 +1,7 @@
 { pkgs, inputs, ... }:
 let
   displayId = "DSI-2";
+  runFirefoxKiosk = pkgs.writeScript "run-firefox-kiosk.sh" (builtins.readFile ./run-firefox-kiosk.sh);
 in
 {
   imports = [
@@ -51,13 +52,8 @@ in
     output.${displayId}.transform = "270";
     input."type:touch".map_to_output = displayId;
     seat."*".hide_cursor = "100";
+    startup = [{ command = "${runFirefoxKiosk}"; }];
   };
-
-  home-manager.users.ian.wayland.windowManager.sway.config.startup = [{
-    command = "systemctl --user import-environment";
-  }{
-    command = "/home/ian/.bin/run-firefox-kiosk.sh";
-  }];
 
   home-manager.users.ian.programs.waybar.enable = pkgs.lib.mkForce false;
   services.displayManager = {

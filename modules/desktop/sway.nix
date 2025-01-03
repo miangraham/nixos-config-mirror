@@ -70,8 +70,15 @@
     };
 
     output = {
-      "*" = {
-        bg = "/home/ian/.background-image fill";
+      "*" = { bg = "/home/ian/.background-image fill"; };
+      # nene ROG: middle
+      "Ancor Communications Inc ROG PG279Q G1LMQS019376" = { pos = "1920 0"; };
+      # IOData mobile monitor: left
+      "Unknown EX-LDC131DM 12IZ004297DZ" = { pos = "0 0"; };
+      # nano
+      "HEADLESS-1" = {
+        mode = "1920x1200@60Hz";
+        pos = "0 0";
       };
     };
 
@@ -179,13 +186,15 @@
     };
 
     startup = pkgs.lib.mkDefault [{
-      command = "systemctl --user import-environment";
-    }{
       command = "swaymsg workspace number 1";
     }{
       command = "alacritty";
     }];
   };
+
+  extraConfigEarly = ''
+    exec systemctl --user import-environment
+  '';
 
   extraConfig = builtins.readFile ./sway.conf;
 }
