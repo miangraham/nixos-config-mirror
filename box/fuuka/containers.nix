@@ -18,8 +18,8 @@ in
       containers = {
         homepage = {
           inherit environment extraOptions;
-          # 0.8.10
-          image = "ghcr.io/gethomepage/homepage@sha256:fc0d6e8b469ea8756d7c5bc542eb5c89064b9c47c3fa85f19b70a695c65cb782";
+          # 0.10.17
+          image = "ghcr.io/gethomepage/homepage@sha256:b261c981a866a0e287205394bf365bd8cdb9152469a85ec569d7bfcd7812cf14";
           ports = [ "7575:3000" ];
           volumes = [
             "/srv/homepage:/app/config"
