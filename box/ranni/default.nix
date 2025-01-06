@@ -33,7 +33,7 @@ in
 
   boot = {
     # LTS, ZFS compatible. Verify ZFS before bumping.
-    kernelPackages = lib.mkForce pkgs.linuxPackages_6_6;
+    kernelPackages = lib.mkForce pkgs.linuxPackages_6_12;
     # TODO: test removal
     kernelModules = [ "coretemp" "nct6775" ];
   };
