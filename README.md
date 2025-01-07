@@ -12,9 +12,9 @@ Requires [NixOS](https://nixos.org/download.html).
 $ git clone https://codeberg.org/mian/nixos-config.git ~/.nix
 $ cd ~/.nix
 $ vim box/somebox/default.nix # add box-specific items, see others in box/*
-$ vim flake.nix # add box config to nixosConfigurations
-$ ./update_versions.sh
-$ ./rebuild_system.sh
+$ nix develop
+$ nupdate_versions # update dependencies
+$ rebuild_system
 ```
 
 ## Organization
