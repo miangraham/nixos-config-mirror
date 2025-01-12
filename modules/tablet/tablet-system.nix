@@ -9,4 +9,8 @@
 
   services.xserver.enable = true;
   services.desktopManager.plasma6.enable = true;
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = false; # sddm wayland doesn't like virtual keyboard as of Jan 2025
+  };
 }
