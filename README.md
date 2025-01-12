@@ -13,8 +13,8 @@ $ git clone https://codeberg.org/mian/nixos-config.git ~/.nix
 $ cd ~/.nix
 $ vim box/somebox/default.nix # add box-specific items, see others in box/*
 $ nix develop
-$ nupdate_versions # update dependencies
-$ rebuild_system
+$ nixup # update dependencies
+$ rebuild_system # switch to new profile
 ```
 
 ## Organization
