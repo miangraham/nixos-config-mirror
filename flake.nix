@@ -4,7 +4,7 @@
     nixpkgs = { url = "github:NixOS/nixpkgs/nixos-24.11"; };
     unstable = { url = "github:NixOS/nixpkgs/nixos-unstable"; };
 
-    nixos-hardware = { url = "github:NixOS/nixos-hardware/master"; };
+    nixos-hardware = { url = "github:miangraham/nixos-hardware/master"; };
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";

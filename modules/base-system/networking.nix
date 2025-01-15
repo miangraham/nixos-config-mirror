@@ -21,6 +21,7 @@
 192.168.0.128 social.rainingmessages.dev
 192.168.0.132 nene
 192.168.0.133 rin
+192.168.0.146 yuuri
 192.168.0.151 makoto
 192.168.0.156 mugi
 192.168.0.167 bocchi
